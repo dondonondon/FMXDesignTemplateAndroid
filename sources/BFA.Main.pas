@@ -34,11 +34,13 @@ procedure fnShowMessage(FMessage : String);
 procedure fnTransitionFrame(FFrom, FGo : TControl; FFAFrom, FFAGo : TFloatAnimation; isBack : Boolean);
 procedure fnGoFrame(FFrom, FGo : String; isBack : Boolean = False);
 procedure fnHideFrame(FFrom : String);
-procedure fnBack;
+procedure fnBack(FProc : TProc = nil);
 
 var
+  FListGo : TStringList;
   goFrame, fromFrame, FToken : String;
   tabCount : Integer;
+  FPopUp : Boolean;
 
 implementation
 
@@ -137,9 +139,42 @@ begin
   VFRGo := nil;
 end;
 
-procedure fnBack;
+procedure fnBack(FProc : TProc = nil);
 begin
+  try
+    if goFrame = C_LOADING then
+      Exit;
 
+    if FListGo.Count <= 2 then begin
+      if (goFrame = C_HOME) or (goFrame = C_HOME) then begin
+        if tabCount < 1 then
+          fnShowMessage('Tap Dua Kali Untuk Keluar')
+        else
+          fnShowMessage('Sampai Jumpa Kembali');
+
+        Inc(TabCount);
+      end;
+    end;
+
+    if FPopUp then begin
+      if Assigned(FProc) then
+        FProc;
+    end else begin
+      if Assigned(FProc) then
+        FProc;
+
+      if FListGo.Count > 2 then begin
+        fnGoFrame(FListGo[FListGo.Count - 1], FListGo[FListGo.Count - 2], True)
+      end;
+    end;
+
+    if ((goFrame = C_HOME) or (goFrame = C_HOME)) AND (TabCount >= 2) then
+    begin
+      Application.Terminate;
+    end;
+  except
+
+  end;
 end;
 
 

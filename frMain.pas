@@ -38,6 +38,7 @@ type
     procedure faFromXFinish(Sender: TObject);
     procedure faGoXFinish(Sender: TObject);
     procedure faFromXProcess(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
   private
     {Keyboard}
     FService1 : IFMXVirtualKeyboardToolbarService;
@@ -238,7 +239,14 @@ begin
   except
   end;
 
+  FListGo := TStringList.Create;
+
   vsMain.OnCalcContentBounds := CalcContentBoundsProc;
+end;
+
+procedure TFMain.FormDestroy(Sender: TObject);
+begin
+  FListGo.DisposeOf;
 end;
 
 procedure TFMain.FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;

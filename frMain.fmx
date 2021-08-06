@@ -8,6 +8,7 @@ object FMain: TFMain
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   OnKeyUp = FormKeyUp
   OnShow = FormShow
   OnVirtualKeyboardShown = FormVirtualKeyboardShown
