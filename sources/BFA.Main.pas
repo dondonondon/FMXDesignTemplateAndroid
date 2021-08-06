@@ -125,7 +125,16 @@ begin
   fromFrame := FFrom;
   goFrame := FGo;
 
+  {FMain.loFooter.Visible := True;
+  if (goFrame = C_LOADING) or (goFrame = C_LOGIN) or (goFrame = C_CHAT) or (goFrame = C_PREDIKSI) or (goFrame = C_SEARCH) or (goFrame = C_NEWS_DETAIL) then
+    FMain.loFooter.Visible := False;}
+
   tabCount := 0;
+
+  if isBack then
+    FListGo.Delete(FListGo.Count - 1)
+  else
+    FListGo.Add(goFrame);
 
   fnTransitionFrame(VFRFrom, VFRGo, FMain.faFromX, FMain.faGoX, isBack);
 end;
