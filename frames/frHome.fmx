@@ -30,11 +30,23 @@ object FHome: TFHome
     object CornerButton1: TCornerButton
       Align = Center
       Sides = [Top, Left, Bottom, Right]
-      TabOrder = 2
+      TabOrder = 3
       Text = 'GO'
       XRadius = 3.000000000000000000
       YRadius = 3.000000000000000000
       OnClick = CornerButton1Click
+    end
+    object CornerButton2: TCornerButton
+      Align = Top
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 360.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'back'
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = CornerButton2Click
     end
   end
 end

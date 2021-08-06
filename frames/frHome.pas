@@ -14,10 +14,12 @@ type
     Label1: TLabel;
     Rectangle1: TRectangle;
     CornerButton1: TCornerButton;
+    CornerButton2: TCornerButton;
     procedure FirstShow;
     procedure btnBackClick(Sender: TObject);
     procedure Rectangle1Click(Sender: TObject);
     procedure CornerButton1Click(Sender: TObject);
+    procedure CornerButton2Click(Sender: TObject);
   private
     statF : Boolean;
     procedure setFrame;
@@ -52,6 +54,11 @@ end;
 procedure TFHome.CornerButton1Click(Sender: TObject);
 begin
   fnGoFrame(C_HOME, C_DETAIL);
+end;
+
+procedure TFHome.CornerButton2Click(Sender: TObject);
+begin
+  fnGoBack;
 end;
 
 procedure TFHome.FirstShow;

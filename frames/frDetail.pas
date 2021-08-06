@@ -55,7 +55,7 @@ const
 
 procedure TFDetail.CornerButton1Click(Sender: TObject);
 begin
-  fnGoFrame(C_DETAIL, C_HOME, True);
+  fnBack();
 end;
 
 procedure TFDetail.FirstShow;

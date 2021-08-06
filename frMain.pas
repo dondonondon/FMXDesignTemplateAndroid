@@ -265,30 +265,7 @@ begin
     begin
       Key := 0;
 
-      {if goFrame = Loading then
-        Exit;
-
-      if (goFrame = HOME) or (goFrame = HOME) then begin
-        if FHome.loQRCode.Visible then begin
-          FHome.loQRCode.Visible := False;
-          Exit;
-        end;
-
-
-        if tabCount < 1 then
-          fnShowE('Tap Dua Kali Untuk Keluar')
-        else
-          fnShowE('Sampai Jumpa Kembali');
-
-        Inc(TabCount);
-      end;
-
       fnBack;
-
-      if ((goFrame = HOME) or (goFrame = HOME)) and (TabCount >= 2) then
-      begin
-        Application.Terminate;
-      end;}
     end;
   end
   else
