@@ -1,0 +1,24 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <VerInfo_Build>1</VerInfo_Build>
+        <Android_LauncherIcon36>assets\img\Logo\36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>assets\img\Logo\48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>assets\img\Logo\72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>assets\img\Logo\96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>assets\img\Logo\144.png</Android_LauncherIcon144>
+        <Android_SplashImage426>assets\img\SPLASH\426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>assets\img\SPLASH\470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>assets\img\SPLASH\640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>assets\img\SPLASH\960x720.png</Android_SplashImage960>
+        <Android_NotificationAccentColor>#000000</Android_NotificationAccentColor>
+        <VerInfo_Keys>package=com.embarcadero.$(MSBuildProjectName);label=Kamus Mandar;versionCode=1;versionName=1.0.0;persistent=False;restoreAnyVersion=False;installLocation=auto;largeHeap=False;theme=TitleBar;hardwareAccelerated=true;apiKey=</VerInfo_Keys>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>OptionSet</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality/>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+</Project>

@@ -1,0 +1,40 @@
+object FHome: TFHome
+  Size.Width = 360.000000000000000000
+  Size.Height = 720.000000000000000000
+  Size.PlatformDefault = False
+  object loMain: TLayout
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Rectangle1: TRectangle
+      Align = Contents
+      Fill.Color = xFFA65353
+      Size.Width = 360.000000000000000000
+      Size.Height = 720.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Label1: TLabel
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      AutoSize = True
+      Position.X = 120.000000000000000000
+      Position.Y = 351.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+      Text = 'INI HOME'
+      TabOrder = 0
+    end
+    object CornerButton1: TCornerButton
+      Align = Center
+      Sides = [Top, Left, Bottom, Right]
+      TabOrder = 2
+      Text = 'GO'
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = CornerButton1Click
+    end
+  end
+end

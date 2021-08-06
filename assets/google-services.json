@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "237435848499",
+    "firebase_url": "https://predemas.firebaseio.com",
+    "project_id": "predemas",
+    "storage_bucket": "predemas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:9586065966a78624b4e046",
+        "android_client_info": {
+          "package_name": "com.blangkon.MugaPay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:b974f33f34771de9",
+        "android_client_info": {
+          "package_name": "com.blangkon.PredEmas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:283de1c8b9fa78c0b4e046",
+        "android_client_info": {
+          "package_name": "com.blangkon.prjAdmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:e4f30895dd36903ab4e046",
+        "android_client_info": {
+          "package_name": "com.blangkon.prjTemplate2021"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
