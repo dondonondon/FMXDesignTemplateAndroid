@@ -2,7 +2,7 @@
 	header("Content-Type: application/json; charset=UTF-8");
 
     function sendPush($to, $title, $body, $icon, $url) {
-        define('FCM_AUTH_KEY', 'AAAAN0hHhzM:APA91bEX3ET3efvwH_ODYNujwdyp62L1Fnc3yFy8Z6pUhsYlz9Thfgz6Y88cF39dLuXpU6bUqPSY5_fhwOF4KsA-LmOrPIUX0thGhUfhqI7mcSwQ72F7NZFBTdAnerhTtMB-jnUv3YBX');
+        define('FCM_AUTH_KEY', '');
         $postdata = json_encode(
             [
                 'notification' => 
