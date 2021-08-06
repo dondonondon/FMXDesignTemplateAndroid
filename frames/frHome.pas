@@ -58,7 +58,7 @@ end;
 
 procedure TFHome.CornerButton2Click(Sender: TObject);
 begin
-  fnGoBack;
+  fnBack;
 end;
 
 procedure TFHome.FirstShow;
