@@ -17,17 +17,13 @@ uses
 
 const
   {$IF DEFINED(IOS) or DEFINED(ANDROID)}
-      url = 'https://www.blangkon.net/API/APITamu/APITamu.php?key=apiapi&act=';
-      assURL = 'https://www.blangkon.net/API/APITamu/files/';
-      PDFURL = 'https://www.blangkon.net/API/APITamu/PrintPDF/';
+      url = 'http://localhost/appru/API/APITamu/APITamu.php?key=apiapi&act=';
+      assURL = 'http://localhost/appru/API/APITamu/files/';
+      PDFURL = 'http://localhost/appru/API/APITamu/PrintPDF/';
   {$ELSE}
       url = 'http://localhost/appru/API/APITamu/APITamu.php?key=apiapi&act=';
       assURL = 'http://localhost/appru/API/APITamu/files/';
       PDFURL = 'http://localhost/appru/API/APITamu/PrintPDF/';
-
-      {url = 'https://www.blangkon.net/API/APITamu/APITamu.php?key=apiapi&act=';
-      assURL = 'https://www.blangkon.net/API/APITamu/files/';
-      PDFURL = 'https://www.blangkon.net/API/APITamu/PrintPDF/';}
   {$ENDIF}
 
 type
