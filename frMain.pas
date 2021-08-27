@@ -209,19 +209,28 @@ begin
       FService1.SetHideKeyboardButtonVisibility(True);
     end;
 
-    if TPlatformServices.Current.SupportsPlatformService(IFMXApplicationEventService, IInterface(AppEvent)) then
-        AppEvent.SetApplicationEventHandler(AppEventProc);
+    {START  ============ enable ini jika sudah mengisikan project > option > entlitemen list bagian push notif }
+    {JANGAN LUPA ISIKAN JUGA PROFIL FIREBASE DI OPTION > PROJECT > SERVICES}
+
+    {if TPlatformServices.Current.SupportsPlatformService(IFMXApplicationEventService, IInterface(AppEvent)) then
+        AppEvent.SetApplicationEventHandler(AppEventProc);     }
 
     {$IFDEF IOS}
-      PushService := TPushServiceManager.Instance.GetServiceByName(TPushService.TServiceNames.APS);
+      //PushService := TPushServiceManager.Instance.GetServiceByName(TPushService.TServiceNames.APS);
     {$ELSE}
-      PushService := TPushServiceManager.Instance.GetServiceByName(TPushService.TServiceNames.FCM);
+      //PushService := TPushServiceManager.Instance.GetServiceByName(TPushService.TServiceNames.FCM);
     {$ENDIF}
 
-    ServiceConnection := TPushServiceConnection.Create(PushService);
+    {ServiceConnection := TPushServiceConnection.Create(PushService);
     ServiceConnection.OnChange := DoServiceConnectionChange;
-    ServiceConnection.OnReceiveNotification := DoReceiveNotificationEvent;
-    //TAndroidHelper.Activity.getWindow.setStatusBarColor($FF0E4EB6);
+    ServiceConnection.OnReceiveNotification := DoReceiveNotificationEvent; }
+
+    {END ============ enable ini jika sudah mengisikan entlitemen list bagian push notif}
+
+
+    {enable ini jika sudah mengisikan entlitemen list bagian push notif}
+
+    //TAndroidHelper.Activity.getWindow.setStatusBarColor($FF0E4EB6);             //color navbar dan status bar
     //TAndroidHelper.Activity.getWindow.setNavigationBarColor($FF0E4EB6);
   {$ELSE}
 
@@ -281,7 +290,8 @@ end;
 procedure TFMain.FormShow(Sender: TObject);
 begin
   {$IF DEFINED (ANDROID) OR DEFINED(IOS)}
-  ServiceConnection.Active := True;
+  //ServiceConnection.Active := True;    //enable ini jika sudah mengisikan entlitemen list bagian push notif
+   {JANGAN LUPA ISIKAN JUGA PROFIL FIREBASE DI OPTION > PROJECT > SERVICES}
   {$ENDIF}
 
   createFrame;
