@@ -107,6 +107,8 @@ begin
 
     Sleep(100);
 
+    FGo.Visible := True;
+
     FFAGo.Enabled := True;
     FFAFrom.Enabled := True;
   end;

@@ -35,6 +35,8 @@ procedure fnLog(FKey, FMessage : String); overload;
 procedure SaveSettingString(Section, Name, Value: string);
 function LoadSettingString(Section, Name, Value: string): string;
 
+procedure LoadImageCenter(ABitmap : TBitmap; FLokasi : String);
+
 implementation
 
 function fnReplaceStr(strSource, strReplaceFrom, strReplaceWith: string; goTrim: Boolean = true): string;
@@ -356,6 +358,47 @@ begin
     ini.WriteString(Section, Name, Value);
   finally
     ini.DisposeOf;
+  end;
+end;
+
+procedure LoadImageCenter(ABitmap : TBitmap; FLokasi : String);
+var
+  AFrom, ACrop : TBitmap;
+  xScale, yScale: extended;
+  iRect, ARect: TRect;
+  sc : Integer;
+begin
+  sc := 150;
+  AFrom := TBitmap.Create;
+  try
+    AFrom.LoadFromFile(FLokasi);
+    //ABitmap := TBitmap.Create;
+    try
+      ARect.Width := sc;
+      ARect.Height := sc;
+      xScale := AFrom.Width / sc;
+      yScale := AFrom.Height / sc;
+
+      if AFrom.Width > AFrom.Height then begin
+        ABitmap.Width := round(ARect.Width * yScale);
+        ABitmap.Height := round(ARect.Height * yScale);
+        iRect.Left := Round((AFrom.Width - AFrom.Height) / 2);
+        iRect.Top := 0;
+      end else begin
+        ABitmap.Width := round(ARect.Width * xScale);
+        ABitmap.Height := round(ARect.Height * xScale);
+        iRect.Left := 0;
+        iRect.Top := Round((AFrom.Height - AFrom.Width) / 2);
+      end;
+
+      iRect.Width := round(ARect.Width * xScale);
+      iRect.Height := round(ARect.Height * yScale);
+      ABitmap.CopyFromBitmap(AFrom, iRect, 0, 0);
+    finally
+      //ABitmap.DisposeOf;
+    end;
+  finally
+    AFrom.DisposeOf;
   end;
 end;
 

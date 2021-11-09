@@ -12,7 +12,7 @@ uses
 
 type
   TControlHelper = class helper for TControl
-    procedure LoadFromURL(FURL, ASaveFile : String);
+    procedure LoadFromURL(FURL, ASaveFile : String; FReplaceDownload : Boolean = False);
     procedure LoadFromLoc(AFileName : String);
     procedure setAnchorContent;
     procedure setAnchorCenter;
@@ -22,6 +22,14 @@ type
     procedure setPosXBefore(AControl : TControl; ASpace : Single = 0);
   end;
 
+  TRectangleHelper = class helper for TRectangle
+    procedure LoadImageCenter(ALokasi : String);
+  end;
+
+  TImageHelper = class helper for TImage
+    procedure LoadImageCenter(ALokasi : String);
+  end;
+
 implementation
 
 procedure TControlHelper.LoadFromLoc(AFileName: String);
@@ -29,10 +37,14 @@ begin
   fnSetImage(Self, AFileName);
 end;
 
-procedure TControlHelper.LoadFromURL(FURL, ASaveFile: String);
+procedure TControlHelper.LoadFromURL(FURL, ASaveFile: String; FReplaceDownload : Boolean = False);
 begin
-  if not FileExists(fnLoadFile(ASaveFile)) then
+  if FReplaceDownload then begin
     fnDownloadFile(FURL, ASaveFile);
+  end else begin
+    if not FileExists(fnLoadFile(ASaveFile)) then
+      fnDownloadFile(FURL, ASaveFile);
+  end;
 
   TThread.Synchronize(nil, procedure begin
     fnSetImage(Self, ASaveFile);
@@ -94,6 +106,101 @@ end;
 procedure TControlHelper.setPosYBefore(AControl: TControl; ASpace: Single = 0);
 begin
   Self.Position.Y := AControl.Position.Y - Self.Height - ASpace;
+end;
+
+{ TRectangleHelper }
+
+procedure TRectangleHelper.LoadImageCenter(ALokasi: String);
+var
+  ABitmap, ACrop : TBitmap;
+  xScale, yScale: extended;
+  iRect, ARect: TRect;
+  sc : Integer;
+begin
+  sc := 150;
+  ABitmap := TBitmap.Create;
+  try
+    ABitmap.LoadFromFile(ALokasi);
+    ACrop := TBitmap.Create;
+    try
+      ARect.Width := sc;
+      ARect.Height := sc;
+      xScale := ABitmap.Width / sc;
+      yScale := ABitmap.Height / sc;
+
+      if ABitmap.Width > ABitmap.Height then begin
+        ACrop.Width := round(ARect.Width * yScale);
+        ACrop.Height := round(ARect.Height * yScale);
+        iRect.Left := Round((ABitmap.Width - ABitmap.Height) / 2);
+        iRect.Top := 0;
+      end else begin
+        ACrop.Width := round(ARect.Width * xScale);
+        ACrop.Height := round(ARect.Height * xScale);
+        iRect.Left := 0;
+        iRect.Top := Round((ABitmap.Height - ABitmap.Width) / 2);
+      end;
+
+      iRect.Width := round(ARect.Width * xScale);
+      iRect.Height := round(ARect.Height * yScale);
+      ACrop.CopyFromBitmap(ABitmap, iRect, 0, 0);
+
+      Self.Fill.Kind := TBrushKind.Bitmap;
+      Self.Fill.Bitmap.WrapMode := TWrapMode.TileStretch;
+      Self.Fill.Bitmap.Bitmap := ACrop;
+
+    finally
+      ACrop.DisposeOf;
+    end;
+  finally
+    ABitmap.DisposeOf;
+  end;
+end;
+
+{ TImageHelper }
+
+procedure TImageHelper.LoadImageCenter(ALokasi: String);
+var
+  ABitmap, ACrop : TBitmap;
+  xScale, yScale: extended;
+  iRect, ARect: TRect;
+  sc : Integer;
+begin
+  sc := 150;
+  ABitmap := TBitmap.Create;
+  try
+    ABitmap.LoadFromFile(ALokasi);
+    ACrop := TBitmap.Create;
+    try
+      ARect.Width := sc;
+      ARect.Height := sc;
+      xScale := ABitmap.Width / sc;
+      yScale := ABitmap.Height / sc;
+
+      if ABitmap.Width > ABitmap.Height then begin
+        ACrop.Width := round(ARect.Width * yScale);
+        ACrop.Height := round(ARect.Height * yScale);
+        iRect.Left := Round((ABitmap.Width - ABitmap.Height) / 2);
+        iRect.Top := 0;
+      end else begin
+        ACrop.Width := round(ARect.Width * xScale);
+        ACrop.Height := round(ARect.Height * xScale);
+        iRect.Left := 0;
+        iRect.Top := Round((ABitmap.Height - ABitmap.Width) / 2);
+      end;
+
+      iRect.Width := round(ARect.Width * xScale);
+      iRect.Height := round(ARect.Height * yScale);
+      ACrop.CopyFromBitmap(ABitmap, iRect, 0, 0);
+
+      Self.WrapMode := TImageWrapMode.Stretch;
+      Self.Bitmap := ACrop;
+
+    finally
+      ACrop.DisposeOf;
+    end;
+  finally
+    ABitmap.DisposeOf;
+  end;
 end;
 
 end.
