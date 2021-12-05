@@ -36,8 +36,8 @@ procedure fnGoFrame(FFrom, FGo : String; isBack : Boolean = False);
 procedure fnHideFrame(FFrom : String);
 procedure fnBack(FProc : TProc = nil);
 
-function fnParsingJSON(req : String; mem : TFDMemTable): Boolean; overload;
-function fnParsingJSON(req : String): Boolean; overload;
+function fnParsingJSON(FReq : String; FMemTable : TFDMemTable): Boolean; overload;
+function fnParsingJSON(FReq : String): Boolean; overload;
 
 var
   FListGo : TStringList;
@@ -191,15 +191,14 @@ begin
   end;
 end;
 
-function fnParsingJSON(req : String; mem : TFDMemTable) : Boolean;
+function fnParsingJSON(FReq : String; FMemTable : TFDMemTable) : Boolean;
 begin
-  Result := fnParseJSON(DM.RClient, DM.RReq, DM.RResp, DM.rRespAdapter, req, mem);
-
+  Result := fnParseJSON(DM.RClient, DM.RReq, DM.RResp, DM.rRespAdapter, FReq, FMemTable);
 end;
 
-function fnParsingJSON(req : String): Boolean;
+function fnParsingJSON(FReq : String): Boolean;
 begin
-  Result := fnParseJSON(DM.RClient, DM.RReq, DM.RResp, DM.rRespAdapter, req, DM.memData);
+  Result := fnParseJSON(DM.RClient, DM.RReq, DM.RResp, DM.rRespAdapter, FReq, DM.memData);
 end;
 
 
