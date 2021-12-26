@@ -31,10 +31,7 @@ type
 
 procedure fnStoreNullData(mem : TFDMemTable);
 function fnParseJSON(Cli : TRESTClient; Req : TRESTRequest; Resp :TRESTResponse; RespAdapter : TRESTResponseDataSetAdapter; act : String; mem : TFDMemTable) : Boolean;
-function JSONToArray(FJSON : String) : TStringArray;
-function fnGetJSON(netHTTP : TNetHTTPClient; act : String):TStringArray;
-function fnPostJSON(netHTTP : TNetHTTPClient; act : String; str : TStringList):TStringArray;  overload;
-function fnPostJSON(netHTTP : TNetHTTPClient; act : String; str : TMultipartFormData; Stream: TStringStream):TStringArray; overload;
+
 
 implementation
 
@@ -87,11 +84,15 @@ begin
 
     Result := True;
 
-    for i := 0 to mem.FieldCount - 1 do begin
-      if mem.FieldDefs[i].Name = 'result' then begin
-        if mem.FieldByName('result').AsString = 'null' then begin
-          Result := False;
-          Break;
+    if Resp.StatusCode <> 200 then begin
+      Result := False;
+    end else begin
+      for i := 0 to mem.FieldCount - 1 do begin
+        if mem.FieldDefs[i].Name = 'result' then begin
+          if mem.FieldByName('result').AsString = 'null' then begin
+            Result := False;
+            Break;
+          end;
         end;
       end;
     end;
@@ -100,99 +101,10 @@ begin
     on E : Exception do begin
       fnLog('fnParseJSON, BFA.Rest, Message', E.Message);
       fnLog('fnParseJSON, BFA.Rest, ClassName', E.ClassName);
+
       fnStoreNullData(mem);
       Result := False;
     end;
-  end;
-end;
-
-function JSONToArray(FJSON : String) : TStringArray;
-var
-  strjsn : string;
-  jDataObject: TJSONObject;
-  jDataArray : TJSONArray;
-  value : String;
-  index : String;
-  kol, bar, i, obj : integer;
-begin
-  try
-    strjsn := FJSON;
-
-    jDataArray:= TJSONObject.ParseJSONValue(strjsn) as TJSONArray;
-    jDataObject := TJSONObject(jDataArray.Get(0));
-
-    try
-      kol := Pred(jDataObject.Size);
-      bar := Pred(jDataArray.Size);
-
-      SetLength(Result, kol + 1, bar + 1);
-      for i:= 0 to Pred(jDataArray.Size) do
-      begin
-        jDataObject := TJSONObject(jDataArray.Get(i));
-        for obj := 0 to Pred(jDataObject.Size) do
-        begin
-          index := jDataObject.Pairs[obj].JsonString.ToString;
-          value := jDataObject.Pairs[obj].JsonValue.ToString;
-
-          Result[obj, i] := StringReplace(value, '"','', [rfReplaceAll, rfIgnoreCase]);
-        end;
-      end;
-    finally
-      jDataArray.DisposeOf;
-      jDataArray := nil;
-    end;
-  except
-    on E : Exception do begin
-      SetLength(Result, 2, 1);
-      Result[0,0] := CNull;
-      Result[1,0] := CGagal;
-
-      fnLog('JSONToArray, BFA.Rest, Message', E.Message);
-      fnLog('JSONToArray, BFA.Rest, ClassName', E.ClassName);
-    end;
-  end;
-end;
-function fnGetJSON(netHTTP : TNetHTTPClient; act : String):TStringArray;
-var
-  strjsn : string;
-  httpresult : IHTTPResponse;
-begin
-  netHTTP.ConnectionTimeout := 8000;
-  netHTTP.ResponseTimeout := 8000;
-  strjsn := '[ { "result": "'+CNull+'", "pesan": "'+CGagal+'" } ]';
-  try
-    httpresult := netHTTP.get(url + act);
-    strjsn := httpresult.ContentAsString();
-  finally
-    Result := JSONToArray(strjsn);
-  end;
-end;
-
-function fnPostJSON(netHTTP : TNetHTTPClient; act : String; str : TStringList):TStringArray;
-var
-  strjsn : string;
-  httpresult : IHTTPResponse ;
-begin
-  strjsn := '[ { "result": "'+CNull+'", "pesan": "'+CGagal+'" } ]';
-  try
-    httpresult := netHTTP.Post(url + act, str);
-    strjsn := httpresult.ContentAsString();
-  finally
-    Result := JSONToArray(strjsn);
-  end;
-end;
-
-function fnPostJSON(netHTTP : TNetHTTPClient; act : String; str : TMultipartFormData; Stream: TStringStream):TStringArray;
-var
-  strjsn : string;
-  httpresult : IHTTPResponse ;
-begin
-  strjsn := '[ { "result": "'+CNull+'", "pesan": "'+CGagal+'" } ]';
-  try
-    httpresult := netHTTP.Post(url + act, str, Stream);
-    strjsn := httpresult.ContentAsString();
-  finally
-    Result := JSONToArray(strjsn);
   end;
 end;
 

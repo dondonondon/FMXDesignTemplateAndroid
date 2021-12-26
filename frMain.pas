@@ -189,10 +189,6 @@ var
   FLayout : TLayout;
 begin
   TFloatAnimation(Sender).Enabled := False;
-  FLayout := TLayout(VFRGo.FindComponent('loMain'));
-  if Assigned(FLayout) then
-    if goFrame <> C_LOADING then
-      FLayout.Visible := True;
 
   fnHideFrame(fromFrame);
 end;

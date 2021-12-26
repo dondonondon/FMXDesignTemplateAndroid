@@ -58,18 +58,11 @@ begin
 end;
 
 procedure fnTransitionFrame(FFrom, FGo : TControl; FFAFrom, FFAGo : TFloatAnimation; isBack : Boolean);
-var
-  FLayout : TLayout;
 begin
   with FMain do begin
     if Assigned(FFrom) then begin
       FFrom.Visible := True;
     end;
-
-    {FLayout := TLayout(FGo.FindComponent('loMain'));
-    if Assigned(FLayout) then
-      if goFrame <> C_LOADING then
-        FLayout.Visible := False;}
 
     if isBack then begin
       FFAGo.Inverse := True;
@@ -84,12 +77,11 @@ begin
       FFAFrom.Inverse := False;
 
       FGo.BringToFront;
+      FGo.Opacity := 0;
 
       FFAGo.Parent := FGo;
       FFAFrom.Parent := FGo;
     end;
-
-    FGo.Visible := True;
 
     FFAGo.PropertyName := 'Position.Y';
     FFAFrom.PropertyName := 'Opacity';
