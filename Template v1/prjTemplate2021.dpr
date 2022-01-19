@@ -15,7 +15,8 @@ uses
   frHome in 'frames\frHome.pas' {FHome: TFrame},
   frLoading in 'frames\frLoading.pas' {FLoading: TFrame},
   frDetail in 'frames\frDetail.pas' {FDetail: TFrame},
-  BFA.Helper.MemTable in 'sources\BFA.Helper.MemTable.pas';
+  BFA.Helper.MemTable in 'sources\BFA.Helper.MemTable.pas',
+  frLogin in 'frames\frLogin.pas' {FLogin: TFrame};
 
 {$R *.res}
 

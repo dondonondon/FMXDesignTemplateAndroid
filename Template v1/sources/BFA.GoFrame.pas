@@ -37,7 +37,7 @@ const
 implementation
 
 uses BFA.Func, BFA.Helper.Control, BFA.Helper.Main, frMain, frHome, frLoading,
-  BFA.Main, frDetail;
+  BFA.Main, frDetail, frLogin;
 
 procedure fnCallFrame(FParent: TLayout; FFClass: TFrameClass);
 begin
@@ -65,6 +65,9 @@ begin
 
     fnCallFrame(FMain.loFrame, frDetail.TFDetail);
     FDetail := TFDetail(genFrame);
+
+    fnCallFrame(FMain.loFrame, frLogin.TFLogin);
+    FLogin := TFLogin(genFrame);
   except
 
   end;
@@ -80,7 +83,9 @@ begin
   else if FTrans = C_HOME then
     tFR := FHome
   else if FTrans = C_DETAIL then
-    tFR := FDetail;
+    tFR := FDetail
+  else if FTrans = C_LOGIN then
+    tFR := FLogin;
 
   if FState = C_FROM then
     VFRFrom := tFR

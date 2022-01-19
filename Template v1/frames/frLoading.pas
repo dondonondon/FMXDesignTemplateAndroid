@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.Objects, FMX.Layouts, FMX.Ani, System.Threading, FMX.Controls.Presentation,
-  FMX.Effects;
+  FMX.Effects, System.Threading;
 
 type
   TFLoading = class(TFrame)
@@ -74,7 +74,7 @@ end;
 procedure TFLoading.tiMoveTimer(Sender: TObject);
 begin
   tiMove.Enabled := False;
-  fnGoFrame(C_LOADING, C_HOME);
+  fnGoFrame(C_LOADING, C_LOGIN);
 end;
 
 end.
