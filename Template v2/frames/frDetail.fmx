@@ -305,8 +305,8 @@ object FDetail: TFDetail
           TabOrder = 5
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
           OnCellClick = stgData1CellClick
-          Viewport.Width = 345.000000000000000000
-          Viewport.Height = 241.000000000000000000
+          Viewport.Width = 341.000000000000000000
+          Viewport.Height = 216.000000000000000000
         end
         object stgData2: TStringGrid
           Anchors = [akLeft, akTop, akRight, akBottom]
@@ -321,8 +321,8 @@ object FDetail: TFDetail
           StyledSettings = [Family, Style, FontColor]
           TabOrder = 4
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-          Viewport.Width = 345.000000000000000000
-          Viewport.Height = 321.000000000000000000
+          Viewport.Width = 341.000000000000000000
+          Viewport.Height = 296.000000000000000000
         end
         object Label2: TLabel
           Anchors = [akLeft, akTop, akRight]
@@ -353,6 +353,22 @@ object FDetail: TFDetail
           YRadius = 3.000000000000000000
           OnClick = btnCekResponClick
         end
+        object CornerButton11: TCornerButton
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 88.000000000000000000
+          Position.Y = 16.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 73.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnMain'
+          TabOrder = 2
+          Text = 'POST'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 3.000000000000000000
+          YRadius = 3.000000000000000000
+          OnClick = CornerButton11Click
+        end
         object loRespon1: TLayout
           Align = Contents
           Size.Width = 360.000000000000000000
@@ -372,6 +388,9 @@ object FDetail: TFDetail
             Position.X = 8.000000000000000000
             Position.Y = 8.000000000000000000
             Sides = [Top, Left, Bottom, Right]
+            Size.Width = 80.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
             StyleLookup = 'btnMain'
             TabOrder = 1
             Text = 'Close'
@@ -445,30 +464,14 @@ object FDetail: TFDetail
             TextSettings.WordWrap = True
             Anchors = [akLeft, akTop, akRight, akBottom]
             Position.X = 8.000000000000000000
-            Position.Y = 40.000000000000000000
+            Position.Y = 56.000000000000000000
             Size.Width = 345.000000000000000000
-            Size.Height = 609.000000000000000000
+            Size.Height = 593.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
-            Viewport.Width = 345.000000000000000000
-            Viewport.Height = 609.000000000000000000
+            Viewport.Width = 325.000000000000000000
+            Viewport.Height = 589.000000000000000000
           end
-        end
-        object CornerButton11: TCornerButton
-          StyledSettings = [Family, Style, FontColor]
-          Position.X = 88.000000000000000000
-          Position.Y = 16.000000000000000000
-          Sides = [Top, Left, Bottom, Right]
-          Size.Width = 73.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          StyleLookup = 'btnMain'
-          TabOrder = 2
-          Text = 'POST'
-          TextSettings.Font.Size = 12.500000000000000000
-          XRadius = 3.000000000000000000
-          YRadius = 3.000000000000000000
-          OnClick = CornerButton11Click
         end
       end
       object tiJSONRest: TTabItem
@@ -562,6 +565,22 @@ object FDetail: TFDetail
           Text = 'If Nested JSON click on cell stringgrid 1 (json format)'
           TabOrder = 6
         end
+        object CornerButton10: TCornerButton
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 88.000000000000000000
+          Position.Y = 16.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 73.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnMain'
+          TabOrder = 2
+          Text = 'POST'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 3.000000000000000000
+          YRadius = 3.000000000000000000
+          OnClick = CornerButton10Click
+        end
         object loRespon2: TLayout
           Align = Contents
           Size.Width = 360.000000000000000000
@@ -581,6 +600,9 @@ object FDetail: TFDetail
             Position.X = 8.000000000000000000
             Position.Y = 8.000000000000000000
             Sides = [Top, Left, Bottom, Right]
+            Size.Width = 80.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
             StyleLookup = 'btnMain'
             TabOrder = 1
             Text = 'Close'
@@ -654,30 +676,14 @@ object FDetail: TFDetail
             TextSettings.WordWrap = True
             Anchors = [akLeft, akTop, akRight, akBottom]
             Position.X = 8.000000000000000000
-            Position.Y = 40.000000000000000000
+            Position.Y = 56.000000000000000000
             Size.Width = 345.000000000000000000
-            Size.Height = 609.000000000000000000
+            Size.Height = 593.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
-            Viewport.Width = 345.000000000000000000
-            Viewport.Height = 609.000000000000000000
+            Viewport.Width = 325.000000000000000000
+            Viewport.Height = 589.000000000000000000
           end
-        end
-        object CornerButton10: TCornerButton
-          StyledSettings = [Family, Style, FontColor]
-          Position.X = 88.000000000000000000
-          Position.Y = 16.000000000000000000
-          Sides = [Top, Left, Bottom, Right]
-          Size.Width = 73.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          StyleLookup = 'btnMain'
-          TabOrder = 2
-          Text = 'POST'
-          TextSettings.Font.Size = 12.500000000000000000
-          XRadius = 3.000000000000000000
-          YRadius = 3.000000000000000000
-          OnClick = CornerButton10Click
         end
       end
     end

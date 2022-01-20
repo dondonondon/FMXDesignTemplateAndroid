@@ -288,6 +288,8 @@ begin
   Self.setAnchorContent;
 
   tcMain.TabIndex := 0;
+  loRespon1.Visible := False;
+  loRespon2.Visible := False;
 
   if FShow then
     Exit;
