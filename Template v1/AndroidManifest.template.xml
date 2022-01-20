@@ -18,7 +18,8 @@
         android:icon="%icon%"
         android:theme="%theme%"
         android:hardwareAccelerated="%hardwareAccelerated%"
-        android:resizeableActivity="false">
+        android:resizeableActivity="false"
+        android:requestLegacyExternalStorage="true">
 
         <%provider%>
         <%application-meta-data%>

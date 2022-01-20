@@ -17,21 +17,19 @@ uses
 
 const
   {$IF DEFINED(IOS) or DEFINED(ANDROID)}
-      url = 'http://localhost/appru/API/APITamu/APITamu.php?key=apiapi&act=';
-      assURL = 'http://localhost/appru/API/APITamu/files/';
-      PDFURL = 'http://localhost/appru/API/APITamu/PrintPDF/';
+      AURL = 'https://www.blangkon.net/JSON/API.php?act=';
+      AURLFile = 'https://www.blangkon.net/JSON/files/';
   {$ELSE}
-      url = 'http://localhost/appru/API/APITamu/APITamu.php?key=apiapi&act=';
-      assURL = 'http://localhost/appru/API/APITamu/files/';
-      PDFURL = 'http://localhost/appru/API/APITamu/PrintPDF/';
+      AURL = 'https://www.blangkon.net/JSON/API.php?act=';
+      AURLFile = 'https://www.blangkon.net/JSON/files/';
   {$ENDIF}
 
 type
   TStringArray = array of array of String;
 
 procedure fnStoreNullData(mem : TFDMemTable);
-function fnParseJSON(Cli : TRESTClient; Req : TRESTRequest; Resp :TRESTResponse; RespAdapter : TRESTResponseDataSetAdapter; act : String; mem : TFDMemTable) : Boolean;
-
+function fnParseJSON(Cli : TRESTClient; Req : TRESTRequest; Resp :TRESTResponse; RespAdapter :
+  TRESTResponseDataSetAdapter; act : String; mem : TFDMemTable; FMethod : TRESTRequestMethod) : Boolean;
 
 implementation
 
@@ -60,7 +58,8 @@ begin
   mem.Post;
 end;
 
-function fnParseJSON(Cli : TRESTClient; Req : TRESTRequest; Resp :TRESTResponse; RespAdapter : TRESTResponseDataSetAdapter; act : String; mem : TFDMemTable) : Boolean;
+function fnParseJSON(Cli : TRESTClient; Req : TRESTRequest; Resp :TRESTResponse; RespAdapter :
+  TRESTResponseDataSetAdapter; act : String; mem : TFDMemTable; FMethod : TRESTRequestMethod) : Boolean;
 var
   i: Integer;
 begin
@@ -71,10 +70,10 @@ begin
 
 
     Cli.Disconnect;
-    Cli.BaseURL := url + act;
+    Cli.BaseURL := AURL + act;
 
     Resp.RootElement := '';
-    req.Method := TRESTRequestMethod.rmPOST;   //ctMULTIPART_FORM_DATA
+    req.Method := FMethod;//TRESTRequestMethod.rmPOST;   //ctMULTIPART_FORM_DATA
 
     RespAdapter.Response := Resp;
     RespAdapter.Dataset := mem;
@@ -87,14 +86,21 @@ begin
     if Resp.StatusCode <> 200 then begin
       Result := False;
     end else begin
-      for i := 0 to mem.FieldCount - 1 do begin
+      {for i := 0 to mem.FieldCount - 1 do begin
         if mem.FieldDefs[i].Name = 'result' then begin
           if mem.FieldByName('result').AsString = 'null' then begin
             Result := False;
             Break;
           end;
         end;
-      end;
+      end;}
+      if mem.FieldByName('status').AsInteger <> 200 then
+        Result := False
+      else
+        Resp.RootElement := 'data';
+
+      mem.First;
+
     end;
 
   except

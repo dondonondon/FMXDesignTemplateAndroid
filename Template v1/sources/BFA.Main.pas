@@ -18,7 +18,7 @@ uses
 
   {$ENDIF}
   System.Generics.Collections, System.Net.URLClient, System.Net.HttpClient,
-  System.Net.HttpClientComponent;
+  System.Net.HttpClientComponent, REST.Types;
 
 const
   //FRAME
@@ -30,14 +30,15 @@ const
   CIdle = 400;
   CFontS = 12.5;
 
+procedure fnLoading(FState : Boolean = False);
 procedure fnShowMessage(FMessage : String);
 procedure fnTransitionFrame(FFrom, FGo : TControl; FFAFrom, FFAGo : TFloatAnimation; isBack : Boolean);
 procedure fnGoFrame(FFrom, FGo : String; isBack : Boolean = False);
 procedure fnHideFrame(FFrom : String);
 procedure fnBack(FProc : TProc = nil);
 
-function fnParsingJSON(FReq : String; FMemTable : TFDMemTable): Boolean; overload;
-function fnParsingJSON(FReq : String): Boolean; overload;
+function fnParsingJSON(req : String; mem : TFDMemTable; FMethod : TRESTRequestMethod = TRESTRequestMethod.rmPOST): Boolean; overload;
+function fnParsingJSON(req : String; FMethod : TRESTRequestMethod = TRESTRequestMethod.rmPOST): Boolean; overload;
 
 var
   FListGo : TStringList;
@@ -47,7 +48,14 @@ var
 
 implementation
 
-uses BFA.Func, BFA.GoFrame, BFA.Rest, frMain, uDM;
+uses BFA.Func, BFA.GoFrame, BFA.Rest, frMain, uDM, BFA.Helper.Main;
+
+procedure fnLoading(FState : Boolean);
+begin
+  TThread.Synchronize(nil, procedure begin
+    FMain.heLoading(FState);
+  end);
+end;
 
 procedure fnShowMessage(FMessage : String);
 begin
@@ -183,14 +191,14 @@ begin
   end;
 end;
 
-function fnParsingJSON(FReq : String; FMemTable : TFDMemTable) : Boolean;
+function fnParsingJSON(req : String; mem : TFDMemTable; FMethod : TRESTRequestMethod = TRESTRequestMethod.rmPOST) : Boolean;
 begin
-  Result := fnParseJSON(DM.RClient, DM.RReq, DM.RResp, DM.rRespAdapter, FReq, FMemTable);
+  Result := fnParseJSON(DM.RClient, DM.RReq, DM.RResp, DM.rRespAdapter, req, mem, FMethod);
 end;
 
-function fnParsingJSON(FReq : String): Boolean;
+function fnParsingJSON(req : String; FMethod : TRESTRequestMethod = TRESTRequestMethod.rmPOST): Boolean;
 begin
-  Result := fnParseJSON(DM.RClient, DM.RReq, DM.RResp, DM.rRespAdapter, FReq, DM.memData);
+  Result := fnParseJSON(DM.RClient, DM.RReq, DM.RResp, DM.rRespAdapter, req, DM.memData, FMethod);
 end;
 
 

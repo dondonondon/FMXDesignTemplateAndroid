@@ -5,40 +5,45 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Objects, FMX.Layouts, FMX.Ani, System.Threading, FMX.Controls.Presentation,
-  FMX.Effects, System.Threading;
+  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, FMX.Effects, FMX.Ani, System.Threading;
 
 type
   TFLoading = class(TFrame)
-    background: TRectangle;
-    tiMove: TTimer;
     loMain: TLayout;
-    faOpa: TFloatAnimation;
+    background: TRectangle;
+    logo: TImage;
+    ShadowEffect1: TShadowEffect;
+    Image1: TImage;
+    ShadowEffect2: TShadowEffect;
+    Image2: TImage;
+    ShadowEffect3: TShadowEffect;
+    Image3: TImage;
+    ShadowEffect4: TShadowEffect;
     Label1: TLabel;
-    imgLogo: TImage;
-    seLogo: TShadowEffect;
+    tiMove: TTimer;
+    faOpa: TFloatAnimation;
     procedure FirstShow;
-    procedure faOpaFinish(Sender: TObject);
     procedure tiMoveTimer(Sender: TObject);
+    procedure faOpaFinish(Sender: TObject);
   private
-    { Private declarations }
+    FShow : Boolean;
     procedure setFrame;
   public
-    { Public declarations }
-    procedure ReleaseFrame;
+    procedure fnGoBack;
   end;
 
 var
-  FLoading : TFLoading;
+  FLoading: TFLoading;
 
 implementation
 
 {$R *.fmx}
 
-uses BFA.Func, BFA.GoFrame, BFA.Helper.Control, BFA.Helper.Main, BFA.Main,
-  BFA.OpenUrl, BFA.Rest;
+uses BFA.Func, BFA.GoFrame, BFA.Helper.Control, BFA.Helper.Main,
+  BFA.Helper.MemTable, BFA.Main, BFA.OpenUrl, BFA.Rest;
 
-{ TFTemp }
+
+{ TFLoading }
 
 procedure TFLoading.faOpaFinish(Sender: TObject);
 begin
@@ -61,14 +66,21 @@ begin
   end).Start;
 end;
 
-procedure TFLoading.ReleaseFrame;
-begin
-  DisposeOf;
+procedure TFLoading.fnGoBack;
+begin       //procedure like event onShow
+  fnBack;
 end;
 
 procedure TFLoading.setFrame;
 begin
   Self.setAnchorContent;
+
+  if FShow then
+    Exit;
+
+  FShow := True;
+
+  //write code here => like event onCreate
 end;
 
 procedure TFLoading.tiMoveTimer(Sender: TObject);

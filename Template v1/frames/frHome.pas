@@ -5,91 +5,59 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Layouts, System.Threading, FMX.Objects,
-  FMX.Edit;
+  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading;
 
 type
   TFHome = class(TFrame)
     loMain: TLayout;
-    Label1: TLabel;
-    Rectangle1: TRectangle;
-    CornerButton1: TCornerButton;
-    CornerButton2: TCornerButton;
+    background: TRectangle;
+    btnMasuk: TCornerButton;
     procedure FirstShow;
-    procedure btnBackClick(Sender: TObject);
-    procedure Rectangle1Click(Sender: TObject);
-    procedure CornerButton1Click(Sender: TObject);
-    procedure CornerButton2Click(Sender: TObject);
+    procedure btnMasukClick(Sender: TObject);
   private
-    statF : Boolean;
+    FShow : Boolean;
     procedure setFrame;
   public
-    { Public declarations }
-    procedure ReleaseFrame;
     procedure fnGoBack;
   end;
 
 var
-  FHome : TFHome;
+  FHome: TFHome;
 
 implementation
 
 {$R *.fmx}
 
-uses BFA.Func, BFA.GoFrame, BFA.Helper.Control, BFA.Helper.Main, BFA.Main,
-  BFA.OpenUrl, BFA.Rest, frMain;
+uses BFA.Func, BFA.GoFrame, BFA.Helper.Control, BFA.Helper.Main,
+  BFA.Helper.MemTable, BFA.Main, BFA.OpenUrl, BFA.Rest;
 
+{ TFHome }
 
-{ TFTemp }
-
-const
-  spc = 10;
-  pad = 8;
-
-procedure TFHome.btnBackClick(Sender: TObject);
-begin
-  fnGoBack;
-end;
-
-procedure TFHome.CornerButton1Click(Sender: TObject);
+procedure TFHome.btnMasukClick(Sender: TObject);
 begin
   fnGoFrame(C_HOME, C_DETAIL);
 end;
 
-procedure TFHome.CornerButton2Click(Sender: TObject);
-begin
-  fnBack;
-end;
-
 procedure TFHome.FirstShow;
-begin
+begin       //procedure like event onShow
   setFrame;
 end;
 
 procedure TFHome.fnGoBack;
 begin
-  fnGoFrame(GoFrame, FromFrame);
-end;
-
-procedure TFHome.Rectangle1Click(Sender: TObject);
-begin
-  fnGoFrame(C_HOME, C_DETAIL);
-end;
-
-procedure TFHome.ReleaseFrame;
-begin
-  DisposeOf;
+  fnBack;
 end;
 
 procedure TFHome.setFrame;
 begin
   Self.setAnchorContent;
 
-  if statF then
+  if FShow then
     Exit;
 
-  statF := True;
+  FShow := True;
 
+  //write code here => like event onCreate
 end;
 
 end.
