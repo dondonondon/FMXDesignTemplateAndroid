@@ -43,6 +43,18 @@ uses BFA.GoFrame, BFA.Env, BFA.Main, BFA.Func, BFA.Helper.Main,
 
 procedure TFLogin.btnMasukClick(Sender: TObject);
 begin
+  {TForm(Screen.ActiveForm).
+    ShowPopUpMessage(
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ' +
+      'Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s',
+      C_SUKSES); }
+  {TForm(Screen.ActiveForm).
+    ShowToastMessage( TCornerButton(Sender).Tag.ToString + '. ' +
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ' +
+      'Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s',
+      C_SUKSES);
+
+  TCornerButton(Sender).Tag := TCornerButton(Sender).Tag + 1;  }
   fnGoFrame(goFrame, C_HOME);
 end;
 

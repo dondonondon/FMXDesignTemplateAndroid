@@ -23,7 +23,7 @@ object FDetail: TFDetail
       Size.Height = 656.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tcMain'
-      TabIndex = 0
+      TabIndex = 2
       TabOrder = 4
       TabPosition = None
       Sizes = (
@@ -41,7 +41,7 @@ object FDetail: TFDetail
         CustomIcon = <
           item
           end>
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -61,7 +61,7 @@ object FDetail: TFDetail
           Size.Height = 49.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'btnMain'
-          TabOrder = 8
+          TabOrder = 9
           Text = 'Load Image'
           TextSettings.Font.Size = 12.500000000000000000
           XRadius = 12.000000000000000000
@@ -79,7 +79,7 @@ object FDetail: TFDetail
           Size.Height = 49.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'btnMain'
-          TabOrder = 7
+          TabOrder = 8
           Text = 'Loading'
           TextSettings.Font.Size = 12.500000000000000000
           XRadius = 12.000000000000000000
@@ -91,7 +91,7 @@ object FDetail: TFDetail
           Anchors = [akLeft, akRight]
           StyledSettings = [Family, Style, FontColor]
           Position.X = 15.000000000000000000
-          Position.Y = 186.422225952148400000
+          Position.Y = 242.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 329.000000000000000000
           Size.Height = 49.000000000000000000
@@ -109,7 +109,7 @@ object FDetail: TFDetail
           Anchors = [akLeft, akRight]
           StyledSettings = [Family, Style, FontColor]
           Position.X = 15.000000000000000000
-          Position.Y = 244.733337402343800000
+          Position.Y = 301.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 329.000000000000000000
           Size.Height = 49.000000000000000000
@@ -117,6 +117,24 @@ object FDetail: TFDetail
           StyleLookup = 'btnMain'
           TabOrder = 5
           Text = 'JSON Rest Client'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          OnClick = btnMainClick
+        end
+        object CornerButton18: TCornerButton
+          Tag = 2
+          Anchors = [akLeft, akRight]
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 15.000000000000000000
+          Position.Y = 184.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 329.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnMain'
+          TabOrder = 7
+          Text = 'Pop Up and Toast'
           TextSettings.Font.Size = 12.500000000000000000
           XRadius = 12.000000000000000000
           YRadius = 12.000000000000000000
@@ -252,7 +270,7 @@ object FDetail: TFDetail
         CustomIcon = <
           item
           end>
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -261,6 +279,142 @@ object FDetail: TFDetail
         Text = 'tiLoading'
         ExplicitSize.cx = 8.000000000000000000
         ExplicitSize.cy = 8.000000000000000000
+        object CornerButton12: TCornerButton
+          Tag = 1
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, FontColor]
+          Position.X = 32.000000000000000000
+          Position.Y = 40.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 297.000000000000000000
+          Size.Height = 41.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnGreen'
+          TabOrder = 6
+          Text = 'Success'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          OnClick = CornerButton12Click
+        end
+        object Label4: TLabel
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family]
+          Position.X = 32.000000000000000000
+          Position.Y = 8.000000000000000000
+          Size.Width = 297.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 15.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFF6B6B6B
+          TextSettings.HorzAlign = Center
+          Text = 'Pop Up Messages'
+          TabOrder = 7
+        end
+        object CornerButton13: TCornerButton
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, FontColor]
+          Position.X = 32.000000000000000000
+          Position.Y = 88.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 297.000000000000000000
+          Size.Height = 41.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnRed'
+          TabOrder = 5
+          Text = 'Error'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          OnClick = CornerButton12Click
+        end
+        object CornerButton14: TCornerButton
+          Tag = 2
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, FontColor]
+          Position.X = 32.000000000000000000
+          Position.Y = 136.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 297.000000000000000000
+          Size.Height = 41.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnGray'
+          TabOrder = 4
+          Text = 'Information'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          OnClick = CornerButton12Click
+        end
+        object CornerButton15: TCornerButton
+          Tag = 2
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, FontColor]
+          Position.X = 32.000000000000000000
+          Position.Y = 336.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 297.000000000000000000
+          Size.Height = 41.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnGray'
+          TabOrder = 0
+          Text = 'Information'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          OnClick = CornerButton17Click
+        end
+        object CornerButton16: TCornerButton
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, FontColor]
+          Position.X = 32.000000000000000000
+          Position.Y = 288.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 297.000000000000000000
+          Size.Height = 41.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnRed'
+          TabOrder = 1
+          Text = 'Error'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          OnClick = CornerButton17Click
+        end
+        object CornerButton17: TCornerButton
+          Tag = 1
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, FontColor]
+          Position.X = 32.000000000000000000
+          Position.Y = 240.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 297.000000000000000000
+          Size.Height = 41.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnGreen'
+          TabOrder = 2
+          Text = 'Success'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          OnClick = CornerButton17Click
+        end
+        object Label5: TLabel
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family]
+          Position.X = 32.000000000000000000
+          Position.Y = 208.000000000000000000
+          Size.Width = 297.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 15.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFF6B6B6B
+          TextSettings.HorzAlign = Center
+          Text = 'Custom Toast Messages'
+          TabOrder = 3
+        end
       end
       object tiJSONMemTable: TTabItem
         CustomIcon = <
@@ -353,6 +507,22 @@ object FDetail: TFDetail
           YRadius = 3.000000000000000000
           OnClick = btnCekResponClick
         end
+        object CornerButton11: TCornerButton
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 88.000000000000000000
+          Position.Y = 16.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 73.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnMain'
+          TabOrder = 2
+          Text = 'POST'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 3.000000000000000000
+          YRadius = 3.000000000000000000
+          OnClick = CornerButton11Click
+        end
         object loRespon1: TLayout
           Align = Contents
           Size.Width = 360.000000000000000000
@@ -372,6 +542,9 @@ object FDetail: TFDetail
             Position.X = 8.000000000000000000
             Position.Y = 8.000000000000000000
             Sides = [Top, Left, Bottom, Right]
+            Size.Width = 80.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
             StyleLookup = 'btnMain'
             TabOrder = 1
             Text = 'Close'
@@ -445,30 +618,14 @@ object FDetail: TFDetail
             TextSettings.WordWrap = True
             Anchors = [akLeft, akTop, akRight, akBottom]
             Position.X = 8.000000000000000000
-            Position.Y = 40.000000000000000000
+            Position.Y = 56.000000000000000000
             Size.Width = 345.000000000000000000
-            Size.Height = 609.000000000000000000
+            Size.Height = 593.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
             Viewport.Width = 345.000000000000000000
-            Viewport.Height = 609.000000000000000000
+            Viewport.Height = 593.000000000000000000
           end
-        end
-        object CornerButton11: TCornerButton
-          StyledSettings = [Family, Style, FontColor]
-          Position.X = 88.000000000000000000
-          Position.Y = 16.000000000000000000
-          Sides = [Top, Left, Bottom, Right]
-          Size.Width = 73.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          StyleLookup = 'btnMain'
-          TabOrder = 2
-          Text = 'POST'
-          TextSettings.Font.Size = 12.500000000000000000
-          XRadius = 3.000000000000000000
-          YRadius = 3.000000000000000000
-          OnClick = CornerButton11Click
         end
       end
       object tiJSONRest: TTabItem
@@ -562,6 +719,22 @@ object FDetail: TFDetail
           Text = 'If Nested JSON click on cell stringgrid 1 (json format)'
           TabOrder = 6
         end
+        object CornerButton10: TCornerButton
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 88.000000000000000000
+          Position.Y = 16.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 73.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnMain'
+          TabOrder = 2
+          Text = 'POST'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 3.000000000000000000
+          YRadius = 3.000000000000000000
+          OnClick = CornerButton10Click
+        end
         object loRespon2: TLayout
           Align = Contents
           Size.Width = 360.000000000000000000
@@ -581,6 +754,9 @@ object FDetail: TFDetail
             Position.X = 8.000000000000000000
             Position.Y = 8.000000000000000000
             Sides = [Top, Left, Bottom, Right]
+            Size.Width = 80.000000000000000000
+            Size.Height = 41.000000000000000000
+            Size.PlatformDefault = False
             StyleLookup = 'btnMain'
             TabOrder = 1
             Text = 'Close'
@@ -654,30 +830,14 @@ object FDetail: TFDetail
             TextSettings.WordWrap = True
             Anchors = [akLeft, akTop, akRight, akBottom]
             Position.X = 8.000000000000000000
-            Position.Y = 40.000000000000000000
+            Position.Y = 56.000000000000000000
             Size.Width = 345.000000000000000000
-            Size.Height = 609.000000000000000000
+            Size.Height = 593.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 2
             Viewport.Width = 345.000000000000000000
-            Viewport.Height = 609.000000000000000000
+            Viewport.Height = 593.000000000000000000
           end
-        end
-        object CornerButton10: TCornerButton
-          StyledSettings = [Family, Style, FontColor]
-          Position.X = 88.000000000000000000
-          Position.Y = 16.000000000000000000
-          Sides = [Top, Left, Bottom, Right]
-          Size.Width = 73.000000000000000000
-          Size.Height = 33.000000000000000000
-          Size.PlatformDefault = False
-          StyleLookup = 'btnMain'
-          TabOrder = 2
-          Text = 'POST'
-          TextSettings.Font.Size = 12.500000000000000000
-          XRadius = 3.000000000000000000
-          YRadius = 3.000000000000000000
-          OnClick = CornerButton10Click
         end
       end
     end
@@ -756,8 +916,8 @@ object FDetail: TFDetail
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
     StoreDefs = True
-    Left = 16
-    Top = 128
+    Left = 152
+    Top = 16
   end
   object QTemp1: TFDMemTable
     FilterOptions = [foCaseInsensitive]
@@ -774,8 +934,8 @@ object FDetail: TFDetail
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
     StoreDefs = True
-    Left = 16
-    Top = 408
+    Left = 64
+    Top = 16
   end
   object QData2: TFDMemTable
     FilterOptions = [foCaseInsensitive]
@@ -792,8 +952,8 @@ object FDetail: TFDetail
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
     StoreDefs = True
-    Left = 64
-    Top = 128
+    Left = 200
+    Top = 16
   end
   object QTemp2: TFDMemTable
     FilterOptions = [foCaseInsensitive]
@@ -810,7 +970,7 @@ object FDetail: TFDetail
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
     StoreDefs = True
-    Left = 64
-    Top = 408
+    Left = 112
+    Top = 16
   end
 end

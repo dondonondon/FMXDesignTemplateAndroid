@@ -68,6 +68,15 @@ type
     Memo2: TMemo;
     CornerButton10: TCornerButton;
     CornerButton11: TCornerButton;
+    CornerButton12: TCornerButton;
+    Label4: TLabel;
+    CornerButton13: TCornerButton;
+    CornerButton14: TCornerButton;
+    CornerButton15: TCornerButton;
+    CornerButton16: TCornerButton;
+    CornerButton17: TCornerButton;
+    Label5: TLabel;
+    CornerButton18: TCornerButton;
     procedure FirstShow;
     procedure btnBackClick(Sender: TObject);
     procedure btnMainClick(Sender: TObject);
@@ -85,6 +94,8 @@ type
     procedure CornerButton10Click(Sender: TObject);
     procedure CornerButton11Click(Sender: TObject);
     procedure stgDataRest1CellClick(const Column: TColumn; const Row: Integer);
+    procedure CornerButton12Click(Sender: TObject);
+    procedure CornerButton17Click(Sender: TObject);
   private
     FShow : Boolean;
     procedure setFrame;
@@ -194,6 +205,40 @@ begin
   end;
 end;
 
+procedure TFDetail.CornerButton12Click(Sender: TObject);
+begin
+  {
+  C_ERROR = 0;
+  C_SUKSES = 1;
+  C_INFO  = 2;
+  }
+
+  TCornerButton(Sender).TagString := Random(100).ToString;
+
+  TForm(Screen.ActiveForm).
+    ShowPopUpMessage( TCornerButton(Sender).TagString + '. ' +
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ' +
+      'Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s',
+     TCornerButton(Sender).Tag);
+end;
+
+procedure TFDetail.CornerButton17Click(Sender: TObject);
+begin
+  {
+  C_ERROR = 0;
+  C_SUKSES = 1;
+  C_INFO  = 2;
+  }
+
+  TCornerButton(Sender).TagString := Random(100).ToString;
+
+  TForm(Screen.ActiveForm).
+    ShowToastMessage( TCornerButton(Sender).TagString + '. ' +
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ' +
+      'Lorem Ipsum has been the industry`s standard dummy text ever since the 1500s',
+      TCornerButton(Sender).Tag);
+end;
+
 procedure TFDetail.CornerButton1Click(Sender: TObject);
 begin
   TTask.Run(procedure begin
@@ -288,6 +333,8 @@ begin
   Self.setAnchorContent;
 
   tcMain.TabIndex := 0;
+  loRespon1.Visible := False;
+  loRespon2.Visible := False;
 
   if FShow then
     Exit;
