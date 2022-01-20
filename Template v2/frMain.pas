@@ -271,7 +271,10 @@ begin
     begin
       Key := 0;
 
-      fnBack;
+      if goFrame = C_DETAIL then
+        FDetail.fnGoBack
+      else
+        fnBack;
     end;
   end
   else

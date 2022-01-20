@@ -42,17 +42,18 @@ begin
       JObjectData := TJSONObject(JArrayJSON.Get(0));
     end else begin
       Result := False;
-      Self.FillError('Gagal Parsing JSON', 'Ini Bukan JSON');
+      Self.FillError('Gagal Parsing JSON / NOT JSON FORMAT', 'Ini Bukan JSON');
       Exit;
     end;
 
-    for var i := 0 to JObjectData.Size - 1 do
+    for var i := 0 to JObjectData.Size - 1 do begin
       Self.FieldDefs.Add(
         StringReplace(JObjectData.Get(i).JsonString.ToString, '"', '', [rfReplaceAll, rfIgnoreCase]),
         ftString,
-        10000,
+        100000,
         False
       );
+    end;
 
     Self.CreateDataSet;
     Self.Active := True;
@@ -65,6 +66,7 @@ begin
 
           Self.Append;
           for var ii := 0 to JObjectData.Size - 1 do begin
+
             if TJSONObject.ParseJSONValue(JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON) is TJSONObject then
               Self.Fields[ii].AsString := JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON
             else if TJSONObject.ParseJSONValue(JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON) is TJSONArray then
@@ -89,14 +91,14 @@ begin
 
       Result := True;
 
-      for var i := 0 to Self.FieldCount - 1 do begin
-        if Self.FieldDefs[i].Name = 'result' then begin
-          if Self.FieldByName('result').AsString = 'null' then begin
+      {for var i := 0 to Self.FieldCount - 1 do begin
+        if Self.FieldDefs[i].Name = 'status' then begin
+          if Self.FieldByName('status').AsString <> '200' then begin
             Result := False;
             Break;
           end;
         end;
-      end;
+      end; }
 
     except
       on E : Exception do begin
@@ -108,6 +110,11 @@ begin
     Self.First;
     if isArray then
       JArrayJSON.DisposeOf;
+    {if Assigned(JArrayJSON) then
+      JArrayJSON.DisposeOf;
+
+    if Assigned(JObjectData) then
+      JObjectData.DisposeOf; }
   end;
 end;
 
@@ -125,6 +132,11 @@ begin
         FNetRespon := FNetHTTP.Get(FURL);
 
       Result := Self.FillDataFromString(FNetRespon.ContentAsString());
+      if FNetRespon.StatusCode = 200 then
+        Result := Self.FillDataFromString(Self.FieldByName('data').AsString)
+      else
+        Result := False;
+
     except
       on E : Exception do begin
         Result := False;
@@ -142,16 +154,17 @@ begin
   Self.Close;
   Self.FieldDefs.Clear;
 
-  Self.FieldDefs.Add('message', ftString, 200, False);
-  Self.FieldDefs.Add('error', ftString, 200, False);
+  Self.FieldDefs.Add('status', ftString, 200, False);
+  Self.FieldDefs.Add('messages', ftString, 200, False);
+  Self.FieldDefs.Add('data', ftString, 200, False);
 
   Self.CreateDataSet;
   Self.Active := True;
   Self.Open;
 
   Self.Append;
-  Self.Fields[0].AsString := FMessage;
-  Self.Fields[1].AsString := FError;
+  Self.Fields[0].AsString := FError;
+  Self.Fields[1].AsString := FMessage;
   Self.Post;
 end;
 

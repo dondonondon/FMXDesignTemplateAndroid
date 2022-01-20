@@ -12,7 +12,7 @@ uses
   FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs, FireDAC.FMXUI.Wait,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, FMX.ListView.Types,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  FMX.Objects, System.IniFiles, System.IOUtils;
+  FMX.Objects, System.IniFiles, System.IOUtils, FMX.Grid.Style, FMX.Grid, REST.Json;
 
 
 function fnReplaceStr(strSource, strReplaceFrom, strReplaceWith: string;
@@ -36,6 +36,9 @@ procedure SaveSettingString(Section, Name, Value: string);
 function LoadSettingString(Section, Name, Value: string): string;
 
 procedure LoadImageCenter(ABitmap : TBitmap; FLokasi : String);
+procedure fnClearStringGrid(FStringGrid : TStringGrid; FRow : Integer = 0);
+
+function FormatJSON(FJSON : String) : String;
 
 implementation
 
@@ -192,6 +195,9 @@ begin
 
     if not DirectoryExists(ExpandFileName(GetCurrentDir) + PathDelim + 'assets' + PathDelim + 'music') then
       CreateDir(ExpandFileName(GetCurrentDir) + PathDelim + 'assets' + PathDelim + 'music');
+
+    if not DirectoryExists(ExpandFileName(GetCurrentDir) + PathDelim + 'assets' + PathDelim + 'other') then
+      CreateDir(ExpandFileName(GetCurrentDir) + PathDelim + 'assets' + PathDelim + 'other');
   {$ENDIF}
 end;
 
@@ -215,16 +221,19 @@ begin
     Result := fnGetLoc + AFileName;
   {$ELSEIF DEFINED(MSWINDOWS)}
     if (ext = '.jpg') or (ext = '.jpeg') or (ext = '.png') or (ext = '.bmp') then
-      Result := fnGetLoc + 'assets' + PathDelim + 'image' + PathDelim + AFileName;
+      Result := fnGetLoc + 'assets' + PathDelim + 'image' + PathDelim + AFileName
 
-    if (ext = '.doc') or (ext = '.pdf') or (ext = '.csv') or (ext = '.txt') or (ext = '.xls') then
-      Result := fnGetLoc + 'assets' + PathDelim + 'doc' + PathDelim + AFileName;
+    else if (ext = '.doc') or (ext = '.pdf') or (ext = '.csv') or (ext = '.txt') or (ext = '.xls') then
+      Result := fnGetLoc + 'assets' + PathDelim + 'doc' + PathDelim + AFileName
 
-    if (ext = '.mp4') or (ext = '.avi') or (ext = '.wmv') or (ext = '.flv') or (ext = '.mov') or (ext = '.mkv') or (ext = '.3gp') then
-      Result := fnGetLoc + 'assets' + PathDelim + 'video' + PathDelim + AFileName;
+    else if (ext = '.mp4') or (ext = '.avi') or (ext = '.wmv') or (ext = '.flv') or (ext = '.mov') or (ext = '.mkv') or (ext = '.3gp') then
+      Result := fnGetLoc + 'assets' + PathDelim + 'video' + PathDelim + AFileName
 
-    if (ext = '.mp3') or (ext = '.wav') or (ext = '.wma') or (ext = '.aac') or (ext = '.flac') or (ext = '.m4a') then
-      Result := fnGetLoc + 'assets' + PathDelim + 'music' + PathDelim + AFileName;
+    else if (ext = '.mp3') or (ext = '.wav') or (ext = '.wma') or (ext = '.aac') or (ext = '.flac') or (ext = '.m4a') then
+      Result := fnGetLoc + 'assets' + PathDelim + 'music' + PathDelim + AFileName
+
+    else
+      Result := fnGetLoc + 'assets' + PathDelim + 'other' + PathDelim + AFileName
   {$ENDIF}
 end;
 
@@ -399,6 +408,32 @@ begin
     end;
   finally
     AFrom.DisposeOf;
+  end;
+end;
+
+procedure fnClearStringGrid(FStringGrid: TStringGrid; FRow : Integer = 0);
+begin
+  for var i := 0 to FStringGrid.RowCount - 1 do
+    for var ii := 0 to FStringGrid.ColumnCount - 1 do
+      FStringGrid.Cells[ii, i] := '';
+
+  FStringGrid.RowCount := FRow;
+end;
+
+function FormatJSON(FJSON: String): String;
+var
+  JObjectData : TJSONObject;
+  JArrayJSON : TJSONArray;
+begin
+  if TJSONObject.ParseJSONValue(FJSON) is TJSONObject then begin
+    JObjectData := TJSONObject.ParseJSONValue(FJSON) as TJSONObject;
+
+    Result := TJson.Format(JObjectData);
+  end else if TJSONObject.ParseJSONValue(FJSON) is TJSONArray then begin
+    JArrayJSON := TJSONObject.ParseJSONValue(FJSON) as TJSONArray;
+
+    Result := TJson.Format(JArrayJSON);
+    JArrayJSON.DisposeOf;
   end;
 end;
 

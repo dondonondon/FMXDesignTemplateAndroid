@@ -11,7 +11,6 @@ type
   TFHome = class(TFrame)
     loMain: TLayout;
     background: TRectangle;
-    Label1: TLabel;
     btnMasuk: TCornerButton;
     procedure FirstShow;
     procedure btnMasukClick(Sender: TObject);
@@ -36,7 +35,7 @@ uses BFA.GoFrame, BFA.Env, BFA.Main, BFA.Func, BFA.Helper.Main,
 
 procedure TFHome.btnMasukClick(Sender: TObject);
 begin
-  fnGoFrame(goFrame, C_DETAIL);
+  fnGoFrame(C_HOME, C_DETAIL);
 end;
 
 procedure TFHome.FirstShow;

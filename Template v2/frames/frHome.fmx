@@ -444,31 +444,18 @@ object FHome: TFHome
     Size.Height = 720.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    object Label1: TLabel
-      Anchors = [akLeft, akTop, akRight, akBottom]
-      StyledSettings = [Family]
-      Size.Width = 360.000000000000000000
-      Size.Height = 720.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.Font.Size = 20.000000000000000000
-      TextSettings.Font.StyleExt = {00070000000000000004000000}
-      TextSettings.FontColor = claWhite
-      TextSettings.HorzAlign = Center
-      Text = 'HOME'
-      TabOrder = 0
-    end
     object btnMasuk: TCornerButton
-      Anchors = [akLeft, akRight, akBottom]
+      Anchors = [akLeft, akRight]
       StyledSettings = [Family, Style, FontColor]
-      Position.X = 16.000000000000000000
-      Position.Y = 648.000000000000000000
+      Position.X = 15.000000000000000000
+      Position.Y = 335.000000000000000000
       Sides = [Top, Left, Bottom, Right]
       Size.Width = 329.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'btnMain'
-      TabOrder = 6
-      Text = 'Go Detail'
+      TabOrder = 5
+      Text = 'Go Sample'
       TextSettings.Font.Size = 12.500000000000000000
       XRadius = 12.000000000000000000
       YRadius = 12.000000000000000000

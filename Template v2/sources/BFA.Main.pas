@@ -10,7 +10,7 @@ uses
   FMX.Grid,FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListBox, FMX.Ani, System.Threading,
   FMX.ListView.Adapters.Base, FMX.ListView, FMX.Memo, FMX.Edit, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Client, REST.Response.Adapter, FMX.LoadingIndicator,
   {$IFDEF ANDROID}
     Androidapi.Helpers, FMX.Platform.Android, System.Android.Service, System.IOUtils,
     FMX.Helpers.Android, Androidapi.JNI.PlayServices, Androidapi.JNI.Os,
@@ -18,17 +18,29 @@ uses
 
   {$ENDIF}
   System.Generics.Collections, System.Net.URLClient, System.Net.HttpClient,
-  System.Net.HttpClientComponent;
+  System.Net.HttpClientComponent, Rest.Types;
 
+procedure fnLoading(FState : Boolean = False);
 procedure fnShowMessage(FText : String);
 procedure fnTransitionFrame(FFrom, FGo : TControl; FLFrom, FLGo : TFloatAnimation; FIsBack : Boolean);
 procedure fnGoFrame(FFrom, FGo : String; FIsBack : Boolean = False);
 procedure fnBack(FProc : TProc = nil);
 procedure fnCreateFrame;
 
+function fnParsingJSON(req : String; mem : TFDMemTable; FMethod : TRESTRequestMethod = TRESTRequestMethod.rmPOST): Boolean; overload;
+function fnParsingJSON(req : String; FMethod : TRESTRequestMethod = TRESTRequestMethod.rmPOST): Boolean; overload;
+
 implementation
 
-uses BFA.Env, BFA.GoFrame, frMain, frDetail, frHome, frLoading, frLogin, frTemp;
+uses BFA.Env, BFA.GoFrame, frMain, frDetail, frHome, frLoading, frLogin, frTemp,
+  BFA.Rest, uDM, BFA.Helper.Main;
+
+procedure fnLoading(FState : Boolean);
+begin
+  TThread.Synchronize(nil, procedure begin
+    FMain.heLoading(FState);
+  end);
+end;
 
 procedure fnShowMessage(FText : String);
 begin
@@ -139,5 +151,17 @@ begin
 
   LListFrame.HideAll;
 end;
+
+function fnParsingJSON(req : String; mem : TFDMemTable; FMethod : TRESTRequestMethod = TRESTRequestMethod.rmPOST) : Boolean;
+begin
+  Result := fnParseJSON(DM.RClient, DM.RReq, DM.RResp, DM.rRespAdapter, req, mem, FMethod);
+end;
+
+function fnParsingJSON(req : String; FMethod : TRESTRequestMethod = TRESTRequestMethod.rmPOST): Boolean;
+begin
+  Result := fnParseJSON(DM.RClient, DM.RReq, DM.RResp, DM.rRespAdapter, req, DM.memData, FMethod);
+end;
+
+
 
 end.

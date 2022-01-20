@@ -85,7 +85,7 @@ end;
 procedure TFLoading.tiMoveTimer(Sender: TObject);
 begin
   tiMove.Enabled := False;
-  fnGoFrame(C_LOADING, C_LOGIN);
+  fnGoFrame(C_LOADING, C_HOME);
 end;
 
 end.
