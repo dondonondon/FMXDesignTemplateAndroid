@@ -10,7 +10,7 @@ uses
   FMX.Grid,FMX.ListView.Types, FMX.ListView.Appearances, FMX.ListBox, FMX.Ani, System.Threading,
   FMX.ListView.Adapters.Base, FMX.ListView, FMX.Memo, FMX.Edit, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Client, REST.Response.Adapter, FMX.LoadingIndicator,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Client, REST.Response.Adapter,
   {$IFDEF ANDROID}
     Androidapi.Helpers, FMX.Platform.Android, System.Android.Service, System.IOUtils,
     FMX.Helpers.Android, Androidapi.JNI.PlayServices, Androidapi.JNI.Os,
@@ -33,7 +33,7 @@ function fnParsingJSON(req : String; FMethod : TRESTRequestMethod = TRESTRequest
 implementation
 
 uses BFA.Env, BFA.GoFrame, frMain, frDetail, frHome, frLoading, frLogin, frTemp,
-  BFA.Rest, uDM, BFA.Helper.Main;
+  BFA.Rest, uDM, BFA.Helper.Main, frAccount;
 
 procedure fnLoading(FState : Boolean);
 begin
@@ -148,6 +148,8 @@ begin
   FHome := TFHome(FHome.CallFrame(FMain.loFrame, TFHome, C_HOME));
   FLogin := TFLogin(FLogin.CallFrame(FMain.loFrame, TFLogin, C_LOGIN));
   FDetail := TFDetail(FDetail.CallFrame(FMain.loFrame, TFDetail, C_DETAIL));
+  FTemp := TFTemp(FTemp.CallFrame(FMain.loFrame, TFTemp, C_TEMP));
+  FAccount := TFAccount(FAccount.CallFrame(FMain.loFrame, TFAccount, C_ACCOUNT));
 
   LListFrame.HideAll;
 end;

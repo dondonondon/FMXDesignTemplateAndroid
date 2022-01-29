@@ -19,6 +19,7 @@ uses
   uFontSetting in 'sources\uFontSetting.pas',
   uDM in 'uDM.pas' {DM: TDataModule},
   BFA.Helper.Control in 'sources\BFA.Helper.Control.pas',
+  frAccount in 'frames\frAccount.pas' {FAccount: TFrame},
   frTemp in 'frames\frTemp.pas' {FTemp: TFrame};
 
 {$R *.res}

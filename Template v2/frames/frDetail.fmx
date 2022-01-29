@@ -23,7 +23,7 @@ object FDetail: TFDetail
       Size.Height = 656.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tcMain'
-      TabIndex = 2
+      TabIndex = 0
       TabOrder = 4
       TabPosition = None
       Sizes = (
@@ -41,7 +41,7 @@ object FDetail: TFDetail
         CustomIcon = <
           item
           end>
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -270,7 +270,7 @@ object FDetail: TFDetail
         CustomIcon = <
           item
           end>
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -916,7 +916,7 @@ object FDetail: TFDetail
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
     StoreDefs = True
-    Left = 152
+    Left = 160
     Top = 16
   end
   object QTemp1: TFDMemTable

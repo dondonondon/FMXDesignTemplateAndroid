@@ -219,7 +219,11 @@ begin
   loPop.Align := TAlignLayout.Top;
   loPop.Margins.Top := 12;
   loPop.Margins.Left := 16;
-  loPop.Margins.Right := 16;
+  if Self.Width < 400 then
+    loPop.Margins.Right := 16
+  else
+    loPop.Margins.Right := Self.Width - 400;
+
   loPop.Position.Y := 1000;
   lo.AddObject(loPop);
 

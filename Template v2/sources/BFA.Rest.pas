@@ -20,7 +20,8 @@ const
       AURL = 'https://www.blangkon.net/JSON/API.php?act=';
       AURLFile = 'https://www.blangkon.net/JSON/files/';
   {$ELSE}
-      AURL = 'https://www.blangkon.net/JSON/API.php?act=';
+      //AURL = 'https://www.blangkon.net/JSON/API.php?act=';
+      AURL = 'http://localhost/upload.php';
       AURLFile = 'https://www.blangkon.net/JSON/files/';
   {$ENDIF}
 

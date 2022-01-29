@@ -17,10 +17,12 @@ type
 
 const
   //FRAME IDENTIFY
+  C_TEMP = 'TEMP';
   C_LOADING = 'LOADING';
   C_HOME = 'HOME';
   C_LOGIN = 'LOGIN';
   C_DETAIL = 'DETAIL';
+  C_ACCOUNT = 'ACCOUNT';
 
 var
   FListGo : TStringList;

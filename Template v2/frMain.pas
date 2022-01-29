@@ -12,7 +12,6 @@ uses
   FMX.ListView.Types, FMX.ListView.Appearances, FMX.Platform,
   FMX.ListView.Adapters.Base, FMX.VirtualKeyboard,
   System.ImageList, FMX.ImgList, FMX.ScrollBox, FMX.Memo, FMX.TabControl,
-  UI.Toast, FMX.LoadingIndicator,
   System.Notification, System.PushNotification, System.Threading,
   FMX.Memo.Types, FMX.ListBox, FMX.MultiView, System.Permissions
 {$IF Defined(ANDROID)}

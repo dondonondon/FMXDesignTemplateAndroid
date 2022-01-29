@@ -302,12 +302,16 @@ begin
 
       FStringGrid.RowCount := FMemTable.RecordCount;
       FMemTable.First;
+      FStringGrid.BeginUpdate;
+      try
+        for var i := 0 to FMemTable.RecordCount - 1 do begin
+          for var ii := 0 to FMemTable.FieldCount - 1 do
+            FStringGrid.Cells[ii, i] := FMemTable.FieldByName(FMemTable.FieldDefs[ii].Name).AsString;
 
-      for var i := 0 to FMemTable.RecordCount - 1 do begin
-        for var ii := 0 to FMemTable.FieldCount - 1 do
-          FStringGrid.Cells[ii, i] := FMemTable.FieldByName(FMemTable.FieldDefs[ii].Name).AsString;
-
-        FMemTable.Next;
+          FMemTable.Next;
+        end;
+      finally
+        FStringGrid.EndUpdate;
       end;
     end;
   except
