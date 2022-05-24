@@ -20,7 +20,8 @@ uses
   uDM in 'uDM.pas' {DM: TDataModule},
   BFA.Helper.Control in 'sources\BFA.Helper.Control.pas',
   frAccount in 'frames\frAccount.pas' {FAccount: TFrame},
-  frTemp in 'frames\frTemp.pas' {FTemp: TFrame};
+  frTemp in 'frames\frTemp.pas' {FTemp: TFrame},
+  BFA.Permission in 'sources\BFA.Permission.pas';
 
 {$R *.res}
 

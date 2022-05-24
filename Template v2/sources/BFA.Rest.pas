@@ -70,6 +70,7 @@ begin
     mem.Filter := '';
     mem.Filtered := True;
 
+    RespAdapter.Dataset := nil;
 
     Cli.Disconnect;
     Cli.BaseURL := AURL + act;

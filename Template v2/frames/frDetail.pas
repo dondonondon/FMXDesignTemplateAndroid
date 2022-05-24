@@ -10,7 +10,9 @@ uses
   FMX.ScrollBox, FMX.Memo, System.Rtti, FMX.Grid.Style, FMX.Grid,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
-  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Types, System.Net.Mime;
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, REST.Types, System.Net.Mime,
+  System.Sensors, System.Sensors.Components, FMX.StdActns,
+  FMX.MediaLibrary.Actions;
 
 type
   TFDetail = class(TFrame)
@@ -77,6 +79,12 @@ type
     CornerButton17: TCornerButton;
     Label5: TLabel;
     CornerButton18: TCornerButton;
+    CornerButton19: TCornerButton;
+    CornerButton20: TCornerButton;
+    LS: TLocationSensor;
+    lblLocation: TLabel;
+    Image1: TImage;
+    tpCamera: TTakePhotoFromCameraAction;
     procedure FirstShow;
     procedure btnBackClick(Sender: TObject);
     procedure btnMainClick(Sender: TObject);
@@ -96,6 +104,11 @@ type
     procedure stgDataRest1CellClick(const Column: TColumn; const Row: Integer);
     procedure CornerButton12Click(Sender: TObject);
     procedure CornerButton17Click(Sender: TObject);
+    procedure CornerButton19Click(Sender: TObject);
+    procedure tpCameraDidFinishTaking(Image: TBitmap);
+    procedure CornerButton20Click(Sender: TObject);
+    procedure LSLocationChanged(Sender: TObject; const OldLocation,
+      NewLocation: TLocationCoord2D);
   private
     FShow : Boolean;
     procedure setFrame;
@@ -239,6 +252,22 @@ begin
       TCornerButton(Sender).Tag);
 end;
 
+procedure TFDetail.CornerButton19Click(Sender: TObject);
+begin
+  TForm(Screen.ActiveForm).
+    ShowToastMessage( 'Jangan Lupa Entitlement List Map di checklist + API key di version info diisi',
+      1);
+
+  HelperPermission.setPermission(
+    [
+      getPermission.ACCESS_FINE_LOCATION,
+      getPermission.ACCESS_COARSE_LOCATION
+    ],
+    procedure begin
+      LS.Active := True;
+    end);
+end;
+
 procedure TFDetail.CornerButton1Click(Sender: TObject);
 begin
   TTask.Run(procedure begin
@@ -249,6 +278,19 @@ begin
       fnLoading(False);
     end;
   end).Start;
+end;
+
+procedure TFDetail.CornerButton20Click(Sender: TObject);
+begin
+  HelperPermission.setPermission(
+    [
+      getPermission.READ_EXTERNAL_STORAGE,
+      getPermission.WRITE_EXTERNAL_STORAGE,
+      getPermission.CAMERA
+    ],
+    procedure begin
+      tpCamera.Execute;
+    end);
 end;
 
 procedure TFDetail.CornerButton4Click(Sender: TObject);
@@ -326,10 +368,18 @@ end;
 
 procedure TFDetail.fnGoBack;
 begin
+  LS.Active := False;
+
   if tcMain.TabIndex <> 0 then
     tcMain.First
   else
     fnBack;
+end;
+
+procedure TFDetail.LSLocationChanged(Sender: TObject; const OldLocation,
+  NewLocation: TLocationCoord2D);
+begin
+  lblLocation.Text := Format('lati : %s | long : %s', [NewLocation.Latitude.ToString, NewLocation.Longitude.ToString]);
 end;
 
 procedure TFDetail.setFrame;
@@ -365,6 +415,11 @@ begin
     fnShowMessage('Data Kosong')
   else
     fillStringGrid(QData2, stgDataRest2);
+end;
+
+procedure TFDetail.tpCameraDidFinishTaking(Image: TBitmap);
+begin
+  Image1.Bitmap := Image;
 end;
 
 end.

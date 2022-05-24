@@ -35,7 +35,14 @@ uses BFA.GoFrame, BFA.Env, BFA.Main, BFA.Func, BFA.Helper.Main,
 
 procedure TFHome.btnMasukClick(Sender: TObject);
 begin
-  fnGoFrame(C_HOME, C_DETAIL);
+  HelperPermission.setPermission(
+    [
+      getPermission.READ_EXTERNAL_STORAGE,
+      getPermission.WRITE_EXTERNAL_STORAGE
+    ],
+    procedure begin
+      fnGoFrame(C_HOME, C_DETAIL);
+    end);
 end;
 
 procedure TFHome.FirstShow;

@@ -52,16 +52,16 @@ object FDetail: TFDetail
         ExplicitSize.cy = 8.000000000000000000
         object btnMain: TCornerButton
           Tag = 1
-          Anchors = [akLeft, akRight]
+          Anchors = [akLeft, akTop, akRight]
           StyledSettings = [Family, Style, FontColor]
           Position.X = 15.000000000000000000
-          Position.Y = 69.800003051757810000
+          Position.Y = 22.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 329.000000000000000000
           Size.Height = 49.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'btnMain'
-          TabOrder = 9
+          TabOrder = 11
           Text = 'Load Image'
           TextSettings.Font.Size = 12.500000000000000000
           XRadius = 12.000000000000000000
@@ -70,16 +70,16 @@ object FDetail: TFDetail
         end
         object CornerButton1: TCornerButton
           Tag = 2
-          Anchors = [akLeft, akRight]
+          Anchors = [akLeft, akTop, akRight]
           StyledSettings = [Family, Style, FontColor]
           Position.X = 15.000000000000000000
-          Position.Y = 128.111114501953100000
+          Position.Y = 80.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 329.000000000000000000
           Size.Height = 49.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'btnMain'
-          TabOrder = 8
+          TabOrder = 10
           Text = 'Loading'
           TextSettings.Font.Size = 12.500000000000000000
           XRadius = 12.000000000000000000
@@ -88,16 +88,16 @@ object FDetail: TFDetail
         end
         object CornerButton2: TCornerButton
           Tag = 3
-          Anchors = [akLeft, akRight]
+          Anchors = [akLeft, akTop, akRight]
           StyledSettings = [Family, Style, FontColor]
           Position.X = 15.000000000000000000
-          Position.Y = 242.000000000000000000
+          Position.Y = 194.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 329.000000000000000000
           Size.Height = 49.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'btnMain'
-          TabOrder = 6
+          TabOrder = 8
           Text = 'JSON Helper MemTable'
           TextSettings.Font.Size = 12.500000000000000000
           XRadius = 12.000000000000000000
@@ -106,16 +106,16 @@ object FDetail: TFDetail
         end
         object CornerButton3: TCornerButton
           Tag = 4
-          Anchors = [akLeft, akRight]
+          Anchors = [akLeft, akTop, akRight]
           StyledSettings = [Family, Style, FontColor]
           Position.X = 15.000000000000000000
-          Position.Y = 301.000000000000000000
+          Position.Y = 253.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 329.000000000000000000
           Size.Height = 49.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'btnMain'
-          TabOrder = 5
+          TabOrder = 7
           Text = 'JSON Rest Client'
           TextSettings.Font.Size = 12.500000000000000000
           XRadius = 12.000000000000000000
@@ -124,21 +124,80 @@ object FDetail: TFDetail
         end
         object CornerButton18: TCornerButton
           Tag = 2
-          Anchors = [akLeft, akRight]
+          Anchors = [akLeft, akTop, akRight]
           StyledSettings = [Family, Style, FontColor]
           Position.X = 15.000000000000000000
-          Position.Y = 184.000000000000000000
+          Position.Y = 136.000000000000000000
           Sides = [Top, Left, Bottom, Right]
           Size.Width = 329.000000000000000000
           Size.Height = 49.000000000000000000
           Size.PlatformDefault = False
           StyleLookup = 'btnMain'
-          TabOrder = 7
+          TabOrder = 9
           Text = 'Pop Up and Toast'
           TextSettings.Font.Size = 12.500000000000000000
           XRadius = 12.000000000000000000
           YRadius = 12.000000000000000000
           OnClick = btnMainClick
+        end
+        object CornerButton19: TCornerButton
+          Tag = 4
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 15.000000000000000000
+          Position.Y = 309.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 329.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnMain'
+          TabOrder = 6
+          Text = 'Location'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          OnClick = CornerButton19Click
+        end
+        object CornerButton20: TCornerButton
+          Tag = 4
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 15.000000000000000000
+          Position.Y = 365.000000000000000000
+          Sides = [Top, Left, Bottom, Right]
+          Size.Width = 329.000000000000000000
+          Size.Height = 49.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'btnMain'
+          TabOrder = 5
+          Text = 'Camera'
+          TextSettings.Font.Size = 12.500000000000000000
+          XRadius = 12.000000000000000000
+          YRadius = 12.000000000000000000
+          OnClick = CornerButton20Click
+        end
+        object lblLocation: TLabel
+          Anchors = [akLeft, akTop, akRight]
+          StyledSettings = [Family, Style, FontColor]
+          Position.X = 16.000000000000000000
+          Position.Y = 424.000000000000000000
+          Size.Width = 329.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 12.500000000000000000
+          TabOrder = 12
+        end
+        object Image1: TImage
+          MultiResBitmap = <
+            item
+            end>
+          Anchors = [akLeft, akTop, akRight, akBottom]
+          HitTest = False
+          Position.X = 16.000000000000000000
+          Position.Y = 448.000000000000000000
+          Size.Width = 329.000000000000000000
+          Size.Height = 194.000000000000000000
+          Size.PlatformDefault = False
         end
       end
       object tiLoadImage: TTabItem
@@ -900,6 +959,10 @@ object FDetail: TFDetail
       Category = 'Tab'
       Tab = tiJSONRest
     end
+    object tpCamera: TTakePhotoFromCameraAction
+      Category = 'Media Library'
+      OnDidFinishTaking = tpCameraDidFinishTaking
+    end
   end
   object QData1: TFDMemTable
     FilterOptions = [foCaseInsensitive]
@@ -972,5 +1035,12 @@ object FDetail: TFDetail
     StoreDefs = True
     Left = 112
     Top = 16
+  end
+  object LS: TLocationSensor
+    ActivityType = Other
+    UsageAuthorization = WhenInUse
+    OnLocationChanged = LSLocationChanged
+    Left = 16
+    Top = 88
   end
 end
