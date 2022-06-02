@@ -3,6 +3,7 @@ program prjTemplate;
 uses
   System.StartUpCopy,
   FMX.Forms,
+  //SKIA.FMX,
   frMain in 'frMain.pas' {FMain},
   frHome in 'frames\frHome.pas' {FHome: TFrame},
   frLogin in 'frames\frLogin.pas' {FLogin: TFrame},
@@ -27,6 +28,7 @@ uses
 
 begin
   //ReportMemoryLeaksOnShutdown := True;
+  //GlobalUseSkia := True;
   Application.Initialize;
   Application.CreateForm(TFMain, FMain);
   Application.CreateForm(TDM, DM);

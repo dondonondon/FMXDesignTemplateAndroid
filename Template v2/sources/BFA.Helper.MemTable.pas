@@ -23,26 +23,42 @@ implementation
 
 { TFDMemTableHelper }
 
-function TFDMemTableHelper.FillDataFromString(FJSON: String): Boolean;
+function TFDMemTableHelper.FillDataFromString(FJSON: String): Boolean; //fix memory leak 2022-06-03
+const
+  FArr = 0;
+  FObj = 1;
+  FEls = 2;
+
+  function isCheck(FString : String) : Integer; begin
+    Result := FEls;
+    var FCheck := TJSONObject.ParseJSONValue(FJSON);
+    if FCheck is TJSONObject then
+      Result := FObj
+    else if FCheck is TJSONArray then
+      Result := FArr;
+
+    FCheck.DisposeOf;
+  end;
+
 var
   JObjectData : TJSONObject;
   JArrayJSON : TJSONArray;
-  isArray : Boolean;
+  JSONCheck : TJSONValue;
 begin
+  var FResult := isCheck(FJSON);
   try
     Self.Active := False;
     Self.Close;
     Self.FieldDefs.Clear;
 
-    if TJSONObject.ParseJSONValue(FJSON) is TJSONObject then begin
+    if FResult = FObj then begin
       JObjectData := TJSONObject.ParseJSONValue(FJSON) as TJSONObject;
-    end else if TJSONObject.ParseJSONValue(FJSON) is TJSONArray then begin
-      isArray := True;
+    end else if FResult = FArr then begin
       JArrayJSON := TJSONObject.ParseJSONValue(FJSON) as TJSONArray;
       JObjectData := TJSONObject(JArrayJSON.Get(0));
     end else begin
+      Self.FillError('Gagal Parsing JSON', 'Ini Bukan JSON');
       Result := False;
-      Self.FillError('Gagal Parsing JSON / NOT JSON FORMAT', 'Ini Bukan JSON');
       Exit;
     end;
 
@@ -60,46 +76,42 @@ begin
     Self.Open;
 
     try
-      if isArray then begin
+      if FResult = FArr then begin
         for var i := 0 to JArrayJSON.Size - 1 do begin
           JObjectData := TJSONObject(JArrayJSON.Get(i));
-
           Self.Append;
           for var ii := 0 to JObjectData.Size - 1 do begin
+            JSONCheck := TJSONObject.ParseJSONValue(JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON);
 
-            if TJSONObject.ParseJSONValue(JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON) is TJSONObject then
+            if JSONCheck is TJSONObject then
               Self.Fields[ii].AsString := JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON
-            else if TJSONObject.ParseJSONValue(JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON) is TJSONArray then
+            else if JSONCheck is TJSONArray then
               Self.Fields[ii].AsString := JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON
             else
               Self.Fields[ii].AsString := JObjectData.Values[Self.FieldDefs[ii].Name].Value;
+
+            JSONCheck.DisposeOf;
           end;
           Self.Post;
         end;
       end else begin
         Self.Append;
         for var ii := 0 to JObjectData.Size - 1 do begin
-          if TJSONObject.ParseJSONValue(JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON) is TJSONObject then
+          JSONCheck := TJSONObject.ParseJSONValue(JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON);
+
+          if JSONCheck is TJSONObject then
             Self.Fields[ii].AsString := JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON
-          else if TJSONObject.ParseJSONValue(JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON) is TJSONArray then
+          else if JSONCheck is TJSONArray then
             Self.Fields[ii].AsString := JObjectData.GetValue(Self.FieldDefs[ii].Name).ToJSON
           else
             Self.Fields[ii].AsString := JObjectData.Values[Self.FieldDefs[ii].Name].Value;
+
+          JSONCheck.DisposeOf;
         end;
         Self.Post;
       end;
 
       Result := True;
-
-      {for var i := 0 to Self.FieldCount - 1 do begin
-        if Self.FieldDefs[i].Name = 'status' then begin
-          if Self.FieldByName('status').AsString <> '200' then begin
-            Result := False;
-            Break;
-          end;
-        end;
-      end; }
-
     except
       on E : Exception do begin
         Result := False;
@@ -107,14 +119,13 @@ begin
       end;
     end;
   finally
-    Self.First;
-    if isArray then
-      JArrayJSON.DisposeOf;
-    {if Assigned(JArrayJSON) then
+    if FResult = FObj then
+      JObjectData.DisposeOf;
+
+    if FResult = FArr then
       JArrayJSON.DisposeOf;
 
-    if Assigned(JObjectData) then
-      JObjectData.DisposeOf; }
+    Self.First;
   end;
 end;
 
