@@ -22,13 +22,14 @@ type
     Label1: TLabel;
     tiMove: TTimer;
     faOpa: TFloatAnimation;
-    procedure FirstShow;
     procedure tiMoveTimer(Sender: TObject);
     procedure faOpaFinish(Sender: TObject);
   private
     FShow : Boolean;
     procedure setFrame;
   public
+  published
+    procedure FirstShow;
     procedure fnGoBack;
   end;
 

@@ -12,12 +12,13 @@ type
     loMain: TLayout;
     background: TRectangle;
     btnMasuk: TCornerButton;
-    procedure FirstShow;
     procedure btnMasukClick(Sender: TObject);
   private
     FShow : Boolean;
     procedure setFrame;
   public
+  published
+    procedure FirstShow;
     procedure fnGoBack;
   end;
 
@@ -29,7 +30,7 @@ implementation
 {$R *.fmx}
 
 uses BFA.GoFrame, BFA.Env, BFA.Main, BFA.Func, BFA.Helper.Main,
-  BFA.Helper.MemTable, BFA.OpenUrl, BFA.Rest, uDM, BFA.Helper.Control;
+  BFA.Helper.MemTable, BFA.OpenUrl, BFA.Rest, uDM, BFA.Helper.Control, BFA.Permission;
 
 { TFHome }
 

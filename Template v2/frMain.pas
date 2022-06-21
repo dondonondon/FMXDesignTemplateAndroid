@@ -80,7 +80,7 @@ implementation
 {$R *.fmx}
 
 uses frTemp, BFA.GoFrame, BFA.Env, frHome, frLogin, BFA.Main, frDetail,
-  frLoading;
+  frLoading, BFA.Helper.Main;
 
 {$IFDEF ANDROID}
 function TFMain.AppEventProc(AAppEvent: TApplicationEvent;
@@ -258,6 +258,9 @@ procedure TFMain.FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
   Shift: TShiftState);
 var
   FService: IFMXVirtualKeyboardService;
+  Routine : TMethod;
+  Exec : TExec;
+  LFrame : TControl;
 begin
   if Key = vkHardwareBack  then
   begin
@@ -270,10 +273,26 @@ begin
     begin
       Key := 0;
 
-      if goFrame = C_DETAIL then
+      {if goFrame = C_DETAIL then
         FDetail.fnGoBack
       else
-        fnBack;
+        fnBack;}
+
+      LFrame := LListFrame.getFrame(goFrame);
+
+      if not Assigned(LFrame) then
+        Exit;
+
+      LFrame.Visible := True;
+
+      Routine.Data := Pointer(LFrame);
+      Routine.Code := LFrame.MethodAddress('fnGoBack');
+      if NOT Assigned(Routine.Code) then
+        Exit;
+
+      Exec := TExec(Routine);
+      Exec;
+
     end;
   end
   else

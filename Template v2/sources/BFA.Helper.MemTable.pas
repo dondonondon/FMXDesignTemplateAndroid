@@ -17,13 +17,15 @@ type
     procedure FillError(FMessage, FError : String);
     function FillDataFromString(FJSON : String) : Boolean; //ctrl + shift + C
     function FillDataFromURL(FURL : String; FMultiPart : TMultipartFormData = nil) : Boolean;  //ctrl + shift + C
+
+    function toJSON(FStatus : Integer; FMessages : String = '') : String;
   end;
 
 implementation
 
 { TFDMemTableHelper }
 
-function TFDMemTableHelper.FillDataFromString(FJSON: String): Boolean; //fix memory leak 2022-06-03
+function TFDMemTableHelper.FillDataFromString(FJSON: String): Boolean; //fix memory leak JSONObject / JSONArray 2022-06-03
 const
   FArr = 0;
   FObj = 1;
@@ -177,6 +179,38 @@ begin
   Self.Fields[0].AsString := FError;
   Self.Fields[1].AsString := FMessage;
   Self.Post;
+end;
+
+function TFDMemTableHelper.toJSON(FStatus: Integer; FMessages: String): String;
+var
+  FResult, FData : TJSONObject;
+  FTemp : TJsonArray;
+begin
+  Self.First;
+
+  FResult := TJSONObject.Create;
+  try
+    FResult.AddPair('status', TJSONNumber.Create(FStatus));
+    FResult.AddPair('messages', FMessages);
+
+    FTemp := TJSONArray.Create;
+    for var i := 0 to Self.RecordCount - 1 do begin
+      FData := TJSONObject.Create;
+      for var ii := 0 to Self.FieldDefs.Count - 1 do begin
+        FData.AddPair(Self.FieldDefs[ii].Name, Self.FieldByName(Self.FieldDefs[ii].Name).AsString);
+      end;
+      FTemp.AddElement(FData);
+      Self.Next;
+    end;
+    FResult.AddPair('data', FTemp);
+
+    Result := FResult.ToJSON;
+
+    Self.First;
+
+  finally
+    FResult.DisposeOf;
+  end;
 end;
 
 end.

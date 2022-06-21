@@ -425,15 +425,21 @@ var
   JObjectData : TJSONObject;
   JArrayJSON : TJSONArray;
 begin
-  if TJSONObject.ParseJSONValue(FJSON) is TJSONObject then begin
-    JObjectData := TJSONObject.ParseJSONValue(FJSON) as TJSONObject;
+  var FCheck := TJSONObject.ParseJSONValue(FJSON);
+  try
+    if FCheck is TJSONObject then begin
+      JObjectData := TJSONObject.ParseJSONValue(FJSON) as TJSONObject;
 
-    Result := TJson.Format(JObjectData);
-  end else if TJSONObject.ParseJSONValue(FJSON) is TJSONArray then begin
-    JArrayJSON := TJSONObject.ParseJSONValue(FJSON) as TJSONArray;
+      Result := TJson.Format(JObjectData);
+      JObjectData.DisposeOf;
+    end else if FCheck is TJSONArray then begin
+      JArrayJSON := TJSONObject.ParseJSONValue(FJSON) as TJSONArray;
 
-    Result := TJson.Format(JArrayJSON);
-    JArrayJSON.DisposeOf;
+      Result := TJson.Format(JArrayJSON);
+      JArrayJSON.DisposeOf;
+    end;
+  finally
+    FCheck.DisposeOf;
   end;
 end;
 

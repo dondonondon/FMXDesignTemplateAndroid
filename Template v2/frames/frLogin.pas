@@ -20,12 +20,13 @@ type
     Edit2: TEdit;
     btnMasuk: TCornerButton;
     seMain: TShadowEffect;
-    procedure FirstShow;
     procedure btnMasukClick(Sender: TObject);
   private
     FShow : Boolean;
     procedure setFrame;
   public
+  published
+    procedure FirstShow;
     procedure fnGoBack;
   end;
 

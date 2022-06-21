@@ -85,7 +85,6 @@ type
     lblLocation: TLabel;
     Image1: TImage;
     tpCamera: TTakePhotoFromCameraAction;
-    procedure FirstShow;
     procedure btnBackClick(Sender: TObject);
     procedure btnMainClick(Sender: TObject);
     procedure CornerButton4Click(Sender: TObject);
@@ -114,6 +113,8 @@ type
     procedure setFrame;
     procedure fillStringGrid(FMemTable : TFDMemTable; FStringGrid : TStringGrid);
   public
+  published
+    procedure FirstShow;
     procedure fnGoBack;
   end;
 
@@ -125,7 +126,7 @@ implementation
 {$R *.fmx}
 
 uses BFA.GoFrame, BFA.Env, BFA.Main, BFA.Func, BFA.Helper.Main,
-  BFA.Helper.MemTable, BFA.OpenUrl, BFA.Rest, uDM, BFA.Helper.Control, frMain;
+  BFA.Helper.MemTable, BFA.OpenUrl, BFA.Rest, uDM, BFA.Helper.Control, frMain, BFA.Permission;
 
 { TFDetail }
 

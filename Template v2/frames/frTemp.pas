@@ -11,11 +11,12 @@ type
   TFTemp = class(TFrame)
     loMain: TLayout;
     background: TRectangle;
-    procedure FirstShow;
   private
     FShow : Boolean;
     procedure setFrame;
   public
+  published
+    procedure FirstShow;
     procedure fnGoBack;
   end;
 

@@ -13,12 +13,14 @@ type
     background: TRectangle;
     Label1: TLabel;
     CornerButton1: TCornerButton;
-    procedure FirstShow;
     procedure CornerButton1Click(Sender: TObject);
   private
     FShow : Boolean;
     procedure setFrame;
   public
+
+  published
+    procedure FirstShow;
     procedure fnGoBack;
   end;
 
