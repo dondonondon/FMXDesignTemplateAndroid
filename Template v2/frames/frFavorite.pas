@@ -1,26 +1,17 @@
-unit frLogin;
+unit frFavorite;
 
 interface
 
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading,
-  FMX.Effects, FMX.Edit;
+  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading;
 
 type
-  TFLogin = class(TFrame)
-    background: TRectangle;
+  TFFavorite = class(TFrame)
     loMain: TLayout;
-    Rectangle1: TRectangle;
-    btnBack: TCornerButton;
+    background: TRectangle;
     Label1: TLabel;
-    Label2: TLabel;
-    Edit1: TEdit;
-    Edit2: TEdit;
-    btnMasuk: TCornerButton;
-    seMain: TShadowEffect;
-    procedure btnMasukClick(Sender: TObject);
   private
     FShow : Boolean;
     procedure setFrame;
@@ -31,7 +22,7 @@ type
   end;
 
 var
-  FLogin: TFLogin;
+  FFavorite: TFFavorite;
 
 implementation
 
@@ -40,25 +31,19 @@ implementation
 uses BFA.GoFrame, BFA.Env, BFA.Main, BFA.Func, BFA.Helper.Main,
   BFA.Helper.MemTable, BFA.OpenUrl, BFA.Rest, uDM, BFA.Helper.Control;
 
-{ TFLogin }
+{ TFTemp }
 
-procedure TFLogin.btnMasukClick(Sender: TObject);
-begin
-
-  fnGoFrame(goFrame, C_HOME);
-end;
-
-procedure TFLogin.FirstShow;
+procedure TFFavorite.FirstShow;
 begin       //procedure like event onShow
   setFrame;
 end;
 
-procedure TFLogin.fnGoBack;
+procedure TFFavorite.fnGoBack;
 begin
- fnBack;
+  fnBack;
 end;
 
-procedure TFLogin.setFrame;
+procedure TFFavorite.setFrame;
 begin
   Self.setAnchorContent;
 

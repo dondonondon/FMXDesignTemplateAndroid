@@ -79,7 +79,7 @@ implementation
 
 {$R *.fmx}
 
-uses frTemp, BFA.GoFrame, BFA.Env, frHome, frLogin, BFA.Main, frDetail,
+uses BFA.GoFrame, BFA.Env, frHome, frLogin, BFA.Main, frDetail,
   frLoading, BFA.Helper.Main;
 
 {$IFDEF ANDROID}

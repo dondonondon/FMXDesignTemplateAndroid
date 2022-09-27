@@ -23,7 +23,7 @@ object FDetail: TFDetail
       Size.Height = 656.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'tcMain'
-      TabIndex = 0
+      TabIndex = 4
       TabOrder = 4
       TabPosition = None
       Sizes = (
@@ -41,7 +41,7 @@ object FDetail: TFDetail
         CustomIcon = <
           item
           end>
-        IsSelected = True
+        IsSelected = False
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -518,8 +518,8 @@ object FDetail: TFDetail
           TabOrder = 5
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
           OnCellClick = stgData1CellClick
-          Viewport.Width = 345.000000000000000000
-          Viewport.Height = 241.000000000000000000
+          Viewport.Width = 341.000000000000000000
+          Viewport.Height = 216.000000000000000000
         end
         object stgData2: TStringGrid
           Anchors = [akLeft, akTop, akRight, akBottom]
@@ -534,8 +534,8 @@ object FDetail: TFDetail
           StyledSettings = [Family, Style, FontColor]
           TabOrder = 4
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-          Viewport.Width = 345.000000000000000000
-          Viewport.Height = 321.000000000000000000
+          Viewport.Width = 341.000000000000000000
+          Viewport.Height = 296.000000000000000000
         end
         object Label2: TLabel
           Anchors = [akLeft, akTop, akRight]
@@ -691,7 +691,7 @@ object FDetail: TFDetail
         CustomIcon = <
           item
           end>
-        IsSelected = False
+        IsSelected = True
         Size.Width = 8.000000000000000000
         Size.Height = 8.000000000000000000
         Size.PlatformDefault = False
@@ -745,8 +745,8 @@ object FDetail: TFDetail
           TabOrder = 5
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
           OnCellClick = stgDataRest1CellClick
-          Viewport.Width = 345.000000000000000000
-          Viewport.Height = 241.000000000000000000
+          Viewport.Width = 341.000000000000000000
+          Viewport.Height = 216.000000000000000000
         end
         object stgDataRest2: TStringGrid
           Anchors = [akLeft, akTop, akRight, akBottom]
@@ -761,8 +761,8 @@ object FDetail: TFDetail
           StyledSettings = [Family, Style, FontColor]
           TabOrder = 4
           Options = [ColumnResize, ColumnMove, ColLines, RowLines, RowSelect, Tabs, Header, HeaderClick, AutoDisplacement]
-          Viewport.Width = 345.000000000000000000
-          Viewport.Height = 321.000000000000000000
+          Viewport.Width = 341.000000000000000000
+          Viewport.Height = 296.000000000000000000
         end
         object Label3: TLabel
           Anchors = [akLeft, akTop, akRight]

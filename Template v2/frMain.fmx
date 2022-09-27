@@ -537,7 +537,7 @@ object FMain: TFMain
     Top = 8
   end
   object NotificationCenter: TNotificationCenter
-    Left = 48
+    Left = 112
     Top = 8
   end
 end

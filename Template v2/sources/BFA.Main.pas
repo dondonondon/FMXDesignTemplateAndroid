@@ -32,8 +32,8 @@ function fnParsingJSON(req : String; FMethod : TRESTRequestMethod = TRESTRequest
 
 implementation
 
-uses BFA.Env, BFA.GoFrame, frMain, frDetail, frHome, frLoading, frLogin, frTemp,
-  BFA.Rest, uDM, BFA.Helper.Main, frAccount;
+uses BFA.Env, BFA.GoFrame, frMain, frDetail, frHome, frLoading, frLogin,
+  BFA.Rest, uDM, BFA.Helper.Main, frAccount, frFavorite;
 
 procedure fnLoading(FState : Boolean);
 begin
@@ -148,8 +148,9 @@ begin
   FHome := TFHome(FHome.CallFrame(FMain.loFrame, TFHome, C_HOME));
   FLogin := TFLogin(FLogin.CallFrame(FMain.loFrame, TFLogin, C_LOGIN));
   FDetail := TFDetail(FDetail.CallFrame(FMain.loFrame, TFDetail, C_DETAIL));
-  FTemp := TFTemp(FTemp.CallFrame(FMain.loFrame, TFTemp, C_TEMP));
+  //FTemp := TFTemp(FTemp.CallFrame(FMain.loFrame, TFTemp, C_TEMP));
   FAccount := TFAccount(FAccount.CallFrame(FMain.loFrame, TFAccount, C_ACCOUNT));
+  FFavorite := TFFavorite(FFavorite.CallFrame(FMain.loFrame, TFFavorite, C_FAVORITE));
 
   LListFrame.HideAll;
 end;

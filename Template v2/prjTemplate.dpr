@@ -3,7 +3,6 @@ program prjTemplate;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  //SKIA.FMX,
   frMain in 'frMain.pas' {FMain},
   frHome in 'frames\frHome.pas' {FHome: TFrame},
   frLogin in 'frames\frLogin.pas' {FLogin: TFrame},
@@ -21,7 +20,7 @@ uses
   uDM in 'uDM.pas' {DM: TDataModule},
   BFA.Helper.Control in 'sources\BFA.Helper.Control.pas',
   frAccount in 'frames\frAccount.pas' {FAccount: TFrame},
-  frTemp in 'frames\frTemp.pas' {FTemp: TFrame},
+  frFavorite in 'frames\frFavorite.pas' {FFavorite: TFrame},
   BFA.Permission in 'sources\BFA.Permission.pas';
 
 {$R *.res}

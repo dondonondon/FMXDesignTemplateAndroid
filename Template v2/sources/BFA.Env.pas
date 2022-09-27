@@ -23,6 +23,7 @@ const
   C_LOGIN = 'LOGIN';
   C_DETAIL = 'DETAIL';
   C_ACCOUNT = 'ACCOUNT';
+  C_FAVORITE = 'FAVORITE';
 
 var
   FListGo : TStringList;
