@@ -1,0 +1,70 @@
+object FMain: TFMain
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 720
+  ClientWidth = 360
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnDestroy = FormDestroy
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object loMain: TLayout
+    Align = Contents
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object vsMain: TVertScrollBox
+      Align = Contents
+      Size.Width = 360.000000000000000000
+      Size.Height = 720.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 360.000000000000000000
+      Viewport.Height = 720.000000000000000000
+      object loFrame: TLayout
+        Align = Contents
+        Size.Width = 360.000000000000000000
+        Size.Height = 720.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+      end
+    end
+    object Memo1: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 8.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 344.000000000000000000
+      Size.Height = 89.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Viewport.Width = 344.000000000000000000
+      Viewport.Height = 89.000000000000000000
+    end
+  end
+  object CornerButton1: TCornerButton
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    TabOrder = 2
+    Text = 'CornerButton1'
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    OnClick = CornerButton1Click
+  end
+  object CornerButton2: TCornerButton
+    Position.X = 104.000000000000000000
+    Position.Y = 8.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    TabOrder = 1
+    Text = 'CornerButton1'
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    OnClick = CornerButton2Click
+  end
+end

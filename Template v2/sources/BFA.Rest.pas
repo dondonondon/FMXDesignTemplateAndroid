@@ -21,7 +21,7 @@ const
       AURLFile = 'https://www.blangkon.net/JSON/files/';
   {$ELSE}
       AURL = 'https://www.blangkon.net/JSON/API.php?act=';
-      //AURL = 'http://localhost/upload.php';
+      //AURL = 'http://localhost:8080/appru/tes.json';
       AURLFile = 'https://www.blangkon.net/JSON/files/';
   {$ENDIF}
 

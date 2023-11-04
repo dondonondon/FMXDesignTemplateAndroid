@@ -10,7 +10,7 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, System.Net.URLClient,
   System.Net.HttpClient, System.Net.HttpClientComponent, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.JSON, System.Net.Mime;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, System.JSON, System.Net.Mime, DataSet.Serialize;
 
 
 type
@@ -48,6 +48,7 @@ var
   JArrayJSON : TJSONArray;
   JSONCheck : TJSONValue;
 begin
+
   var FResult := isCheck(FJSON);
   try
     Self.Active := False;
@@ -68,7 +69,7 @@ begin
     for var i := 0 to JObjectData.Size - 1 do begin
       Self.FieldDefs.Add(
         StringReplace(JObjectData.Get(i).JsonString.ToString, '"', '', [rfReplaceAll, rfIgnoreCase]),
-        ftString,
+        ftWideString,
         100000,
         False
       );
@@ -146,10 +147,10 @@ begin
         FNetRespon := FNetHTTP.Get(FURL);
 
       Result := Self.FillDataFromString(FNetRespon.ContentAsString());
-      if FNetRespon.StatusCode = 200 then
-        Result := Self.FillDataFromString(Self.FieldByName('data').AsString)
-      else
-        Result := False;
+//      if FNetRespon.StatusCode = 200 then
+//        Result := Self.FillDataFromString(Self.FieldByName('data').AsString)
+//      else
+//        Result := False;
 
     except
       on E : Exception do begin

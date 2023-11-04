@@ -1,0 +1,18 @@
+{
+    "google.delivered_priority": "normal",
+    "google.sent_time": "1684602905589",
+    "google.ttl": "2419200",
+    "google.original_priority": "normal",
+    "gcm.notification.e": "1",
+    "gcm.n.dnp": "1",
+    "gcm.notification.title": "Title Test",
+    "from": "237435848499",
+    "gcm.notification.target": "com.blangkon.projectname",
+    "google.message_id": "0:1684602905607614%9c8ffdb89c8ffdb8",
+    "gcm.notification.body": "Hello World",
+    "gcm.notification.icon": "",
+    "google.c.a.e": "1",
+    "google.c.sender.id": "237435848499",
+    "gcm.notification.click_action": "",
+    "collapse_key": "com.blangkon.projectname"
+}

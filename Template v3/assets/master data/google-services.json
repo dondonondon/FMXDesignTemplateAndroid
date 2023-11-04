@@ -1,0 +1,301 @@
+{
+  "project_info": {
+    "project_number": "237435848499",
+    "firebase_url": "https://predemas.firebaseio.com",
+    "project_id": "predemas",
+    "storage_bucket": "predemas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:19dbb476c21aba9cb4e046",
+        "android_client_info": {
+          "package_name": "com.blangkon.LapasTulungagung"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:9586065966a78624b4e046",
+        "android_client_info": {
+          "package_name": "com.blangkon.MugaPay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:b974f33f34771de9",
+        "android_client_info": {
+          "package_name": "com.blangkon.PredEmas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:7c088d6aa1b89a0db4e046",
+        "android_client_info": {
+          "package_name": "com.blangkon.RadioIndo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:283de1c8b9fa78c0b4e046",
+        "android_client_info": {
+          "package_name": "com.blangkon.prjAdmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:e4f30895dd36903ab4e046",
+        "android_client_info": {
+          "package_name": "com.blangkon.prjTemplate2021"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:a69ca63ff2dea7bfb4e046",
+        "android_client_info": {
+          "package_name": "com.blangkon.prjTemplateV3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:e43933f1c2024787b4e046",
+        "android_client_info": {
+          "package_name": "com.blangkon.rsuddrloekmonohadikudus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:eb4114f0cf4d5bf1b4e046",
+        "android_client_info": {
+          "package_name": "com.blangkonfa.RekamMedis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237435848499:android:7a53f7c5397c62c2b4e046",
+        "android_client_info": {
+          "package_name": "com.trainingdelphi.delphi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237435848499-jpd2ds4f7p5usa03ikse5990p416c91r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
