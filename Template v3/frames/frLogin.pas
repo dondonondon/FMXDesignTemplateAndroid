@@ -26,7 +26,7 @@ type
   published
     procedure Show;
 
-    constructor Create;
+    constructor Create(AOwner : TComponent); override;
   end;
 
 var
@@ -43,11 +43,12 @@ uses frMain;
 
 procedure TFLogin.btnMasukClick(Sender: TObject);
 begin
-  FMain.Frame.GoFrame('LOADING');
+  FMain.Frame.GoFrame('HOME');
 end;
 
-constructor TFLogin.Create;
+constructor TFLogin.Create(AOwner: TComponent);
 begin
+  inherited;
 
 end;
 

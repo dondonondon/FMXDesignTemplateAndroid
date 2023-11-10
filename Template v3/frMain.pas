@@ -18,15 +18,12 @@ type
     loMain: TLayout;
     vsMain: TVertScrollBox;
     loFrame: TLayout;
-    CornerButton1: TCornerButton;
-    CornerButton2: TCornerButton;
-    Memo1: TMemo;
+    SB: TStyleBook;
     procedure FormShow(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
     procedure FormDestroy(Sender: TObject);
-    procedure CornerButton1Click(Sender: TObject);
-    procedure CornerButton2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     FNotification : TPushNotif;
     FKeyboard : TKeyboardShow;
@@ -45,7 +42,7 @@ implementation
 
 {$R *.fmx}
 
-uses frLoading, frLogin, BFA.Permission;
+uses frLoading, frLogin, BFA.Permission, frHome;
 
 function TFMain.AppEventProc(AAppEvent: TApplicationEvent;
   AContext: TObject): Boolean;
@@ -57,10 +54,33 @@ begin
   end;
 end;
 
-procedure TFMain.CornerButton1Click(Sender: TObject);
+procedure TFMain.FormCreate(Sender: TObject);
 begin
-  Memo1.Lines.Add(FNotification.DeviceID);
-  Memo1.Lines.Add(FNotification.DeviceToken);
+  {
+    this template tested with madExcept
+  }
+
+  FKeyboard := TKeyboardShow.Create(
+    Self, vsMain, loFrame, True
+  );
+
+//  FNotification := TPushNotif.Create;
+  FNotification := TPushNotif.Create(AppEventProc);  //you can replace AppEventProc. It's for Push Notif from firebase.
+
+  Frame := TGoFrame.Create;
+  Frame.ControlParent := loFrame;
+  Frame.SetIdle := True;  //setidle not free from memory
+
+  Frame.RegisterClassesFrame(
+    [
+      TFLoading, TFHome
+    ],
+    [
+      'LOADING', 'HOME'
+    ]
+  );
+  //or you can register class one by one like below...
+  Frame.RegisterClassFrame(TFLogin, 'LOGIN');
 end;
 
 procedure TFMain.FormDestroy(Sender: TObject);
@@ -81,38 +101,14 @@ begin
   FKeyboard.KeyUp(Key, KeyChar, Shift);
 end;
 
-procedure TFMain.CornerButton2Click(Sender: TObject);
-begin
-  Frame.GoFrame('LOADING');
-//  Frame.GoFrame(TFLogin);
-end;
-
 procedure TFMain.FormShow(Sender: TObject);
 begin
-  FKeyboard := TKeyboardShow.Create(
-    Self, vsMain, loFrame, True
-  );
-
-//  FNotification := TPushNotif.Create;
-  FNotification := TPushNotif.Create(AppEventProc);  //you can replace AppEventProc
   FNotification.ServiceConnectionStatus(True);
+//  FNotification.DeviceID <-- for device id
+//  FNotification.DeviceToken <-- for token
 
-  Frame := TGoFrame.Create;
-  Frame.ControlParent := loFrame;
-  Frame.SetIdle := True;
 
-  Frame.RegisterClassesFrame(
-    [
-      TFLoading
-    ],
-    [
-      'LOADING'
-    ]
-  );
-
-  Frame.RegisterClassFrame(TFLogin, 'LOGIN');
-
-//  Frame.GoFrame('LOADING');
+  Frame.GoFrame('LOADING');
 end;
 
 end.

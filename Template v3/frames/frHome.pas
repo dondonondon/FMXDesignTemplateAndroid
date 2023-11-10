@@ -5,68 +5,33 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading, REST.Types, System.Net.Mime;
+  FMX.Controls.Presentation;
 
 type
   TFHome = class(TFrame)
-    loMain: TLayout;
-    background: TRectangle;
-    btnMasuk: TCornerButton;
-    procedure btnMasukClick(Sender: TObject);
+    Label1: TLabel;
   private
-    FShow : Boolean;
-    procedure setFrame;
+    { Private declarations }
   public
+    { Public declarations }
   published
-    procedure FirstShow;
-    procedure fnGoBack;
+    constructor Create(AOwner : TComponent); override;
   end;
 
-var
-  FHome: TFHome;
+var FHome : TFHome;
 
 implementation
 
 {$R *.fmx}
 
-uses BFA.GoFrame, BFA.Env, BFA.Main, BFA.Func, BFA.Helper.Main,
-  BFA.Helper.MemTable, BFA.OpenUrl, BFA.Rest, uDM, BFA.Helper.Control, BFA.Permission;
+{ TFrame1 }
 
-{ TFHome }
+{ TFrame1 }
 
-procedure TFHome.btnMasukClick(Sender: TObject);
+constructor TFHome.Create(AOwner: TComponent);
 begin
-  HelperPermission.setPermission(
-    [
-      getPermission.READ_EXTERNAL_STORAGE,
-      getPermission.WRITE_EXTERNAL_STORAGE
-    ],
-    procedure begin
-      fnGoFrame(C_HOME, C_DETAIL);
-      //proses setelah dapat permssion = true
-    end);
-end;
+  inherited;
 
-procedure TFHome.FirstShow;
-begin       //procedure like event onShow
-  setFrame;
-end;
-
-procedure TFHome.fnGoBack;
-begin
-  fnBack;
-end;
-
-procedure TFHome.setFrame;
-begin
-  Self.setAnchorContent;
-
-  if FShow then
-    Exit;
-
-  FShow := True;
-
-  //write code here => like event onCreate
 end;
 
 end.

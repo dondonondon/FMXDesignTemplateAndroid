@@ -10,7 +10,8 @@ uses
   frLogin in 'frames\frLogin.pas' {FLogin: TFrame},
   BFA.PushNotification in 'sources\helper\BFA.PushNotification.pas',
   BFA.Permission in 'sources\helper\BFA.Permission.pas',
-  BFA.Form.Message in 'sources\helper\BFA.Form.Message.pas';
+  BFA.Form.Message in 'sources\helper\BFA.Form.Message.pas',
+  frHome in 'frames\frHome.pas' {FHome: TFrame};
 
 {$R *.res}
 

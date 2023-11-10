@@ -29,7 +29,7 @@ type
   published
     procedure Show;
 
-    constructor Create;
+    constructor Create(AOwner : TComponent); override;
   end;
 
 var
@@ -42,9 +42,10 @@ implementation
 uses BFA.Form.Message, BFA.Frame, BFA.Keyboard, BFA.Permission,
   BFA.PushNotification, frMain;
 
-constructor TFLoading.Create;
+constructor TFLoading.Create(AOwner: TComponent);
 begin
-
+  inherited;
+  Label1.Text := 'Hello World';
 end;
 
 procedure TFLoading.faOpaFinish(Sender: TObject);

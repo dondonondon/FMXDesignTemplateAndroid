@@ -442,6 +442,7 @@ object FLogin: TFLogin
       Size.PlatformDefault = False
       StyleLookup = 'btnImg'
       TabOrder = 0
+      TextSettings.Trimming = None
       Visible = False
       XRadius = 3.000000000000000000
       YRadius = 3.000000000000000000
@@ -456,6 +457,7 @@ object FLogin: TFLogin
       TextSettings.Font.Size = 25.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = xFF364F6B
+      TextSettings.Trimming = None
       Text = 'Hallo'
       TabOrder = 2
     end
@@ -469,6 +471,7 @@ object FLogin: TFLogin
       TextSettings.Font.Size = 15.000000000000000000
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = xFF364F6B
+      TextSettings.Trimming = None
       Text = 'Selamat Datang Kembali'
       TabOrder = 1
     end
@@ -514,6 +517,7 @@ object FLogin: TFLogin
       TabOrder = 6
       Text = 'Masuk'
       TextSettings.Font.Size = 12.500000000000000000
+      TextSettings.Trimming = None
       XRadius = 12.000000000000000000
       YRadius = 12.000000000000000000
       OnClick = btnMasukClick

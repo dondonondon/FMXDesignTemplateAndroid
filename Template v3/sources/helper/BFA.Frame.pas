@@ -210,11 +210,12 @@ begin
 
   Routine.Data := Pointer(FControl);
   Routine.Code := FControl.MethodAddress('Show');
-  if not Assigned(Routine.Code) then
-    raise Exception.Create('Method "Show" not found.');
+  if Assigned(Routine.Code) then begin
+//    raise Exception.Create('Method "Show" not found.');
 
-  Exec := TExec(Routine);
-  Exec;
+    Exec := TExec(Routine);
+    Exec;
+  end;
 end;
 
 procedure TGoFrame.ShowLastControl;

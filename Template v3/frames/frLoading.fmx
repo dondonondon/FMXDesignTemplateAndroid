@@ -4916,6 +4916,7 @@ object FLoading: TFLoading
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claWhite
       TextSettings.HorzAlign = Center
+      TextSettings.Trimming = None
       Text = 'LOADING'
       TabOrder = 4
     end
