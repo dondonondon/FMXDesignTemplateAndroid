@@ -6,7 +6,12 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading,
-  FMX.Effects, FMX.Edit;
+  FMX.Effects, FMX.Edit, FMX.MediaLibrary.Actions, FMX.StdActns, System.Actions,
+  FMX.ActnList, FMX.TabControl
+  {$IF DEFINED (ANDROID)}
+  , Androidapi.Helpers, Androidapi.JNI.Os, Androidapi.JNI.JavaTypes
+  {$ENDIF}
+  ;
 
 type
   TFLogin = class(TFrame)
@@ -20,7 +25,16 @@ type
     Edit2: TEdit;
     btnMasuk: TCornerButton;
     seMain: TShadowEffect;
+    AL: TActionList;
+    cta0: TChangeTabAction;
+    cta1: TChangeTabAction;
+    cta2: TChangeTabAction;
+    tpLibrary: TTakePhotoFromLibraryAction;
+    tpCamera: TTakePhotoFromCameraAction;
+    OD: TOpenDialog;
+    Image1: TImage;
     procedure btnMasukClick(Sender: TObject);
+    procedure tpLibraryDidFinishTaking(Image: TBitmap);
   private
   public
   published
@@ -36,13 +50,60 @@ implementation
 
 {$R *.fmx}
 
-uses frMain;
+uses frMain, BFA.Permission;
 
 
 { TFLogin }
 
 procedure TFLogin.btnMasukClick(Sender: TObject);
 begin
+//  {$IF DEFINED(IOS) or DEFINED(ANDROID)}
+//  var OSVersion := StrToIntDef(JStringToString(TJBuild_VERSION.JavaClass.RELEASE), 10);
+//  {$ELSE}
+//  var OSVersion := 10;
+//  {$ENDIF}
+//
+//  if OSVersion >= 13 then begin
+//    HelperPermission.setPermission([
+//      getPermission.READ_MEDIA_IMAGES,
+//      getPermission.READ_MEDIA_VIDEO,
+//      getPermission.READ_MEDIA_AUDIO,
+//      getPermission.CAMERA
+//    ],
+//    procedure begin
+//      {$IF DEFINED(IOS) or DEFINED(ANDROID)}
+//        tpCamera.Execute;
+//      {$ELSE}
+//        OD.Filter := 'Image Files (*.jpg)|*.jpg;*.jpeg;*.bmp;*.png';
+//        OD.FileName := '';
+//        OD.Execute;
+//        if OD.FileName = '' then
+//          Exit;
+//
+//        Image1.Bitmap.LoadFromFile(OD.FileName);
+//      {$ENDIF}
+//    end);
+//  end else begin
+//    HelperPermission.setPermission([
+//      getPermission.READ_EXTERNAL_STORAGE,
+//      getPermission.WRITE_EXTERNAL_STORAGE,
+//      getPermission.CAMERA
+//    ],
+//    procedure begin
+//      {$IF DEFINED(IOS) or DEFINED(ANDROID)}
+//        tpCamera.Execute;
+//      {$ELSE}
+//        OD.Filter := 'Image Files (*.jpg)|*.jpg;*.jpeg;*.bmp;*.png';
+//        OD.FileName := '';
+//        OD.Execute;
+//        if OD.FileName = '' then
+//          Exit;
+//
+//        Image1.Bitmap.LoadFromFile(OD.FileName);
+//      {$ENDIF}
+//    end);
+//  end;
+
   FMain.Frame.GoFrame('HOME');
 end;
 
@@ -55,6 +116,11 @@ end;
 procedure TFLogin.Show;
 begin
 
+end;
+
+procedure TFLogin.tpLibraryDidFinishTaking(Image: TBitmap);
+begin
+  Image1.Bitmap.Assign(Image);
 end;
 
 end.

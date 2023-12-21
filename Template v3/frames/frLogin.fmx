@@ -530,4 +530,40 @@ object FLogin: TFLogin
       ShadowColor = claBlack
     end
   end
+  object OD: TOpenDialog
+    Left = 264
+    Top = 128
+  end
+  object Image1: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Position.X = 16.000000000000000000
+    Position.Y = 264.000000000000000000
+    Size.Width = 137.000000000000000000
+    Size.Height = 144.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+  end
+  object AL: TActionList
+    Left = 288
+    Top = 24
+    object cta0: TChangeTabAction
+      Category = 'Tab'
+    end
+    object cta1: TChangeTabAction
+      Category = 'Tab'
+    end
+    object cta2: TChangeTabAction
+      Category = 'Tab'
+    end
+    object tpLibrary: TTakePhotoFromLibraryAction
+      Category = 'Media Library'
+      OnDidFinishTaking = tpLibraryDidFinishTaking
+    end
+    object tpCamera: TTakePhotoFromCameraAction
+      Category = 'Media Library'
+      OnDidFinishTaking = tpLibraryDidFinishTaking
+    end
+  end
 end

@@ -4,6 +4,9 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   frMain in 'frMain.pas' {FMain},
+  {$IF DEFINED (ANDROID)}
+  FMX.MediaLibrary.Android in 'sources\libraries\FMX.MediaLibrary.Android.pas',
+  {$ENDIF}
   BFA.Keyboard in 'sources\helper\BFA.Keyboard.pas',
   BFA.Frame in 'sources\helper\BFA.Frame.pas',
   frLoading in 'frames\frLoading.pas' {FLoading: TFrame},
