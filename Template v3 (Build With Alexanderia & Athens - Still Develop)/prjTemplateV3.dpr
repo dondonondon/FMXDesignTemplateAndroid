@@ -1,12 +1,17 @@
 program prjTemplateV3;
 
 uses
+  madExcept,
+  madLinkDisAsm,
+  madListHardware,
+  madListProcesses,
+  madListModules,
   System.StartUpCopy,
   FMX.Forms,
   frMain in 'frMain.pas' {FMain},
   {$IF DEFINED (ANDROID)}
   FMX.MediaLibrary.Android in 'sources\libraries\FMX.MediaLibrary.Android.pas',
-  {$ENDIF}
+  {$ENDIF }
   BFA.Keyboard in 'sources\helper\BFA.Keyboard.pas',
   BFA.Frame in 'sources\helper\BFA.Frame.pas',
   frLoading in 'frames\frLoading.pas' {FLoading: TFrame},
@@ -14,7 +19,8 @@ uses
   BFA.PushNotification in 'sources\helper\BFA.PushNotification.pas',
   BFA.Permission in 'sources\helper\BFA.Permission.pas',
   BFA.Form.Message in 'sources\helper\BFA.Form.Message.pas',
-  frHome in 'frames\frHome.pas' {FHome: TFrame};
+  frHome in 'frames\frHome.pas' {FHome: TFrame},
+  uDM in 'uDM.pas' {DM: TDataModule};
 
 {$R *.res}
 
@@ -23,6 +29,7 @@ begin
 
   Application.Initialize;
   Application.CreateForm(TFMain, FMain);
+  Application.CreateForm(TDM, DM);
   Application.Run;
 
 end.

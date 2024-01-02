@@ -28,6 +28,10 @@ type
     FNotification : TPushNotif;
     FKeyboard : TKeyboardShow;
 
+    procedure InitFunction;
+    procedure InitKeyboard;
+    procedure InitPushNotification;
+    procedure InitFrame;
     function AppEventProc(AAppEvent: TApplicationEvent;
       AContext: TObject): Boolean;
   public
@@ -56,31 +60,7 @@ end;
 
 procedure TFMain.FormCreate(Sender: TObject);
 begin
-  {
-    this template tested with madExcept
-  }
-
-  FKeyboard := TKeyboardShow.Create(
-    Self, vsMain, loFrame, True
-  );
-
-//  FNotification := TPushNotif.Create;
-  FNotification := TPushNotif.Create(AppEventProc);  //you can replace AppEventProc. It's for Push Notif from firebase.
-
-  Frame := TGoFrame.Create;
-  Frame.ControlParent := loFrame;
-  Frame.SetIdle := True;  //setidle not free from memory
-
-  Frame.RegisterClassesFrame(
-    [
-      TFLoading, TFHome
-    ],
-    [
-      'LOADING', 'HOME'
-    ]
-  );
-  //or you can register class one by one like below...
-  Frame.RegisterClassFrame(TFLogin, 'LOGIN');
+  InitFunction;
 end;
 
 procedure TFMain.FormDestroy(Sender: TObject);
@@ -107,8 +87,46 @@ begin
 //  FNotification.DeviceID <-- for device id
 //  FNotification.DeviceToken <-- for token
 
-
   Frame.GoFrame('LOADING');
+end;
+
+procedure TFMain.InitFrame;
+begin
+  Frame := TGoFrame.Create;
+  Frame.ControlParent := loFrame;
+  Frame.SetIdle := True;  //setidle not free from memory
+
+  Frame.RegisterClassesFrame(
+    [
+      TFLoading, TFHome
+    ],
+    [
+      'LOADING', 'HOME'
+    ]
+  );
+  //or you can register class one by one like below...
+  Frame.RegisterClassFrame(TFLogin, 'LOGIN');
+end;
+
+procedure TFMain.InitFunction;
+begin
+  InitKeyboard;
+  InitPushNotification;
+  InitFrame;
+end;
+
+procedure TFMain.InitKeyboard;
+begin
+  FKeyboard := TKeyboardShow.Create(
+    Self, vsMain, loFrame, True
+  );
+end;
+
+procedure TFMain.InitPushNotification;
+begin
+//  FNotification := TPushNotif.Create;
+  FNotification := TPushNotif.Create(AppEventProc);
+  //you can replace AppEventProc. It's for Push Notif from firebase. You can set nil => FNotification := TPushNotif.Create;
 end;
 
 end.
