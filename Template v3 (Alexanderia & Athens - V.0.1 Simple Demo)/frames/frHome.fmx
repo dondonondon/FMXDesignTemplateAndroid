@@ -1,0 +1,806 @@
+object FHome: TFHome
+  Size.Width = 393.000000000000000000
+  Size.Height = 635.000000000000000000
+  Size.PlatformDefault = False
+  object loHeader: TLayout
+    Align = Top
+    Size.Width = 393.000000000000000000
+    Size.Height = 83.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object reHeader: TRectangle
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Fill.Color = xFF364F6B
+      Size.Width = 393.000000000000000000
+      Size.Height = 83.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object seHeader: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.150000005960464500
+        ShadowColor = claBlack
+      end
+    end
+    object lblTitle: TLabel
+      Anchors = [akLeft, akTop, akRight]
+      StyledSettings = [Family]
+      HitTest = True
+      Position.X = 48.000000000000000000
+      Position.Y = 12.000000000000000000
+      Size.Width = 327.000000000000000000
+      Size.Height = 59.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.Trimming = None
+      Text = 'HOME'
+      TabOrder = 2
+    end
+    object btnBack: TCornerButton
+      Anchors = [akLeft]
+      StyledSettings = [Family, Size]
+      Position.X = 8.000000000000000000
+      Position.Y = 25.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 33.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'btnImg'
+      TabOrder = 1
+      Text = '<'
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btnBackClick
+    end
+  end
+  object OD: TOpenDialog
+    Left = 216
+    Top = 24
+  end
+  object tcMain: TTabControl
+    Align = Client
+    Size.Width = 393.000000000000000000
+    Size.Height = 552.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 1
+    TabOrder = 5
+    TabPosition = None
+    Sizes = (
+      393s
+      552s
+      393s
+      552s
+      393s
+      552s
+      393s
+      552s
+      393s
+      552s
+      393s
+      552s
+      393s
+      552s)
+    object tiMenu: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiMenu'
+      object lbMenu: TListBox
+        Align = Client
+        Size.Width = 393.000000000000000000
+        Size.Height = 552.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        ShowScrollBars = False
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        OnItemClick = lbMenuItemClick
+        Viewport.Width = 389.000000000000000000
+        Viewport.Height = 548.000000000000000000
+        object ListBoxItem1: TListBoxItem
+          Tag = 1
+          Selectable = False
+          ItemData.Detail = 'Get Token && Device ID'
+          Size.Width = 389.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 5
+          object btnMasuk: TCornerButton
+            Align = Client
+            StyledSettings = [Family, Style, FontColor]
+            HitTest = False
+            Margins.Left = 12.000000000000000000
+            Margins.Top = 12.000000000000000000
+            Margins.Right = 12.000000000000000000
+            Margins.Bottom = 12.000000000000000000
+            Sides = [Top, Left, Bottom, Right]
+            Size.Width = 365.000000000000000000
+            Size.Height = 49.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btnMain'
+            TabOrder = 6
+            Text = 'Get Token && Device ID'
+            TextSettings.Font.Size = 12.500000000000000000
+            TextSettings.Trimming = None
+            XRadius = 12.000000000000000000
+            YRadius = 12.000000000000000000
+          end
+        end
+        object ListBoxItem6: TListBoxItem
+          Tag = 2
+          Selectable = False
+          ItemData.Detail = 'Get Permission'
+          Position.Y = 73.000000000000000000
+          Size.Width = 389.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object CornerButton5: TCornerButton
+            Align = Client
+            StyledSettings = [Family, Style, FontColor]
+            HitTest = False
+            Margins.Left = 12.000000000000000000
+            Margins.Top = 12.000000000000000000
+            Margins.Right = 12.000000000000000000
+            Margins.Bottom = 12.000000000000000000
+            Sides = [Top, Left, Bottom, Right]
+            Size.Width = 365.000000000000000000
+            Size.Height = 49.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btnMain'
+            TabOrder = 6
+            Text = 'Get Permission'
+            TextSettings.Font.Size = 12.500000000000000000
+            TextSettings.Trimming = None
+            XRadius = 12.000000000000000000
+            YRadius = 12.000000000000000000
+          end
+        end
+        object ListBoxItem2: TListBoxItem
+          Tag = 3
+          Selectable = False
+          ItemData.Detail = 'Get Permission Camera && Library'
+          Position.Y = 146.000000000000000000
+          Size.Width = 389.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          object CornerButton1: TCornerButton
+            Align = Client
+            StyledSettings = [Family, Style, FontColor]
+            HitTest = False
+            Margins.Left = 12.000000000000000000
+            Margins.Top = 12.000000000000000000
+            Margins.Right = 12.000000000000000000
+            Margins.Bottom = 12.000000000000000000
+            Sides = [Top, Left, Bottom, Right]
+            Size.Width = 365.000000000000000000
+            Size.Height = 49.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btnMain'
+            TabOrder = 6
+            Text = 'Get Permission Camera && Library'
+            TextSettings.Font.Size = 12.500000000000000000
+            TextSettings.Trimming = None
+            XRadius = 12.000000000000000000
+            YRadius = 12.000000000000000000
+          end
+        end
+        object ListBoxItem3: TListBoxItem
+          Tag = 4
+          Selectable = False
+          ItemData.Detail = 'Toast Message'
+          Position.Y = 219.000000000000000000
+          Size.Width = 389.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          object CornerButton2: TCornerButton
+            Align = Client
+            StyledSettings = [Family, Style, FontColor]
+            HitTest = False
+            Margins.Left = 12.000000000000000000
+            Margins.Top = 12.000000000000000000
+            Margins.Right = 12.000000000000000000
+            Margins.Bottom = 12.000000000000000000
+            Sides = [Top, Left, Bottom, Right]
+            Size.Width = 365.000000000000000000
+            Size.Height = 49.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btnMain'
+            TabOrder = 6
+            Text = 'Toast Message'
+            TextSettings.Font.Size = 12.500000000000000000
+            TextSettings.Trimming = None
+            XRadius = 12.000000000000000000
+            YRadius = 12.000000000000000000
+          end
+        end
+        object ListBoxItem4: TListBoxItem
+          Tag = 5
+          Selectable = False
+          ItemData.Detail = 'Popup Message'
+          Position.Y = 292.000000000000000000
+          Size.Width = 389.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object CornerButton3: TCornerButton
+            Align = Client
+            StyledSettings = [Family, Style, FontColor]
+            HitTest = False
+            Margins.Left = 12.000000000000000000
+            Margins.Top = 12.000000000000000000
+            Margins.Right = 12.000000000000000000
+            Margins.Bottom = 12.000000000000000000
+            Sides = [Top, Left, Bottom, Right]
+            Size.Width = 365.000000000000000000
+            Size.Height = 49.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btnMain'
+            TabOrder = 6
+            Text = 'Popup Message'
+            TextSettings.Font.Size = 12.500000000000000000
+            TextSettings.Trimming = None
+            XRadius = 12.000000000000000000
+            YRadius = 12.000000000000000000
+          end
+        end
+        object ListBoxItem5: TListBoxItem
+          Tag = 6
+          Selectable = False
+          ItemData.Detail = 'Move Frame'
+          Position.Y = 365.000000000000000000
+          Size.Width = 389.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object CornerButton4: TCornerButton
+            Align = Client
+            StyledSettings = [Family, Style, FontColor]
+            HitTest = False
+            Margins.Left = 12.000000000000000000
+            Margins.Top = 12.000000000000000000
+            Margins.Right = 12.000000000000000000
+            Margins.Bottom = 12.000000000000000000
+            Sides = [Top, Left, Bottom, Right]
+            Size.Width = 365.000000000000000000
+            Size.Height = 49.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btnMain'
+            TabOrder = 6
+            Text = 'Move Frame'
+            TextSettings.Font.Size = 12.500000000000000000
+            TextSettings.Trimming = None
+            XRadius = 12.000000000000000000
+            YRadius = 12.000000000000000000
+          end
+        end
+      end
+    end
+    object tiTokenDeviceID: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiTokenDeviceID'
+      object CornerButton6: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 12.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnMain'
+        TabOrder = 6
+        Text = 'Get Token && Device ID'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton6Click
+      end
+      object Memo1: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          'Check this before get token & id '
+          'https://www.youtube.com/watch?v=xYYPTN1E9wg&t=742s')
+        Align = Client
+        Margins.Left = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Size.Width = 369.000000000000000000
+        Size.Height = 471.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Viewport.Width = 365.000000000000000000
+        Viewport.Height = 467.000000000000000000
+      end
+    end
+    object tiPermission: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiPermission'
+      object CornerButton7: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 12.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnMain'
+        TabOrder = 6
+        Text = 'Get Permission'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton7Click
+      end
+      object Memo2: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Align = Client
+        Margins.Left = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Size.Width = 369.000000000000000000
+        Size.Height = 471.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Viewport.Width = 365.000000000000000000
+        Viewport.Height = 467.000000000000000000
+      end
+    end
+    object tiPermissionPhoto: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiPermissionPhoto'
+      object CornerButton8: TCornerButton
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 12.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 117.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnMain'
+        TabOrder = 7
+        Text = 'Camera'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton8Click
+      end
+      object Image1: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 12.000000000000000000
+        Position.Y = 113.000000000000000000
+        Size.Width = 369.000000000000000000
+        Size.Height = 96.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label1: TLabel
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 12.000000000000000000
+        Position.Y = 88.000000000000000000
+        Size.Width = 369.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Trimming = None
+        Text = 'From Camera'
+        TabOrder = 10
+      end
+      object Image2: TImage
+        MultiResBitmap = <
+          item
+          end>
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 12.000000000000000000
+        Position.Y = 249.000000000000000000
+        Size.Width = 369.000000000000000000
+        Size.Height = 96.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label2: TLabel
+        Anchors = [akLeft, akTop, akRight]
+        Position.X = 12.000000000000000000
+        Position.Y = 224.000000000000000000
+        Size.Width = 369.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Trimming = None
+        Text = 'From Library'
+        TabOrder = 9
+      end
+      object Memo3: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Lines.Strings = (
+          'English : '
+          
+            'If you are using Delphi 11 (Alexanderia) then you have to add th' +
+            'e unit in the sources -> libraries -> FMX.MediaLibrary.Android.p' +
+            'as folder'
+          'Steps:'
+          '1. Add sources -> libraries -> FMX.MediaLibrary.Android.pas'
+          '2. Open DPR File (right click on project -> view sources)'
+          
+            '3. Change / Add the code in the FMX.MediaLibrary.Android.pas uni' +
+            't section to become'
+          '   {$IF DEFINED (ANDROID)}'
+          
+            '   FMX.MediaLibrary.Android in '#39'sources\libraries\FMX.MediaLibra' +
+            'ry.Android.pas'#39','
+          '   {$ENDIF }'
+          '4. Don'#39't forget to revert the library'
+          ''
+          'Indonesia : '
+          
+            'Jika kamu menggunakan Delphi 11 (Alexanderia) maka kamu harus me' +
+            'nambahkan unit di folder sources -> libraries -> FMX.MediaLibrar' +
+            'y.Android.pas'
+          'Langkahnya : '
+          '1. Add sources -> libraries -> FMX.MediaLibrary.Android.pas'
+          '2. Open File DPR (klik kanan pada project -> view sources)'
+          
+            '3. Ubah / Tambahkan kode pada bagian unit FMX.MediaLibrary.Andro' +
+            'id.pas menjadi '
+          '  {$IF DEFINED (ANDROID)}'
+          
+            '  FMX.MediaLibrary.Android in '#39'sources\libraries\FMX.MediaLibrar' +
+            'y.Android.pas'#39','
+          '  {$ENDIF }'
+          '4. Jangan lupa untuk melakukan revert library')
+        ReadOnly = True
+        TextSettings.WordWrap = True
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Position.X = 12.000000000000000000
+        Position.Y = 368.000000000000000000
+        Size.Width = 369.000000000000000000
+        Size.Height = 157.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 12
+        Viewport.Width = 349.000000000000000000
+        Viewport.Height = 153.000000000000000000
+      end
+      object CornerButton18: TCornerButton
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 140.000000000000000000
+        Position.Y = 12.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 117.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnMain'
+        TabOrder = 6
+        Text = 'Library'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton18Click
+      end
+    end
+    object tiToastMessage: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiToastMessage'
+      object CornerButton9: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 12.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnGreen'
+        TabOrder = 8
+        Text = 'Toast Message Success'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton9Click
+      end
+      object CornerButton10: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 150.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnGray'
+        TabOrder = 7
+        Text = 'Toast Message Information'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton10Click
+      end
+      object CornerButton11: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 81.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnRed'
+        TabOrder = 6
+        Text = 'Toast Message Error'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton11Click
+      end
+    end
+    object tiPopupMessage: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiPopupMessage'
+      object CornerButton12: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 150.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnGray'
+        TabOrder = 7
+        Text = 'Popup Message Information'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton12Click
+      end
+      object CornerButton13: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 81.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnRed'
+        TabOrder = 6
+        Text = 'Popup Message Error'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton13Click
+      end
+      object CornerButton14: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 12.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnGreen'
+        TabOrder = 8
+        Text = 'Popup Message Success'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton14Click
+      end
+    end
+    object tiMoveFrame: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiMoveFrame'
+      object CornerButton15: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 12.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnMain'
+        TabOrder = 8
+        Text = 'ACCOUNT'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton15Click
+      end
+      object CornerButton16: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 81.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnMain'
+        TabOrder = 7
+        Text = 'FAVORITE'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton16Click
+      end
+      object CornerButton17: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 150.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnMain'
+        TabOrder = 6
+        Text = 'DETAIL'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton17Click
+      end
+    end
+  end
+  object AL: TActionList
+    Left = 288
+    Top = 24
+    object cta0: TChangeTabAction
+      Category = 'Tab'
+    end
+    object cta1: TChangeTabAction
+      Category = 'Tab'
+    end
+    object cta2: TChangeTabAction
+      Category = 'Tab'
+    end
+    object tpLibrary: TTakePhotoFromLibraryAction
+      Category = 'Media Library'
+      OnDidFinishTaking = tpLibraryDidFinishTaking
+    end
+    object tpCamera: TTakePhotoFromCameraAction
+      Category = 'Media Library'
+      OnDidFinishTaking = tpCameraDidFinishTaking
+    end
+  end
+end
