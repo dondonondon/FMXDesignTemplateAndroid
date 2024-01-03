@@ -7,7 +7,7 @@ uses
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading,
   FMX.Effects, FMX.Edit, FMX.MediaLibrary.Actions, FMX.StdActns, System.Actions,
-  FMX.ActnList, FMX.TabControl
+  FMX.ActnList, FMX.TabControl, FMX.MediaLibrary, BFA.Control.Form.Message
   {$IF DEFINED (ANDROID)}
   , Androidapi.Helpers, Androidapi.JNI.Os, Androidapi.JNI.JavaTypes
   {$ENDIF}
@@ -39,6 +39,7 @@ type
   public
   published
     procedure Show;
+    procedure Back;
 
     constructor Create(AOwner : TComponent); override;
   end;
@@ -50,10 +51,16 @@ implementation
 
 {$R *.fmx}
 
-uses frMain, BFA.Permission;
+uses frMain;
 
 
 { TFLogin }
+
+procedure TFLogin.Back;
+begin
+  FMain.Frame.Back;
+//  if FMain.Frame.Back then Application.Terminate;
+end;
 
 procedure TFLogin.btnMasukClick(Sender: TObject);
 begin

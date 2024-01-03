@@ -4907,6 +4907,7 @@ object FLoading: TFLoading
     object Label1: TLabel
       Anchors = [akLeft, akRight, akBottom]
       StyledSettings = [Family]
+      HitTest = True
       Position.X = 117.000000000000000000
       Position.Y = 656.000000000000000000
       Size.Width = 125.000000000000000000
@@ -4919,6 +4920,7 @@ object FLoading: TFLoading
       TextSettings.Trimming = None
       Text = 'LOADING'
       TabOrder = 4
+      OnClick = Label1Click
     end
     object faOpa: TFloatAnimation
       Duration = 0.750000000000000000

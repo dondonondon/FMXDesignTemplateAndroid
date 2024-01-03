@@ -5,7 +5,10 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, FMX.Effects, FMX.Ani, System.Threading;
+  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, FMX.Effects, FMX.Ani, System.Threading,
+  BFA.Control.Form.Message, BFA.Control.Frame, BFA.Control.Keyboard,
+  BFA.Control.Permission, BFA.Control.PushNotification, BFA.Global.Func,
+  BFA.Global.Variable, BFA.Helper.Main, BFA.Helper.TFDMemTable;
 
 type
   TFLoading = class(TFrame)
@@ -24,6 +27,7 @@ type
     faOpa: TFloatAnimation;
     procedure tiMoveTimer(Sender: TObject);
     procedure faOpaFinish(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
   private
   public
   published
@@ -39,8 +43,7 @@ implementation
 
 {$R *.fmx}
 
-uses BFA.Form.Message, BFA.Frame, BFA.Keyboard, BFA.Permission,
-  BFA.PushNotification, frMain;
+uses frMain;
 
 constructor TFLoading.Create(AOwner: TComponent);
 begin
@@ -52,6 +55,11 @@ procedure TFLoading.faOpaFinish(Sender: TObject);
 begin
   TFloatAnimation(Sender).Enabled := False;
   tiMove.Enabled := True;
+end;
+
+procedure TFLoading.Label1Click(Sender: TObject);
+begin
+  ShowMessage(TFLoading.ClassName);
 end;
 
 procedure TFLoading.Show;

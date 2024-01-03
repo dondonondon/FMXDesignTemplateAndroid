@@ -520,7 +520,15 @@ object FMain: TFMain
           74796C6531155465787453657474696E67732E5472696D6D696E6707044E6F6E
           650756697369626C6508000000}
       end>
-    Left = 40
-    Top = 168
+    Left = 64
+    Top = 528
+  end
+  object loTest: TLayout
+    Align = Contents
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 2
   end
 end
