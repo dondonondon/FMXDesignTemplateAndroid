@@ -54,7 +54,7 @@ uses
 function TFMain.AppEventProc(AAppEvent: TApplicationEvent;
   AContext: TObject): Boolean;
 begin
-  FNotification.AppEventProc(AAppEvent, AContext);
+//  FNotification.AppEventProc(AAppEvent, AContext);
 
   if (AAppEvent = TApplicationEvent.BecameActive) then begin
     //your code here
@@ -107,7 +107,7 @@ end;
 
 procedure TFMain.FormShow(Sender: TObject);
 begin
-  FNotification.ServiceConnectionStatus(True);
+//  FNotification.ServiceConnectionStatus(True);
 
   Frame.GoFrame(C_LOADING);
 end;

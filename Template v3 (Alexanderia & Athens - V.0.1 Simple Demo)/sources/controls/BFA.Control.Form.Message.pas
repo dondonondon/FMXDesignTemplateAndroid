@@ -70,13 +70,13 @@ begin
   loToast := TLayout(TControl(Sender).Parent);
   if Assigned(loToast) then begin
     lo := TLayout(loToast.FindStyleResource('loToast'));
-    loToast.Parent := nil;
+//    loToast.Parent := nil;
 
     FListTemporaryToast.Add(loToast);
 
-    if Assigned(lo) then
-      if lo.ControlsCount = 0 then
-        lo.DisposeOf;
+//    if Assigned(lo) then
+//      if lo.ControlsCount = 0 then
+//        lo.DisposeOf;
   end;
 end;
 
@@ -402,6 +402,8 @@ begin
   loPop.Height := LStatus.Height + LMessage.Height + 20;
 
   LClick.OnClick := defClickToast;
+
+  LClick.Visible := False; //hide because error
 
   var FLOpa : TFloatAnimation;
   FLOpa := TFloatAnimation.Create(loPop);

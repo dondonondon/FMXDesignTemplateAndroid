@@ -61,7 +61,7 @@ end;
 class procedure TInitControls.InitFunction;
 begin
   InitKeyboard;
-  InitPushNotification;
+//  InitPushNotification;
   InitToastMessage; //init before Initframe
   InitFrame;
 end;

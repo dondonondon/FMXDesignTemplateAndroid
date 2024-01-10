@@ -5,15 +5,14 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
-  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading;
+  FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading,
+  FMX.Edit;
 
 type
   TFTemp = class(TFrame)
     loMain: TLayout;
     background: TRectangle;
-    Label1: TLabel;
-    CornerButton1: TCornerButton;
-    procedure CornerButton1Click(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
   private
   public
   published
@@ -42,15 +41,15 @@ begin
   Frame.Back;
 end;
 
-procedure TFTemp.CornerButton1Click(Sender: TObject);
-begin
-  Back;
-end;
-
 constructor TFTemp.Create(AOwner: TComponent);
 begin
   inherited;
 
+end;
+
+procedure TFTemp.Label1Click(Sender: TObject);
+begin
+  Frame.GoFrame(C_HOME);
 end;
 
 procedure TFTemp.Show;

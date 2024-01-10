@@ -3,12 +3,9 @@ program prjTemplateV3;
 uses
   System.StartUpCopy,
   FMX.Forms,
-//  {$IF DEFINED (ANDROID)}
-//  FMX.MediaLibrary.Android in 'sources\libraries\FMX.MediaLibrary.Android.pas',
-//  {$ENDIF }
+  FMX.Skia,
   frMain in 'frMain.pas' {FMain},
   frLoading in 'frames\frLoading.pas' {FLoading: TFrame},
-  frLogin in 'frames\frLogin.pas' {FLogin: TFrame},
   frHome in 'frames\frHome.pas' {FHome: TFrame},
   uDM in 'uDM.pas' {DM: TDataModule},
   BFA.Global.Variable in 'sources\BFA.Global.Variable.pas',
@@ -24,6 +21,7 @@ uses
   frAccount in 'frames\frAccount.pas' {FAccount: TFrame},
   frFavorite in 'frames\frFavorite.pas' {FFavorite: TFrame},
   frDetail in 'frames\frDetail.pas' {FDetail: TFrame},
+  frLogin in 'frames\frLogin.pas' {FLogin: TFrame},
   frTemp in 'frames\frTemp.pas' {FTemp: TFrame};
 
 //  {$IF DEFINED (ANDROID)}
@@ -33,6 +31,7 @@ uses
 {$R *.res}
 
 begin
+  GlobalUseSkia := True;
   ReportMemoryLeaksOnShutdown := True;
 
   Application.Initialize;

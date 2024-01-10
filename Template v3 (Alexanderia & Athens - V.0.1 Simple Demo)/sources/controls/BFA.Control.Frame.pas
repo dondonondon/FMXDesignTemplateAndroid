@@ -82,6 +82,7 @@ var
   LFrame : TControl;
 begin
   try
+
     LFrame := GetControlFromList(FFrame.ClassName);
 
     if Assigned(FControl) then begin
@@ -108,6 +109,7 @@ begin
         ShowFrame(LFrame);
 
     end else begin
+
       ShowFrame(LFrame);
     end;
 
@@ -116,7 +118,8 @@ begin
     FControl := LFrame;
   except
     on E : Exception do
-      raise Exception.Create(E.Message);
+      MainHelper.ShowToastMessage(E.Message);
+//      raise Exception.Create(E.Message);
   end;
 end;
 

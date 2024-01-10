@@ -424,28 +424,5 @@ object FTemp: TFTemp
     Size.Height = 720.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    object Label1: TLabel
-      Align = Center
-      StyledSettings = [Family, Style, FontColor]
-      Size.Width = 169.000000000000000000
-      Size.Height = 105.000000000000000000
-      Size.PlatformDefault = False
-      TextSettings.Font.Size = 15.000000000000000000
-      TextSettings.HorzAlign = Center
-      TextSettings.Trimming = None
-      Text = 'FRAME ACCOUNT'
-      TabOrder = 0
-    end
-    object CornerButton1: TCornerButton
-      Position.X = 8.000000000000000000
-      Position.Y = 8.000000000000000000
-      Sides = [Top, Left, Bottom, Right]
-      TabOrder = 2
-      Text = 'back'
-      TextSettings.Trimming = None
-      XRadius = 3.000000000000000000
-      YRadius = 3.000000000000000000
-      OnClick = CornerButton1Click
-    end
   end
 end

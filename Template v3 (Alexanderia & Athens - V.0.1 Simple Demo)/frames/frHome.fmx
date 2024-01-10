@@ -98,6 +98,8 @@ object FHome: TFHome
       StyleLookup = ''
       TabOrder = 0
       Text = 'tiMenu'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object lbMenu: TListBox
         Align = Client
         Size.Width = 393.000000000000000000
@@ -305,6 +307,8 @@ object FHome: TFHome
       StyleLookup = ''
       TabOrder = 0
       Text = 'tiTokenDeviceID'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object CornerButton6: TCornerButton
         Align = Top
         StyledSettings = [Family, Style, FontColor]
@@ -341,8 +345,8 @@ object FHome: TFHome
         Size.Height = 471.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 7
-        Viewport.Width = 365.000000000000000000
-        Viewport.Height = 467.000000000000000000
+        Viewport.Width = 369.000000000000000000
+        Viewport.Height = 471.000000000000000000
       end
     end
     object tiPermission: TTabItem
@@ -357,6 +361,8 @@ object FHome: TFHome
       StyleLookup = ''
       TabOrder = 0
       Text = 'tiPermission'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object CornerButton7: TCornerButton
         Align = Top
         StyledSettings = [Family, Style, FontColor]
@@ -390,8 +396,8 @@ object FHome: TFHome
         Size.Height = 471.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 7
-        Viewport.Width = 365.000000000000000000
-        Viewport.Height = 467.000000000000000000
+        Viewport.Width = 369.000000000000000000
+        Viewport.Height = 471.000000000000000000
       end
     end
     object tiPermissionPhoto: TTabItem
@@ -406,6 +412,8 @@ object FHome: TFHome
       StyleLookup = ''
       TabOrder = 0
       Text = 'tiPermissionPhoto'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object CornerButton8: TCornerButton
         StyledSettings = [Family, Style, FontColor]
         Margins.Left = 12.000000000000000000
@@ -519,8 +527,8 @@ object FHome: TFHome
         Size.Height = 157.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 12
-        Viewport.Width = 349.000000000000000000
-        Viewport.Height = 153.000000000000000000
+        Viewport.Width = 369.000000000000000000
+        Viewport.Height = 157.000000000000000000
       end
       object CornerButton18: TCornerButton
         StyledSettings = [Family, Style, FontColor]
@@ -556,6 +564,8 @@ object FHome: TFHome
       StyleLookup = ''
       TabOrder = 0
       Text = 'tiToastMessage'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object CornerButton9: TCornerButton
         Align = Top
         StyledSettings = [Family, Style, FontColor]
@@ -635,6 +645,8 @@ object FHome: TFHome
       StyleLookup = ''
       TabOrder = 0
       Text = 'tiPopupMessage'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object CornerButton12: TCornerButton
         Align = Top
         StyledSettings = [Family, Style, FontColor]
@@ -714,6 +726,8 @@ object FHome: TFHome
       StyleLookup = ''
       TabOrder = 0
       Text = 'tiMoveFrame'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object CornerButton15: TCornerButton
         Align = Top
         StyledSettings = [Family, Style, FontColor]

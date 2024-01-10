@@ -1,66 +1,12 @@
 object TStyleContainer
   object TLayout
-    StyleName = 'btnGray'
-    Align = Center
-    Size.Width = 80.000000000000000000
-    Size.Height = 22.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 86
-    object TRectangle
-      StyleName = 'background'
-      Align = Contents
-      Fill.Color = xFFBCBFC2
-      Locked = True
-      HitTest = False
-      Size.Width = 80.000000000000000000
-      Size.Height = 22.000000000000000000
-      Size.PlatformDefault = False
-      Stroke.Kind = None
-      object TInnerGlowEffect
-        Softness = 0.400000005960464500
-        GlowColor = xFF4F4848
-        Opacity = 0.899999976158142100
-        Trigger = 'IsPressed=true'
-        Enabled = False
-      end
-    end
-    object TGlyph
-      StyleName = 'glyphstyle'
-      Margins.Left = 2.000000000000000000
-      Margins.Top = 4.000000000000000000
-      Margins.Right = 2.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Align = Left
-      Position.X = 2.000000000000000000
-      Position.Y = 4.000000000000000000
-      Size.Width = 16.000000000000000000
-      Size.Height = 16.000000000000000000
-      Size.PlatformDefault = False
-    end
-    object TText
-      StyleName = 'text'
-      Align = Client
-      Locked = True
-      HitTest = False
-      Margins.Left = 5.000000000000000000
-      Margins.Top = 2.000000000000000000
-      Margins.Right = 5.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Size.Width = 50.000000000000000000
-      Size.Height = 18.000000000000000000
-      Size.PlatformDefault = False
-      Text = 'Text'
-      TextSettings.FontColor = claWhite
-      TextSettings.WordWrap = False
-    end
-  end
-  object TLayout
     StyleName = 'btnGreen'
     Align = Center
     Size.Width = 80.000000000000000000
     Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 75
+    Visible = False
+    TabOrder = 73
     object TRectangle
       StyleName = 'background'
       Align = Contents
@@ -86,8 +32,6 @@ object TStyleContainer
       Margins.Right = 2.000000000000000000
       Margins.Bottom = 2.000000000000000000
       Align = Left
-      Position.X = 2.000000000000000000
-      Position.Y = 4.000000000000000000
       Size.Width = 16.000000000000000000
       Size.Height = 16.000000000000000000
       Size.PlatformDefault = False
@@ -101,7 +45,7 @@ object TStyleContainer
       Margins.Top = 2.000000000000000000
       Margins.Right = 5.000000000000000000
       Margins.Bottom = 2.000000000000000000
-      Size.Width = 50.000000000000000000
+      Size.Width = 70.000000000000000000
       Size.Height = 18.000000000000000000
       Size.PlatformDefault = False
       TextSettings.FontColor = claWhite
@@ -114,6 +58,7 @@ object TStyleContainer
     Size.Width = 80.000000000000000000
     Size.Height = 50.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     TabOrder = 8
     object TRectangle
       StyleName = 'background'
@@ -154,8 +99,8 @@ object TStyleContainer
       Margins.Right = 4.000000000000000000
       Margins.Bottom = 4.000000000000000000
       Align = Client
-      Size.Width = 72.000000000000000000
-      Size.Height = 42.000000000000000000
+      Size.Width = 76.000000000000000000
+      Size.Height = 46.000000000000000000
       Size.PlatformDefault = False
     end
     object TText
@@ -176,112 +121,78 @@ object TStyleContainer
     end
   end
   object TLayout
-    StyleName = 'btnMain'
+    StyleName = 'edMain'
     Align = Center
-    Size.Width = 80.000000000000000000
-    Size.Height = 22.000000000000000000
+    Size.Width = 286.000000000000000000
+    Size.Height = 38.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 85
+    Visible = False
+    TabOrder = 13
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Color = xFF3DBFC7
+      Fill.Color = claWhite
       Locked = True
       HitTest = False
-      Size.Width = 80.000000000000000000
-      Size.Height = 22.000000000000000000
+      Size.Width = 286.000000000000000000
+      Size.Height = 38.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Kind = None
-      object TInnerGlowEffect
-        Softness = 0.400000005960464500
-        GlowColor = xFF4F4848
-        Opacity = 0.899999976158142100
-        Trigger = 'IsPressed=true'
-        Enabled = False
+      Stroke.Color = xFFEDEDED
+      XRadius = 8.000000000000000000
+      YRadius = 8.000000000000000000
+      object TColorAnimation
+        StyleName = 'caBackground'
+        Duration = 0.200000002980232200
+        PropertyName = 'Stroke.Color'
+        StartValue = xFFEDEDED
+        StopValue = xFF1E1F58
+        Trigger = 'IsFocused=true'
+        TriggerInverse = 'IsFocused=false'
       end
     end
-    object TGlyph
-      StyleName = 'glyphstyle'
-      Margins.Left = 2.000000000000000000
-      Margins.Top = 4.000000000000000000
-      Margins.Right = 2.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Align = Left
-      Position.X = 2.000000000000000000
-      Position.Y = 4.000000000000000000
-      Size.Width = 16.000000000000000000
-      Size.Height = 16.000000000000000000
-      Size.PlatformDefault = False
-    end
-    object TText
-      StyleName = 'text'
+    object TLayout
+      StyleName = 'content'
       Align = Client
       Locked = True
-      HitTest = False
-      Margins.Left = 5.000000000000000000
-      Margins.Top = 2.000000000000000000
-      Margins.Right = 5.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Size.Width = 50.000000000000000000
-      Size.Height = 18.000000000000000000
+      Margins.Left = 8.000000000000000000
+      Margins.Top = 3.000000000000000000
+      Margins.Right = 8.000000000000000000
+      Margins.Bottom = 3.000000000000000000
+      Size.Width = 218.000000000000000000
+      Size.Height = 32.000000000000000000
       Size.PlatformDefault = False
-      TextSettings.FontColor = claWhite
-      TextSettings.WordWrap = False
     end
-  end
-  object TLayout
-    StyleName = 'btnRed'
-    Align = Center
-    Size.Width = 80.000000000000000000
-    Size.Height = 22.000000000000000000
-    Size.PlatformDefault = False
-    TabOrder = 87
-    object TRectangle
-      StyleName = 'background'
-      Align = Contents
-      Fill.Color = xFFFF6969
+    object TLayout
+      StyleName = 'buttons'
+      Align = Right
       Locked = True
-      HitTest = False
-      Size.Width = 80.000000000000000000
-      Size.Height = 22.000000000000000000
-      Size.PlatformDefault = False
-      Stroke.Kind = None
-      object TInnerGlowEffect
-        Softness = 0.400000005960464500
-        GlowColor = xFF4F4848
-        Opacity = 0.899999976158142100
-        Trigger = 'IsPressed=true'
-        Enabled = False
-      end
-    end
-    object TGlyph
-      StyleName = 'glyphstyle'
-      Margins.Left = 2.000000000000000000
-      Margins.Top = 4.000000000000000000
+      Margins.Top = 2.000000000000000000
       Margins.Right = 2.000000000000000000
       Margins.Bottom = 2.000000000000000000
-      Align = Left
-      Position.X = 2.000000000000000000
-      Position.Y = 4.000000000000000000
-      Size.Width = 16.000000000000000000
-      Size.Height = 16.000000000000000000
+      Position.X = 234.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 34.000000000000000000
       Size.PlatformDefault = False
     end
-    object TText
-      StyleName = 'text'
-      Align = Client
+    object TBrushObject
+      StyleName = 'foreground'
+      Brush.Color = claBlack
+    end
+    object TBrushObject
+      StyleName = 'selection'
+      Brush.Color = x7F2A96FF
+    end
+    object TFontObject
+      StyleName = 'font'
+    end
+    object TLabel
+      StyleName = 'prompt'
       Locked = True
-      HitTest = False
-      Margins.Left = 5.000000000000000000
-      Margins.Top = 2.000000000000000000
-      Margins.Right = 5.000000000000000000
-      Margins.Bottom = 2.000000000000000000
-      Size.Width = 50.000000000000000000
-      Size.Height = 18.000000000000000000
-      Size.PlatformDefault = False
-      Text = 'Text'
-      TextSettings.FontColor = claWhite
-      TextSettings.WordWrap = False
+      Opacity = 0.500000000000000000
+      StyleLookup = 'Edit1Style1LabelStyle1'
+      TextSettings.Trimming = None
+      Visible = False
     end
   end
   object TLayout
@@ -290,6 +201,7 @@ object TStyleContainer
     Size.Width = 286.000000000000000000
     Size.Height = 38.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     TabOrder = 12
     object TRectangle
       StyleName = 'background'
@@ -359,77 +271,170 @@ object TStyleContainer
     end
   end
   object TLayout
-    StyleName = 'edMain'
+    StyleName = 'btnRed'
     Align = Center
-    Size.Width = 286.000000000000000000
-    Size.Height = 38.000000000000000000
+    Size.Width = 80.000000000000000000
+    Size.Height = 22.000000000000000000
     Size.PlatformDefault = False
-    TabOrder = 13
+    Visible = False
+    TabOrder = 87
     object TRectangle
       StyleName = 'background'
       Align = Contents
-      Fill.Color = claWhite
+      Fill.Color = xFFFF6969
       Locked = True
       HitTest = False
-      Size.Width = 286.000000000000000000
-      Size.Height = 38.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 22.000000000000000000
       Size.PlatformDefault = False
-      Stroke.Color = xFFEDEDED
-      XRadius = 8.000000000000000000
-      YRadius = 8.000000000000000000
-      object TColorAnimation
-        StyleName = 'caBackground'
-        Duration = 0.200000002980232200
-        PropertyName = 'Stroke.Color'
-        StartValue = xFFEDEDED
-        StopValue = xFF1E1F58
-        Trigger = 'IsFocused=true'
-        TriggerInverse = 'IsFocused=false'
+      Stroke.Kind = None
+      object TInnerGlowEffect
+        Softness = 0.400000005960464500
+        GlowColor = xFF4F4848
+        Opacity = 0.899999976158142100
+        Trigger = 'IsPressed=true'
+        Enabled = False
       end
     end
-    object TLayout
-      StyleName = 'content'
-      Align = Client
-      Locked = True
-      Margins.Left = 8.000000000000000000
-      Margins.Top = 3.000000000000000000
-      Margins.Right = 8.000000000000000000
-      Margins.Bottom = 3.000000000000000000
-      Size.Width = 218.000000000000000000
-      Size.Height = 32.000000000000000000
-      Size.PlatformDefault = False
-    end
-    object TLayout
-      StyleName = 'buttons'
-      Align = Right
-      Locked = True
-      Margins.Top = 2.000000000000000000
+    object TGlyph
+      StyleName = 'glyphstyle'
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 4.000000000000000000
       Margins.Right = 2.000000000000000000
       Margins.Bottom = 2.000000000000000000
-      Position.X = 234.000000000000000000
-      Position.Y = 2.000000000000000000
-      Size.Width = 50.000000000000000000
-      Size.Height = 34.000000000000000000
+      Align = Left
+      Position.X = 2.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 16.000000000000000000
+      Size.Height = 16.000000000000000000
       Size.PlatformDefault = False
     end
-    object TBrushObject
-      StyleName = 'foreground'
-      Brush.Color = claBlack
-    end
-    object TBrushObject
-      StyleName = 'selection'
-      Brush.Color = x7F2A96FF
-    end
-    object TFontObject
-      StyleName = 'font'
-    end
-    object TLabel
-      StyleName = 'prompt'
+    object TText
+      StyleName = 'text'
+      Align = Client
       Locked = True
-      Opacity = 0.500000000000000000
-      StyleLookup = 'Edit1Style1LabelStyle1'
-      TextSettings.Trimming = None
-      Visible = False
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 70.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Text'
+      TextSettings.FontColor = claWhite
+      TextSettings.WordWrap = False
+    end
+  end
+  object TLayout
+    StyleName = 'btnGray'
+    Align = Center
+    Size.Width = 80.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 86
+    object TRectangle
+      StyleName = 'background'
+      Align = Contents
+      Fill.Color = xFFBCBFC2
+      Locked = True
+      HitTest = False
+      Size.Width = 80.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object TInnerGlowEffect
+        Softness = 0.400000005960464500
+        GlowColor = xFF4F4848
+        Opacity = 0.899999976158142100
+        Trigger = 'IsPressed=true'
+        Enabled = False
+      end
+    end
+    object TGlyph
+      StyleName = 'glyphstyle'
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Align = Left
+      Position.X = 2.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 16.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object TText
+      StyleName = 'text'
+      Align = Client
+      Locked = True
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 70.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Text'
+      TextSettings.FontColor = claWhite
+      TextSettings.WordWrap = False
+    end
+  end
+  object TLayout
+    StyleName = 'btnMain'
+    Align = Center
+    Size.Width = 80.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 85
+    object TRectangle
+      StyleName = 'background'
+      Align = Contents
+      Fill.Color = xFF3DBFC7
+      Locked = True
+      HitTest = False
+      Size.Width = 80.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      object TInnerGlowEffect
+        Softness = 0.400000005960464500
+        GlowColor = xFF4F4848
+        Opacity = 0.899999976158142100
+        Trigger = 'IsPressed=true'
+        Enabled = False
+      end
+    end
+    object TGlyph
+      StyleName = 'glyphstyle'
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Align = Left
+      Position.X = 2.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 16.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object TText
+      StyleName = 'text'
+      Align = Client
+      Locked = True
+      HitTest = False
+      Margins.Left = 5.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 5.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 70.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claWhite
+      TextSettings.WordWrap = False
     end
   end
 end
