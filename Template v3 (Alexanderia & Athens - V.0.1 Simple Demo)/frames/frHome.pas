@@ -8,7 +8,9 @@ uses
   FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading,
   FMX.Effects, FMX.Edit, FMX.MediaLibrary.Actions, FMX.StdActns, System.Actions,
   FMX.ActnList, FMX.TabControl, FMX.MediaLibrary, FMX.Memo.Types, FMX.ScrollBox,
-  FMX.Memo, FMX.ListBox
+  FMX.Memo, FMX.ListBox, REST.Types, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client
   {$IF DEFINED (ANDROID)}
   , Androidapi.Helpers, Androidapi.JNI.Os, Androidapi.JNI.JavaTypes
   {$ENDIF}
@@ -69,6 +71,15 @@ type
     CornerButton16: TCornerButton;
     CornerButton17: TCornerButton;
     CornerButton18: TCornerButton;
+    tiRest: TTabItem;
+    btnGet: TCornerButton;
+    memRest: TMemo;
+    btnPost: TCornerButton;
+    btnBody: TCornerButton;
+    ListBoxItem7: TListBoxItem;
+    CornerButton19: TCornerButton;
+    QData: TFDMemTable;
+    QSubData: TFDMemTable;
     procedure btnBackClick(Sender: TObject);
     procedure lbMenuItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
@@ -87,6 +98,9 @@ type
     procedure CornerButton16Click(Sender: TObject);
     procedure CornerButton17Click(Sender: TObject);
     procedure CornerButton18Click(Sender: TObject);
+    procedure btnGetClick(Sender: TObject);
+    procedure btnPostClick(Sender: TObject);
+    procedure btnBodyClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -100,6 +114,9 @@ type
 
 var FHome : TFHome;
 
+const
+  COBASEURL = 'http://localhost:8080/API/APITemplateV3/';
+
 implementation
 
 {$R *.fmx}
@@ -107,7 +124,7 @@ implementation
 uses frMain, BFA.Global.Variable,
   BFA.Control.Form.Message, BFA.Control.Frame, BFA.Control.Keyboard,
   BFA.Control.Permission, BFA.Control.PushNotification, BFA.Global.Func,
-  BFA.Helper.Main, BFA.Helper.TFDMemTable;
+  BFA.Helper.Main, BFA.Helper.TFDMemTable, BFA.Control.Rest;
 
 procedure TFHome.Back;
 begin
@@ -122,6 +139,97 @@ end;
 procedure TFHome.btnBackClick(Sender: TObject);
 begin
   Back;
+end;
+
+procedure TFHome.btnBodyClick(Sender: TObject);
+var
+  Rest : TRequestAPI;
+begin
+  Rest := TRequestAPI.Create;
+  try
+    var FValue :=
+      '{'#13 +
+      '"data1": "Hello world",'#13 +
+      '"data2": "testing data values"'#13 +
+      '}';
+
+    Rest.URL := COBASEURL + 'sample_body.php';
+    Rest.Method := TRESTRequestMethod.rmPOST;
+    Rest.Data := QData;
+
+    Rest.AddBody(FValue, TRESTContentType.ctAPPLICATION_JSON);
+
+    Rest.Execute(True);
+
+    memRest.Lines.Clear;
+    memRest.Lines.Add('Status Code : ' + Rest.StatusCode.ToString);
+    memRest.Lines.Add(Rest.Content);
+    memRest.Lines.Add('=================');
+    memRest.Lines.Add('status : ' + QData.FieldByName('status').AsString);
+    memRest.Lines.Add('messages : ' + QData.FieldByName('messages').AsString);
+
+    QSubData.FillDataFromString(QData.FieldByName('messages').AsString, False);
+    if QSubData.IsEmpty then Exit;
+
+    memRest.Lines.Add('=================');
+    memRest.Lines.Add('data1 : ' + QSubData.FieldByName('data1').AsString);
+    memRest.Lines.Add('data2 : ' + QSubData.FieldByName('data2').AsString);
+
+  finally
+    Rest.DisposeOf;
+  end;
+end;
+
+procedure TFHome.btnGetClick(Sender: TObject);
+var
+  Rest : TRequestAPI;
+begin
+  Rest := TRequestAPI.Create;
+  try
+    var FValue := 'Hello world from Blangkon FA';
+    var FParams := 'value=' + FValue;
+    Rest.URL := COBASEURL + 'sample_get.php?' + FParams;
+    Rest.Method := TRESTRequestMethod.rmGET;
+    Rest.Data := QData;
+
+    Rest.Execute(True);
+
+    memRest.Lines.Clear;
+    memRest.Lines.Add('Status Code : ' + Rest.StatusCode.ToString);
+    memRest.Lines.Add(Rest.Content);
+    memRest.Lines.Add('=================');
+    memRest.Lines.Add('status : ' + QData.FieldByName('status').AsString);
+    memRest.Lines.Add('messages : ' + QData.FieldByName('messages').AsString);
+  finally
+    Rest.DisposeOf;
+  end;
+end;
+
+procedure TFHome.btnPostClick(Sender: TObject);
+var
+  Rest : TRequestAPI;
+begin
+  Rest := TRequestAPI.Create;
+  try
+    var FValue := 'Hello world from Blangkon FA';
+
+    Rest.URL := COBASEURL + 'sample_post.php';
+    Rest.Method := TRESTRequestMethod.rmPOST;
+    Rest.Data := QData;
+
+    Rest.AddParameter('value', FValue);
+
+    Rest.Execute(True);
+
+    memRest.Lines.Clear;
+    memRest.Lines.Add('Status Code : ' + Rest.StatusCode.ToString);
+    memRest.Lines.Add(Rest.Content);
+    memRest.Lines.Add('=================');
+    memRest.Lines.Add('status : ' + QData.FieldByName('status').AsString);
+    memRest.Lines.Add('messages : ' + QData.FieldByName('messages').AsString);
+  finally
+    Rest.DisposeOf;
+  end;
 end;
 
 procedure TFHome.CornerButton10Click(Sender: TObject);

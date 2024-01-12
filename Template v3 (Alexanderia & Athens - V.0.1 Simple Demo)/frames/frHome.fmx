@@ -68,10 +68,12 @@ object FHome: TFHome
     Size.Width = 393.000000000000000000
     Size.Height = 552.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 5
     TabPosition = None
     Sizes = (
+      393s
+      552s
       393s
       552s
       393s
@@ -91,7 +93,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -121,7 +123,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 6
           object btnMasuk: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -181,7 +183,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 5
           object CornerButton1: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -211,7 +213,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           object CornerButton2: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -241,7 +243,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 2
+          TabOrder = 3
           object CornerButton3: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -271,7 +273,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 1
+          TabOrder = 2
           object CornerButton4: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -293,6 +295,36 @@ object FHome: TFHome
             YRadius = 12.000000000000000000
           end
         end
+        object ListBoxItem7: TListBoxItem
+          Tag = 7
+          Selectable = False
+          ItemData.Detail = 'REST API (GET, POST, BODY)'
+          Position.Y = 438.000000000000000000
+          Size.Width = 389.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object CornerButton19: TCornerButton
+            Align = Client
+            StyledSettings = [Family, Style, FontColor]
+            HitTest = False
+            Margins.Left = 12.000000000000000000
+            Margins.Top = 12.000000000000000000
+            Margins.Right = 12.000000000000000000
+            Margins.Bottom = 12.000000000000000000
+            Sides = [Top, Left, Bottom, Right]
+            Size.Width = 365.000000000000000000
+            Size.Height = 49.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btnMain'
+            TabOrder = 7
+            Text = 'REST API (GET, POST, BODY)'
+            TextSettings.Font.Size = 12.500000000000000000
+            TextSettings.Trimming = None
+            XRadius = 12.000000000000000000
+            YRadius = 12.000000000000000000
+          end
+        end
       end
     end
     object tiTokenDeviceID: TTabItem
@@ -300,7 +332,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -795,6 +827,75 @@ object FHome: TFHome
         OnClick = CornerButton17Click
       end
     end
+    object tiRest: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiRest'
+      object btnGet: TCornerButton
+        Position.X = 8.000000000000000000
+        Position.Y = 8.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 80.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'GET'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnGetClick
+      end
+      object memRest: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        TextSettings.WordWrap = True
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Position.X = 8.000000000000000000
+        Position.Y = 49.000000000000000000
+        Size.Width = 377.000000000000000000
+        Size.Height = 488.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Viewport.Width = 373.000000000000000000
+        Viewport.Height = 484.000000000000000000
+      end
+      object btnPost: TCornerButton
+        Position.X = 96.000000000000000000
+        Position.Y = 8.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 80.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'POST'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnPostClick
+      end
+      object btnBody: TCornerButton
+        Position.X = 184.000000000000000000
+        Position.Y = 8.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 80.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'BODY'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnBodyClick
+      end
+    end
   end
   object AL: TActionList
     Left = 288
@@ -816,5 +917,27 @@ object FHome: TFHome
       Category = 'Media Library'
       OnDidFinishTaking = tpCameraDidFinishTaking
     end
+  end
+  object QData: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 248
+    Top = 160
+  end
+  object QSubData: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 296
+    Top = 160
   end
 end

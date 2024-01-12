@@ -22,7 +22,8 @@ uses
   frFavorite in 'frames\frFavorite.pas' {FFavorite: TFrame},
   frDetail in 'frames\frDetail.pas' {FDetail: TFrame},
   frLogin in 'frames\frLogin.pas' {FLogin: TFrame},
-  frTemp in 'frames\frTemp.pas' {FTemp: TFrame};
+  frTemp in 'frames\frTemp.pas' {FTemp: TFrame},
+  BFA.Control.Rest in 'sources\controls\BFA.Control.Rest.pas';
 
 //  {$IF DEFINED (ANDROID)}
 //  FMX.MediaLibrary.Android in 'sources\libraries\FMX.MediaLibrary.Android.pas',
