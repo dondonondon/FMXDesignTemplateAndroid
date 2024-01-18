@@ -32,7 +32,6 @@ uses
 {$R *.res}
 
 begin
-  GlobalUseSkia := True;
   ReportMemoryLeaksOnShutdown := True;
 
   Application.Initialize;

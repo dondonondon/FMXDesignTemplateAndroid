@@ -80,6 +80,11 @@ type
     CornerButton19: TCornerButton;
     QData: TFDMemTable;
     QSubData: TFDMemTable;
+    ListBoxItem8: TListBoxItem;
+    CornerButton20: TCornerButton;
+    tiLoading: TTabItem;
+    btnStartLoading: TCornerButton;
+    memLoading: TMemo;
     procedure btnBackClick(Sender: TObject);
     procedure lbMenuItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
@@ -101,6 +106,7 @@ type
     procedure btnGetClick(Sender: TObject);
     procedure btnPostClick(Sender: TObject);
     procedure btnBodyClick(Sender: TObject);
+    procedure btnStartLoadingClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -115,7 +121,8 @@ type
 var FHome : TFHome;
 
 const
-  COBASEURL = 'http://localhost:8080/API/APITemplateV3/';
+//  COBASEURL = 'http://localhost:8080/API/APITemplateV3/';
+  COBASEURL = 'https://www.blangkon.net/APITemplate/';
 
 implementation
 
@@ -139,6 +146,33 @@ end;
 procedure TFHome.btnBackClick(Sender: TObject);
 begin
   Back;
+end;
+
+procedure TFHome.btnPostClick(Sender: TObject);
+var
+  Rest : TRequestAPI;
+begin
+  Rest := TRequestAPI.Create;
+  try
+    var FValue := 'Hello world from Blangkon FA';
+
+    Rest.URL := COBASEURL + 'sample_post.php';
+    Rest.Method := TRESTRequestMethod.rmPOST;
+    Rest.Data := QData;
+
+    Rest.AddParameter('value', FValue);
+
+    Rest.Execute(True);
+
+    memRest.Lines.Clear;
+    memRest.Lines.Add('Status Code : ' + Rest.StatusCode.ToString);
+    memRest.Lines.Add(Rest.Content);
+    memRest.Lines.Add('=================');
+    memRest.Lines.Add('status : ' + QData.FieldByName('status').AsString);
+    memRest.Lines.Add('messages : ' + QData.FieldByName('messages').AsString);
+  finally
+    Rest.DisposeOf;
+  end;
 end;
 
 procedure TFHome.btnBodyClick(Sender: TObject);
@@ -205,31 +239,23 @@ begin
   end;
 end;
 
-procedure TFHome.btnPostClick(Sender: TObject);
-var
-  Rest : TRequestAPI;
+procedure TFHome.btnStartLoadingClick(Sender: TObject);
 begin
-  Rest := TRequestAPI.Create;
-  try
-    var FValue := 'Hello world from Blangkon FA';
+  memLoading.Lines.Add('Loading Start');
 
-    Rest.URL := COBASEURL + 'sample_post.php';
-    Rest.Method := TRESTRequestMethod.rmPOST;
-    Rest.Data := QData;
+  TTask.Run(procedure begin
+    Helper.StartLoading;
+    try
+      Sleep(3000);
 
-    Rest.AddParameter('value', FValue);
+      TThread.Synchronize(nil, procedure begin
+        memLoading.Lines.Add('Loading Finish');
+      end);
 
-    Rest.Execute(True);
-
-    memRest.Lines.Clear;
-    memRest.Lines.Add('Status Code : ' + Rest.StatusCode.ToString);
-    memRest.Lines.Add(Rest.Content);
-    memRest.Lines.Add('=================');
-    memRest.Lines.Add('status : ' + QData.FieldByName('status').AsString);
-    memRest.Lines.Add('messages : ' + QData.FieldByName('messages').AsString);
-  finally
-    Rest.DisposeOf;
-  end;
+    finally
+      Helper.StopLoading;
+    end;
+  end).Start;
 end;
 
 procedure TFHome.CornerButton10Click(Sender: TObject);
@@ -320,6 +346,11 @@ end;
 
 procedure TFHome.CornerButton6Click(Sender: TObject);
 begin
+  if not Assigned(FNotification) then begin
+    Helper.ShowToastMessage('Please remove comment on BFA.Init -> InitFunction -> InitPushNotification && Event OnShow frMain');
+    Exit;
+  end;
+
   Memo1.Lines.Add('Device ID : ' + sLineBreak + FNotification.DeviceID);
   Memo1.Lines.Add('');
   Memo1.Lines.Add('');

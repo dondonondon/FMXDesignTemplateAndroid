@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:android="http://schemas.android.com/apk/res/android">
-    <string name="google_api_key">AIzaSyAfiy_XYi2-KsNiDW1GLB8ZmEOMRmQB1CA</string>
-    <string name="project_id">predemas</string>
-    <string name="google_app_id">1:237435848499:android:a69ca63ff2dea7bfb4e046</string>
-    <string name="gcm_defaultSenderId">237435848499</string>
-    <string name="fcm_fallback_notification_channel_label" translatable="false">Notification channel for Firebase</string>
-</resources>

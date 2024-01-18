@@ -68,10 +68,12 @@ object FHome: TFHome
     Size.Width = 393.000000000000000000
     Size.Height = 552.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 0
+    TabIndex = 1
     TabOrder = 5
     TabPosition = None
     Sizes = (
+      393s
+      552s
       393s
       552s
       393s
@@ -93,7 +95,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -123,7 +125,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 6
+          TabOrder = 7
           object btnMasuk: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -183,7 +185,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 5
+          TabOrder = 6
           object CornerButton1: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -213,7 +215,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 4
+          TabOrder = 5
           object CornerButton2: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -243,7 +245,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 3
+          TabOrder = 4
           object CornerButton3: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -273,7 +275,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 2
+          TabOrder = 3
           object CornerButton4: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -303,7 +305,7 @@ object FHome: TFHome
           Size.Width = 389.000000000000000000
           Size.Height = 73.000000000000000000
           Size.PlatformDefault = False
-          TabOrder = 1
+          TabOrder = 2
           object CornerButton19: TCornerButton
             Align = Client
             StyledSettings = [Family, Style, FontColor]
@@ -325,6 +327,36 @@ object FHome: TFHome
             YRadius = 12.000000000000000000
           end
         end
+        object ListBoxItem8: TListBoxItem
+          Tag = 8
+          Selectable = False
+          ItemData.Detail = 'Loading'
+          Position.Y = 511.000000000000000000
+          Size.Width = 389.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object CornerButton20: TCornerButton
+            Align = Client
+            StyledSettings = [Family, Style, FontColor]
+            HitTest = False
+            Margins.Left = 12.000000000000000000
+            Margins.Top = 12.000000000000000000
+            Margins.Right = 12.000000000000000000
+            Margins.Bottom = 12.000000000000000000
+            Sides = [Top, Left, Bottom, Right]
+            Size.Width = 365.000000000000000000
+            Size.Height = 49.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'btnMain'
+            TabOrder = 7
+            Text = 'Loading Thread'
+            TextSettings.Font.Size = 12.500000000000000000
+            TextSettings.Trimming = None
+            XRadius = 12.000000000000000000
+            YRadius = 12.000000000000000000
+          end
+        end
       end
     end
     object tiTokenDeviceID: TTabItem
@@ -332,7 +364,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -377,8 +409,8 @@ object FHome: TFHome
         Size.Height = 471.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 7
-        Viewport.Width = 369.000000000000000000
-        Viewport.Height = 471.000000000000000000
+        Viewport.Width = 365.000000000000000000
+        Viewport.Height = 467.000000000000000000
       end
     end
     object tiPermission: TTabItem
@@ -839,6 +871,8 @@ object FHome: TFHome
       StyleLookup = ''
       TabOrder = 0
       Text = 'tiRest'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
       object btnGet: TCornerButton
         Position.X = 8.000000000000000000
         Position.Y = 8.000000000000000000
@@ -864,8 +898,8 @@ object FHome: TFHome
         Size.Height = 488.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        Viewport.Width = 373.000000000000000000
-        Viewport.Height = 484.000000000000000000
+        Viewport.Width = 377.000000000000000000
+        Viewport.Height = 488.000000000000000000
       end
       object btnPost: TCornerButton
         Position.X = 96.000000000000000000
@@ -894,6 +928,49 @@ object FHome: TFHome
         XRadius = 3.000000000000000000
         YRadius = 3.000000000000000000
         OnClick = btnBodyClick
+      end
+    end
+    object tiLoading: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tiLoading'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object btnStartLoading: TCornerButton
+        Position.X = 8.000000000000000000
+        Position.Y = 8.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 80.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Start'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnStartLoadingClick
+      end
+      object memLoading: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        TextSettings.WordWrap = True
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Position.X = 8.000000000000000000
+        Position.Y = 49.000000000000000000
+        Size.Width = 377.000000000000000000
+        Size.Height = 488.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Viewport.Width = 377.000000000000000000
+        Viewport.Height = 488.000000000000000000
       end
     end
   end

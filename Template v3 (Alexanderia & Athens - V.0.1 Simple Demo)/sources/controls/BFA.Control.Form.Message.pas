@@ -18,10 +18,14 @@ type
 
   TMainHelper = class
   private
+    FTransLayoutPopup : TLayout;
+
     FListTemporaryToast : TList<TLayout>;
     FListTemporaryPopup : TList<TLayout>;
     FSetForm: TForm;
     FTransProccess : TProc;
+    FStateLoading: Boolean;
+    FStatePopup: Boolean;
 
     procedure defClickToast(Sender : TObject);
     procedure defClickPopUp(Sender : TObject);
@@ -31,10 +35,14 @@ type
     procedure ShowPopUpMessage(FMessage : String; FJenis : TTypeMessage; FProc : TProc = nil);
     procedure Loading(IsState : Boolean);
 
-    procedure StartLoading;
-    procedure StopLoading;
+    procedure StartLoading(IsSynchronize : Boolean = True);
+    procedure StopLoading(IsSynchronize : Boolean = True);
+
+    procedure ClosePopup;
 
     property SetForm : TForm read FSetForm write FSetForm;
+    property StateLoading : Boolean read FStateLoading write FStateLoading;
+    property StatePopup : Boolean read FStatePopup write FStatePopup;
 
     constructor Create;
     destructor Destroy; override;
@@ -45,6 +53,21 @@ implementation
 
 { TMainHelper }
 
+procedure TMainHelper.ClosePopup;
+begin
+  if StatePopup then begin
+    StatePopup := False;
+
+    FListTemporaryPopup.Add(FTransLayoutPopup);
+    FTransLayoutPopup.Visible := False;
+
+    if Assigned(FTransProccess) then
+      FTransProccess;
+
+    FTransProccess := nil;
+  end;
+end;
+
 constructor TMainHelper.Create;
 begin
   FListTemporaryToast := TList<TLayout>.Create;
@@ -53,6 +76,8 @@ end;
 
 procedure TMainHelper.defClickPopUp(Sender: TObject);
 begin
+  StatePopup := False;
+
   FListTemporaryPopup.Add(TLayout(TControl(Sender).Parent));
   TLayout(TControl(Sender).Parent).Visible := False;
 
@@ -130,6 +155,8 @@ var
   FLayout : TLayout;
   FAni : TAniIndicator;
 begin
+  StateLoading := IsState;
+
   if not IsState then begin
     FLayout := TLayout(SetForm.FindStyleResource('FLayout'));
     if Assigned(FLayout) then
@@ -175,6 +202,8 @@ var
   FStatus : String;
   FColor : Cardinal;
 begin
+  if StatePopup then Exit;
+
   FTransProccess := nil;
 
   if FListTemporaryPopup.Count > 0 then begin
@@ -275,6 +304,9 @@ begin
 
         FTransProccess := FProc;
         LClick.OnClick := defClickPopUp;
+
+    FTransLayoutPopup := lo;
+    StatePopup := True;
   end;
 end;
 
@@ -421,14 +453,18 @@ begin
   FLOpa.Enabled := True;
 end;
 
-procedure TMainHelper.StartLoading;
+procedure TMainHelper.StartLoading(IsSynchronize : Boolean);
 begin
-  Self.Loading(True);
+  if IsSynchronize then begin
+    TThread.Synchronize(TThread.CurrentThread, procedure begin Self.Loading(True); end)
+  end else Self.Loading(True);
 end;
 
-procedure TMainHelper.StopLoading;
+procedure TMainHelper.StopLoading(IsSynchronize : Boolean);
 begin
-  Self.Loading(False);
+  if IsSynchronize then begin
+    TThread.Synchronize(TThread.CurrentThread, procedure begin Self.Loading(False); end)
+  end else Self.Loading(False);
 end;
 
 end.

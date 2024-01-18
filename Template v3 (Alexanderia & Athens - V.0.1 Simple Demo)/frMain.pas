@@ -88,6 +88,16 @@ begin
       FKeyboard.HideKeyboard;
       Key := 0;
 
+      if Assigned(Helper) then begin
+        if Helper.StateLoading then begin
+          Helper.ShowToastMessage('Still loading');
+          Exit;
+        end else if Helper.StatePopup then begin
+          Helper.ClosePopup;
+          Exit;
+        end;
+      end;
+
       if Assigned(Frame.LastControl) then begin
         LFrame := Frame.LastControl;
         Routine.Data := Pointer(LFrame);
