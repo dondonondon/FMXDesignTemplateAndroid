@@ -69,7 +69,7 @@ object FHome: TFHome
     Size.Width = 393.000000000000000000
     Size.Height = 552.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 0
+    TabIndex = 8
     TabOrder = 5
     TabPosition = None
     Sizes = (
@@ -96,7 +96,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -899,8 +899,8 @@ object FHome: TFHome
         Size.Height = 488.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        Viewport.Width = 377.000000000000000000
-        Viewport.Height = 488.000000000000000000
+        Viewport.Width = 373.000000000000000000
+        Viewport.Height = 484.000000000000000000
       end
       object btnPost: TCornerButton
         Position.X = 96.000000000000000000
@@ -936,7 +936,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -970,8 +970,8 @@ object FHome: TFHome
         Size.Height = 488.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        Viewport.Width = 377.000000000000000000
-        Viewport.Height = 488.000000000000000000
+        Viewport.Width = 373.000000000000000000
+        Viewport.Height = 484.000000000000000000
       end
     end
   end

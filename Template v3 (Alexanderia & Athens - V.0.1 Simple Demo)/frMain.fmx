@@ -295,6 +295,7 @@ object FMain: TFMain
     Size.Width = 250.000000000000000000
     Size.Height = 720.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
     TabOrder = 4
     object loSidebar: TLayout
       Align = Contents

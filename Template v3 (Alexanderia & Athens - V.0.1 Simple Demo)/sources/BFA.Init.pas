@@ -54,7 +54,7 @@ begin
     [TFLoading, TFHome, TFAccount, TFDetail, TFFavorite,
     TFDashboard, TFSubMenuTemp, TFReport, TFRecord, TFPayment, TFOrder, TFInventory, TFHelp],
     [C_LOADING, C_HOME, C_ACCOUNT, C_DETAIL, C_FAVORITE,
-    C_DASHBOARD, C_SUBMENU, C_REPORT, C_RECORD, C_PAYMENT, C_ORDER, C_INVENTORY, C_HELP]
+        C_DASHBOARD, C_SUBMENU, C_REPORT, C_RECORD, C_PAYMENT, C_ORDER, C_INVENTORY, C_HELP]
   );
 
   {or you can register class one by one like below...}
@@ -114,6 +114,9 @@ begin
 
   if Assigned(Helper) then
     Helper.DisposeOf;
+
+  if Assigned(FSidebar) then
+    FSidebar.DisposeOf;
 end;
 
 end.

@@ -48,8 +48,8 @@ object FOrder: TFOrder
       OnDrawColumnHeader = stgMainDrawColumnHeader
       OnDrawColumnCell = stgMainDrawColumnCell
       OnCellClick = stgMainCellClick
-      Viewport.Width = 1013.000000000000000000
-      Viewport.Height = 517.000000000000000000
+      Viewport.Width = 1033.000000000000000000
+      Viewport.Height = 542.000000000000000000
       object StringColumn1: TStringColumn
         Header = 'Name'
         HeaderSettings.TextSettings.WordWrap = False

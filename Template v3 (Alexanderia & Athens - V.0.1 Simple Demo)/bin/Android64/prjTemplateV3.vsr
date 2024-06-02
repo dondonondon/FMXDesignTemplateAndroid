@@ -1,0 +1,13 @@
+EXPORTED {
+	global:
+		_NativeMain;
+		__rsrc_*;
+		__rstr_*;
+		dbkFCallWrapperAddr;
+		dbk_RTL_initialized;
+		__dbk_fcall_wrapper;
+		_DbgExcNotify;
+		ExecJNI;
+		ANativeActivity_onCreate;
+	local: *;
+};
