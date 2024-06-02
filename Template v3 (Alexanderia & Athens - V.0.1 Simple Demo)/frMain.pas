@@ -30,6 +30,7 @@ type
     loTest: TLayout;
     loSidebar: TLayout;
     mvMain: TMultiView;
+    memAnnounce: TMemo;
     procedure FormShow(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
@@ -67,6 +68,8 @@ end;
 procedure TFMain.FormCreate(Sender: TObject);
 begin
   TInitControls.InitFunction;
+
+  memAnnounce.DisposeOf;
 end;
 
 procedure TFMain.FormDestroy(Sender: TObject);

@@ -305,4 +305,44 @@ object FMain: TFMain
       TabOrder = 0
     end
   end
+  object memAnnounce: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Lines.Strings = (
+      
+        'Because this template was created using Delphi 12. Things you ne' +
+        'ed to pay attention to if you are using a Delphi version below o' +
+        'r the same as Delphi 11.'
+      '1. Go to frame->frOrder then select "Ignore All"'
+      '2. Go to frame-> controls-> frListMenu then select "Ignore All"'
+      ''
+      
+        'This needs to be done because there are several properties that ' +
+        'are not in Delphi 11 and below. Thanks.'
+      ''
+      '==============================='
+      ''
+      
+        'Karena template ini di buat dengan menggunakan Delphi 12. Hal ya' +
+        'ng perlu diperhatikan jika anda menggunakan versi Delphi dibawah' +
+        ' atau sama dengan Delphi 11.'
+      '1. Buka frame-> frOrder lalu pilih "Ignore All"'
+      '2. Buka frame-> controls-> frListMenu lalu pilih "Ignore All"'
+      ''
+      
+        'Hal tersebut perlu dilakukan karena ada beberapa property yang t' +
+        'idak ada di Delphi 11 kebawah. Thanks.')
+    StyledSettings = [Family, Style, FontColor]
+    TextSettings.Font.Size = 11.000000000000000000
+    TextSettings.HorzAlign = Center
+    TextSettings.WordWrap = True
+    Position.X = 40.000000000000000000
+    Position.Y = 144.000000000000000000
+    Size.Width = 288.000000000000000000
+    Size.Height = 337.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 7
+    Viewport.Width = 284.000000000000000000
+    Viewport.Height = 333.000000000000000000
+  end
 end
