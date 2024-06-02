@@ -14,7 +14,8 @@ uses
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
   BFA.Helper.TFDMemTable, BFA.Global.Func,
-  BFA.Global.Variable, BFA.Helper.Main, BFA.Control.PushNotification
+  BFA.Global.Variable, BFA.Helper.Main, BFA.Control.PushNotification,
+  FMX.MultiView
   {$IF DEFINED (ANDROID)}
   , Androidapi.Helpers, Androidapi.JNI.Os, Androidapi.JNI.JavaTypes
   {$ENDIF}
@@ -27,6 +28,8 @@ type
     loFrame: TLayout;
     SB: TStyleBook;
     loTest: TLayout;
+    loSidebar: TLayout;
+    mvMain: TMultiView;
     procedure FormShow(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char;
       Shift: TShiftState);
@@ -49,7 +52,7 @@ implementation
 {$R *.fmx}
 
 uses
-  frHome, frLoading, frLogin, BFA.Control.Permission, BFA.Init;
+  frHome, frLoading, frLogin, BFA.Control.Permission, BFA.Init, frListMenu;
 
 function TFMain.AppEventProc(AAppEvent: TApplicationEvent;
   AContext: TObject): Boolean;
@@ -88,6 +91,15 @@ begin
       FKeyboard.HideKeyboard;
       Key := 0;
 
+      if Assigned(FSidebar) then begin
+        if Assigned(FSidebar.MultiView) then begin
+          if FSidebar.MultiView.IsShowed then begin
+            FSidebar.MultiView.HideMaster;
+            Exit;
+          end;
+        end;
+      end;
+
       if Assigned(Helper) then begin
         if Helper.StateLoading then begin
           Helper.ShowToastMessage('Still loading');
@@ -118,7 +130,6 @@ end;
 procedure TFMain.FormShow(Sender: TObject);
 begin
 //  FNotification.ServiceConnectionStatus(True);
-
   Frame.GoFrame(C_LOADING);
 end;
 

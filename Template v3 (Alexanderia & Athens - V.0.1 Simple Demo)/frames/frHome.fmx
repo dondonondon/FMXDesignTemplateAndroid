@@ -42,6 +42,8 @@ object FHome: TFHome
     object btnBack: TCornerButton
       Anchors = [akLeft]
       StyledSettings = [Family, Size]
+      Images = DM.img
+      ImageIndex = 1
       Position.X = 8.000000000000000000
       Position.Y = 25.000000000000000000
       Sides = [Top, Left, Bottom, Right]
@@ -50,7 +52,6 @@ object FHome: TFHome
       Size.PlatformDefault = False
       StyleLookup = 'btnImg'
       TabOrder = 1
-      Text = '<'
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claWhite
       TextSettings.Trimming = None
@@ -68,7 +69,7 @@ object FHome: TFHome
     Size.Width = 393.000000000000000000
     Size.Height = 552.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 1
+    TabIndex = 0
     TabOrder = 5
     TabPosition = None
     Sizes = (
@@ -95,7 +96,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -364,7 +365,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -409,8 +410,8 @@ object FHome: TFHome
         Size.Height = 471.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 7
-        Viewport.Width = 365.000000000000000000
-        Viewport.Height = 467.000000000000000000
+        Viewport.Width = 369.000000000000000000
+        Viewport.Height = 471.000000000000000000
       end
     end
     object tiPermission: TTabItem

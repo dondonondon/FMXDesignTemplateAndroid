@@ -30,6 +30,10 @@ type
     FTapBack : Integer;
     FToastMessage: TMainHelper;
     FCloseAppWhenDoubleTap: Boolean;
+    FFrameAliasNow: String;
+    FFrameAliasBefore: String;
+
+    FTempAlias : String;
 
     procedure CallFrame(FFrame : TFrameClass; FParent : TControl; out FControl : TControl; IsIdle : Boolean); overload;
 
@@ -51,6 +55,9 @@ type
     property SetIdle : Boolean read FSetIdle write FSetIdle;
     property CloseAppWhenDoubleTap : Boolean read FCloseAppWhenDoubleTap write FCloseAppWhenDoubleTap;
     property MainHelper : TMainHelper read FToastMessage write FToastMessage;
+
+    property FrameAliasNow : String read FFrameAliasNow;
+    property FrameAliasBefore : String read FFrameAliasBefore;
 
     procedure RegisterClassesFrame(const AClass : array of TPersistentClass; AliasClass : array of String);
     procedure RegisterClassFrame(const AClass : TPersistentClass; AliasClass : String);
@@ -261,6 +268,7 @@ end;
 
 procedure TGoFrame.GoFrame(FFrame: TFrameClass);
 begin
+  FTempAlias := GetAliasName(FFrame.ClassName);
   CallFrame(FFrame);
 end;
 
@@ -270,6 +278,7 @@ begin
   if FIndex < 0 then
     raise Exception.Create('Alias not found');
 
+  FTempAlias := Alias;
   CallFrame(FListFrame[FListAlias.IndexOf(Alias)].ClassName);
 end;
 
@@ -300,6 +309,9 @@ begin
 
   FIsBack := False;
   FTapBack := 0;
+
+  FFrameAliasBefore := FrameAliasNow;
+  FFrameAliasNow := FTempAlias;
 
   Routine.Data := Pointer(FControl);
   Routine.Code := FControl.MethodAddress('Show');

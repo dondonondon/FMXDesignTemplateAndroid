@@ -1,12 +1,12 @@
 program prjTemplateV3;
 
+{$R *.dres}
+
 uses
   System.StartUpCopy,
   FMX.Forms,
   FMX.Skia,
   frMain in 'frMain.pas' {FMain},
-  frLoading in 'frames\frLoading.pas' {FLoading: TFrame},
-  frHome in 'frames\frHome.pas' {FHome: TFrame},
   uDM in 'uDM.pas' {DM: TDataModule},
   BFA.Global.Variable in 'sources\BFA.Global.Variable.pas',
   BFA.Global.Func in 'sources\BFA.Global.Func.pas',
@@ -18,12 +18,23 @@ uses
   BFA.Helper.Main in 'sources\helpers\BFA.Helper.Main.pas',
   BFA.Helper.TFDMemTable in 'sources\helpers\BFA.Helper.TFDMemTable.pas',
   BFA.Init in 'sources\BFA.Init.pas',
+  BFA.Control.Rest in 'sources\controls\BFA.Control.Rest.pas',
+  frListMenu in 'frames\controls\frListMenu.pas' {FListMenu: TFrame},
   frAccount in 'frames\frAccount.pas' {FAccount: TFrame},
-  frFavorite in 'frames\frFavorite.pas' {FFavorite: TFrame},
+  frDashboard in 'frames\frDashboard.pas' {FDashboard: TFrame},
   frDetail in 'frames\frDetail.pas' {FDetail: TFrame},
+  frFavorite in 'frames\frFavorite.pas' {FFavorite: TFrame},
+  frHelp in 'frames\frHelp.pas' {FHelp: TFrame},
+  frHome in 'frames\frHome.pas' {FHome: TFrame},
+  frInventory in 'frames\frInventory.pas' {FInventory: TFrame},
+  frLoading in 'frames\frLoading.pas' {FLoading: TFrame},
   frLogin in 'frames\frLogin.pas' {FLogin: TFrame},
-  frTemp in 'frames\frTemp.pas' {FTemp: TFrame},
-  BFA.Control.Rest in 'sources\controls\BFA.Control.Rest.pas';
+  frOrder in 'frames\frOrder.pas' {FOrder: TFrame},
+  frPayment in 'frames\frPayment.pas' {FPayment: TFrame},
+  frRecord in 'frames\frRecord.pas' {FRecord: TFrame},
+  frReport in 'frames\frReport.pas' {FReport: TFrame},
+  frSubMenuTemp in 'frames\frSubMenuTemp.pas' {FSubMenuTemp: TFrame},
+  frTemp in 'frames\frTemp.pas' {FTemp: TFrame};
 
 //  {$IF DEFINED (ANDROID)}
 //  FMX.MediaLibrary.Android in 'sources\libraries\FMX.MediaLibrary.Android.pas',

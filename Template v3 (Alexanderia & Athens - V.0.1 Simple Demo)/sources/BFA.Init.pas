@@ -31,12 +31,15 @@ type
     class procedure InitPushNotification;
     class procedure InitToastMessage;
     class procedure InitFrame;
+    class procedure InitSidebar;
   end;
 
 implementation
 
 uses
-  frHome, frLoading, frLogin, frAccount, frDetail, frFavorite;
+  frHome, frLoading, frLogin, frAccount, frDetail, frFavorite, frListMenu,
+  frDashboard, frHelp, frInventory, frOrder, frPayment, frRecord, frReport,
+  frSubMenuTemp, frTemp;
 
 { TInitControls }
 
@@ -48,8 +51,10 @@ begin
   Frame.MainHelper := Helper;
 
   Frame.RegisterClassesFrame(  {register class using array}
-    [TFLoading, TFHome, TFAccount, TFDetail, TFFavorite],
-    [C_LOADING, C_HOME, C_ACCOUNT, C_DETAIL, C_FAVORITE]
+    [TFLoading, TFHome, TFAccount, TFDetail, TFFavorite,
+    TFDashboard, TFSubMenuTemp, TFReport, TFRecord, TFPayment, TFOrder, TFInventory, TFHelp],
+    [C_LOADING, C_HOME, C_ACCOUNT, C_DETAIL, C_FAVORITE,
+    C_DASHBOARD, C_SUBMENU, C_REPORT, C_RECORD, C_PAYMENT, C_ORDER, C_INVENTORY, C_HELP]
   );
 
   {or you can register class one by one like below...}
@@ -64,6 +69,7 @@ begin
 //  InitPushNotification;
   InitToastMessage; //init before Initframe
   InitFrame;
+  InitSidebar;
 end;
 
 class procedure TInitControls.InitKeyboard;
@@ -78,6 +84,15 @@ begin
 //  FNotification := TPushNotif.Create;
   FNotification := TPushNotif.Create(FMain.AppEventProc);
   //you can replace AppEventProc. It's for Push Notif from firebase. You can set nil => FNotification := TPushNotif.Create;
+end;
+
+class procedure TInitControls.InitSidebar;
+begin
+  FSidebar := TFListMenu.Create(FMain);
+  FSidebar.Parent := FMain.loSidebar;
+  FSidebar.Align := TAlignLayout.Contents;
+
+  FSidebar.MultiView := FMain.mvMain;
 end;
 
 class procedure TInitControls.InitToastMessage;

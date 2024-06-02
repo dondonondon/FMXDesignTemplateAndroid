@@ -54,6 +54,9 @@ end;
 procedure TFLoading.faOpaFinish(Sender: TObject);
 begin
   TFloatAnimation(Sender).Enabled := False;
+  FSidebar.LoadListMenu;
+  FSidebar.MultiView.Enabled := False;
+
   tiMove.Enabled := True;
 end;
 

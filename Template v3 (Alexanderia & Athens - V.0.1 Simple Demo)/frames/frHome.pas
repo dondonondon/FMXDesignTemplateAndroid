@@ -131,15 +131,20 @@ implementation
 uses frMain, BFA.Global.Variable,
   BFA.Control.Form.Message, BFA.Control.Frame, BFA.Control.Keyboard,
   BFA.Control.Permission, BFA.Control.PushNotification, BFA.Global.Func,
-  BFA.Helper.Main, BFA.Helper.TFDMemTable, BFA.Control.Rest;
+  BFA.Helper.Main, BFA.Helper.TFDMemTable, BFA.Control.Rest, uDM;
 
 procedure TFHome.Back;
 begin
-  if tcMain.TabIndex <> 0 then begin
-    tcMain.TabIndex := 0;
-    lblTitle.Text := 'Menu Home';
+  if btnBack.ImageIndex = 2 then begin
+    btnBack.ImageIndex := 1;
+    if tcMain.TabIndex <> 0 then begin
+      tcMain.TabIndex := 0;
+      lblTitle.Text := 'Menu Home';
+    end else begin
+      Frame.Back;
+    end;
   end else begin
-    Frame.Back;
+    FSidebar.MultiView.ShowMaster;
   end;
 end;
 
@@ -431,12 +436,20 @@ procedure TFHome.lbMenuItemClick(const Sender: TCustomListBox;
 begin
   tcMain.TabIndex := Item.Tag;
   lblTitle.Text := Item.ItemData.Detail;
+  btnBack.ImageIndex := 2;
 end;
 
 procedure TFHome.Show;
 begin
+  if Frame.FrameAliasBefore = C_FAVORITE then Exit;
+
+  FSidebar.SetSelectedMenu(C_HOME);
   tcMain.TabIndex := 0;
+  btnBack.ImageIndex := 1;
+
   lblTitle.Text := 'Menu Home';
+
+  FSidebar.MultiView.Enabled := True;
 end;
 
 procedure TFHome.tpCameraDidFinishTaking(Image: TBitmap);

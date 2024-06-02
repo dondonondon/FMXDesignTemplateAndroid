@@ -56,6 +56,7 @@ end;
 
 procedure TFLogin.btnBiometricClick(Sender: TObject);
 begin
+//  ShowMessage(Frame.FrameAliasNow + ' | ' + Frame.FrameAliasBefore);
   Frame.GoFrame(C_HOME);
 end;
 

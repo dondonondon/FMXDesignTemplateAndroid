@@ -1,0 +1,92 @@
+object FRecord: TFRecord
+  Size.Width = 1080.000000000000000000
+  Size.Height = 720.000000000000000000
+  Size.PlatformDefault = False
+  object background: TRectangle
+    Align = Contents
+    Fill.Color = xFFF2F9FF
+    Size.Width = 1080.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+  end
+  object loMain: TLayout
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Size.Width = 1080.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object loHeader: TLayout
+      Align = Top
+      Size.Width = 1080.000000000000000000
+      Size.Height = 83.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object reHeader: TRectangle
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Fill.Color = xFF364F6B
+        Size.Width = 1080.000000000000000000
+        Size.Height = 83.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object seHeader: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.150000005960464500
+          ShadowColor = claBlack
+        end
+      end
+      object lblTitle: TLabel
+        Anchors = [akLeft, akTop, akRight]
+        StyledSettings = [Family]
+        HitTest = True
+        Position.X = 48.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 1014.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+        TextSettings.Trimming = None
+        Text = 'RECORD'
+        TabOrder = 2
+      end
+      object btnMenu: TCornerButton
+        Anchors = [akLeft]
+        StyledSettings = [Family, Size]
+        Images = DM.img
+        ImageIndex = 1
+        Position.X = 8.000000000000000000
+        Position.Y = 25.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 33.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnImg'
+        TabOrder = 1
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnMenuClick
+      end
+    end
+  end
+  object Label1: TLabel
+    Align = Center
+    AutoSize = True
+    StyledSettings = [Family, FontColor]
+    Size.Width = 327.000000000000000000
+    Size.Height = 34.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.Size = 25.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.HorzAlign = Center
+    TextSettings.Trimming = None
+    Text = 'RECORD'
+    TabOrder = 2
+  end
+end
