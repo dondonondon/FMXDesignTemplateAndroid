@@ -133,7 +133,8 @@ end;
 procedure TFMain.FormShow(Sender: TObject);
 begin
 //  FNotification.ServiceConnectionStatus(True);
-  Frame.GoFrame(C_LOGIN);
+//  Frame.GoFrame(C_LOGIN);
+  Frame.GoFrame(C_LOADING);
 end;
 
 end.

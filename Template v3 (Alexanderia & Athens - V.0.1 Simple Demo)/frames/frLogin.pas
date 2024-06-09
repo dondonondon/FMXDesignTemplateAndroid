@@ -79,9 +79,9 @@ constructor TFLogin.Create(AOwner: TComponent);
 begin
   inherited;
 
-  ACalender := TFCalender.Create(Self);
-  ACalender.Parent := Self;
-  ACalender.Align := TAlignLayout.Contents;
+//  ACalender := TFCalender.Create(Self);
+//  ACalender.Parent := Self;
+//  ACalender.Align := TAlignLayout.Contents;
 
 end;
 
