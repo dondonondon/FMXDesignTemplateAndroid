@@ -33,7 +33,8 @@ uses
   frRecord in 'frames\frRecord.pas' {FRecord: TFrame},
   frReport in 'frames\frReport.pas' {FReport: TFrame},
   frSubMenuTemp in 'frames\frSubMenuTemp.pas' {FSubMenuTemp: TFrame},
-  frTemp in 'frames\frTemp.pas' {FTemp: TFrame};
+  frTemp in 'frames\frTemp.pas' {FTemp: TFrame},
+  frCalender in 'frames\controls\frCalender.pas' {FCalender: TFrame};
 
 //  {$IF DEFINED (ANDROID)}
 //  FMX.MediaLibrary.Android in 'sources\libraries\FMX.MediaLibrary.Android.pas',

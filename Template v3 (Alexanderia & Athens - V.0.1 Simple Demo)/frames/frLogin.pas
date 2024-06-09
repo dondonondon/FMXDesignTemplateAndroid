@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading,
-  FMX.Edit, FMX.Effects;
+  FMX.Edit, FMX.Effects, frCalender;
 
 type
   TFLogin = class(TFrame)
@@ -27,6 +27,7 @@ type
     procedure btnMasukClick(Sender: TObject);
     procedure btnBiometricClick(Sender: TObject);
   private
+    ACalender : TFCalender;
   public
   published
     procedure Show;
@@ -77,6 +78,10 @@ end;
 constructor TFLogin.Create(AOwner: TComponent);
 begin
   inherited;
+
+  ACalender := TFCalender.Create(Self);
+  ACalender.Parent := Self;
+  ACalender.Align := TAlignLayout.Contents;
 
 end;
 

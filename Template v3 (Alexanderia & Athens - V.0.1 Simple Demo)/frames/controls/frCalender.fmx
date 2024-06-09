@@ -1,0 +1,282 @@
+object FCalender: TFCalender
+  Size.Width = 360.000000000000000000
+  Size.Height = 720.000000000000000000
+  Size.PlatformDefault = False
+  object background: TRectangle
+    Align = Contents
+    Fill.Color = claBlack
+    Opacity = 0.300000011920929000
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object Rectangle1: TRectangle
+    Align = Contents
+    Fill.Color = claBlack
+    Opacity = 0.300000011920929000
+    Margins.Left = 16.000000000000000000
+    Margins.Top = 16.000000000000000000
+    Margins.Right = 16.000000000000000000
+    Margins.Bottom = 16.000000000000000000
+    Size.Width = 328.000000000000000000
+    Size.Height = 688.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object loDate: TLayout
+    Align = Top
+    Size.Width = 360.000000000000000000
+    Size.Height = 313.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object reDate: TRectangle
+      Align = Contents
+      Corners = [BottomLeft, BottomRight]
+      Fill.Color = claWhite
+      Size.Width = 360.000000000000000000
+      Size.Height = 313.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 16.000000000000000000
+      YRadius = 16.000000000000000000
+    end
+    object reHeader: TRectangle
+      Align = Top
+      Corners = [BottomLeft, BottomRight]
+      Fill.Color = xFFFF9575
+      Size.Width = 360.000000000000000000
+      Size.Height = 121.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 16.000000000000000000
+      YRadius = 16.000000000000000000
+      object seHeader: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.100000001490116100
+        Opacity = 0.250000000000000000
+        ShadowColor = claBlack
+      end
+    end
+    object lblYear: TLabel
+      StyledSettings = [Family]
+      HitTest = True
+      Position.X = 24.000000000000000000
+      Position.Y = 23.000000000000000000
+      Size.Width = 201.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claWhite
+      Text = '2024'
+      TabOrder = 2
+      OnClick = lblYearClick
+    end
+    object Next: TImage
+      MultiResBitmap.Height = 96
+      MultiResBitmap.Width = 96
+      MultiResBitmap = <
+        item
+          Width = 96
+          Height = 96
+          PNG = {
+            89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+            380000000473424954080808087C086488000002C349444154789CEDDDD151DB
+            4010C6F1BD4C0AA00495E0124C0774803B800E7009A402DC414A201D182A903B
+            101DFC79382721060F63ACDD3D29DFEF91079D6EBFD160AFEECE662222222222
+            222222614AE6E0C0C2CC1666D6EDFF3498D97329E557D63DCD1E7001DC0103C7
+            0DC003D065DFEFAC00579F14FE2377D9F73D0BC0CD898557086301BA338AFFDB
+            43F63C260BE8470840217C05B01CA9F8B30CE15BC0188B91AFB7027E0217235F
+            374544009DC335AFCCEC710E214404E06561330821228027C76B4F3E04F756C4
+            BE38BD99791669676697A5949DE3182EDC9F8052CA8B99FD701EA6B3FA2474CE
+            E34C13B5FFD38FFC71F423BD423882FA6D58216452080D50080DA0FE4FD82A84
+            440AA10181210CD4D79F72681FC246212453080D080CE12A7BAECD02EE034200
+            B8CE9E6BB380B54248A6101A10188296BD1CA3101AA0101AA0101AA0101A00AC
+            14423285D080C01096D9736D165FDB6F70AA6DF63C9B062C0242587ADDFF9497
+            269A995929E5C9CC2ECDECC57118B716F6E40330FB13C2BDE3106EABFA661100
+            B5A1B6761CC2EDE99A7C00C08D996D9C87F15C603C5DD4EDAEDEFAEC793629A8
+            F8A0F705EF05167F9D3DD7E65077D0ABF8D1A8EB8754FC0CC4ADA053F10F5157
+            534715FF367BBE4D216E293BC02A7BBE4D092CFE805ACEFF0A2EBED68ABE454C
+            7B19B46FE03DEAC11E2A7E06E03AA0F02AFE4738EF34AD536C55FC03C4F575B6
+            4CF84C091781C5DFA8F807228B9F3DD7E6A0A65A0ED4D1CC833A9A7950473357
+            60F157D9736D0E319F76B4F7F718FCBB9AEA681EC3F8A7E61EEAA75EFCEFCED7
+            5F3A5E7B67133D29F1ADA92E4DDCD90C8A6FE61FC0CEE99AB328BE3BC6F9DD80
+            B7D4D13C15F03852F11F55FC2FA03E05E7BE66DC64CF63D2386F47A3E7CE97FF
+            0775B5437F62F1D5D71913B5237AFB491003F5D4AC2EFB7E23A4FD921EF51B6C
+            677F77200E66F66C664FFB13D74544444444444464765E0105C183C9D2DC7F70
+            0000000049454E44AE426082}
+          FileName = 
+            'D:\Project\Github\FMXDesignTemplateAndroid\Template v3 (Alexande' +
+            'ria & Athens - V.0.1 Simple Demo)\assets\icons\arrow-right.png'
+        end>
+      Position.X = 316.000000000000000000
+      Position.Y = 23.000000000000000000
+      Size.Width = 16.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = NextClick
+    end
+    object Previous: TImage
+      MultiResBitmap.Height = 96
+      MultiResBitmap.Width = 96
+      MultiResBitmap = <
+        item
+          Width = 96
+          Height = 96
+          PNG = {
+            89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+            380000000473424954080808087C086488000002E149444154789CEDDDDD71DA
+            501005E07333298074A05410D201EEC01DD8AEC0E9C0A402A703930ED201E900
+            3A800E7007270F1219CC208F01EDCFD59CEFD10F17ED1EB0C5EA4A0644444444
+            44444444DC94E803F0467202600AE01B802FDD8FD700B6A59475D8818D1DC986
+            E42F923BF6DB907CEC4292A1744D3DC786E434FAB84781E4F399CD3F74177DFC
+            5523F97245F3C9F6D755135D4775484E482EAF6CFEDE32BA9EAA74CD5F0DD4FC
+            BDC6EA783F592D1CA16BD40AED69E6906603AFF7DF6802E89ABF04D0182C6FB1
+            2680910460DC7C53D507C0F67CDDBAF97F0DD7AE17C929DFFF663B848D650DD5
+            7E0248DEA27DE75B8F0D7E1BAF5F1F9277C6EFFABD5574ADE9F0FCB9CEC5CDA7
+            BE05BF45F2C9B1F99A881E726CFE42CD3FE2D9FCE85AD3E1F513CD8F9A47D79A
+            0ADBA19A9A1F8136134D35FF23D85EBBF56AFE8FE87A53E99ABF716AFE7D74BD
+            A938367F4772165D6F2ACECDD76E8743F49968926DC04D74BDA9909CA9F941E8
+            37D154F38F5113CD38D444338E63F335D13CE6D9FCE85AD3716CFE3CBAD67448
+            DEABF981E8F30D771E5D674A6CBF6859AB7AA2F9D9787DEBB9CB43296561FC1A
+            A6AC3766599E0AFEACBDF9807D00AF866B3F7204934DEB002C6FFB9C00588E21
+            0453B4BFBCB863BB4F544EA1CF9910A93B1AFB919C2B84600A2101C7109EA26B
+            4D4B2124A01012500809288404E877BD4021F45108093886F01C5D6B5A246FE9
+            B353EE25BAD6B4E8B7575421F4F10C81DA3F749A6308DA41D7877EF70D28843E
+            0A2101C71036D46EEAD31442020A2101E710CCFF2654F7C4AC52CA16C00D80AD
+            F14B3500CCB73D56FBF87AFA3C29F115C0D7528AD906B3EA3E017BDD27E13BEC
+            377F99EE39AA360000E8DE9937B00DC174E75DD501006E2198A93E00E04D087F
+            0C96DF1AAC395E6CEF901CD22CBAA6EA0C1882E95373476DA0109AE83AAAC6EB
+            B6BD547DEF591A1784A0FB0D86C6767EB4E0FB57D8765D58AED704AA1D455C8A
+            ED59CDE17FD1DB0258EBBFE88988888888888878F8074C74B2179ABC6FF00000
+            000049454E44AE426082}
+          FileName = 
+            'D:\Project\Github\FMXDesignTemplateAndroid\Template v3 (Alexande' +
+            'ria & Athens - V.0.1 Simple Demo)\assets\icons\arrow-left.png'
+        end>
+      Position.X = 276.000000000000000000
+      Position.Y = 23.000000000000000000
+      Size.Width = 16.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      OnClick = PreviousClick
+    end
+    object lblMonth: TLabel
+      StyledSettings = [Family]
+      HitTest = True
+      Position.X = 97.000000000000000000
+      Position.Y = 23.000000000000000000
+      Size.Width = 176.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claWhite
+      Text = 'September'
+      TabOrder = 0
+      OnClick = lblMonthClick
+    end
+    object lbDate: TListBox
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      Margins.Left = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 328.000000000000000000
+      Size.Height = 225.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'transparentlistboxstyle'
+      TabOrder = 5
+      Columns = 7
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      OnItemClick = lbDateItemClick
+      Viewport.Width = 328.000000000000000000
+      Viewport.Height = 225.000000000000000000
+      object ListBoxItem1: TListBoxItem
+        TabOrder = 0
+        Text = 'ListBoxItem1'
+      end
+    end
+  end
+  object ciSelected: TCircle
+    Fill.Color = xFFFF9575
+    HitTest = False
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 144.000000000000000000
+    Position.Y = 168.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object seSelected: TShadowEffect
+      Distance = 3.000000000000000000
+      Direction = 45.000000000000000000
+      Softness = 0.100000001490116100
+      Opacity = 0.250000000000000000
+      ShadowColor = claBlack
+    end
+    object lblText: TLabel
+      Align = Contents
+      StyledSettings = [Family]
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 46.000000000000000000
+      Size.Height = 46.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = '1'
+      TabOrder = 0
+    end
+  end
+  object ciTempDateNow: TCircle
+    Fill.Color = claWhite
+    Margins.Left = 2.000000000000000000
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 152.000000000000000000
+    Position.Y = 176.000000000000000000
+    Size.Width = 50.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFFFF9575
+    Stroke.Thickness = 2.000000000000000000
+    Visible = False
+    object lblTextNow: TLabel
+      StyleName = 'lblTextNow'
+      Align = Contents
+      StyledSettings = [Family]
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 46.000000000000000000
+      Size.Height = 46.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 14.000000000000000000
+      TextSettings.FontColor = xFF313131
+      TextSettings.HorzAlign = Center
+      Text = '1'
+      TabOrder = 0
+    end
+  end
+  object tiResize: TTimer
+    Enabled = False
+    Interval = 10
+    OnTimer = tiResizeTimer
+    Left = 272
+    Top = 216
+  end
+end

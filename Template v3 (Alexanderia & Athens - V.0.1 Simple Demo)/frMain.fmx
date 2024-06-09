@@ -289,22 +289,6 @@ object FMain: TFMain
     Visible = False
     TabOrder = 2
   end
-  object mvMain: TMultiView
-    BorderOptions.Visible = False
-    Mode = Drawer
-    Size.Width = 250.000000000000000000
-    Size.Height = 720.000000000000000000
-    Size.PlatformDefault = False
-    Visible = False
-    TabOrder = 4
-    object loSidebar: TLayout
-      Align = Contents
-      Size.Width = 250.000000000000000000
-      Size.Height = 720.000000000000000000
-      Size.PlatformDefault = False
-      TabOrder = 0
-    end
-  end
   object memAnnounce: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
@@ -344,5 +328,21 @@ object FMain: TFMain
     TabOrder = 7
     Viewport.Width = 284.000000000000000000
     Viewport.Height = 333.000000000000000000
+  end
+  object mvMain: TMultiView
+    BorderOptions.Visible = False
+    Mode = Drawer
+    Size.Width = 250.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 4
+    object loSidebar: TLayout
+      Align = Contents
+      Size.Width = 250.000000000000000000
+      Size.Height = 720.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+    end
   end
 end
