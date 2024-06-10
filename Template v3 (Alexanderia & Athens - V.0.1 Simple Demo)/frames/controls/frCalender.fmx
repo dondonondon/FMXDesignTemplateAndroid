@@ -9,6 +9,7 @@ object FCalender: TFCalender
     Size.Width = 360.000000000000000000
     Size.Height = 720.000000000000000000
     Size.PlatformDefault = False
+    OnClick = backgroundClick
   end
   object Rectangle1: TRectangle
     Align = Contents
@@ -21,6 +22,7 @@ object FCalender: TFCalender
     Size.Width = 328.000000000000000000
     Size.Height = 688.000000000000000000
     Size.PlatformDefault = False
+    Visible = False
   end
   object loDate: TLayout
     Align = Top
@@ -69,7 +71,7 @@ object FCalender: TFCalender
       TextSettings.Font.StyleExt = {00070000000000000004000000}
       TextSettings.FontColor = claWhite
       Text = '2024'
-      TabOrder = 2
+      TabOrder = 1
       OnClick = lblYearClick
     end
     object Next: TImage

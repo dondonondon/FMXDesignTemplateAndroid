@@ -107,6 +107,7 @@ type
     procedure btnPostClick(Sender: TObject);
     procedure btnBodyClick(Sender: TObject);
     procedure btnStartLoadingClick(Sender: TObject);
+    procedure lblTitleClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -131,7 +132,7 @@ implementation
 uses frMain, BFA.Global.Variable,
   BFA.Control.Form.Message, BFA.Control.Frame, BFA.Control.Keyboard,
   BFA.Control.Permission, BFA.Control.PushNotification, BFA.Global.Func,
-  BFA.Helper.Main, BFA.Helper.TFDMemTable, BFA.Control.Rest, uDM;
+  BFA.Helper.Main, BFA.Helper.TFDMemTable, BFA.Control.Rest, uDM, frCalender;
 
 procedure TFHome.Back;
 begin
@@ -429,6 +430,13 @@ constructor TFHome.Create(AOwner: TComponent);
 begin
   inherited;
 
+end;
+
+procedure TFHome.lblTitleClick(Sender: TObject);
+begin
+  var ACalender := TFCalender.Create(Self);
+  ACalender.Parent := Self;
+  ACalender.Align := TAlignLayout.Contents;
 end;
 
 procedure TFHome.lbMenuItemClick(const Sender: TCustomListBox;

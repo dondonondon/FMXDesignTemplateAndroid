@@ -34,6 +34,7 @@ type
     procedure lblYearClick(Sender: TObject);
     procedure PreviousClick(Sender: TObject);
     procedure NextClick(Sender: TObject);
+    procedure backgroundClick(Sender: TObject);
   private
     IsDate, IsMonth, IsYear : Boolean;
     FDateTimeSelected : TDateTime;
@@ -53,6 +54,11 @@ implementation
 {$R *.fmx}
 
 { TFCalender }
+
+procedure TFCalender.backgroundClick(Sender: TObject);
+begin
+  Self.DisposeOf;
+end;
 
 procedure TFCalender.ClearType;
 begin
