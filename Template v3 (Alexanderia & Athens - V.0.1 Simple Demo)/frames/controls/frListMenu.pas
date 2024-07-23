@@ -9,7 +9,8 @@ uses
   System.ImageList, FMX.ImgList, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  System.Generics.Collections, System.StrUtils, FMX.Effects, FMX.MultiView;
+  System.Generics.Collections, System.StrUtils, FMX.Effects, FMX.MultiView,
+  FMX.Edit, FMX.SearchBox, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo;
 
 type
   TListMenuSideBar = class(TObject)
@@ -52,8 +53,10 @@ type
     img: TImageList;
     imgTempSelected: TImage;
     QListMenu: TFDMemTable;
+    sbSearch: TSearchBox;
     procedure lbMenuItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
+    procedure sbSearchTyping(Sender: TObject);
   private
     ListMenu : TList<TListMenuSideBar>;
 
@@ -97,7 +100,7 @@ implementation
 
 {$R *.fmx}
 
-uses BFA.Control.Frame, BFA.Global.Func, BFA.Helper.TFDMemTable,
+uses BFA.Control.Frame, BFA.Global.Func, BFA.Helper.MemoryTable,
   BFA.Global.Variable;
 
 { TFListMenu }
@@ -343,7 +346,7 @@ begin
           Inc(FIndex);
 
           LM.ListBoxItem.Text := LM.ListBoxItem.Text + ' ' + QSubListMenu.FieldByName('name').AsString;
-
+          LMSub.ListBoxItem.Text := QSubListMenu.FieldByName('name').AsString;
           LMSub.ListBoxItem.Hint := QListMenu.FieldByName('name').AsString + '_sub'; //identify sub from LM
           LMSub.ListBoxItem.TagString := QSubListMenu.FieldByName('alias').AsString;
           LMSub.LabelText.Text := QSubListMenu.FieldByName('name').AsString;
@@ -364,6 +367,18 @@ begin
     end;
   finally
     QSubListMenu.DisposeOf;
+  end;
+end;
+
+procedure TFListMenu.sbSearchTyping(Sender: TObject);
+begin
+  for var i := 0 to lbMenu.items.Count - 1 do begin
+    var Item := lbMenu.ItemByIndex(i);
+    if ListMenu[Item.Tag].IsHaveSubMenu then begin
+      if not ListMenu[Item.Tag].IsExpand then begin
+        ExpandMenu(Item);
+      end;
+    end
   end;
 end;
 

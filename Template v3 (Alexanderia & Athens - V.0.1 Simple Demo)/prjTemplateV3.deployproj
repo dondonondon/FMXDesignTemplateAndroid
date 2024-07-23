@@ -4,7 +4,7 @@
         <ProjectFileVersion>12</ProjectFileVersion>
     </ProjectExtensions>
     <PropertyGroup>
-        <DeviceId Condition="'$(Platform)'=='Android'">121512542T000655</DeviceId>
+        <DeviceId Condition="'$(Platform)'=='Android'"/>
         <DeviceId Condition="'$(Platform)'=='Android64'">121512542T000655</DeviceId>
         <DeviceId Condition="'$(Platform)'=='iOSDevice64'"/>
         <DeviceId Condition="'$(Platform)'=='iOSSimARM64'"/>
@@ -23,29 +23,11 @@
         </DeployFile>
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Android64'">
-        <DeployFile Include="assets\icons\inventory_main.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>inventory_main.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\icons\inventory_main.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>inventory_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
             <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="bin\Android64\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\</RemoteDir>
-            <RemoteName>AndroidManifest.xml</RemoteName>
-            <DeployClass>ProjectAndroidManifest</DeployClass>
-            <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -68,37 +50,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\res\drawable-hdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon72</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\drawable-mdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon48</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\drawable-large\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
-            <DeployClass>Android_SplashImage640</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -122,24 +77,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\library\lib\mips\</RemoteDir>
-            <RemoteName>libprjTemplateV3.so</RemoteName>
-            <DeployClass>AndroidLibnativeMipsFile</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\mdi_bell-outline_red.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>mdi_bell-outline_red.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\icons\mdi_bell-outline_red.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>mdi_bell-outline_red.png</RemoteName>
@@ -149,28 +86,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\library\lib\armeabi-v7a\</RemoteDir>
-            <RemoteName>libprjTemplateV3.so</RemoteName>
-            <DeployClass>AndroidLibnativeArmeabiv7aFile</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>libprjTemplateV3.so</RemoteName>
             <DeployClass>AndroidLibnativeArmeabiv7aFile</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="bin\Android64\colors-night-v21.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\values-night-v21\</RemoteDir>
-            <RemoteName>colors.xml</RemoteName>
-            <DeployClass>Android_ColorsDark</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -194,36 +113,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\calender_selected.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>calender_selected.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\icons\report_main.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>report_main.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\report_main.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>report_main.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\ep_arrow-up-bold.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>ep_arrow-up-bold.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
@@ -248,25 +140,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\report_selected.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>report_selected.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\icons\sub_selected.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>sub_selected.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\sub_selected.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>sub_selected.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -284,37 +158,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\res\drawable-xxxhdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon192</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>prjTemplateV3\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\res\drawable-xhdpi\</RemoteDir>
-            <RemoteName>ic_notification.png</RemoteName>
-            <DeployClass>Android_NotificationIcon48</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\library\lib\armeabi\</RemoteDir>
-            <RemoteName>libprjTemplateV3.so</RemoteName>
-            <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -338,15 +185,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\sub_main.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>sub_main.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\icons\inventory_selected.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>inventory_selected.png</RemoteName>
@@ -355,25 +193,6 @@
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\inventory_selected.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>inventory_selected.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="bin\Android64\libprjTemplateV3.so" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\library\lib\arm64-v8a\</RemoteDir>
-            <RemoteName>libprjTemplateV3.so</RemoteName>
-            <DeployClass>ProjectOutput</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-            <Required>True</Required>
         </DeployFile>
         <DeployFile Include="bin\Android64\libprjTemplateV3.so" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\library\lib\arm64-v8a\</RemoteDir>
@@ -389,24 +208,6 @@
             <RemoteDir>prjTemplateV3\res\drawable\</RemoteDir>
             <RemoteName>splash_image_def.xml</RemoteName>
             <DeployClass>AndroidSplashImageDef</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="bin\Android64\splash_image_def.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\res\drawable\</RemoteDir>
-            <RemoteName>splash_image_def.xml</RemoteName>
-            <DeployClass>AndroidSplashImageDef</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="bin\Android64\styles-v21.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\values-v21\</RemoteDir>
-            <RemoteName>styles.xml</RemoteName>
-            <DeployClass>AndroidSplashStylesV21</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -430,36 +231,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="bin\Android64\prjTemplateV3.classes" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\classes\</RemoteDir>
-            <RemoteName>prjTemplateV3.classes</RemoteName>
-            <DeployClass>AndroidClasses</DeployClass>
-            <Operation>64</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\icons\mdi_bell-outline.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>mdi_bell-outline.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\mdi_bell-outline.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>mdi_bell-outline.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\help_main.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>help_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
@@ -484,38 +258,11 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\ep_arrow-down-bold.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>ep_arrow-down-bold.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\drawable-normal\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
-            <DeployClass>Android_SplashImage470</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
             <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\home_main.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>home_main.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -529,27 +276,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\grommet-icons_finger-print.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>grommet-icons_finger-print.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\icons\grommet-icons_finger-print.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>grommet-icons_finger-print.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\help_selected.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>help_selected.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
@@ -574,15 +303,6 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\res\drawable-xxhdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon144</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\master data\data.json" Condition="'$(Config)'=='Debug'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>data.json</RemoteName>
@@ -592,37 +312,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\drawable-xxxhdpi\</RemoteDir>
-            <RemoteName>ic_notification.png</RemoteName>
-            <DeployClass>Android_NotificationIcon96</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon96</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\master data\data.json" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>data.json</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="bin\Android64\colors.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
-            <RemoteName>colors.xml</RemoteName>
-            <DeployClass>Android_Colors</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -637,28 +330,10 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\drawable-ldpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon36</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-ldpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon36</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="bin\Android64\styles.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
-            <RemoteName>styles.xml</RemoteName>
-            <DeployClass>AndroidSplashStyles</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -682,36 +357,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\icon-park-solid_tips.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>icon-park-solid_tips.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\icons\order_main.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>order_main.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\order_main.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>order_main.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\payment_selected.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>payment_selected.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
@@ -727,27 +375,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\master data\list_menu.json" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>list_menu.json</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\master data\list_menu.json" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>list_menu.json</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\home_selected.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>home_selected.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>
@@ -772,6 +402,511 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="assets\icons\dashboard_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>dashboard_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-xhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon96</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\ep_arrow-down-bold_w.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>ep_arrow-down-bold_w.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-mdpi\</RemoteDir>
+            <RemoteName>ic_notification.png</RemoteName>
+            <DeployClass>Android_NotificationIcon24</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\payment_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>payment_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-xlarge\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage960</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\order_selected.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>order_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\fe_drop-down.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>fe_drop-down.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-small\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage426</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\calender_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>calender_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\foundation_indent-more.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>foundation_indent-more.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteName>ic_notification.png</RemoteName>
+            <DeployClass>Android_NotificationIcon72</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android64\strings.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
+            <RemoteName>strings.xml</RemoteName>
+            <DeployClass>Android_Strings</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\dashboard_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>dashboard_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\inventory_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>inventory_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android64\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>AndroidManifest.xml</RemoteName>
+            <DeployClass>ProjectAndroidManifest</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-hdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon72</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-mdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon48</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-large\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage640</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\library\lib\mips\</RemoteDir>
+            <RemoteName>libprjTemplateV3.so</RemoteName>
+            <DeployClass>AndroidLibnativeMipsFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\mdi_bell-outline_red.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>mdi_bell-outline_red.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\armeabi-v7a\libnative-activity.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libprjTemplateV3.so</RemoteName>
+            <DeployClass>AndroidLibnativeArmeabiv7aFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android64\colors-night-v21.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\values-night-v21\</RemoteDir>
+            <RemoteName>colors.xml</RemoteName>
+            <DeployClass>Android_ColorsDark</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\calender_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>calender_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\report_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>report_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\ep_arrow-up-bold.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>ep_arrow-up-bold.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\report_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>report_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\sub_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>sub_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon192</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-xhdpi\</RemoteDir>
+            <RemoteName>ic_notification.png</RemoteName>
+            <DeployClass>Android_NotificationIcon48</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\library\lib\armeabi\</RemoteDir>
+            <RemoteName>libprjTemplateV3.so</RemoteName>
+            <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\sub_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>sub_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\file_paths.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\xml\</RemoteDir>
+            <RemoteName>file_paths.xml</RemoteName>
+            <DeployClass>File</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\inventory_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>inventory_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android64\libprjTemplateV3.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\library\lib\arm64-v8a\</RemoteDir>
+            <RemoteName>libprjTemplateV3.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="bin\Android64\splash_image_def.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable\</RemoteDir>
+            <RemoteName>splash_image_def.xml</RemoteName>
+            <DeployClass>AndroidSplashImageDef</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android64\styles-v21.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\values-v21\</RemoteDir>
+            <RemoteName>styles.xml</RemoteName>
+            <DeployClass>AndroidSplashStylesV21</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android64\prjTemplateV3.classes" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\classes\</RemoteDir>
+            <RemoteName>prjTemplateV3.classes</RemoteName>
+            <DeployClass>AndroidClasses</DeployClass>
+            <Operation>64</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\mdi_bell-outline.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>mdi_bell-outline.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\help_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>help_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\ep_arrow-down-bold.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>ep_arrow-down-bold.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-normal\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage470</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\home_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>home_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\grommet-icons_finger-print.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>grommet-icons_finger-print.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\help_selected.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>help_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon144</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\master data\data.json" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>data.json</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteName>ic_notification.png</RemoteName>
+            <DeployClass>Android_NotificationIcon96</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android64\colors.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
+            <RemoteName>colors.xml</RemoteName>
+            <DeployClass>Android_Colors</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-ldpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon36</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android64\styles.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
+            <RemoteName>styles.xml</RemoteName>
+            <DeployClass>AndroidSplashStyles</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\icon-park-solid_tips.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>icon-park-solid_tips.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\order_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>order_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\payment_selected.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>payment_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\master data\list_menu.json" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>list_menu.json</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\home_selected.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>home_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
@@ -790,25 +925,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\dashboard_selected.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>dashboard_selected.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\drawable-xhdpi\</RemoteDir>
-            <RemoteName>ic_launcher.png</RemoteName>
-            <DeployClass>Android_LauncherIcon96</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon96</DeployClass>
@@ -826,56 +943,11 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\ep_arrow-down-bold_w.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>ep_arrow-down-bold_w.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>prjTemplateV3\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon24</DeployClass>
             <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\res\drawable-mdpi\</RemoteDir>
-            <RemoteName>ic_notification.png</RemoteName>
-            <DeployClass>Android_NotificationIcon24</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\drawable-xlarge\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
-            <DeployClass>Android_SplashImage960</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\res\drawable-xlarge\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
-            <DeployClass>Android_SplashImage960</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\payment_main.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>payment_main.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -889,11 +961,11 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\order_selected.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>order_selected.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-xlarge\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage960</DeployClass>
+            <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -916,25 +988,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\fe_drop-down.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>fe_drop-down.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\drawable-small\</RemoteDir>
-            <RemoteName>splash_image.png</RemoteName>
-            <DeployClass>Android_SplashImage426</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
@@ -952,25 +1006,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\calender_main.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>calender_main.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="assets\icons\foundation_indent-more.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>foundation_indent-more.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\foundation_indent-more.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>foundation_indent-more.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -988,29 +1024,11 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\res\drawable-xxhdpi\</RemoteDir>
-            <RemoteName>ic_notification.png</RemoteName>
-            <DeployClass>Android_NotificationIcon72</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
         <DeployFile Include="bin\Android64\strings.xml" Condition="'$(Config)'=='Debug'">
             <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
             <RemoteName>strings.xml</RemoteName>
             <DeployClass>Android_Strings</DeployClass>
             <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="assets\icons\dashboard_main.png" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
-            <RemoteName>dashboard_main.png</RemoteName>
-            <DeployClass>ProjectFile</DeployClass>
-            <Operation>0</Operation>
             <LocalCommand/>
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
@@ -1024,18 +1042,9 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="bin\Android64\strings.xml" Condition="'$(Config)'=='Release'">
-            <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
-            <RemoteName>strings.xml</RemoteName>
-            <DeployClass>Android_Strings</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='Android'">
-        <DeployFile Include="assets\master data\data.json" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\master data\data.json" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>data.json</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1053,7 +1062,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\foundation_indent-more.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\foundation_indent-more.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>foundation_indent-more.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1080,7 +1089,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="bin\Android\styles-v21.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="bin\Android\styles-v21.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\values-v21\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStylesV21</DeployClass>
@@ -1089,7 +1098,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\help_selected.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\help_selected.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>help_selected.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1116,7 +1125,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\grommet-icons_finger-print.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\grommet-icons_finger-print.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>grommet-icons_finger-print.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1134,7 +1143,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\dashboard_selected.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\dashboard_selected.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>dashboard_selected.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1143,7 +1152,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\ep_arrow-down-bold.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\ep_arrow-down-bold.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>ep_arrow-down-bold.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1170,7 +1179,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-normal\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage470</DeployClass>
@@ -1179,7 +1188,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon72</DeployClass>
@@ -1188,7 +1197,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-xxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon144</DeployClass>
@@ -1197,7 +1206,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-xxxhdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon192</DeployClass>
@@ -1215,7 +1224,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="bin\Android\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="bin\Android\AndroidManifest.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>AndroidManifest.xml</RemoteName>
             <DeployClass>ProjectAndroidManifest</DeployClass>
@@ -1260,10 +1269,19 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-small\</RemoteDir>
             <RemoteName>splash_image.png</RemoteName>
             <DeployClass>Android_SplashImage426</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android\colors-night-v21.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\values-night-v21\</RemoteDir>
+            <RemoteName>colors.xml</RemoteName>
+            <DeployClass>Android_ColorsDark</DeployClass>
             <Operation>1</Operation>
             <LocalCommand/>
             <RemoteCommand/>
@@ -1278,16 +1296,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="bin\Android\colors-night-v21.xml" Condition="'$(Config)'=='Debug'">
-            <RemoteDir>prjTemplateV3\res\values-night-v21\</RemoteDir>
-            <RemoteName>colors.xml</RemoteName>
-            <DeployClass>Android_ColorsDark</DeployClass>
-            <Operation>1</Operation>
-            <LocalCommand/>
-            <RemoteCommand/>
-            <Overwrite>True</Overwrite>
-        </DeployFile>
-        <DeployFile Include="bin\Android\libprjTemplateV3.so" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="bin\Android\libprjTemplateV3.so" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\library\lib\armeabi-v7a\</RemoteDir>
             <RemoteName>libprjTemplateV3.so</RemoteName>
             <DeployClass>ProjectOutput</DeployClass>
@@ -1324,7 +1333,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="bin\Android\styles.xml" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="bin\Android\styles.xml" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
             <RemoteName>styles.xml</RemoteName>
             <DeployClass>AndroidSplashStyles</DeployClass>
@@ -1334,6 +1343,502 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-mdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon48</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\payment_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>payment_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-xlarge\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage960</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\icon-park-solid_tips.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>icon-park-solid_tips.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\report_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>report_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-xhdpi\</RemoteDir>
+            <RemoteName>ic_notification.png</RemoteName>
+            <DeployClass>Android_NotificationIcon48</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\master data\list_menu.json" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>list_menu.json</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\armeabi\libnative-activity.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\library\lib\armeabi\</RemoteDir>
+            <RemoteName>libprjTemplateV3.so</RemoteName>
+            <DeployClass>AndroidLibnativeArmeabiFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-hdpi\</RemoteDir>
+            <RemoteName>ic_notification.png</RemoteName>
+            <DeployClass>Android_NotificationIcon36</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\inventory_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>inventory_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\dashboard_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>dashboard_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteName>ic_notification.png</RemoteName>
+            <DeployClass>Android_NotificationIcon96</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\mdi_bell-outline.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>mdi_bell-outline.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android\strings.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
+            <RemoteName>strings.xml</RemoteName>
+            <DeployClass>Android_Strings</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\report_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>report_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\home_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>home_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\sub_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>sub_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\order_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>order_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\ep_arrow-up-bold.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>ep_arrow-up-bold.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\ep_arrow-down-bold_w.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>ep_arrow-down-bold_w.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\order_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>order_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\help_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>help_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\master data\data.json" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>data.json</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\home_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>home_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\foundation_indent-more.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>foundation_indent-more.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-hdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon72</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\calender_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>calender_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android\styles-v21.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\values-v21\</RemoteDir>
+            <RemoteName>styles.xml</RemoteName>
+            <DeployClass>AndroidSplashStylesV21</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\help_selected.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>help_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\inventory_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>inventory_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-ldpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon36</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\grommet-icons_finger-print.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>grommet-icons_finger-print.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\calender_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>calender_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\dashboard_selected.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>dashboard_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\ep_arrow-down-bold.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>ep_arrow-down-bold.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\fe_drop-down.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>fe_drop-down.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\sub_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>sub_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-normal\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage470</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteName>ic_notification.png</RemoteName>
+            <DeployClass>Android_NotificationIcon72</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-xxhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon144</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_192x192.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-xxxhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon192</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-xhdpi\</RemoteDir>
+            <RemoteName>ic_launcher.png</RemoteName>
+            <DeployClass>Android_LauncherIcon96</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android\AndroidManifest.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>AndroidManifest.xml</RemoteName>
+            <DeployClass>ProjectAndroidManifest</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\payment_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>payment_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android\prjTemplateV3.classes" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\classes\</RemoteDir>
+            <RemoteName>prjTemplateV3.classes</RemoteName>
+            <DeployClass>AndroidClasses</DeployClass>
+            <Operation>64</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-mdpi\</RemoteDir>
+            <RemoteName>ic_notification.png</RemoteName>
+            <DeployClass>Android_NotificationIcon24</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\lib\android\debug\mips\libnative-activity.so" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\library\lib\mips\</RemoteDir>
+            <RemoteName>libprjTemplateV3.so</RemoteName>
+            <DeployClass>AndroidLibnativeMipsFile</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\drawable-small\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage426</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android\colors-night-v21.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\values-night-v21\</RemoteDir>
+            <RemoteName>colors.xml</RemoteName>
+            <DeployClass>Android_ColorsDark</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\mdi_bell-outline_red.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>mdi_bell-outline_red.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android\libprjTemplateV3.so" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\library\lib\armeabi-v7a\</RemoteDir>
+            <RemoteName>libprjTemplateV3.so</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="bin\Android\splash_image_def.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable\</RemoteDir>
+            <RemoteName>splash_image_def.xml</RemoteName>
+            <DeployClass>AndroidSplashImageDef</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\drawable-large\</RemoteDir>
+            <RemoteName>splash_image.png</RemoteName>
+            <DeployClass>Android_SplashImage640</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android\colors.xml" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
+            <RemoteName>colors.xml</RemoteName>
+            <DeployClass>Android_Colors</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\Android\styles.xml" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\res\values\</RemoteDir>
+            <RemoteName>styles.xml</RemoteName>
+            <DeployClass>AndroidSplashStyles</DeployClass>
+            <Operation>1</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-mdpi\</RemoteDir>
             <RemoteName>ic_launcher.png</RemoteName>
             <DeployClass>Android_LauncherIcon48</DeployClass>
@@ -1378,7 +1883,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-xhdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon48</DeployClass>
@@ -1387,7 +1892,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\master data\list_menu.json" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\master data\list_menu.json" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>list_menu.json</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1405,7 +1910,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
             <DeployClass>Android_NotificationIcon36</DeployClass>
@@ -1423,7 +1928,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\dashboard_main.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\dashboard_main.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>dashboard_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1441,7 +1946,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\mdi_bell-outline.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\mdi_bell-outline.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>mdi_bell-outline.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1495,7 +2000,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\ep_arrow-up-bold.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\ep_arrow-up-bold.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>ep_arrow-up-bold.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1504,7 +2009,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\ep_arrow-down-bold_w.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\ep_arrow-down-bold_w.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>ep_arrow-down-bold_w.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1513,7 +2018,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\order_main.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\order_main.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
             <RemoteName>order_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1543,7 +2048,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\help_main.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\help_main.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>help_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1553,6 +2058,277 @@
             <Overwrite>True</Overwrite>
         </DeployFile>
         <DeployFile Include="assets\icons\ep_arrow-down-bold_w.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>ep_arrow-down-bold_w.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\home_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>home_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\payment_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>payment_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\icon-park-solid_tips.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>icon-park-solid_tips.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\calender_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>calender_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\help_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>help_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\home_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>home_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\order_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>order_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\dashboard_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>dashboard_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\calender_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>calender_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\dashboard_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>dashboard_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\inventory_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>inventory_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\mdi_bell-outline.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>mdi_bell-outline.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\foundation_indent-more.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>foundation_indent-more.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\master data\data.json" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>data.json</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\report_main.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>report_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\sub_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>sub_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\grommet-icons_finger-print.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>grommet-icons_finger-print.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\report_selected.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>report_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\payment_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>payment_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\ep_arrow-down-bold.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>ep_arrow-down-bold.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\fe_drop-down.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>fe_drop-down.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\master data\list_menu.json" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>list_menu.json</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="bin\prjTemplateV3.exe" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>prjTemplateV3.exe</RemoteName>
+            <DeployClass>ProjectOutput</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+            <Required>True</Required>
+        </DeployFile>
+        <DeployFile Include="assets\icons\inventory_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>inventory_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\ep_arrow-up-bold.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>ep_arrow-up-bold.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\sub_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>sub_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\mdi_bell-outline_red.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>mdi_bell-outline_red.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\order_selected.png" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>order_selected.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\help_main.png" Condition="'$(Config)'=='Debug'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>help_main.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\icons\ep_arrow-down-bold_w.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>ep_arrow-down-bold_w.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1588,7 +2364,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\calender_main.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\calender_main.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>calender_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1615,7 +2391,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\order_main.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\order_main.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>order_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1642,7 +2418,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\dashboard_main.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\dashboard_main.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>dashboard_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1705,7 +2481,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\grommet-icons_finger-print.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\grommet-icons_finger-print.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>grommet-icons_finger-print.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1714,7 +2490,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\report_selected.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\report_selected.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>report_selected.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1723,7 +2499,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\payment_main.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\payment_main.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>payment_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1732,7 +2508,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\ep_arrow-down-bold.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\ep_arrow-down-bold.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>ep_arrow-down-bold.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1741,7 +2517,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\fe_drop-down.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\fe_drop-down.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>fe_drop-down.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1759,7 +2535,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="bin\prjTemplateV3.exe" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="bin\prjTemplateV3.exe" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>prjTemplateV3.exe</RemoteName>
             <DeployClass>ProjectOutput</DeployClass>
@@ -1769,7 +2545,7 @@
             <Overwrite>True</Overwrite>
             <Required>True</Required>
         </DeployFile>
-        <DeployFile Include="assets\icons\inventory_main.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\inventory_main.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>inventory_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1787,7 +2563,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\sub_main.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\sub_main.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>sub_main.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1796,7 +2572,7 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
-        <DeployFile Include="assets\icons\mdi_bell-outline_red.png" Condition="'$(Config)'=='Debug'">
+        <DeployFile Include="assets\icons\mdi_bell-outline_red.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>mdi_bell-outline_red.png</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
@@ -1808,4 +2584,6 @@
     </ItemGroup>
     <ItemGroup Condition="'$(Platform)'=='iOSDevice64'"/>
     <ItemGroup Condition="'$(Platform)'=='iOSSimARM64'"/>
+    <ItemGroup Condition="'$(Platform)'=='Win64x'"/>
+    <ItemGroup Condition="'$(Platform)'=='Linux64'"/>
 </Project>

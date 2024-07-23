@@ -33,10 +33,10 @@ type
   public
     procedure ShowToastMessage(FMessage : String; FJenis : TTypeMessage = Information);
     procedure ShowPopUpMessage(FMessage : String; FJenis : TTypeMessage; FProc : TProc = nil);
-    procedure Loading(IsState : Boolean);
+    procedure Loading(IsState : Boolean; AText : String = '');
 
-    procedure StartLoading(IsSynchronize : Boolean = True);
-    procedure StopLoading(IsSynchronize : Boolean = True);
+    procedure StartLoading(AText : String = '');
+    procedure StopLoading;
 
     procedure ClosePopup;
 
@@ -150,10 +150,12 @@ begin
   end;
 end;
 
-procedure TMainHelper.Loading(IsState: Boolean);
+procedure TMainHelper.Loading(IsState: Boolean; AText : String);
 var
   FLayout : TLayout;
   FAni : TAniIndicator;
+
+  FLabel : TLabel;
 begin
   StateLoading := IsState;
 
@@ -180,12 +182,30 @@ begin
     FLayout.AddObject(FAni);
     SetForm.AddObject(FLayout);
     FLayout.BringToFront;
+
+    FLabel := TLabel.Create(SetForm);
+    FLabel.Text := AText;
+    FLabel.Font.Size := 12.5;
+    FLabel.FontColor := $FF606060;
+    FLabel.StyledSettings := [];
+    FLabel.Width := SetForm.Width - 32;
+    FLabel.AutoSize := True;
+    FLabel.Position.X := 16;
+    FLabel.Position.Y := FAni.Position.Y + FAni.Height + 16;
+
+    FLabel.TextSettings.HorzAlign := TTextAlign.Center;
+
+    FLabel.StyleName := 'labelLoading';
+
+    FLayout.AddObject(FLabel);
   end else begin
     FLayout.Visible := IsState;
     FAni := TAniIndicator(FLayout.FindStyleResource('FAni'));
     if Assigned(FAni) then
       FAni.Enabled := IsState;
     FLayout.BringToFront;
+
+    TLabel(FLayout.FindStyleResource('labelLoading')).Text := AText;
   end;
 end;
 
@@ -373,6 +393,7 @@ begin
   reBackground.XRadius := 8;
   reBackground.YRadius := reBackground.XRadius;
   reBackground.Align := TAlignLayout.Contents;
+  reBackground.HitTest := False;
   //reBackground.Anchors := [TAnchorKind.akLeft, TAnchorKind.akRight, TAnchorKind.akTop, TAnchorKind.akBottom];
   loPop.AddObject(reBackground);
 
@@ -444,7 +465,7 @@ begin
   FLOpa.StartValue := 1;
   FLOpa.StopValue := 0;
   FLOpa.Delay := 1;
-  FLOpa.Duration := 0.75;
+  FLOpa.Duration := 3.75;
 
   FLOpa.OnFinish := flFinish;
 
@@ -453,18 +474,15 @@ begin
   FLOpa.Enabled := True;
 end;
 
-procedure TMainHelper.StartLoading(IsSynchronize : Boolean);
+procedure TMainHelper.StartLoading(AText : String);
 begin
-  if IsSynchronize then begin
-    TThread.Synchronize(TThread.CurrentThread, procedure begin Self.Loading(True); end)
-  end else Self.Loading(True);
+  TThread.Synchronize(TThread.CurrentThread, procedure begin Self.Loading(True, AText); end);
 end;
 
-procedure TMainHelper.StopLoading(IsSynchronize : Boolean);
+procedure TMainHelper.StopLoading;
 begin
-  if IsSynchronize then begin
-    TThread.Synchronize(TThread.CurrentThread, procedure begin Self.Loading(False); end)
-  end else Self.Loading(False);
+  TThread.Synchronize(TThread.CurrentThread, procedure begin Self.Loading(False); end);
 end;
 
 end.
+

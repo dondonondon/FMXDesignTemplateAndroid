@@ -15,7 +15,7 @@ uses
   BFA.Control.Permission in 'sources\controls\BFA.Control.Permission.pas',
   BFA.Control.PushNotification in 'sources\controls\BFA.Control.PushNotification.pas',
   BFA.Helper.Main in 'sources\helpers\BFA.Helper.Main.pas',
-  BFA.Helper.TFDMemTable in 'sources\helpers\BFA.Helper.TFDMemTable.pas',
+  BFA.Helper.MemoryTable in 'sources\helpers\BFA.Helper.MemoryTable.pas',
   BFA.Init in 'sources\BFA.Init.pas',
   BFA.Control.Rest in 'sources\controls\BFA.Control.Rest.pas',
   frListMenu in 'frames\controls\frListMenu.pas' {FListMenu: TFrame},
@@ -34,7 +34,11 @@ uses
   frReport in 'frames\frReport.pas' {FReport: TFrame},
   frSubMenuTemp in 'frames\frSubMenuTemp.pas' {FSubMenuTemp: TFrame},
   frTemp in 'frames\frTemp.pas' {FTemp: TFrame},
-  frCalender in 'frames\controls\frCalender.pas' {FCalender: TFrame};
+  frCalender in 'frames\controls\frCalender.pas' {FCalender: TFrame},
+  BFA.Helper.Bitmap in 'sources\helpers\BFA.Helper.Bitmap.pas',
+  BFA.Log in 'sources\helpers\BFA.Log.pas',
+  BFA.OpenUrl in 'sources\helpers\BFA.OpenUrl.pas',
+  BFA.Helper.OpenDialog in 'sources\helpers\BFA.Helper.OpenDialog.pas';
 
 //  {$IF DEFINED (ANDROID)}
 //  FMX.MediaLibrary.Android in 'sources\libraries\FMX.MediaLibrary.Android.pas',

@@ -52,30 +52,24 @@ object FOrder: TFOrder
       Viewport.Height = 542.000000000000000000
       object StringColumn1: TStringColumn
         Header = 'Name'
-        HeaderSettings.TextSettings.WordWrap = False
         Size.Width = 210.000000000000000000
       end
       object StringColumn2: TStringColumn
         Header = 'Location'
-        HeaderSettings.TextSettings.WordWrap = False
         Size.Width = 170.000000000000000000
       end
       object StringColumn3: TStringColumn
         Header = 'Phone Number'
-        HeaderSettings.TextSettings.WordWrap = False
         Size.Width = 130.000000000000000000
       end
       object StringColumn4: TStringColumn
         Header = 'Status'
-        HeaderSettings.TextSettings.WordWrap = False
       end
       object StringColumn5: TStringColumn
         Header = 'Priority'
-        HeaderSettings.TextSettings.WordWrap = False
       end
       object StringColumn6: TStringColumn
         Header = 'Ticket Number'
-        HeaderSettings.TextSettings.WordWrap = False
         Size.Width = 117.000000000000000000
       end
     end

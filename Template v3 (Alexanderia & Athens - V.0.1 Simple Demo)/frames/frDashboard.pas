@@ -39,7 +39,7 @@ implementation
 uses frMain, BFA.Global.Variable,
   BFA.Control.Form.Message, BFA.Control.Frame, BFA.Control.Keyboard,
   BFA.Control.Permission, BFA.Control.PushNotification, BFA.Global.Func,
-  BFA.Helper.Main, BFA.Helper.TFDMemTable, frListMenu;
+  BFA.Helper.Main, BFA.Helper.MemoryTable, frListMenu;
 
 { TFTemp }
 

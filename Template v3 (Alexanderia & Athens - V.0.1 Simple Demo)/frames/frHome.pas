@@ -85,6 +85,8 @@ type
     tiLoading: TTabItem;
     btnStartLoading: TCornerButton;
     memLoading: TMemo;
+    Line1: TLine;
+    CornerButton21: TCornerButton;
     procedure btnBackClick(Sender: TObject);
     procedure lbMenuItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
@@ -108,6 +110,7 @@ type
     procedure btnBodyClick(Sender: TObject);
     procedure btnStartLoadingClick(Sender: TObject);
     procedure lblTitleClick(Sender: TObject);
+    procedure CornerButton21Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -132,7 +135,7 @@ implementation
 uses frMain, BFA.Global.Variable,
   BFA.Control.Form.Message, BFA.Control.Frame, BFA.Control.Keyboard,
   BFA.Control.Permission, BFA.Control.PushNotification, BFA.Global.Func,
-  BFA.Helper.Main, BFA.Helper.TFDMemTable, BFA.Control.Rest, uDM, frCalender;
+  BFA.Helper.Main, BFA.Helper.MemoryTable, BFA.Control.Rest, uDM, frCalender;
 
 procedure TFHome.Back;
 begin
@@ -145,7 +148,8 @@ begin
       Frame.Back;
     end;
   end else begin
-    FSidebar.MultiView.ShowMaster;
+    HelperFunction.ShowMenu;
+//    FSidebar.MultiView.ShowMaster;
   end;
 end;
 
@@ -250,7 +254,7 @@ begin
   memLoading.Lines.Add('Loading Start');
 
   TTask.Run(procedure begin
-    Helper.StartLoading;
+    Helper.StartLoading('Waiting Process');
     try
       Sleep(3000);
 
@@ -266,27 +270,34 @@ end;
 
 procedure TFHome.CornerButton10Click(Sender: TObject);
 begin
-  Helper.ShowToastMessage('This is message Information', TTypeMessage.Information);
+  HelperFunction.ShowToastMessage('This is message Information', TTypeMessage.Information);
 end;
 
 procedure TFHome.CornerButton11Click(Sender: TObject);
 begin
-  Helper.ShowToastMessage('This is message Error', TTypeMessage.Error);
+  HelperFunction.ShowToastMessage('This is message Error', TTypeMessage.Error);
 end;
 
 procedure TFHome.CornerButton12Click(Sender: TObject);
 begin
-  Helper.ShowPopUpMessage('This is message Information', TTypeMessage.Information);
+  HelperFunction.ShowPopUpMessage('This is message Information', TTypeMessage.Information);
 end;
 
 procedure TFHome.CornerButton13Click(Sender: TObject);
 begin
-  Helper.ShowPopUpMessage('This is message Error', TTypeMessage.Error);
+  HelperFunction.ShowPopUpMessage('This is message Error', TTypeMessage.Error);
 end;
 
 procedure TFHome.CornerButton14Click(Sender: TObject);
 begin
-  Helper.ShowPopUpMessage('This is message Success', TTypeMessage.Success);
+  HelperFunction.ShowPopUpMessage('This is message Success', TTypeMessage.Success);
+end;
+
+procedure TFHome.CornerButton21Click(Sender: TObject);
+begin
+  HelperFunction.ShowPopUpMessage('This is message Success with process', TTypeMessage.Success, procedure begin
+    ShowMessage('Hello World');
+  end);
 end;
 
 procedure TFHome.CornerButton15Click(Sender: TObject);
@@ -423,7 +434,7 @@ end;
 
 procedure TFHome.CornerButton9Click(Sender: TObject);
 begin
-  Helper.ShowToastMessage('This is message Success', TTypeMessage.Success);
+  HelperFunction.ShowToastMessage('This is message Success', TTypeMessage.Success);
 end;
 
 constructor TFHome.Create(AOwner: TComponent);

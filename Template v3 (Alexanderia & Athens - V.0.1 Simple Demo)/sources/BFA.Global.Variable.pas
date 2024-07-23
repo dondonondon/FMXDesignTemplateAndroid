@@ -13,7 +13,7 @@ uses
   FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
-  BFA.Helper.TFDMemTable, BFA.Global.Func,
+  BFA.Helper.MemoryTable, BFA.Global.Func,
   BFA.Helper.Main, BFA.Control.PushNotification, frListMenu
   {$IF DEFINED(IOS) or DEFINED(ANDROID)}
    ,AndroidApi.JNI.GraphicsContentViewText, AndroidApi.JNI.OS, AndroidApi.Helpers, AndroidApi.JNI.Net,

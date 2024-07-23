@@ -13,7 +13,7 @@ uses
   FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
-  BFA.Helper.TFDMemTable, BFA.Global.Func,
+  BFA.Helper.MemoryTable, BFA.Global.Func,
   BFA.Global.Variable, BFA.Helper.Main, BFA.Control.PushNotification, frMain,
   BFA.Control.Permission
   {$IF DEFINED (ANDROID)}
@@ -39,7 +39,7 @@ implementation
 uses
   frHome, frLoading, frLogin, frAccount, frDetail, frFavorite, frListMenu,
   frDashboard, frHelp, frInventory, frOrder, frPayment, frRecord, frReport,
-  frSubMenuTemp, frTemp;
+  frSubMenuTemp, frTemp, BFA.Helper.OpenDialog;
 
 { TInitControls }
 
@@ -70,6 +70,8 @@ begin
   InitToastMessage; //init before Initframe
   InitFrame;
   InitSidebar;
+
+  TBFAOpenDialog.InitSubsribeMessage;
 end;
 
 class procedure TInitControls.InitKeyboard;

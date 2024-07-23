@@ -13,7 +13,7 @@ uses
   FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
-  BFA.Helper.TFDMemTable, BFA.Global.Func,
+  BFA.Helper.MemoryTable, BFA.Global.Func,
   BFA.Global.Variable, BFA.Helper.Main, BFA.Control.PushNotification,
   FMX.MultiView
   {$IF DEFINED (ANDROID)}
@@ -70,6 +70,8 @@ begin
   TInitControls.InitFunction;
 
   memAnnounce.DisposeOf;
+
+//  ShowMessage('');
 end;
 
 procedure TFMain.FormDestroy(Sender: TObject);

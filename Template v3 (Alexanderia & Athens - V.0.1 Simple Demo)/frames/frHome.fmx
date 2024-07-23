@@ -70,7 +70,7 @@ object FHome: TFHome
     Size.Width = 393.000000000000000000
     Size.Height = 552.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 0
+    TabIndex = 6
     TabOrder = 5
     TabPosition = None
     Sizes = (
@@ -97,7 +97,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -771,7 +771,7 @@ object FHome: TFHome
         Size.Height = 45.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = 'btnGreen'
-        TabOrder = 8
+        TabOrder = 9
         Text = 'Popup Message Success'
         TextSettings.Font.Size = 12.500000000000000000
         TextSettings.Trimming = None
@@ -779,13 +779,43 @@ object FHome: TFHome
         YRadius = 12.000000000000000000
         OnClick = CornerButton14Click
       end
+      object Line1: TLine
+        Align = Top
+        LineType = Bottom
+        Position.Y = 207.000000000000000000
+        Size.Width = 393.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object CornerButton21: TCornerButton
+        Align = Top
+        StyledSettings = [Family, Style, FontColor]
+        Margins.Left = 12.000000000000000000
+        Margins.Top = 12.000000000000000000
+        Margins.Right = 12.000000000000000000
+        Margins.Bottom = 12.000000000000000000
+        Position.X = 12.000000000000000000
+        Position.Y = 245.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 369.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnGreen'
+        TabOrder = 8
+        Text = 'Popup Message Success With Process'
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.Trimming = None
+        XRadius = 12.000000000000000000
+        YRadius = 12.000000000000000000
+        OnClick = CornerButton21Click
+      end
     end
     object tiMoveFrame: TTabItem
       CustomIcon = <
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -971,8 +1001,8 @@ object FHome: TFHome
         Size.Height = 488.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        Viewport.Width = 373.000000000000000000
-        Viewport.Height = 484.000000000000000000
+        Viewport.Width = 377.000000000000000000
+        Viewport.Height = 488.000000000000000000
       end
     end
   end

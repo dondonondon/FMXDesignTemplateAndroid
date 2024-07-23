@@ -43,7 +43,7 @@ implementation
 uses frMain, BFA.Global.Variable,
   BFA.Control.Form.Message, BFA.Control.Frame, BFA.Control.Keyboard,
   BFA.Control.Permission, BFA.Control.PushNotification, BFA.Global.Func,
-  BFA.Helper.Main, BFA.Helper.TFDMemTable;
+  BFA.Helper.Main, BFA.Helper.MemoryTable;
 
 constructor TFLoading.Create(AOwner: TComponent);
 begin
@@ -81,6 +81,7 @@ end;
 procedure TFLoading.tiMoveTimer(Sender: TObject);
 begin
   tiMove.Enabled := False;
+//  Frame.GoFrame(C_DETAIL);
   Frame.GoFrame(C_LOGIN);
 end;
 

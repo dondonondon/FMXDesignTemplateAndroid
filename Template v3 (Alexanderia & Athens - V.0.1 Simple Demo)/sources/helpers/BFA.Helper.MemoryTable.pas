@@ -1,4 +1,4 @@
-unit BFA.Helper.TFDMemTable;
+unit BFA.Helper.MemoryTable;
 
 interface
 
