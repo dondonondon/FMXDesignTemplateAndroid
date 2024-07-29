@@ -907,6 +907,15 @@
             <RemoteCommand/>
             <Overwrite>True</Overwrite>
         </DeployFile>
+        <DeployFile Include="assets\master data\a.pdf" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\assets\internal\</RemoteDir>
+            <RemoteName>a.pdf</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
         <DeployFile Include="$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png" Condition="'$(Config)'=='Release'">
             <RemoteDir>prjTemplateV3\res\drawable-hdpi\</RemoteDir>
             <RemoteName>ic_notification.png</RemoteName>
@@ -2240,6 +2249,15 @@
         <DeployFile Include="assets\icons\ep_arrow-down-bold.png" Condition="'$(Config)'=='Debug'">
             <RemoteDir>prjTemplateV3\</RemoteDir>
             <RemoteName>ep_arrow-down-bold.png</RemoteName>
+            <DeployClass>ProjectFile</DeployClass>
+            <Operation>0</Operation>
+            <LocalCommand/>
+            <RemoteCommand/>
+            <Overwrite>True</Overwrite>
+        </DeployFile>
+        <DeployFile Include="assets\master data\a.pdf" Condition="'$(Config)'=='Release'">
+            <RemoteDir>prjTemplateV3\</RemoteDir>
+            <RemoteName>a.pdf</RemoteName>
             <DeployClass>ProjectFile</DeployClass>
             <Operation>0</Operation>
             <LocalCommand/>

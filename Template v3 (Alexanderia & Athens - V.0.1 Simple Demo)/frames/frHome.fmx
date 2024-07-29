@@ -70,7 +70,7 @@ object FHome: TFHome
     Size.Width = 393.000000000000000000
     Size.Height = 552.000000000000000000
     Size.PlatformDefault = False
-    TabIndex = 6
+    TabIndex = 0
     TabOrder = 5
     TabPosition = None
     Sizes = (
@@ -97,7 +97,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -815,7 +815,7 @@ object FHome: TFHome
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False

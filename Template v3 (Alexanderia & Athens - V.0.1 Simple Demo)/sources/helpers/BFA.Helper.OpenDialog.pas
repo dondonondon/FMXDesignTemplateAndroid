@@ -45,6 +45,7 @@ type
     class var OD_PERMISSION_JNETURI : JNet_Uri;
 
     class procedure OnActivityResult(RequestCode, ResultCode: Integer; Data: JIntent);
+    class function GetFileName(AUri : JNet_Uri) : String;
     {$ENDIF}
 
     class procedure ListenerMessage(const Sender: TObject; const M: TMessage);
@@ -53,7 +54,6 @@ type
     class procedure CopyFileToInternal(AFileName : String);
 
     class procedure ConvertToNetUri(AFileName : String);
-    class function GetFileName(AUri : JNet_Uri) : String;
   public
     class var OD_TRANSFILENAME : String;
 
@@ -347,13 +347,11 @@ begin
 {$ENDIF}
 end;
 
-class function TBFAOpenDialog.GetFileName(AUri: JNet_Uri): String;
 {$IF DEFINED(ANDROID)}
+class function TBFAOpenDialog.GetFileName(AUri: JNet_Uri): String;
 var
   C: JCursor;
-{$ENDIF}
 begin
-{$IF DEFINED(ANDROID)}
   result := '';
   try
     C := TAndroidHelper.Activity.getContentResolver.query(AUri, nil, nil, nil,
@@ -366,8 +364,8 @@ begin
   finally
     C.close;
   end;
-{$ENDIF}
 end;
+{$ENDIF}
 
 class procedure TBFAOpenDialog.InitSubsribeMessage;
 const

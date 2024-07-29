@@ -63,7 +63,7 @@ end;
 
 procedure TFDetail.btnOpenFileClick(Sender: TObject);
 begin
-  TBFAOpenDialog.OpenFile(GlobalFunction.LoadFile('calender_main.png'));
+  TBFAOpenDialog.OpenFile(GlobalFunction.LoadFile('a.pdf'));
 end;
 
 procedure TFDetail.btnShareClick(Sender: TObject);

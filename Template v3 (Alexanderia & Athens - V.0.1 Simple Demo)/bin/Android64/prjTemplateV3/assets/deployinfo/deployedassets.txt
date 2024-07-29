@@ -24,6 +24,7 @@
 .\assets\internal\data.json
 .\assets\internal\icon-park-solid_tips.png
 .\assets\internal\order_main.png
+.\assets\internal\a.pdf
 .\assets\internal\payment_main.png
 .\assets\internal\order_selected.png
 .\assets\internal\dashboard_main.png
