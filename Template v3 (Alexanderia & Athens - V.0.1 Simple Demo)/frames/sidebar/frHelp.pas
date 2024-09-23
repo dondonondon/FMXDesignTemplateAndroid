@@ -1,4 +1,4 @@
-unit frTemp;
+unit frHelp;
 
 interface
 
@@ -6,13 +6,20 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading,
-  FMX.Edit;
+  FMX.Edit, FMX.Effects;
 
 type
-  TFTemp = class(TFrame)
+  TFHelp = class(TFrame)
     loMain: TLayout;
     background: TRectangle;
+    Label1: TLabel;
+    loHeader: TLayout;
+    reHeader: TRectangle;
+    seHeader: TShadowEffect;
+    lblTitle: TLabel;
+    btnMenu: TCornerButton;
     procedure Label1Click(Sender: TObject);
+    procedure btnMenuClick(Sender: TObject);
   private
   public
   published
@@ -23,7 +30,7 @@ type
   end;
 
 var
-  FTemp: TFTemp;
+  FHelp: TFHelp;
 
 implementation
 
@@ -36,25 +43,30 @@ uses frMain, BFA.Global.Variable,
 
 { TFTemp }
 
-procedure TFTemp.Back;
+procedure TFHelp.Back;
 begin
   Frame.Back;
 end;
 
-constructor TFTemp.Create(AOwner: TComponent);
+procedure TFHelp.btnMenuClick(Sender: TObject);
+begin
+  HelperFunction.ShowSidebar;
+end;
+
+constructor TFHelp.Create(AOwner: TComponent);
 begin
   inherited;
 
 end;
 
-procedure TFTemp.Label1Click(Sender: TObject);
+procedure TFHelp.Label1Click(Sender: TObject);
 begin
   Frame.GoFrame(View.HOME);
 end;
 
-procedure TFTemp.Show;
+procedure TFHelp.Show;
 begin
-
+  HelperFunction.SetSelectedMenuSidebar(View.HELP);
 end;
 
 end.

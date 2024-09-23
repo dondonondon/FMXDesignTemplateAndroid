@@ -29,7 +29,8 @@ type
     class procedure StartLoading(AMessage : String = '');
     class procedure StopLoading;
 
-    class procedure ShowMenu;
+    class procedure ShowSidebar;
+    class procedure SetSelectedMenuSidebar(AAlias : String);
   end;
 
   HelperRest = class
@@ -68,9 +69,24 @@ begin
   end);
 end;
 
-class procedure HelperFunction.ShowMenu;
+class procedure HelperFunction.ShowSidebar;
 begin
-  FSidebar.MultiView.ShowMaster;
+{$REGION 'ADD FRAME SIDEBAR'}
+  if Assigned(FSidebar) then begin
+    if not FSidebar.MultiView.Enabled then
+      FSidebar.MultiView.Enabled := True;
+
+    FSidebar.MultiView.ShowMaster;
+  end;
+{$ENDREGION}
+end;
+
+class procedure HelperFunction.SetSelectedMenuSidebar(AAlias: String);
+begin
+{$REGION 'ADD FRAME SIDEBAR'}
+  if Assigned(FSidebar) then
+    FSidebar.SetSelectedMenu(AAlias);
+{$ENDREGION}
 end;
 
 class procedure HelperFunction.ShowPopUpMessage(AMessage: String;

@@ -10,7 +10,10 @@ uses
   FMX.ActnList, FMX.TabControl, FMX.MediaLibrary, FMX.Memo.Types, FMX.ScrollBox,
   FMX.Memo, FMX.ListBox, REST.Types, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
-  FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client
+  FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  System.Rtti, FMX.Grid.Style, Data.Bind.EngExt, Fmx.Bind.DBEngExt,
+  Fmx.Bind.Grid, System.Bindings.Outputs, Fmx.Bind.Editors,
+  Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope, FMX.Grid
   {$IF DEFINED (ANDROID)}
   , Androidapi.Helpers, Androidapi.JNI.Os, Androidapi.JNI.JavaTypes
   {$ENDIF}
@@ -87,6 +90,12 @@ type
     memLoading: TMemo;
     Line1: TLine;
     CornerButton21: TCornerButton;
+    CornerButton22: TCornerButton;
+    QJSONToMemtable: TFDMemTable;
+    StringGrid1: TStringGrid;
+    BindSourceDB1: TBindSourceDB;
+    BindingsList1: TBindingsList;
+    LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource;
     procedure btnBackClick(Sender: TObject);
     procedure lbMenuItemClick(const Sender: TCustomListBox;
       const Item: TListBoxItem);
@@ -111,6 +120,7 @@ type
     procedure btnStartLoadingClick(Sender: TObject);
     procedure lblTitleClick(Sender: TObject);
     procedure CornerButton21Click(Sender: TObject);
+    procedure CornerButton22Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -148,8 +158,7 @@ begin
       Frame.Back;
     end;
   end else begin
-    HelperFunction.ShowMenu;
-//    FSidebar.MultiView.ShowMaster;
+    HelperFunction.ShowSidebar;
   end;
 end;
 
@@ -275,7 +284,9 @@ end;
 
 procedure TFHome.CornerButton11Click(Sender: TObject);
 begin
-  HelperFunction.ShowToastMessage('This is message Error', TTypeMessage.Error);
+  TTask.Run(procedure begin
+    HelperFunction.ShowToastMessage('This is message Error', TTypeMessage.Error);
+  end).Start;
 end;
 
 procedure TFHome.CornerButton12Click(Sender: TObject);
@@ -300,19 +311,31 @@ begin
   end);
 end;
 
+procedure TFHome.CornerButton22Click(Sender: TObject);
+begin
+  QJSONToMemtable.FillDataFromString(memRest.Text);
+  if not QJSONToMemtable.FillDataFromString(QJSONToMemtable.FieldByName('config_splitview').AsString) then begin
+    HelperFunction.ShowToastMessage('Gagal parsing JSON', TTypeMessage.Error);
+    HelperFunction.ShowToastMessage(QJSONToMemtable.FieldByName('messages').AsString, TTypeMessage.Error);
+    Exit;
+  end;
+
+  HelperFunction.ShowToastMessage('Sukses parsing JSON', TTypeMessage.Success);
+end;
+
 procedure TFHome.CornerButton15Click(Sender: TObject);
 begin
-  Frame.GoFrame(C_ACCOUNT);
+  Frame.GoFrame(View.ACCOUNT);
 end;
 
 procedure TFHome.CornerButton16Click(Sender: TObject);
 begin
-  Frame.GoFrame(C_FAVORITE);
+  Frame.GoFrame(View.FAVORITE);
 end;
 
 procedure TFHome.CornerButton17Click(Sender: TObject);
 begin
-  Frame.GoFrame(C_DETAIL);
+  Frame.GoFrame(View.DETAIL);
 end;
 
 procedure TFHome.CornerButton18Click(Sender: TObject);
@@ -377,12 +400,22 @@ end;
 
 procedure TFHome.CornerButton7Click(Sender: TObject);
 begin
-  HelperPermission.setPermission([
-    getPermission.BODY_SENSORS
-  ],
-  procedure begin
-    Memo2.Lines.Add('"BODY_SENSORS" Access granted');
-  end);
+//  HelperPermission.setPermission([
+//    getPermission.BODY_SENSORS
+//  ],
+//  procedure begin
+//    Memo2.Lines.Add('"BODY_SENSORS" Access granted');
+//  end);
+
+  HelperPermission.setPermission(
+    [
+      getPermission.READ_EXTERNAL_STORAGE,
+      getPermission.WRITE_EXTERNAL_STORAGE
+    ],
+    procedure begin
+      ShowMessage('Sudah dapat akses ke read externam && write external')
+    end
+  )
 end;
 
 procedure TFHome.CornerButton8Click(Sender: TObject);
@@ -460,15 +493,13 @@ end;
 
 procedure TFHome.Show;
 begin
-  if Frame.FrameAliasBefore = C_FAVORITE then Exit;
+  if Frame.FrameAliasBefore = View.FAVORITE then Exit;
+  HelperFunction.SetSelectedMenuSidebar(View.HOME);
 
-  FSidebar.SetSelectedMenu(C_HOME);
   tcMain.TabIndex := 0;
   btnBack.ImageIndex := 1;
 
   lblTitle.Text := 'Menu Home';
-
-  FSidebar.MultiView.Enabled := True;
 end;
 
 procedure TFHome.tpCameraDidFinishTaking(Image: TBitmap);

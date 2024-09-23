@@ -58,7 +58,7 @@ end;
 procedure TFLogin.btnBiometricClick(Sender: TObject);
 begin
 //  ShowMessage(Frame.FrameAliasNow + ' | ' + Frame.FrameAliasBefore);
-  Frame.GoFrame(C_HOME);
+  Frame.GoFrame(View.HOME);
 end;
 
 procedure TFLogin.btnMasukClick(Sender: TObject);
@@ -72,7 +72,14 @@ begin
 //    end;
 //  end).Start;
 
-  Frame.GoFrame(C_HOME);
+//  HelperFunction.MoveToFrame(View.SAMPLE);
+  HelperFunction.MoveToFrame(View.HOME);
+
+//  TTask.Run(procedure begin
+//    TThread.Synchronize(nil, procedure begin
+//      Frame.GoFrame(View.HOME);
+//    end);
+//  end).Start;
 end;
 
 constructor TFLogin.Create(AOwner: TComponent);

@@ -16,6 +16,19 @@ uses
   IdHashMessageDigest, idHash, IdGlobal, System.Hash;
 
 type
+  QueryFunction = class
+    class procedure SQLAdd(Query: TFDQuery; SQL: string; ClearPrior: Boolean = False); overload;
+    class procedure SQLOpen(Query: TFDQuery; WriteLog : Boolean = True); overload;
+    class procedure ExecSQL(Query: TFDQuery; WriteLog : Boolean = True); overload;
+    class procedure SQLParamByName(Query: TFDQuery; ParamStr: string; Value: Variant); overload;
+  end;
+
+  HelperCheck = class
+    class function IsNumber(AValue : String) : Boolean;
+    class function IsFloat(AValue : String) : Boolean;
+    class function IsInteger(AValue : String) : Boolean;
+  end;
+
   GlobalFunction = class
     class procedure CreateBaseDirectory;
     class function GetBaseDirectory : String;
@@ -258,6 +271,87 @@ begin
   finally
     ACombobox.OnChange := AEventChange;
   end;
+end;
+
+{ QueryFunction }
+
+class procedure QueryFunction.ExecSQL(Query: TFDQuery; WriteLog: Boolean);
+var L: TStringList;
+  s: string;
+  s1: string;
+  TempS: string;
+  x1: integer;
+  x2: integer;
+begin
+  L := TStringList.Create;
+
+  s := Query.SQL.Text;
+
+  FreeAndNil(L);
+
+  Query.Prepared;
+
+  Query.ExecSQL;
+end;
+
+class procedure QueryFunction.SQLAdd(Query: TFDQuery; SQL: string;
+  ClearPrior: Boolean);
+var s: string;
+begin
+  if ClearPrior then
+    Query.SQL.Clear;
+
+  s := SQL;
+
+  Query.SQL.Add(S);
+end;
+
+class procedure QueryFunction.SQLOpen(Query: TFDQuery; WriteLog: Boolean);
+var L: TStringList;
+  s: string;
+  s1: string;
+  TempS: string;
+  x1: integer;
+  x2: integer;
+begin
+  L := TStringList.Create;
+
+  s := Query.SQL.Text;
+
+  FreeAndNil(L);
+
+  Query.Prepared;
+  Query.Open;
+end;
+
+class procedure QueryFunction.SQLParamByName(Query: TFDQuery; ParamStr: string;
+  Value: Variant);
+begin
+  Query.ParamByName(ParamStr).Value := Value
+end;
+
+{ HelperCheck }
+
+class function HelperCheck.IsFloat(AValue: String): Boolean;
+var
+  FDummy : Single;
+begin
+  Result := TryStrToFloat(AValue, FDummy);
+end;
+
+class function HelperCheck.IsInteger(AValue: String): Boolean;
+var
+  FDummy : Integer;
+begin
+  Result := TryStrToInt(AValue, FDummy);
+end;
+
+class function HelperCheck.IsNumber(AValue: String): Boolean;
+begin
+  Result := False;
+
+  if IsFloat(AValue) then
+    Result := IsInteger(AValue);
 end;
 
 end.

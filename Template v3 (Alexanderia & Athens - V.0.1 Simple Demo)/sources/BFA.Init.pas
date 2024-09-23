@@ -37,9 +37,17 @@ type
 implementation
 
 uses
-  frHome, frLoading, frLogin, frAccount, frDetail, frFavorite, frListMenu,
-  frDashboard, frHelp, frInventory, frOrder, frPayment, frRecord, frReport,
-  frSubMenuTemp, frTemp, BFA.Helper.OpenDialog;
+  BFA.Helper.OpenDialog,
+  frAccount, frDetail, frFavorite, frHome, frLoading, frLogin
+
+  {$REGION 'ADD FRAME SIDEBAR'}
+  ,frListMenu
+
+  ,frDashboard, frHelp, frInventory, frOrder, frPayment, frRecord,
+  frReport, frSample, frSubMenuTemp
+
+  {$ENDREGION}
+  ;
 
 { TInitControls }
 
@@ -51,25 +59,33 @@ begin
   Frame.MainHelper := Helper;
 
   Frame.RegisterClassesFrame(  {register class using array}
-    [TFLoading, TFHome, TFAccount, TFDetail, TFFavorite,
-    TFDashboard, TFSubMenuTemp, TFReport, TFRecord, TFPayment, TFOrder, TFInventory, TFHelp],
-    [C_LOADING, C_HOME, C_ACCOUNT, C_DETAIL, C_FAVORITE,
-        C_DASHBOARD, C_SUBMENU, C_REPORT, C_RECORD, C_PAYMENT, C_ORDER, C_INVENTORY, C_HELP]
+    [TFLoading, TFHome, TFAccount, TFDetail, TFFavorite],
+    [View.LOADING, View.HOME, View.ACCOUNT, View.DETAIL, View.FAVORITE]
   );
 
   {or you can register class one by one like below...}
-  Frame.RegisterClassFrame(TFLogin, C_LOGIN);
+  Frame.RegisterClassFrame(TFLogin, View.LOGIN);
 
-  Frame.AddDoubleTapBackExit([C_LOGIN, C_LOADING]); {when frame on list, if you tap back / esc then application terminate}
+{$REGION 'ADD FRAME SIDEBAR'}   //just remove this code / add comment if you don't want use sidebar
+  Frame.RegisterClassesFrame(  {register class sidebar}
+    [TFDashboard, TFSubMenuTemp, TFReport, TFRecord, TFPayment, TFOrder, TFInventory, TFHelp],
+    [View.DASHBOARD, View.SUBMENU, View.REPORT, View.RECORDDATA, View.PAYMENT, View.ORDER, View.INVENTORY, View.HELP]
+  );
+  Frame.RegisterClassFrame(TFSample, View.SAMPLE);
+{$ENDREGION}
+
+  Frame.AddDoubleTapBackExit([View.LOGIN, View.LOADING]); {when frame on list, if you tap back / esc then application terminate}
 end;
 
 class procedure TInitControls.InitFunction;
 begin
   InitKeyboard;
-//  InitPushNotification;
+//  InitPushNotification; //comment this if you don't need
+
   InitToastMessage; //init before Initframe
   InitFrame;
-  InitSidebar;
+
+  InitSidebar;  //comment this if you don't need
 
   TBFAOpenDialog.InitSubsribeMessage;
 end;
@@ -90,11 +106,13 @@ end;
 
 class procedure TInitControls.InitSidebar;
 begin
+{$REGION 'ADD FRAME SIDEBAR'}
   FSidebar := TFListMenu.Create(FMain);
   FSidebar.Parent := FMain.loSidebar;
   FSidebar.Align := TAlignLayout.Contents;
 
   FSidebar.MultiView := FMain.mvMain;
+{$ENDREGION}
 end;
 
 class procedure TInitControls.InitToastMessage;

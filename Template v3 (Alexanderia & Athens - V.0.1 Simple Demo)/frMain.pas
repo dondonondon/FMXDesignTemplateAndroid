@@ -53,13 +53,14 @@ implementation
 {$R *.fmx}
 
 uses
-  frHome, frLoading, frLogin, BFA.Control.Permission, BFA.Init, frListMenu;
+  frHome, frLoading, frLogin, BFA.Control.Permission, BFA.Init
+
+  {, frListMenu};
 
 function TFMain.AppEventProc(AAppEvent: TApplicationEvent;
   AContext: TObject): Boolean;
 begin
 //  FNotification.AppEventProc(AAppEvent, AContext);
-
   if (AAppEvent = TApplicationEvent.BecameActive) then begin
     //your code here
   end;
@@ -70,8 +71,6 @@ begin
   TInitControls.InitFunction;
 
   memAnnounce.DisposeOf;
-
-//  ShowMessage('');
 end;
 
 procedure TFMain.FormDestroy(Sender: TObject);
@@ -134,9 +133,8 @@ end;
 
 procedure TFMain.FormShow(Sender: TObject);
 begin
-//  FNotification.ServiceConnectionStatus(True);
-//  Frame.GoFrame(C_LOGIN);
-  Frame.GoFrame(C_LOADING);
+//  FNotification.ServiceConnectionStatus(True); //uncomment this if you want uses Push Notification from firebase
+  Frame.GoFrame(View.LOADING);
 end;
 
 end.

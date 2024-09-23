@@ -12,6 +12,17 @@
             "submenu":""
         },
         {
+            "index":0,
+            "name":"Sample Menu",
+            "frame":"TFSample",
+            "alias":"SAMPLE",
+            "imagefilenamedefault":"dashboard_main.png",
+            "imagefilenameselected":"dashboard_selected.png",
+            "imageindexdefault":"8",
+            "imageindexselected":"9",
+            "submenu":""
+        },
+        {
             "index":1,
             "name":"Home",
             "frame":"TFHome",

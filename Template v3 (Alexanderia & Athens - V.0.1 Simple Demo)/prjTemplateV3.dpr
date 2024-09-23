@@ -5,6 +5,7 @@ program prjTemplateV3;
 uses
   System.StartUpCopy,
   FMX.Forms,
+  FMX.Skia,
   frMain in 'frMain.pas' {FMain},
   uDM in 'uDM.pas' {DM: TDataModule},
   BFA.Global.Variable in 'sources\BFA.Global.Variable.pas',
@@ -18,27 +19,27 @@ uses
   BFA.Helper.MemoryTable in 'sources\helpers\BFA.Helper.MemoryTable.pas',
   BFA.Init in 'sources\BFA.Init.pas',
   BFA.Control.Rest in 'sources\controls\BFA.Control.Rest.pas',
-  frListMenu in 'frames\controls\frListMenu.pas' {FListMenu: TFrame},
   frAccount in 'frames\frAccount.pas' {FAccount: TFrame},
-  frDashboard in 'frames\frDashboard.pas' {FDashboard: TFrame},
   frDetail in 'frames\frDetail.pas' {FDetail: TFrame},
   frFavorite in 'frames\frFavorite.pas' {FFavorite: TFrame},
-  frHelp in 'frames\frHelp.pas' {FHelp: TFrame},
   frHome in 'frames\frHome.pas' {FHome: TFrame},
-  frInventory in 'frames\frInventory.pas' {FInventory: TFrame},
   frLoading in 'frames\frLoading.pas' {FLoading: TFrame},
   frLogin in 'frames\frLogin.pas' {FLogin: TFrame},
-  frOrder in 'frames\frOrder.pas' {FOrder: TFrame},
-  frPayment in 'frames\frPayment.pas' {FPayment: TFrame},
-  frRecord in 'frames\frRecord.pas' {FRecord: TFrame},
-  frReport in 'frames\frReport.pas' {FReport: TFrame},
-  frSubMenuTemp in 'frames\frSubMenuTemp.pas' {FSubMenuTemp: TFrame},
-  frTemp in 'frames\frTemp.pas' {FTemp: TFrame},
   frCalender in 'frames\controls\frCalender.pas' {FCalender: TFrame},
   BFA.Helper.Bitmap in 'sources\helpers\BFA.Helper.Bitmap.pas',
   BFA.Log in 'sources\helpers\BFA.Log.pas',
   BFA.OpenUrl in 'sources\helpers\BFA.OpenUrl.pas',
-  BFA.Helper.OpenDialog in 'sources\helpers\BFA.Helper.OpenDialog.pas';
+  BFA.Helper.OpenDialog in 'sources\helpers\BFA.Helper.OpenDialog.pas',
+  frDashboard in 'frames\sidebar\frDashboard.pas' {FDashboard: TFrame},
+  frHelp in 'frames\sidebar\frHelp.pas' {FHelp: TFrame},
+  frInventory in 'frames\sidebar\frInventory.pas' {FInventory: TFrame},
+  frOrder in 'frames\sidebar\frOrder.pas' {FOrder: TFrame},
+  frPayment in 'frames\sidebar\frPayment.pas' {FPayment: TFrame},
+  frRecord in 'frames\sidebar\frRecord.pas' {FRecord: TFrame},
+  frReport in 'frames\sidebar\frReport.pas' {FReport: TFrame},
+  frSample in 'frames\sidebar\frSample.pas' {FSample: TFrame},
+  frSubMenuTemp in 'frames\sidebar\frSubMenuTemp.pas' {FSubMenuTemp: TFrame},
+  frListMenu in 'frames\controls\frListMenu.pas' {FListMenu: TFrame};
 
 //  {$IF DEFINED (ANDROID)}
 //  FMX.MediaLibrary.Android in 'sources\libraries\FMX.MediaLibrary.Android.pas',
@@ -47,6 +48,7 @@ uses
 {$R *.res}
 
 begin
+  GlobalUseSkia := True;
   ReportMemoryLeaksOnShutdown := True;
 
   Application.Initialize;

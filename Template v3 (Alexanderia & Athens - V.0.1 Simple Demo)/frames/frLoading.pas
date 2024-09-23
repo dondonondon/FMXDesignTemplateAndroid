@@ -54,8 +54,13 @@ end;
 procedure TFLoading.faOpaFinish(Sender: TObject);
 begin
   TFloatAnimation(Sender).Enabled := False;
-  FSidebar.LoadListMenu;
-  FSidebar.MultiView.Enabled := False;
+
+{$REGION 'ADD FRAME SIDEBAR'}
+  if Assigned(FSidebar) then begin
+    FSidebar.LoadListMenu;
+    FSidebar.MultiView.Enabled := False;
+  end;
+{$ENDREGION}
 
   tiMove.Enabled := True;
 end;
@@ -81,8 +86,8 @@ end;
 procedure TFLoading.tiMoveTimer(Sender: TObject);
 begin
   tiMove.Enabled := False;
-//  Frame.GoFrame(C_DETAIL);
-  Frame.GoFrame(C_LOGIN);
+//  Frame.GoFrame(View.DETAIL);
+  Frame.GoFrame(View.LOGIN);
 end;
 
 end.

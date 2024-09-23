@@ -1,4 +1,4 @@
-unit frTemp;
+unit frSample;
 
 interface
 
@@ -9,9 +9,10 @@ uses
   FMX.Edit;
 
 type
-  TFTemp = class(TFrame)
+  TFSample = class(TFrame)
     loMain: TLayout;
     background: TRectangle;
+    Label1: TLabel;
     procedure Label1Click(Sender: TObject);
   private
   public
@@ -23,7 +24,7 @@ type
   end;
 
 var
-  FTemp: TFTemp;
+  FSample: TFSample;
 
 implementation
 
@@ -36,23 +37,23 @@ uses frMain, BFA.Global.Variable,
 
 { TFTemp }
 
-procedure TFTemp.Back;
+procedure TFSample.Back;
 begin
   Frame.Back;
 end;
 
-constructor TFTemp.Create(AOwner: TComponent);
+constructor TFSample.Create(AOwner: TComponent);
 begin
   inherited;
 
 end;
 
-procedure TFTemp.Label1Click(Sender: TObject);
+procedure TFSample.Label1Click(Sender: TObject);
 begin
   Frame.GoFrame(View.HOME);
 end;
 
-procedure TFTemp.Show;
+procedure TFSample.Show;
 begin
 
 end;

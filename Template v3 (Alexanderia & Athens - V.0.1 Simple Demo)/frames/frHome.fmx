@@ -922,16 +922,210 @@ object FHome: TFHome
       object memRest: TMemo
         Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
         DataDetectorTypes = []
+        Lines.Strings = (
+          '{'
+          '    "config_splitview":['
+          '        {'
+          '            "index":0,'
+          '            "name":"Dashboard",'
+          '            "frame":"TFDashboard",'
+          '            "alias":"DASHBOARD",'
+          '            "imagefilenamedefault":"dashboard_main.png",'
+          '            "imagefilenameselected":"dashboard_selected.png",'
+          '            "imageindexdefault":"8",'
+          '            "imageindexselected":"9",'
+          '            "submenu":""'
+          '        },'
+          '        {'
+          '            "index":0,'
+          '            "name":"Sample Menu",'
+          '            "frame":"TFSample",'
+          '            "alias":"SAMPLE",'
+          '            "imagefilenamedefault":"dashboard_main.png",'
+          '            "imagefilenameselected":"dashboard_selected.png",'
+          '            "imageindexdefault":"8",'
+          '            "imageindexselected":"9",'
+          '            "submenu":""'
+          '        },'
+          '        {'
+          '            "index":1,'
+          '            "name":"Home",'
+          '            "frame":"TFHome",'
+          '            "alias":"HOME",'
+          '            "imagefilenamedefault":"home_main.png",'
+          '            "imagefilenameselected":"home_selected.png",'
+          '            "imageindexdefault":"4",'
+          '            "imageindexselected":"5",'
+          '            "submenu":""'
+          '        },'
+          '        {'
+          '            "index":2,'
+          '            "name":"Inventory",'
+          '            "frame":"",'
+          '            "alias":"",'
+          '            "imagefilenamedefault":"inventory_main.png",'
+          '            "imagefilenameselected":"inventory_selected.png",'
+          '            "imageindexdefault":"0",'
+          '            "imageindexselected":"1",'
+          '            "submenu":['
+          '                {'
+          '                    "index":0,'
+          '                    "name":"Sub Item 1",'
+          '                    "frame":"TFSubMenuTemp",'
+          '                    "alias":"SUBMENU",'
+          '                    "imagefilenamedefault":"sub_main.png",'
+          '                    "imagefilenameselected":"sub_selected.png",'
+          '                    "imageindexdefault":"14",'
+          '                    "imageindexselected":"15",'
+          '                    "submenu":""'
+          '                },'
+          '                {'
+          '                    "index":1,'
+          '                    "name":"Sub Item 2",'
+          '                    "frame":"TFSubMenuTemp",'
+          '                    "alias":"SUBMENU",'
+          '                    "imagefilenamedefault":"sub_main.png",'
+          '                    "imagefilenameselected":"sub_selected.png",'
+          '                    "imageindexdefault":"14",'
+          '                    "imageindexselected":"15",'
+          '                    "submenu":""'
+          '                },'
+          '                {'
+          '                    "index":2,'
+          '                    "name":"Sub Item 3",'
+          '                    "frame":"TFSubMenuTemp",'
+          '                    "alias":"SUBMENU",'
+          '                    "imagefilenamedefault":"sub_main.png",'
+          '                    "imagefilenameselected":"sub_selected.png",'
+          '                    "imageindexdefault":"14",'
+          '                    "imageindexselected":"15",'
+          '                    "submenu":""'
+          '                },'
+          '                {'
+          '                    "index":3,'
+          '                    "name":"Sub Item 4",'
+          '                    "frame":"TFSubMenuTemp",'
+          '                    "alias":"SUBMENU",'
+          '                    "imagefilenamedefault":"sub_main.png",'
+          '                    "imagefilenameselected":"sub_selected.png",'
+          '                    "imageindexdefault":"14",'
+          '                    "imageindexselected":"15",'
+          '                    "submenu":""'
+          '                }'
+          '            ]'
+          '        },'
+          '        {'
+          '            "index":3,'
+          '            "name":"Orders",'
+          '            "frame":"TFOrder",'
+          '            "alias":"ORDER",'
+          '            "imagefilenamedefault":"order_main.png",'
+          '            "imagefilenameselected":"order_selected.png",'
+          '            "imageindexdefault":"16",'
+          '            "imageindexselected":"17",'
+          '            "submenu":""'
+          '        },'
+          '        {'
+          '            "index":4,'
+          '            "name":"Payment",'
+          '            "frame":"TFPayment",'
+          '            "alias":"PAYMENT",'
+          '            "imagefilenamedefault":"payment_main.png",'
+          '            "imagefilenameselected":"payment_selected.png",'
+          '            "imageindexdefault":"10",'
+          '            "imageindexselected":"11",'
+          '            "submenu":""'
+          '        },'
+          '        {'
+          '            "index":6,'
+          '            "name":"Records",'
+          '            "frame":"TFRecords",'
+          '            "alias":"RECORD",'
+          '            "imagefilenamedefault":"calender_main.png",'
+          '            "imagefilenameselected":"calender_selected.png",'
+          '            "imageindexdefault":"12",'
+          '            "imageindexselected":"13",'
+          '            "submenu":""'
+          '        },'
+          '        {'
+          '            "index":5,'
+          '            "name":"Report",'
+          '            "frame":"TFReport",'
+          '            "alias":"REPORT",'
+          '            "imagefilenamedefault":"report_main.png",'
+          '            "imagefilenameselected":"report_selected.png",'
+          '            "imageindexdefault":"6",'
+          '            "imageindexselected":"7",'
+          '            "submenu":""'
+          '        },'
+          '        {'
+          '            "index":7,'
+          '            "name":"Help",'
+          '            "frame":"",'
+          '            "alias":"",'
+          '            "imagefilenamedefault":"help_main.png",'
+          '            "imagefilenameselected":"help_selected.png",'
+          '            "imageindexdefault":"2",'
+          '            "imageindexselected":"3",'
+          '            "submenu":['
+          '                {'
+          '                    "index":0,'
+          '                    "name":"Sub Item 1",'
+          '                    "frame":"TFSubMenuTemp",'
+          '                    "alias":"SUBMENU",'
+          '                    "imagefilenamedefault":"sub_main.png",'
+          '                    "imagefilenameselected":"sub_selected.png",'
+          '                    "imageindexdefault":"14",'
+          '                    "imageindexselected":"15",'
+          '                    "submenu":""'
+          '                },'
+          '                {'
+          '                    "index":1,'
+          '                    "name":"Sub Item 2",'
+          '                    "frame":"TFSubMenuTemp",'
+          '                    "alias":"SUBMENU",'
+          '                    "imagefilenamedefault":"sub_main.png",'
+          '                    "imagefilenameselected":"sub_selected.png",'
+          '                    "imageindexdefault":"14",'
+          '                    "imageindexselected":"15",'
+          '                    "submenu":""'
+          '                },'
+          '                {'
+          '                    "index":2,'
+          '                    "name":"Sub Item 3",'
+          '                    "frame":"TFSubMenuTemp",'
+          '                    "alias":"SUBMENU",'
+          '                    "imagefilenamedefault":"sub_main.png",'
+          '                    "imagefilenameselected":"sub_selected.png",'
+          '                    "imageindexdefault":"14",'
+          '                    "imageindexselected":"15",'
+          '                    "submenu":""'
+          '                },'
+          '                {'
+          '                    "index":3,'
+          '                    "name":"Sub Item 4",'
+          '                    "frame":"TFSubMenuTemp",'
+          '                    "alias":"SUBMENU",'
+          '                    "imagefilenamedefault":"sub_main.png",'
+          '                    "imagefilenameselected":"sub_selected.png",'
+          '                    "imageindexdefault":"14",'
+          '                    "imageindexselected":"15",'
+          '                    "submenu":""'
+          '                }'
+          '            ]'
+          '        }'
+          '    ]'
+          '}')
         TextSettings.WordWrap = True
         Anchors = [akLeft, akTop, akRight, akBottom]
         Position.X = 8.000000000000000000
         Position.Y = 49.000000000000000000
         Size.Width = 377.000000000000000000
-        Size.Height = 488.000000000000000000
+        Size.Height = 168.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
         Viewport.Width = 377.000000000000000000
-        Viewport.Height = 488.000000000000000000
+        Viewport.Height = 168.000000000000000000
       end
       object btnPost: TCornerButton
         Position.X = 96.000000000000000000
@@ -960,6 +1154,32 @@ object FHome: TFHome
         XRadius = 3.000000000000000000
         YRadius = 3.000000000000000000
         OnClick = btnBodyClick
+      end
+      object CornerButton22: TCornerButton
+        Position.X = 272.000000000000000000
+        Position.Y = 8.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 113.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'JSON to MemTable'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = CornerButton22Click
+      end
+      object StringGrid1: TStringGrid
+        CanFocus = True
+        ClipChildren = True
+        Position.X = 8.000000000000000000
+        Position.Y = 225.000000000000000000
+        Size.Width = 377.000000000000000000
+        Size.Height = 320.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        Viewport.Width = 377.000000000000000000
+        Viewport.Height = 320.000000000000000000
       end
     end
     object tiLoading: TTabItem
@@ -1035,8 +1255,8 @@ object FHome: TFHome
     UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
     UpdateOptions.CheckRequired = False
     UpdateOptions.AutoCommitUpdates = True
-    Left = 248
-    Top = 160
+    Left = 136
+    Top = 152
   end
   object QSubData: TFDMemTable
     FetchOptions.AssignedValues = [evMode]
@@ -1048,5 +1268,34 @@ object FHome: TFHome
     UpdateOptions.AutoCommitUpdates = True
     Left = 296
     Top = 160
+  end
+  object QJSONToMemtable: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 280
+    Top = 368
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = QJSONToMemtable
+    ScopeMappings = <>
+    Left = 184
+    Top = 304
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 124
+    Top = 37
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = StringGrid1
+      Columns = <>
+    end
   end
 end

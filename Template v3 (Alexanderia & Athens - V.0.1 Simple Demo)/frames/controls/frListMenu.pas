@@ -367,6 +367,8 @@ begin
     end;
   finally
     QSubListMenu.DisposeOf;
+    if Assigned(MultiView) then
+      MultiView.Enabled := True;
   end;
 end;
 

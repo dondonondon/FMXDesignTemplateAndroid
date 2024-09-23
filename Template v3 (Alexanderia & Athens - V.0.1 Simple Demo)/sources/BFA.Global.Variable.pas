@@ -14,7 +14,7 @@ uses
   Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs,
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
   BFA.Helper.MemoryTable, BFA.Global.Func,
-  BFA.Helper.Main, BFA.Control.PushNotification, frListMenu
+  BFA.Helper.Main, BFA.Control.PushNotification
   {$IF DEFINED(IOS) or DEFINED(ANDROID)}
    ,AndroidApi.JNI.GraphicsContentViewText, AndroidApi.JNI.OS, AndroidApi.Helpers, AndroidApi.JNI.Net,
   AndroidApi.JNI.JavaTypes, AndroidApi.JNIBridge, AndroidApi.JNI.Provider, AndroidApi.JNI.Telephony,
@@ -22,25 +22,37 @@ uses
   AndroidApi.JNI.Java.Net,
   AndroidApi.JNI.Android.Security
   {$ENDIF}
+
+  {$REGION 'ADD FRAME SIDEBAR'}
+  , frListMenu
+  {$ENDREGION}
   ;
 
-const
-  C_HOME = 'HOME';
-  C_LOADING = 'LOADING';
-  C_LOGIN = 'LOGIN';
-  C_ACCOUNT = 'ACCOUNT';
-  C_FAVORITE = 'FAVORITE';
-  C_DETAIL = 'DETAIL';
+type
+  View = class
+    const
+      HOME = 'HOME';
+      LOADING = 'LOADING';
+      LOGIN = 'LOGIN';
+      ACCOUNT = 'ACCOUNT';
+      FAVORITE = 'FAVORITE';
+      DETAIL = 'DETAIL';
 
-  C_SUBMENU = 'SUBMENU';
 
-  C_DASHBOARD = 'DASHBOARD';
-  C_ORDER = 'ORDER';
-  C_PAYMENT = 'PAYMENT';
-  C_RECORD = 'RECORD';
-  C_HELP = 'HELP';
-  C_REPORT = 'REPORT';
-  C_INVENTORY = 'INVENTORY';
+      {$REGION 'ADD FRAME SIDEBAR'}   //just remove this code / add comment if you don't want use sidebar
+
+      SUBMENU = 'SUBMENU';
+      DASHBOARD = 'DASHBOARD';
+      ORDER = 'ORDER';
+      PAYMENT = 'PAYMENT';
+      RECORDDATA = 'RECORD';
+      HELP = 'HELP';
+      REPORT = 'REPORT';
+      INVENTORY = 'INVENTORY';
+      SAMPLE = 'SAMPLE';
+
+      {$ENDREGION}
+  end;
 
 var
   FNotification : TPushNotif;
@@ -48,7 +60,10 @@ var
 
   Frame : TGoFrame;
   Helper : TMainHelper;
+
+  {$REGION 'ADD FRAME SIDEBAR'}
   FSidebar : TFListMenu;
+  {$ENDREGION}
 
 implementation
 
