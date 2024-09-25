@@ -46,7 +46,7 @@ implementation
 uses frMain, BFA.Global.Variable,
   BFA.Control.Form.Message, BFA.Control.Frame, BFA.Control.Keyboard,
   BFA.Control.Permission, BFA.Control.PushNotification, BFA.Global.Func,
-  BFA.Helper.Main, BFA.Helper.MemoryTable, uDM;
+  BFA.Helper.Main, BFA.Helper.MemoryTable, uDM, frConfirmation;
 
 { TFTemp }
 
@@ -63,23 +63,28 @@ end;
 
 procedure TFLogin.btnMasukClick(Sender: TObject);
 begin
-//  TTask.Run(procedure begin
-//    Helper.StartLoading;
-//    try
-//      Sleep(3000);
-//    finally
-//      Helper.StopLoading;
-//    end;
-//  end).Start;
+//  if Assigned(FConfirmation) then begin
+//    FreeAndNil(FConfirmation);
+//  end;
+//
+//  FConfirmation := TFConfirmation.Create(FMain);
+//  FConfirmation.Parent := FMain;
+//
+//  FConfirmation.Title := 'Helo Dunia';
+//  FConfirmation.Caption := 'Oke Siap';
+//  FConfirmation.Description := 'Ini adalah sebuah deskripsi';
+//
+//  FConfirmation.ChangeRadius := 25;
+//
+//  FConfirmation.CancelProcedure := procedure begin
+//    ShowMessage('Anda membatalkan pindah view');
+//  end;
+//
+//  FConfirmation.Show(procedure begin
+//    HelperFunction.MoveToFrame(View.HOME);
+//  end);
 
-//  HelperFunction.MoveToFrame(View.SAMPLE);
   HelperFunction.MoveToFrame(View.HOME);
-
-//  TTask.Run(procedure begin
-//    TThread.Synchronize(nil, procedure begin
-//      Frame.GoFrame(View.HOME);
-//    end);
-//  end).Start;
 end;
 
 constructor TFLogin.Create(AOwner: TComponent);

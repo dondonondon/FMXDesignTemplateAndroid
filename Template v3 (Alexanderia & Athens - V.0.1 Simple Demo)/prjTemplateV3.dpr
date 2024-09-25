@@ -1,6 +1,6 @@
 program prjTemplateV3;
 
-{$R *.dres}
+
 
 uses
   System.StartUpCopy,
@@ -39,7 +39,8 @@ uses
   frReport in 'frames\sidebar\frReport.pas' {FReport: TFrame},
   frSample in 'frames\sidebar\frSample.pas' {FSample: TFrame},
   frSubMenuTemp in 'frames\sidebar\frSubMenuTemp.pas' {FSubMenuTemp: TFrame},
-  frListMenu in 'frames\controls\frListMenu.pas' {FListMenu: TFrame};
+  frListMenu in 'frames\controls\frListMenu.pas' {FListMenu: TFrame},
+  frConfirmation in 'frames\controls\frConfirmation.pas' {FConfirmation: TFrame};
 
 //  {$IF DEFINED (ANDROID)}
 //  FMX.MediaLibrary.Android in 'sources\libraries\FMX.MediaLibrary.Android.pas',

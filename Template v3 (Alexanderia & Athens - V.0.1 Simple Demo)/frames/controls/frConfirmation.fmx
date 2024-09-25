@@ -1,0 +1,157 @@
+object FConfirmation: TFConfirmation
+  Size.Width = 360.000000000000000000
+  Size.Height = 720.000000000000000000
+  Size.PlatformDefault = False
+  object background: TRectangle
+    Align = Contents
+    Fill.Color = claBlack
+    Opacity = 0.250000000000000000
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+  end
+  object loMain: TLayout
+    Align = Center
+    Size.Width = 320.000000000000000000
+    Size.Height = 234.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object reMain: TRectangle
+      Align = Contents
+      Fill.Color = claWhite
+      Size.Width = 320.000000000000000000
+      Size.Height = 234.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 12.000000000000000000
+      YRadius = 12.000000000000000000
+    end
+    object lblTitle: TLabel
+      Align = Top
+      AutoSize = True
+      StyledSettings = [Family]
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 288.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = xFF3F3F3F
+      TextSettings.HorzAlign = Center
+      Text = 'TITLE'
+      TabOrder = 2
+    end
+    object lblCaption: TLabel
+      Align = Top
+      AutoSize = True
+      StyledSettings = [Family]
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 288.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 12.500000000000000000
+      TextSettings.FontColor = xFF3F3F3F
+      TextSettings.HorzAlign = Center
+      Text = 'CAPTION'
+      TabOrder = 1
+    end
+    object loDesc: TLayout
+      Align = Client
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Size.Width = 288.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object reColor: TRectangle
+        Align = Contents
+        Fill.Color = xFF4BC961
+        Opacity = 0.250000000000000000
+        Size.Width = 288.000000000000000000
+        Size.Height = 64.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object reSideColor: TRectangle
+        Align = Left
+        Fill.Color = xFF4BC961
+        Size.Width = 6.000000000000000000
+        Size.Height = 64.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+      end
+      object lblDesc: TLabel
+        Align = Client
+        AutoSize = True
+        StyledSettings = [Family]
+        Margins.Left = 8.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Size.Width = 266.000000000000000000
+        Size.Height = 48.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 12.500000000000000000
+        TextSettings.FontColor = xFF3F3F3F
+        Text = 'Description'
+        TabOrder = 1
+      end
+    end
+    object loButton: TLayout
+      Align = Bottom
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 161.000000000000000000
+      Size.Width = 288.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object btnNo: TCornerButton
+        Anchors = [akLeft, akBottom]
+        Position.X = 8.000000000000000000
+        Position.Y = 9.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 113.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnGray'
+        TabOrder = 1
+        Text = 'Cancel'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnNoClick
+      end
+      object btnYes: TCornerButton
+        Anchors = [akRight, akBottom]
+        Position.X = 167.000000000000000000
+        Position.Y = 9.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 113.000000000000000000
+        Size.Height = 40.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnMain'
+        TabOrder = 0
+        Text = 'Confirm'
+        TextSettings.Trimming = None
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnYesClick
+      end
+    end
+  end
+end
