@@ -46,7 +46,7 @@ implementation
 uses frMain, BFA.Global.Variable,
   BFA.Control.Form.Message, BFA.Control.Frame, BFA.Control.Keyboard,
   BFA.Control.Permission, BFA.Control.PushNotification, BFA.Global.Func,
-  BFA.Helper.Main, BFA.Helper.MemoryTable, uDM, frConfirmation;
+  BFA.Helper.Main, BFA.Helper.MemoryTable, uDM, frConfirmation, BFA.OpenUrl;
 
 { TFTemp }
 
@@ -63,6 +63,8 @@ end;
 
 procedure TFLogin.btnMasukClick(Sender: TObject);
 begin
+  TURLOpen.OpenUrl('https://www.google.com/maps/dir/-7.5836549,110.2846045/Tejowarno/@-7.5792817,110.2682699');
+
 //  if Assigned(FConfirmation) then begin
 //    FreeAndNil(FConfirmation);
 //  end;

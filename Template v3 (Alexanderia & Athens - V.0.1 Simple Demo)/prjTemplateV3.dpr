@@ -2,6 +2,8 @@ program prjTemplateV3;
 
 
 
+{$R *.dres}
+
 uses
   System.StartUpCopy,
   FMX.Forms,
