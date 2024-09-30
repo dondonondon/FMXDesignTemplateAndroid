@@ -13,7 +13,7 @@ uses
   FireDAC.DApt.Intf, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   System.Rtti, FMX.Grid.Style, Data.Bind.EngExt, Fmx.Bind.DBEngExt,
   Fmx.Bind.Grid, System.Bindings.Outputs, Fmx.Bind.Editors,
-  Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope, FMX.Grid
+  Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope, FMX.Grid, gtClasses
   {$IF DEFINED (ANDROID)}
   , Androidapi.Helpers, Androidapi.JNI.Os, Androidapi.JNI.JavaTypes
   {$ENDIF}

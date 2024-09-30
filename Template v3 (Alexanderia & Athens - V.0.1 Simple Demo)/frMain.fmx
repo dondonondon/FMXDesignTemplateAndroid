@@ -2663,7 +2663,7 @@ object FMain: TFMain
         'Because this template was created using Delphi 12. Things you ne' +
         'ed to pay attention to if you are using a Delphi version below o' +
         'r the same as Delphi 11.'
-      '1. Go to frame->frOrder then select "Ignore All"'
+      '1. Go to frame->sidebar->frOrder then select "Ignore All"'
       '2. Go to frame-> controls-> frListMenu then select "Ignore All"'
       ''
       
@@ -2692,8 +2692,8 @@ object FMain: TFMain
     Size.Height = 337.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 7
-    Viewport.Width = 284.000000000000000000
-    Viewport.Height = 333.000000000000000000
+    Viewport.Width = 288.000000000000000000
+    Viewport.Height = 337.000000000000000000
   end
   object mvMain: TMultiView
     BorderOptions.Visible = False

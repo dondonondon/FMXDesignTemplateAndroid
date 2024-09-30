@@ -76,7 +76,10 @@ begin
     if not FSidebar.MultiView.Enabled then
       FSidebar.MultiView.Enabled := True;
 
-    FSidebar.MultiView.ShowMaster;
+    if FSidebar.MultiView.IsShowed then
+      FSidebar.MultiView.HideMaster
+    else
+      FSidebar.MultiView.ShowMaster;
   end;
 {$ENDREGION}
 end;

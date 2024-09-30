@@ -46,7 +46,8 @@ implementation
 uses frMain, BFA.Global.Variable,
   BFA.Control.Form.Message, BFA.Control.Frame, BFA.Control.Keyboard,
   BFA.Control.Permission, BFA.Control.PushNotification, BFA.Global.Func,
-  BFA.Helper.Main, BFA.Helper.MemoryTable, uDM, frConfirmation, BFA.OpenUrl;
+  BFA.Helper.Main, BFA.Helper.MemoryTable, uDM, frConfirmation, BFA.OpenUrl,
+  frHome;
 
 { TFTemp }
 
@@ -57,36 +58,13 @@ end;
 
 procedure TFLogin.btnBiometricClick(Sender: TObject);
 begin
-//  ShowMessage(Frame.FrameAliasNow + ' | ' + Frame.FrameAliasBefore);
   Frame.GoFrame(View.HOME);
 end;
 
 procedure TFLogin.btnMasukClick(Sender: TObject);
 begin
-  TURLOpen.OpenUrl('https://www.google.com/maps/dir/-7.5836549,110.2846045/Tejowarno/@-7.5792817,110.2682699');
-
-//  if Assigned(FConfirmation) then begin
-//    FreeAndNil(FConfirmation);
-//  end;
-//
-//  FConfirmation := TFConfirmation.Create(FMain);
-//  FConfirmation.Parent := FMain;
-//
-//  FConfirmation.Title := 'Helo Dunia';
-//  FConfirmation.Caption := 'Oke Siap';
-//  FConfirmation.Description := 'Ini adalah sebuah deskripsi';
-//
-//  FConfirmation.ChangeRadius := 25;
-//
-//  FConfirmation.CancelProcedure := procedure begin
-//    ShowMessage('Anda membatalkan pindah view');
-//  end;
-//
-//  FConfirmation.Show(procedure begin
-//    HelperFunction.MoveToFrame(View.HOME);
-//  end);
-
   HelperFunction.MoveToFrame(View.HOME);
+//  HelperFunction.MoveToFrame(View.TAMPILANBARU);
 end;
 
 constructor TFLogin.Create(AOwner: TComponent);

@@ -1,0 +1,30 @@
+object FTampilanBaru: TFTampilanBaru
+  Size.Width = 709.000000000000000000
+  Size.Height = 583.000000000000000000
+  Size.PlatformDefault = False
+  object CornerButton1: TCornerButton
+    Align = Center
+    Sides = [Top, Left, Bottom, Right]
+    Size.Width = 169.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Text = 'TAMPILAN BARU'
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    OnClick = CornerButton1Click
+  end
+  object CornerButton2: TCornerButton
+    Position.X = 128.000000000000000000
+    Position.Y = 96.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    Size.Width = 473.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Text = 'sidebar'
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    OnClick = CornerButton2Click
+  end
+end

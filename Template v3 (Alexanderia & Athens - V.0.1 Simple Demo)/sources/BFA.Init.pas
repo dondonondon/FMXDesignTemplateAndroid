@@ -74,7 +74,7 @@ begin
   Frame.RegisterClassFrame(TFSample, View.SAMPLE);
 {$ENDREGION}
 
-  Frame.AddDoubleTapBackExit([View.LOGIN, View.LOADING]); {when frame on list, if you tap back / esc then application terminate}
+  Frame.AddDoubleTapBackExit([View.LOGIN, View.LOADING, View.HOME]); {when frame on list, if you tap back / esc then application terminate}
 end;
 
 class procedure TInitControls.InitFunction;

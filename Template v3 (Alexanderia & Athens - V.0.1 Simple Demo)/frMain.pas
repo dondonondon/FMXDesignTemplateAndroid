@@ -126,6 +126,8 @@ begin
         Exec;
       end;
     end;
+  end else if Key = vkF1 then begin
+    HelperFunction.ShowSidebar;
   end else begin
     FKeyboard.KeyUp(Key, KeyChar, Shift);
   end;
