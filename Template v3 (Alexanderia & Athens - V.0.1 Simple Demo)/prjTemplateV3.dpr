@@ -7,7 +7,6 @@ program prjTemplateV3;
 uses
   System.StartUpCopy,
   FMX.Forms,
-  FMX.Skia,
   frMain in 'frMain.pas' {FMain},
   uDM in 'uDM.pas' {DM: TDataModule},
   BFA.Global.Variable in 'sources\BFA.Global.Variable.pas',
@@ -51,7 +50,7 @@ uses
 {$R *.res}
 
 begin
-  GlobalUseSkia := True;
+//  GlobalUseSkia := True;
   ReportMemoryLeaksOnShutdown := True;
 
   Application.Initialize;
