@@ -75,7 +75,6 @@ type
     procedure ShowLastControl;
 
     constructor Create;
-
     destructor Destroy; override;
   end;
 
