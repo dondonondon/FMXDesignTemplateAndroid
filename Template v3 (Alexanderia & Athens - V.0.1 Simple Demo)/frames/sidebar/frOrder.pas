@@ -81,8 +81,8 @@ begin
       var SL := TStringList.Create;
       try
         SL.LoadFromFile(FFileName);
-        QData.FillDataFromString(SL.Text);
-        QData.FillDataFromString(QData.FieldByName('tickets').AsString);
+        QData.LoadFromJSON(SL.Text);
+        QData.LoadFromJSON(QData.FieldByName('tickets').AsString);
       finally
         SL.DisposeOf;
       end;

@@ -1243,4 +1243,17 @@ object FLogin: TFLogin
       end
     end
   end
+  object Memo1: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    DataDetectorTypes = []
+    Position.X = 32.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 264.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Visible = False
+    Viewport.Width = 260.000000000000000000
+    Viewport.Height = 69.000000000000000000
+  end
 end

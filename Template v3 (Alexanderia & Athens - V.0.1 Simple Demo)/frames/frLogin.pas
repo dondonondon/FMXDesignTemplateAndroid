@@ -6,7 +6,8 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading,
-  FMX.Edit, FMX.Effects, frCalender, IdGlobal;
+  FMX.Edit, FMX.Effects, frCalender, IdGlobal, FMX.Memo.Types, FMX.ScrollBox,
+  FMX.Memo;
 
 type
   TFLogin = class(TFrame)
@@ -24,6 +25,7 @@ type
     lblRS: TLabel;
     Image1: TImage;
     ShadowEffect1: TShadowEffect;
+    Memo1: TMemo;
     procedure btnMasukClick(Sender: TObject);
     procedure btnBiometricClick(Sender: TObject);
   private
@@ -63,6 +65,10 @@ end;
 
 procedure TFLogin.btnMasukClick(Sender: TObject);
 begin
+//  Memo1.Text := SimpleCrypt.Decrypt(GlobalFunction.DecodeBase64('zcrR0dSF3NTX0ck='));
+//  Memo1.Lines.Add(GlobalFunction.DecodeBase64('zcrR0dSF3NTX0ck='));
+//  Exit;
+
   HelperFunction.MoveToFrame(View.HOME);
 //  HelperFunction.MoveToFrame(View.TAMPILANBARU);
 end;

@@ -292,8 +292,8 @@ var
   FIndex : Integer;
 begin
   if JSONListMenu = '' then raise Exception.Create('JSONListMenu Empty');
-  if not QListMenu.FillDataFromString(JSONListMenu) then raise Exception.Create('JSONListMenu Parsing Failed');
-  if not QListMenu.FillDataFromString(QListMenu.FieldByName('config_splitview').AsString) then raise Exception.Create('config_splitview Not Found');
+  if not QListMenu.LoadFromJSON(JSONListMenu) then raise Exception.Create('JSONListMenu Parsing Failed');
+  if not QListMenu.LoadFromJSON(QListMenu.FieldByName('config_splitview').AsString) then raise Exception.Create('config_splitview Not Found');
 
   ClearMenu;
 
@@ -326,7 +326,7 @@ begin
 
       LM.IsHaveSubMenu := False;
 
-      if QSubListMenu.FillDataFromString(QListMenu.FieldByName('submenu').AsString) then begin
+      if QSubListMenu.LoadFromJSON(QListMenu.FieldByName('submenu').AsString) then begin
         QSubListMenu.First;
 
         LM.IsHaveSubMenu := True;

@@ -221,7 +221,7 @@ begin
     memRest.Lines.Add('status : ' + QData.FieldByName('status').AsString);
     memRest.Lines.Add('messages : ' + QData.FieldByName('messages').AsString);
 
-    QSubData.FillDataFromString(QData.FieldByName('messages').AsString, False);
+    QSubData.LoadFromJSON(QData.FieldByName('messages').AsString, False);
     if QSubData.IsEmpty then Exit;
 
     memRest.Lines.Add('=================');
@@ -313,8 +313,8 @@ end;
 
 procedure TFHome.CornerButton22Click(Sender: TObject);
 begin
-  QJSONToMemtable.FillDataFromString(memRest.Text);
-  if not QJSONToMemtable.FillDataFromString(QJSONToMemtable.FieldByName('config_splitview').AsString) then begin
+  QJSONToMemtable.LoadFromJSON(memRest.Text);
+  if not QJSONToMemtable.LoadFromJSON(QJSONToMemtable.FieldByName('config_splitview').AsString) then begin
     HelperFunction.ShowToastMessage('Gagal parsing JSON', TTypeMessage.Error);
     HelperFunction.ShowToastMessage(QJSONToMemtable.FieldByName('messages').AsString, TTypeMessage.Error);
     Exit;

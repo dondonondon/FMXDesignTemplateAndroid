@@ -52,8 +52,14 @@ type
     class procedure SetIndexCombobox(ACombobox : TCombobox; AValue : String);
   end;
 
+  SimpleCrypt = class
+    class function Encrypt(const s: String): String;
+    class function Decrypt(const s: String): String;
+  end;
+
 const
   SIGNATUREAPPS = '';
+  CRYPTRAHASIA = 7269;
 
 implementation
 
@@ -352,6 +358,30 @@ begin
 
   if IsFloat(AValue) then
     Result := IsInteger(AValue);
+end;
+
+{ SimpleCrypt }
+
+class function SimpleCrypt.Decrypt(const s: String): String;
+var
+  i: integer;
+  s2: string;
+begin
+  if not (Length(s) = 0) then
+    for i := 1 to Length(s) do
+      s2 := s2 + Chr(Ord(s[i]) - CRYPTRAHASIA);
+  Result := s2;
+end;
+
+class function SimpleCrypt.Encrypt(const s: String): String;
+var
+  i: integer;
+  s2: string;
+begin
+  if not (Length(s) = 0) then
+    for i := 1 to Length(s) do
+      s2 := s2 + Chr(Ord(s[i]) + CRYPTRAHASIA);
+  Result := s2;
 end;
 
 end.

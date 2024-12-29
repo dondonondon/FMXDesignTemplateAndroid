@@ -138,18 +138,18 @@ begin
 
       Rest.Execute(True);
 
-      AData.FillDataFromString(Rest.Content);
+      AData.LoadFromJSON(Rest.Content);
 
       if Rest.StatusCode = 200 then begin
         if AData.FieldByName('status').AsString = '200' then begin
           Result := True;
-          AData.FillDataFromString(AData.FieldByName('data').AsString);
+          AData.LoadFromJSON(AData.FieldByName('data').AsString);
         end;
       end;
     except on E: Exception do
       begin
         Result := False;
-        TFDMemTableHelperFunction.FillErrorParse(AData, E.Message, E.ClassName, False);
+        HelperFunctionMemoryTable.FillErrorData(AData, E.Message + ' | ' + E.ClassName, False);
       end;
     end;
   finally
