@@ -340,7 +340,7 @@ end;
 
 procedure TFHome.CornerButton18Click(Sender: TObject);
 begin
-  {$IF DEFINED(IOS) or DEFINED(ANDROID)}
+  {$IF DEFINED(ANDROID)}
   var OSVersion := StrToIntDef(JStringToString(TJBuild_VERSION.JavaClass.RELEASE), 10);
   {$ELSE}
   var OSVersion := 10;
@@ -420,7 +420,7 @@ end;
 
 procedure TFHome.CornerButton8Click(Sender: TObject);
 begin
-  {$IF DEFINED(IOS) or DEFINED(ANDROID)}
+  {$IF DEFINED(ANDROID)}
   var OSVersion := StrToIntDef(JStringToString(TJBuild_VERSION.JavaClass.RELEASE), 10);
   {$ELSE}
   var OSVersion := 10;

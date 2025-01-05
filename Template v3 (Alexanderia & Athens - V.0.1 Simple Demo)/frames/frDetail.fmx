@@ -39,7 +39,7 @@ object FDetail: TFDetail
       Size.Height = 41.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'btnMain'
-      TabOrder = 5
+      TabOrder = 6
       Text = 'btnShare'
       TextSettings.Trimming = None
       XRadius = 3.000000000000000000
@@ -87,9 +87,9 @@ object FDetail: TFDetail
       Size.Width = 344.000000000000000000
       Size.Height = 390.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 6
-      Viewport.Width = 344.000000000000000000
-      Viewport.Height = 390.000000000000000000
+      TabOrder = 7
+      Viewport.Width = 340.000000000000000000
+      Viewport.Height = 386.000000000000000000
     end
     object btnOpenFile: TCornerButton
       Position.X = 8.000000000000000000
@@ -105,6 +105,21 @@ object FDetail: TFDetail
       XRadius = 3.000000000000000000
       YRadius = 3.000000000000000000
       OnClick = btnOpenFileClick
+    end
+    object btnFileToIntent: TCornerButton
+      Position.X = 217.000000000000000000
+      Position.Y = 96.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 120.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'btnMain'
+      TabOrder = 5
+      Text = 'File To Intent'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btnFileToIntentClick
     end
   end
 end

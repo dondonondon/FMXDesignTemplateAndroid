@@ -29,6 +29,17 @@
         android:resizeableActivity="false"
         android:requestLegacyExternalStorage="true">
 <%provider%>
+ <!-- Note from BFA. don't delete this, because this uses for share file. go to Deployment & check file_path.xml on 
+        folder assets->file_path.xml -->
+    <!-- <provider
+        android:name="androidx.core.content.FileProvider"
+        android:authorities="com.embarcadero.prjTemplateV3.fileprovider"
+        android:exported="false"
+        android:grantUriPermissions="true">
+        <meta-data
+            android:name="android.support.FILE_PROVIDER_PATHS"
+            android:resource="@xml/file_paths" />
+    </provider> -->
 <%application-meta-data%>
 <%uses-libraries%>
 <%services%>

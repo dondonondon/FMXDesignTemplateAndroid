@@ -18,11 +18,13 @@ type
     btnShareFile: TCornerButton;
     memResult: TMemo;
     btnOpenFile: TCornerButton;
+    btnFileToIntent: TCornerButton;
     procedure btnBackClick(Sender: TObject);
     procedure btnShareClick(Sender: TObject);
     procedure btnGetFileClick(Sender: TObject);
     procedure btnShareFileClick(Sender: TObject);
     procedure btnOpenFileClick(Sender: TObject);
+    procedure btnFileToIntentClick(Sender: TObject);
   private
   public
   published
@@ -54,6 +56,11 @@ end;
 procedure TFDetail.btnBackClick(Sender: TObject);
 begin
   Back;
+end;
+
+procedure TFDetail.btnFileToIntentClick(Sender: TObject);
+begin
+  TBFAOpenDialog.SaveFileInternalToExternal(GlobalFunction.LoadFile('a.pdf'));
 end;
 
 procedure TFDetail.btnGetFileClick(Sender: TObject);

@@ -11,7 +11,7 @@ uses
   , Androidapi.Helpers, FMX.Platform.Android, Androidapi.JNI.Net,
   Androidapi.JNI.GraphicsContentViewText, Androidapi.JNI.Provider,
   Androidapi.JNI.JavaTypes, Androidapi.JNIBridge, FMX.PushNotification.Android;
-  {$ELSEIF Defined(MSWINDOWS)}
+  {$ELSE}
       ;
   {$ENDIF}
 

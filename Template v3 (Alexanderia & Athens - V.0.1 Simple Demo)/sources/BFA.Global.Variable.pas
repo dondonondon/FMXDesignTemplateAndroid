@@ -15,7 +15,7 @@ uses
   Fmx.Bind.Editors, Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
   BFA.Helper.MemoryTable, BFA.Global.Func,
   BFA.Helper.Main, BFA.Control.PushNotification
-  {$IF DEFINED(IOS) or DEFINED(ANDROID)}
+  {$IF DEFINED(ANDROID)}
    ,AndroidApi.JNI.GraphicsContentViewText, AndroidApi.JNI.OS, AndroidApi.Helpers, AndroidApi.JNI.Net,
   AndroidApi.JNI.JavaTypes, AndroidApi.JNIBridge, AndroidApi.JNI.Provider, AndroidApi.JNI.Telephony,
   FMX.PhoneDialer, FMX.PhoneDialer.Android, FMX.Platform.Android,
