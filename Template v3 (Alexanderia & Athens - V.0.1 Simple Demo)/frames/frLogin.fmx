@@ -1253,7 +1253,7 @@ object FLogin: TFLogin
     Size.PlatformDefault = False
     TabOrder = 2
     Visible = False
-    Viewport.Width = 260.000000000000000000
-    Viewport.Height = 69.000000000000000000
+    Viewport.Width = 264.000000000000000000
+    Viewport.Height = 73.000000000000000000
   end
 end

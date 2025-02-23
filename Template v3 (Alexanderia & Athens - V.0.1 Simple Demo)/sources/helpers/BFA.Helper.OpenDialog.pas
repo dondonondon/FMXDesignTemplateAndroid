@@ -40,6 +40,7 @@ type
 
   TBFAOpenDialog = class
   private
+    class var MethodExec : TProc;
     {$IF DEFINED(ANDROID)}
     class var OD_FILE_FROM_OPENDIALOG : JNet_Uri;
     class var OD_PERMISSION_JNETURI : JNet_Uri;
@@ -57,7 +58,7 @@ type
   public
     class var OD_TRANSFILENAME : String;
 
-    class procedure OpenIntent(ARequestCode : Integer);
+    class procedure OpenIntent(ARequestCode : Integer; AMethod : TProc = nil);
     class procedure InitSubsribeMessage;
 
     class procedure OpenFile(AFileName : String = '');
@@ -417,6 +418,11 @@ begin
   finally
     if RequestCode <> TBFARequestCodeOpenDialog.GET_FILE_OPEN_DIRECTORY then
       OD_TRANSFILENAME := '';
+
+    if Assigned(MethodExec) then
+      MethodExec;
+
+    MethodExec := nil;
   end;
 end;
 {$ENDIF}
@@ -452,7 +458,7 @@ begin
 {$ENDIF}
 end;
 
-class procedure TBFAOpenDialog.OpenIntent(ARequestCode: Integer);
+class procedure TBFAOpenDialog.OpenIntent(ARequestCode: Integer; AMethod : TProc);
 {$IF DEFINED(ANDROID)}
 var
   Intent : JIntent;
@@ -464,6 +470,8 @@ begin
   Intent.addCategory(TJIntent.JavaClass.CATEGORY_OPENABLE);
   Intent.setType(StringToJString('*/*'));
   TAndroidHelper.Activity.startActivityForResult(Intent, ARequestCode);
+
+  MethodExec := AMethod;
 {$ENDIF}
 end;
 

@@ -19,12 +19,15 @@ type
     memResult: TMemo;
     btnOpenFile: TCornerButton;
     btnFileToIntent: TCornerButton;
+    CornerButton1: TCornerButton;
+    Image1: TImage;
     procedure btnBackClick(Sender: TObject);
     procedure btnShareClick(Sender: TObject);
     procedure btnGetFileClick(Sender: TObject);
     procedure btnShareFileClick(Sender: TObject);
     procedure btnOpenFileClick(Sender: TObject);
     procedure btnFileToIntentClick(Sender: TObject);
+    procedure CornerButton1Click(Sender: TObject);
   private
   public
   published
@@ -65,7 +68,10 @@ end;
 
 procedure TFDetail.btnGetFileClick(Sender: TObject);
 begin
-  TBFAOpenDialog.OpenIntent(TBFARequestCodeOpenDialog.GET_FILE_OPEN_DIRECTORY);
+  TBFAOpenDialog.OD_TRANSFILENAME := GlobalFunction.LoadFile('test.txt');
+  TBFAOpenDialog.OpenIntent(TBFARequestCodeOpenDialog.SAVEFILE_TO_INTERNAL, procedure begin
+    memResult.Lines.LoadFromFile(GlobalFunction.LoadFile('test.txt'))
+  end);
 end;
 
 procedure TFDetail.btnOpenFileClick(Sender: TObject);
@@ -81,6 +87,14 @@ end;
 procedure TFDetail.btnShareFileClick(Sender: TObject);
 begin
   TBFAOpenDialog.ShareFile;
+end;
+
+procedure TFDetail.CornerButton1Click(Sender: TObject);
+begin
+  TBFAOpenDialog.OD_TRANSFILENAME := GlobalFunction.LoadFile('test.jpg');
+  TBFAOpenDialog.OpenIntent(TBFARequestCodeOpenDialog.SAVEFILE_TO_INTERNAL, procedure begin
+    Image1.Bitmap.LoadFromFile(GlobalFunction.LoadFile('test.jpg'));
+  end);
 end;
 
 constructor TFDetail.Create(AOwner: TComponent);

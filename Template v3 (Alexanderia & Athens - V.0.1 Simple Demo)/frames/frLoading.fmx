@@ -4932,9 +4932,145 @@ object FLoading: TFLoading
   end
   object tiMove: TTimer
     Enabled = False
-    Interval = 800
+    Interval = 300
     OnTimer = tiMoveTimer
     Left = 312
     Top = 16
+  end
+  object Layout1: TLayout
+    Align = Contents
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 3
+    object memXML: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Lines.Strings = (
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        '<Items>'
+        '    <Item>'
+        '        <item_id>6</item_id>'
+        '        <resto_id>R000001</resto_id>'
+        '        <item_name>Steak</item_name>'
+        '        <description>Handcrafts</description>'
+        '        <small_description>B0fxqnwyp6</small_description>'
+        '        <price>3023</price>'
+        '        <description_modifier></description_modifier>'
+        '        <item_type>MAIN</item_type>'
+        '        <parent_item_id>6</parent_item_id>'
+        '        <special_note>OKKKKK</special_note>'
+        '        <quantity>3</quantity>'
+        '        <identifier>35, 38, 39, 42, 44, 45</identifier>'
+        '        <index_order>0</index_order>'
+        '        <image_name>1734447766Steak.jpg</image_name>'
+        '    </Item>'
+        '    <Item>'
+        '        <item_id>35</item_id>'
+        '        <resto_id>R000001</resto_id>'
+        '        <item_name>Well Done</item_name>'
+        
+          '        <description>Bagian tengah berwarna cokelat sepenuhnya, ' +
+          'tidak ada bagian merah (74+)</description>'
+        '        <small_description></small_description>'
+        '        <price>0</price>'
+        '        <description_modifier>Temperatur</description_modifier>'
+        '        <item_type>MODIFIER</item_type>'
+        '        <parent_item_id>6</parent_item_id>'
+        '        <special_note>OKKKKK</special_note>'
+        '        <quantity>3</quantity>'
+        '        <identifier>35, 38, 39, 42, 44, 45</identifier>'
+        '        <index_order>0</index_order>'
+        '        <image_name>1734447766Steak.jpg</image_name>'
+        '    </Item>'
+        '    <Item>'
+        '        <item_id>38</item_id>'
+        '        <resto_id>R000001</resto_id>'
+        '        <item_name>Wortel</item_name>'
+        '        <description>-</description>'
+        '        <small_description></small_description>'
+        '        <price>0</price>'
+        '        <description_modifier>Additional</description_modifier>'
+        '        <item_type>MODIFIER</item_type>'
+        '        <parent_item_id>6</parent_item_id>'
+        '        <special_note>OKKKKK</special_note>'
+        '        <quantity>3</quantity>'
+        '        <identifier>35, 38, 39, 42, 44, 45</identifier>'
+        '        <index_order>0</index_order>'
+        '        <image_name>1734447766Steak.jpg</image_name>'
+        '    </Item>'
+        '</Items>')
+      Align = Top
+      Size.Width = 360.000000000000000000
+      Size.Height = 169.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Viewport.Width = 340.000000000000000000
+      Viewport.Height = 149.000000000000000000
+    end
+    object memResult: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Align = Top
+      Margins.Top = 8.000000000000000000
+      Position.Y = 217.000000000000000000
+      Size.Width = 360.000000000000000000
+      Size.Height = 376.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 356.000000000000000000
+      Viewport.Height = 372.000000000000000000
+    end
+    object btnCheck: TCornerButton
+      Align = Top
+      Margins.Top = 8.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.Y = 601.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 360.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'btnCheck'
+      TextSettings.Trimming = None
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+      OnClick = btnCheckClick
+    end
+    object StringGrid1: TStringGrid
+      Align = Client
+      CanFocus = True
+      ClipChildren = True
+      Size.Width = 360.000000000000000000
+      Size.Height = 71.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Viewport.Width = 356.000000000000000000
+      Viewport.Height = 46.000000000000000000
+    end
+    object Edit1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 4
+      Text = 'Item[2].item_id'
+      Position.Y = 177.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Size.Width = 360.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextPrompt = 'METADATA.FIELDS.FIELD[1].PARAM'
+    end
+  end
+  object QData: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 232
+    Top = 64
   end
 end
