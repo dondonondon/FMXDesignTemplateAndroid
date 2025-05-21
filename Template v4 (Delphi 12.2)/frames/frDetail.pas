@@ -46,7 +46,9 @@ end;
 
 procedure TFDetail.btnBackClick(Sender: TObject);
 begin
-  FMain.Fr.Back;
+  FMain.Fr.Back; Exit;
+  FMain.Fr.NavigateTo(LOGIN);
+//  FMain.Fr.Back;
 end;
 
 constructor TFDetail.Create(AOwner: TComponent);

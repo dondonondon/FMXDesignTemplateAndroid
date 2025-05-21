@@ -2646,4 +2646,48 @@ object FMain: TFMain
     Left = 64
     Top = 528
   end
+  object lblBreadCrumb: TLabel
+    Align = Top
+    Margins.Left = 8.000000000000000000
+    Margins.Top = 8.000000000000000000
+    Margins.Right = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'lblBreadCrumb'
+    TabOrder = 4
+  end
+  object lblCurrent: TLabel
+    Align = Top
+    Margins.Left = 8.000000000000000000
+    Margins.Right = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 25.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'lblBreadCrumb'
+    TabOrder = 3
+  end
+  object lblClass: TLabel
+    Align = Top
+    Margins.Left = 8.000000000000000000
+    Margins.Right = 8.000000000000000000
+    Margins.Bottom = 8.000000000000000000
+    Position.X = 8.000000000000000000
+    Position.Y = 42.000000000000000000
+    Size.Width = 344.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'lblBreadCrumb'
+    TabOrder = 2
+  end
+  object tiUpdate: TTimer
+    Interval = 500
+    OnTimer = tiUpdateTimer
+    Left = 96
+    Top = 264
+  end
 end

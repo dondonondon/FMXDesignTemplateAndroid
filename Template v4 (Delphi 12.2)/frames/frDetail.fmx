@@ -86,8 +86,8 @@ object FDetail: TFDetail
       Size.Height = 390.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 6
-      Viewport.Width = 340.000000000000000000
-      Viewport.Height = 386.000000000000000000
+      Viewport.Width = 344.000000000000000000
+      Viewport.Height = 390.000000000000000000
     end
     object btnOpenFile: TCornerButton
       Position.X = 8.000000000000000000

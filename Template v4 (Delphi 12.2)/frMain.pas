@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
-  BFA.Control.Frame, FMX.Controls.Presentation, FMX.StdCtrls;
+  BFA.Control.Frame, FMX.Controls.Presentation, FMX.StdCtrls, System.StrUtils;
 
 type
   TFMain = class(TForm)
@@ -13,10 +13,15 @@ type
     vsMain: TVertScrollBox;
     loFrame: TLayout;
     SB: TStyleBook;
+    lblBreadCrumb: TLabel;
+    tiUpdate: TTimer;
+    lblCurrent: TLabel;
+    lblClass: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure CornerButton1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure tiUpdateTimer(Sender: TObject);
   private
 
   public
@@ -39,7 +44,7 @@ uses frLoading, frLogin, frTemp, frDetail;
 
 procedure TFMain.CornerButton1Click(Sender: TObject);
 begin
-  ShowMessage(TFMain.ClassName);
+//  ShowMessage(TFMain.ClassName);
 end;
 
 procedure TFMain.FormCreate(Sender: TObject);
@@ -54,16 +59,33 @@ end;
 
 procedure TFMain.FormShow(Sender: TObject);
 begin
-  Fr.FrameContainer := loFrame;
+  Fr.Container := loFrame;
 
   Fr.RegisterFrame(TFLogin, LOGIN);
   Fr.RegisterFrame(TFDetail, DETAIL);
   Fr.RegisterFrame(TFLoading, LOADING);
 
-  Fr.Visible := False;
+  Fr.LockBack([LOGIN, LOADING], True);
 
-  Fr.MoveTo(LOADING);
+  Fr.NavigateTo(LOADING);
 
+end;
+
+procedure TFMain.tiUpdateTimer(Sender: TObject);
+var
+  LCurrent : String;
+  LPrevious : String;
+begin
+  if not Assigned(Fr) then Exit;
+
+  lblBreadCrumb.Text := Fr.RouteNavigation;
+  lblCurrent.Text := Fr.CurrentAlias + ' | ' + Fr.PreviousAlias;
+
+  LCurrent := IfThen(Assigned(Fr.CurrentFrame), Fr.CurrentFrame.ClassName, 'NOTFOUND');
+  if Assigned(Fr.PreviousFrame) then
+    LPrevious := Fr.PreviousFrame.ClassName;
+
+  lblClass.Text := LCurrent + ' | ' + LPrevious;
 end;
 
 end.

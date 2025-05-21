@@ -54,7 +54,7 @@ end;
 
 procedure TFLoading.logoClick(Sender: TObject);
 begin
-  FMain.Fr.MoveTo(LOGIN);
+  FMain.Fr.NavigateTo(LOGIN);
 end;
 
 procedure TFLoading.Show;

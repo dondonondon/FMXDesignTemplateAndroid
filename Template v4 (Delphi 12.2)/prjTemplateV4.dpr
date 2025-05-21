@@ -8,7 +8,9 @@ uses
   frLoading in 'frames\frLoading.pas' {FLoading: TFrame},
   frLogin in 'frames\frLogin.pas' {FLogin: TFrame},
   frTemp in 'frames\frTemp.pas' {FTemp: TFrame},
-  BFA.Control.Frame in 'sources\controls\BFA.Control.Frame.pas';
+  BFA.Control.Frame.Old in 'sources\controls\BFA.Control.Frame.Old.pas',
+  BFA.Control.Frame in 'sources\controls\BFA.Control.Frame.pas',
+  BFA.Resource.Message in 'sources\resources\BFA.Resource.Message.pas';
 
 {$R *.res}
 

@@ -541,6 +541,7 @@ object FLogin: TFLogin
           TextSettings.Trimming = None
           Text = 'atau'
           TabOrder = 1
+          OnClick = Label3Click
         end
         object btnBiometric: TCornerButton
           Align = Bottom
@@ -1242,5 +1243,27 @@ object FLogin: TFLogin
         TabOrder = 2
       end
     end
+  end
+  object btnBack: TCornerButton
+    Align = Top
+    StyledSettings = [Family, Style, FontColor]
+    Margins.Left = 16.000000000000000000
+    Margins.Top = 8.000000000000000000
+    Margins.Right = 16.000000000000000000
+    Margins.Bottom = 8.000000000000000000
+    Position.X = 16.000000000000000000
+    Position.Y = 8.000000000000000000
+    Sides = [Top, Left, Bottom, Right]
+    Size.Width = 328.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'btnMain'
+    TabOrder = 4
+    Text = 'Back'
+    TextSettings.Font.Size = 12.500000000000000000
+    TextSettings.Trimming = None
+    XRadius = 12.000000000000000000
+    YRadius = 12.000000000000000000
+    OnClick = btnBackClick
   end
 end

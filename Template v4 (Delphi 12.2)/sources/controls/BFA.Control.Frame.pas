@@ -12,67 +12,59 @@ type
   TFrameContainer = class of TFrame;
   TMethodExec = procedure of object;
 
+  TListFrame = class
+  private
+    FPersistentClass: TList<TPersistentClass>;
+    FAlias: TList<String>;
+    FContainerName: TList<String>;
+    FFrame: TList<TFrame>;
+  public
+    property PersistentClass : TList<TPersistentClass> read FPersistentClass write FPersistentClass;
+    property Alias : TList<String> read FAlias write FAlias;
+    property ContainerName : TList<String> read FContainerName write FContainerName;
+    property Frame : TList<TFrame> read FFrame write FFrame;
+
+    function Find(AAlias : String; out AFound : Boolean) : Integer;
+    function Count : Integer;
+
+    constructor Create;
+    destructor Destroy; override;
+  end;
+
   TFrameCollection = class(TComponent)
   private
-    ListFrame : TList<TPersistentClass>;
-    ListAlias : TList<String>;
-    ListDoubleTapBackAlias : TList<String>;
+    CountTap : Integer;
+    List : TListFrame;
+    ListLockFrame : TList<String>;
+    IsBack : Boolean;
+    IsActiveDoubleTapExit : Boolean;
 
-    ListAvailableFrame : TList<TControl>;
-    ListRoute : TList<String>;
-
-    FPreviousFrame: TControl;
+    FContainer: TControl;
+    FRoutes: TList<String>;
+    FRouteNavigation: String;
     FCurrentFrame: TControl;
-    FFrameContainer: TControl;
-
-    IsInitFrame : Boolean;
-
-    FIsBack : Boolean;
-    FTapBack : Integer;
-    FIsUsesDoubleTapBack : Boolean;
-
     FPreviousAlias: String;
     FCurrentAlias: String;
-    FCloseAppWhenDoubleTap: Boolean;
-//    FDestroyAfterClose: Boolean;
+    FPreviousFrame: TControl;
 
-    function InitFrame(AFrame : TFrameContainer; AParent : TControl) : TControl;
-    function CallingFrame(AClassName : String) : TControl; overload;
-    function CallingFrame(AFrame : TFrameContainer): TControl; overload;
-
-    function GetFrameFromList(AClassName : String) : TControl;
-    function IsFrameAvailable(AFrame : TControl) : Boolean;
-    function GetAliasName(AClassName : String) : String;
-
-    procedure Show(AControl : TControl);
-    procedure SetVisible(const Value: Boolean);
+    procedure UpdateRouteNavigation;
+    procedure CreateNew(AAlias : String);
+    procedure DisplayMessage(AMessage : String);
+    procedure Hide;
   public
-    property FrameContainer : TControl read FFrameContainer write FFrameContainer;
+    property Container : TControl read FContainer write FContainer;
+    property Routes : TList<String> read FRoutes;
+    property RouteNavigation : String read FRouteNavigation;
 
     property CurrentFrame : TControl read FCurrentFrame;
     property PreviousFrame : TControl read FPreviousFrame;
-
     property CurrentAlias : String read FCurrentAlias;
     property PreviousAlias : String read FPreviousAlias;
 
-    property CloseAppWhenDoubleTap : Boolean read FCloseAppWhenDoubleTap write FCloseAppWhenDoubleTap;
-
-    property Visible : Boolean write SetVisible;
-
-//    property DestroyAfterClose : Boolean read FDestroyAfterClose write FDestroyAfterClose;
-
-    procedure RegisterFrame(const AClass : TPersistentClass; AAliasClass : String); overload;
-    procedure RegisterFrame(const AClass : array of TPersistentClass; AAliasClasses : array of String); overload;
-
-    procedure SetDoubleTapBackExit(AAliasClass : array of String);
-
-    procedure MoveTo(AAlias : String); overload;
-    procedure MoveTo(AFrame : TFrameContainer); overload;
-
-    function GetFrame(AAlias : String) : TControl; overload;
-    function GetFrame(AFrame : TFrameContainer) : TControl; overload;
-
-    function Back : Boolean;
+    procedure LockBack(ATargetAliases : array of string; AActiveDoubleTapExit : Boolean = False);
+    procedure RegisterFrame(const AClass : TPersistentClass; AAliasClass : String);
+    procedure NavigateTo(ATargetAlias : String);
+    procedure Back;
 
     constructor Create;
     destructor Destroy; override;
@@ -82,261 +74,244 @@ type
 
 implementation
 
-{ TFrameCollection }
+uses BFA.Resource.Message;
 
-function TFrameCollection.CallingFrame(AClassName: String): TControl;
+procedure TFrameCollection.Back;
+var
+  LLastAlias : String;
 begin
-  Result := nil;
-  try
-    FindClass(AClassName);
+  if Routes.Count = 0 then Exit;
 
-    var LClass := TFrameContainer(GetClass(AClassName));
-    Result := InitFrame(LClass, FrameContainer);
-  except on E: Exception do
-    raise Exception.Create('Class Not Found / Not Register');
-  end;
-end;
+  if IsActiveDoubleTapExit then begin
+    LLastAlias := Routes.Last;
 
-function TFrameCollection.Back: Boolean;
-begin
-  if ListRoute.Count = 0 then Exit;
-
-  if FIsUsesDoubleTapBack then begin
-    var FAlias : String;
-    FAlias := ListRoute.Last;
-    if ListDoubleTapBackAlias.IndexOf(FAlias) >= 0 then begin
-      if FTapBack >= 1 then begin
-//        ShowMessages('Bye bye');
-        Result := True;
-
-        if CloseAppWhenDoubleTap then
+    if ListLockFrame.IndexOf(LLastAlias) >= 0 then begin
+      if CountTap >= 1 then begin
+        DisplayMessage('Bye bye');
+        if IsActiveDoubleTapExit then
           Application.Terminate;
 
         Exit;
       end;
 
-      Inc(FTapBack);
-//      ShowMessages('Tap twice to exit application');
+      Inc(CountTap);
+      DisplayMessage('Tap twice to exit application');
       Exit;
     end;
   end;
 
-  if ListRoute.Count <= 1 then Exit;
+  if Routes.Count <= 1 then Exit;
 
-  FIsBack := True;
+  IsBack := True;
+  if Routes.Count > 1 then
+    NavigateTo(Routes[Routes.Count - 2]) else
+    NavigateTo(Routes[Routes.Count - 1]);
 
-  if ListRoute.Count > 1 then MoveTo(ListRoute[ListRoute.Count - 2]) else
-    MoveTo(ListRoute[ListRoute.Count - 1]);
-
-  ListRoute.Delete(ListRoute.Count - 1);
-end;
-
-function TFrameCollection.CallingFrame(AFrame: TFrameContainer): TControl;
-begin
-  if not Assigned(FrameContainer) then
-    raise Exception.Create('Control Parent Not Set!');
-
-  InitFrame(AFrame, FrameContainer);
+  Routes.Delete(Routes.Count - 1);
+  UpdateRouteNavigation;
 end;
 
 constructor TFrameCollection.Create;
 begin
-  ListFrame := TList<TPersistentClass>.Create;
-  ListAlias := TList<String>.Create;
-  ListRoute := TList<String>.Create;
-  ListDoubleTapBackAlias := TList<String>.Create;
-  ListAvailableFrame := TList<TControl>.Create;
+  List := TListFrame.Create;
+  ListLockFrame := TList<String>.Create;
+
+  FRoutes := TList<String>.Create;
+end;
+
+procedure TFrameCollection.CreateNew(AAlias: String);
+var
+  LFound : Boolean;
+  LIndex : Integer;
+  LClass : TFrameContainer;
+  LFrame : TFrame;
+begin
+  if not Assigned(Container) then raise Exception.Create('Container Not Set!');
+
+  LIndex := List.Find(AAlias, LFound);
+  if not LFound then begin
+    DisplayMessage(RS_FRAME_NOT_FOUND);
+    Exit;
+  end;
+
+  LClass := TFrameContainer(List.PersistentClass[LIndex]);
+  LFrame := List.Frame[LIndex];
+
+  if LFrame = nil then begin
+    LFrame := LClass.Create(nil);
+    LFrame.Align := TAlignLayout.Contents;
+    Container.AddObject(LFrame);
+
+    LFrame.Visible := False;
+    List.Frame[LIndex] := LFrame;
+  end;
 end;
 
 destructor TFrameCollection.Destroy;
 begin
-  ListFrame.Free;
-  ListAlias.Free;
-  ListRoute.Free;
-  ListDoubleTapBackAlias.Free;
-  ListAvailableFrame.Free;
+  List.Free;
+  ListLockFrame.Free;
+
+  FRoutes.Free;
+
   inherited;
 end;
 
-function TFrameCollection.GetAliasName(AClassName: String): String;
-var
-  FIndex : Integer;
+procedure TFrameCollection.DisplayMessage(AMessage: String);
 begin
-  if ListFrame.Count = 0 then Exit;
+  ShowMessage(AMessage);
+end;
 
-  for var Frame in ListFrame do begin
-    if AClassName = Frame.ClassName then begin
-      FIndex := ListFrame.IndexOf(Frame);
-      Result := ListAlias[FIndex];
-      Break;
-    end;
+procedure TFrameCollection.Hide;
+var
+  L : TFrame;
+begin
+  for L in List.Frame do begin
+    if L <> nil then L.Visible := False;
   end;
 end;
 
-function TFrameCollection.GetFrame(AFrame: TFrameContainer): TControl;
-begin
-  Result := GetFrameFromList(AFrame.ClassName);
-end;
-
-function TFrameCollection.GetFrame(AAlias: String): TControl;
-begin
-  Result := GetFrameFromList(ListFrame[ListAlias.IndexOf(AAlias)].ClassName);
-end;
-
-function TFrameCollection.GetFrameFromList(AClassName: String): TControl;
-begin
-  Result := nil;
-  if ListAvailableFrame.Count = 0 then Exit;
-
-  for var Frame in ListAvailableFrame do begin
-    if AClassName = Frame.ClassName then begin
-      Result := Frame;
-      Break;
-    end;
-  end;
-end;
-
-function TFrameCollection.InitFrame(AFrame: TFrameContainer; AParent: TControl): TControl;
+procedure TFrameCollection.LockBack(ATargetAliases: array of string;
+  AActiveDoubleTapExit: Boolean);
 var
-  LFrame : TControl;
+  LIndex : Integer;
+  LFound : Boolean;
 begin
-  Result := nil;
+  ListLockFrame.Clear;
+
+  if Length(ATargetAliases) = 0 then raise Exception.Create('Please input Alias Class');
+
+  for var i := 0 to Length(ATargetAliases) - 1 do begin
+    LIndex := List.Find(ATargetAliases[i], LFound);
+    if LFound then Break;
+  end;
+
+  if not LFound then raise Exception.Create('Alias not match!');
+  for var i := 0 to Length(ATargetAliases) - 1 do ListLockFrame.Add(ATargetAliases[i]);
+
+  IsActiveDoubleTapExit := AActiveDoubleTapExit;
+end;
+
+procedure TFrameCollection.NavigateTo(ATargetAlias: String);
+var
+  LFound : Boolean;
+  LIndex : Integer;
+  LNewURL : String;
+begin
   try
-    LFrame := GetFrameFromList(AFrame.ClassName);
+    try
+      LIndex := List.Find(ATargetAlias, LFound);
+      if not LFound then begin
+        DisplayMessage(RS_FRAME_NOT_FOUND);
+        Exit;
+      end;
 
-    if Assigned(CurrentFrame) then begin
-      CurrentFrame.Visible := True;
-      if CurrentFrame.ClassName = AFrame.ClassName then Exit;
+      if Assigned(CurrentFrame) and (List.Frame[LIndex] <> nil) then
+        if CurrentFrame.ClassName = List.Frame[LIndex].ClassName then Exit;
 
-//      if not IsFrameAvailable(CurrentFrame) then CurrentFrame.Free else  //DestroyAfterClose
-      CurrentFrame.Visible := False;
+      Hide;
+
+      CreateNew(ATargetAlias);
+
+      if List.Frame[LIndex] <> nil then begin
+        List.Frame[LIndex].Visible := True;
+
+        if not IsBack then Routes.Add(ATargetAlias);
+      end;
+
+      UpdateRouteNavigation;
+    except on E: Exception do
+      DisplayMessage(E.Message);
     end;
-
-    if not Assigned(LFrame) then begin
-      LFrame := AFrame.Create(nil);
-      LFrame.Align := TAlignLayout.Contents;
-      FrameContainer.AddObject(LFrame);
-
-      LFrame.Visible := False;
-    end;
-
-    FPreviousFrame := FCurrentFrame;
-    FCurrentFrame := LFrame;
-
-    if not IsInitFrame then
-      Show(LFrame);
-
-    IsInitFrame := False;
-  except on E : Exception do
-//      MainHelper.ShowToastMessage(E.Message);
-      raise Exception.Create(E.Message);
-  end;
-end;
-
-function TFrameCollection.IsFrameAvailable(AFrame: TControl): Boolean;
-begin
-  Result := False;
-
-  for var Frame in ListAvailableFrame do begin
-    if AFrame.ClassName = Frame.ClassName then begin
-      Result := True;
-      Break;
-    end;
-  end;
-end;
-
-procedure TFrameCollection.MoveTo(AFrame: TFrameContainer);
-begin
-  CallingFrame(GetAliasName(AFrame.ClassName));
-end;
-
-procedure TFrameCollection.MoveTo(AAlias: String);
-begin
-  var FIndex := ListAlias.IndexOf(AAlias);
-  if FIndex < 0 then
-    raise Exception.Create('Alias not found');
-
-  CallingFrame(ListFrame[ListAlias.IndexOf(AAlias)].ClassName);
-end;
-
-procedure TFrameCollection.RegisterFrame(
-  const AClass: array of TPersistentClass; AAliasClasses: array of String);
-begin
-  if Length(AClass) <> Length(AAliasClasses) then
-    raise Exception.Create('Total Class && AliasClass not match!');
-
-  for var i := 0 to Length(AClass) - 1 do begin
-    RegisterFrame(AClass[i], AAliasClasses[i]);
-  end;
-end;
-
-procedure TFrameCollection.SetDoubleTapBackExit(AAliasClass: array of String);
-var
-  FIndex : Integer;
-begin
-  if Length(AAliasClass) = 0 then
-    raise Exception.Create('Please input Alias Class');
-
-  for var i := 0 to Length(AAliasClass) - 1 do begin
-    FIndex := ListAlias.IndexOf(AAliasClass[i]);
-    if FIndex < 0 then Break;
-  end;
-
-  if FIndex < 0 then
-    raise Exception.Create('Alias not match!');
-
-  for var i := 0 to Length(AAliasClass) - 1 do begin
-    ListDoubleTapBackAlias.Add(AAliasClass[i]);
-  end;
-
-  FIsUsesDoubleTapBack := True;
-end;
-
-procedure TFrameCollection.SetVisible(const Value: Boolean);
-begin
-//  for var TempFrame in ListFrame do begin
-//    GetFrameFromList(TempFrame.ClassName).Visible := Value;
-//  end;
-end;
-
-procedure TFrameCollection.Show(AControl: TControl);
-var
-  Routine : TMethod;
-  Exec : TMethodExec;
-begin
-  if not Assigned(AControl) then
-    raise Exception.Create('Object not found');
-
-  AControl.Visible := True;
-
-  if not FIsBack then ListRoute.Add(GetAliasName(AControl.ClassName));
-
-  FIsBack := False;
-  FTapBack := 0;
-
-  FPreviousAlias := CurrentAlias;
-  FCurrentAlias := GetAliasName(AControl.ClassName);
-
-  Routine.Data := Pointer(AControl);
-  Routine.Code := AControl.MethodAddress('Show');
-  if Assigned(Routine.Code) then begin
-    Exec := TMethodExec(Routine);
-    Exec;
+  finally
+    IsBack := False;
+    CountTap := 0;
   end;
 end;
 
 procedure TFrameCollection.RegisterFrame(const AClass: TPersistentClass;
   AAliasClass: String);
+var
+  LContainerName : String;
 begin
-  ListFrame.Add(AClass);
-  ListAlias.Add(AAliasClass);
+  LContainerName := StringReplace(AAliasClass, ' ', '', [rfReplaceAll, rfIgnoreCase]);
+
+  List.PersistentClass.Add(AClass);
+  List.Alias.Add(AAliasClass);
+  List.ContainerName.Add(LContainerName);
+  List.Frame.Add(nil);
+
   RegisterClass(AClass);
+end;
 
-  FIsBack := True;
-  IsInitFrame := True;
+procedure TFrameCollection.UpdateRouteNavigation;
+var
+  LFound : Boolean;
+  LIndex : Integer;
+begin
+  FCurrentFrame := nil;
+  FPreviousFrame := nil;
 
-  FCurrentFrame := CallingFrame(AClass.ClassName);
-  if Assigned(CurrentFrame) then CurrentFrame.Visible := False;
+  FRouteNavigation := '';
+  FCurrentAlias := '';
+
+  if Routes.Count = 0 then Exit;
+
+  var LTempList := TStringList.Create;
+  try
+    for var LText in Routes do
+      LTempList.Add(LText);
+
+    FRouteNavigation := LTempList.DelimitedText;
+    FRouteNavigation := StringReplace(FRouteNavigation, ',', ' -> ', [rfReplaceAll]);
+
+    FCurrentAlias := LTempList[LTempList.Count - 1];
+
+    LIndex := List.Find(FCurrentAlias, LFound);
+    if LFound then
+      FCurrentFrame := List.Frame[LIndex];
+
+    if LTempList.Count > 1 then begin
+      FPreviousAlias := LTempList[LTempList.Count - 2];
+
+      LIndex := List.Find(FPreviousAlias, LFound);
+      if LFound then
+        FPreviousFrame := List.Frame[LIndex];
+    end;
+  finally
+    LTempList.Free;
+  end;
+end;
+
+function TListFrame.Count: Integer;
+begin
+  Result := Alias.Count;
+end;
+
+{ TListWebForm }
+
+constructor TListFrame.Create;
+begin
+  FPersistentClass := TList<TPersistentClass>.Create;
+  FAlias := TList<String>.Create;
+  FContainerName := TList<String>.Create;
+  FFrame := TList<TFrame>.Create;
+end;
+
+destructor TListFrame.Destroy;
+begin
+  FPersistentClass.Free;
+  FAlias.Free;
+  FContainerName.Free;
+  FFrame.Free;
+
+  inherited;
+end;
+
+function TListFrame.Find(AAlias: String; out AFound: Boolean): Integer;
+begin
+  Result := Alias.IndexOf(AAlias);
+  AFound := Result >= 0;
 end;
 
 end.

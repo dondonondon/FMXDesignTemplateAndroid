@@ -24,7 +24,10 @@ type
     lblRS: TLabel;
     Image1: TImage;
     ShadowEffect1: TShadowEffect;
+    btnBack: TCornerButton;
     procedure btnMasukClick(Sender: TObject);
+    procedure btnBackClick(Sender: TObject);
+    procedure Label3Click(Sender: TObject);
   private
   public
   published
@@ -50,10 +53,14 @@ procedure TFLogin.Back;
 begin
 end;
 
+procedure TFLogin.btnBackClick(Sender: TObject);
+begin
+  FMain.Fr.Back;
+end;
+
 procedure TFLogin.btnMasukClick(Sender: TObject);
 begin
-
-  FMain.Fr.MoveTo(DETAIL);
+  FMain.Fr.NavigateTo(DETAIL);
 end;
 
 constructor TFLogin.Create(AOwner: TComponent);
@@ -65,6 +72,11 @@ destructor TFLogin.Destroy;
 begin
 
   inherited;
+end;
+
+procedure TFLogin.Label3Click(Sender: TObject);
+begin
+  FMain.Fr.NavigateTo(LOGIN);
 end;
 
 procedure TFLogin.Show;
