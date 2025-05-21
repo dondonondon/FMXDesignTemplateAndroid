@@ -45,7 +45,7 @@ implementation
 
 {$R *.fmx}
 
-uses BFA.Control.Frame, frMain;
+uses BFA.Control.Frame, frMain, frDetail;
 
 { TFTemp }
 
@@ -76,6 +76,9 @@ end;
 
 procedure TFLogin.Label3Click(Sender: TObject);
 begin
+  var LDetail := TFDetail(FMain.Fr.GetFrame(DETAIL));
+  LDetail.btnBack.Text := 'Ganti Text';
+
   FMain.Fr.NavigateTo(LOGIN);
 end;
 

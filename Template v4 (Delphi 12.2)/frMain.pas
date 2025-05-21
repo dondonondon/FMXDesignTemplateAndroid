@@ -61,9 +61,17 @@ procedure TFMain.FormShow(Sender: TObject);
 begin
   Fr.Container := loFrame;
 
-  Fr.RegisterFrame(TFLogin, LOGIN);
-  Fr.RegisterFrame(TFDetail, DETAIL);
-  Fr.RegisterFrame(TFLoading, LOADING);
+//  Fr.RegisterFrame(TFLogin, LOGIN);
+//  Fr.RegisterFrame(TFDetail, DETAIL, True);
+//  Fr.RegisterFrame(TFLoading, LOADING);
+
+//  Fr.RegisterFrame([TFLogin, TFLoading], [LOGIN, LOADING]);
+  Fr.RegisterFrame([TFDetail], [DETAIL], True);
+
+  Fr.RegisterFrame([
+    Fr.Add(TFLogin, LOGIN),
+    Fr.Add(TFLoading, LOADING)
+  ]);
 
   Fr.LockBack([LOGIN, LOADING], True);
 

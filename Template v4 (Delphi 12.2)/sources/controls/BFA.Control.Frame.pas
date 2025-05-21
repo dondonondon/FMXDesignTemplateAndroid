@@ -12,6 +12,13 @@ type
   TFrameContainer = class of TFrame;
   TMethodExec = procedure of object;
 
+  TFrameRegistration = record
+    Frame: TPersistentClass;
+    Alias: string;
+  end;
+
+  TFrameRegistrationArray = array of TFrameRegistration;
+
   TListFrame = class
   private
     FPersistentClass: TList<TPersistentClass>;
@@ -62,9 +69,16 @@ type
     property PreviousAlias : String read FPreviousAlias;
 
     procedure LockBack(ATargetAliases : array of string; AActiveDoubleTapExit : Boolean = False);
-    procedure RegisterFrame(const AClass : TPersistentClass; AAliasClass : String);
+
+    function Add(AClass: TPersistentClass; const AAlias: string): TFrameRegistration;
+
+    procedure RegisterFrame(const AClass : TPersistentClass; AAliasClass : String; AAutoCreate : Boolean = False); overload;
+    procedure RegisterFrame(const AClass : array of TPersistentClass; AAliasClasses : array of String; AAutoCreate : Boolean = False); overload;
+    procedure RegisterFrame(const ARegistrations: TFrameRegistrationArray; AAutoCreate: Boolean = False); overload;
     procedure NavigateTo(ATargetAlias : String);
     procedure Back;
+
+    function GetFrame(ATargetAlias : String) : TControl;
 
     constructor Create;
     destructor Destroy; override;
@@ -162,6 +176,19 @@ begin
   ShowMessage(AMessage);
 end;
 
+function TFrameCollection.GetFrame(ATargetAlias: String): TControl;
+var
+  LIndex : Integer;
+  LFound : Boolean;
+begin
+  LIndex := List.Find(ATargetAlias, LFound);
+
+  if not LFound then raise Exception.Create('Alias not found!');
+  if List.Frame[LIndex] = nil then raise Exception.Create('View '+ ATargetAlias +' not created!');
+
+  Result := List.Frame[LIndex];
+end;
+
 procedure TFrameCollection.Hide;
 var
   L : TFrame;
@@ -229,8 +256,17 @@ begin
   end;
 end;
 
+procedure TFrameCollection.RegisterFrame(
+  const AClass: array of TPersistentClass; AAliasClasses: array of String;
+  AAutoCreate: Boolean);
+begin
+  if Length(AClass) <> Length(AAliasClasses) then raise Exception.Create('Total Class && AliasClass not match!');
+  for var i := 0 to Length(AClass) - 1 do
+    RegisterFrame(AClass[i], AAliasClasses[i], AAutoCreate);
+end;
+
 procedure TFrameCollection.RegisterFrame(const AClass: TPersistentClass;
-  AAliasClass: String);
+  AAliasClass: String; AAutoCreate : Boolean);
 var
   LContainerName : String;
 begin
@@ -242,44 +278,38 @@ begin
   List.Frame.Add(nil);
 
   RegisterClass(AClass);
+
+  if AAutoCreate then CreateNew(AAliasClass);
 end;
 
 procedure TFrameCollection.UpdateRouteNavigation;
 var
   LFound : Boolean;
-  LIndex : Integer;
+  LIndex, LLastIndex : Integer;
 begin
   FCurrentFrame := nil;
   FPreviousFrame := nil;
 
   FRouteNavigation := '';
   FCurrentAlias := '';
+  FPreviousAlias := '';
 
   if Routes.Count = 0 then Exit;
+  FRouteNavigation := string.Join(' -> ', Routes.ToArray);
 
-  var LTempList := TStringList.Create;
-  try
-    for var LText in Routes do
-      LTempList.Add(LText);
+  LLastIndex := Routes.Count - 1;
+  FCurrentAlias := Routes[LLastIndex];
 
-    FRouteNavigation := LTempList.DelimitedText;
-    FRouteNavigation := StringReplace(FRouteNavigation, ',', ' -> ', [rfReplaceAll]);
+  LIndex := List.Find(FCurrentAlias, LFound);
+  if LFound then
+    FCurrentFrame := List.Frame[LIndex];
 
-    FCurrentAlias := LTempList[LTempList.Count - 1];
+  if Routes.Count > 1 then begin
+    FPreviousAlias := Routes[LLastIndex - 1];
 
-    LIndex := List.Find(FCurrentAlias, LFound);
+    LIndex := List.Find(FPreviousAlias, LFound);
     if LFound then
-      FCurrentFrame := List.Frame[LIndex];
-
-    if LTempList.Count > 1 then begin
-      FPreviousAlias := LTempList[LTempList.Count - 2];
-
-      LIndex := List.Find(FPreviousAlias, LFound);
-      if LFound then
-        FPreviousFrame := List.Frame[LIndex];
-    end;
-  finally
-    LTempList.Free;
+      FPreviousFrame := List.Frame[LIndex];
   end;
 end;
 
@@ -312,6 +342,22 @@ function TListFrame.Find(AAlias: String; out AFound: Boolean): Integer;
 begin
   Result := Alias.IndexOf(AAlias);
   AFound := Result >= 0;
+end;
+
+function TFrameCollection.Add(AClass: TPersistentClass;
+  const AAlias: string): TFrameRegistration;
+begin
+  Result.Frame := AClass;
+  Result.Alias := AAlias;
+end;
+
+procedure TFrameCollection.RegisterFrame(
+  const ARegistrations: TFrameRegistrationArray; AAutoCreate: Boolean);
+var
+  LReg : TFrameRegistration;
+begin
+  for LReg in ARegistrations do
+    RegisterFrame(LReg.Frame, LReg.Alias, AAutoCreate);
 end;
 
 end.

@@ -36,7 +36,7 @@ implementation
 
 {$R *.fmx}
 
-uses BFA.Control.Frame, frMain;
+uses BFA.Control.Frame, frMain, frLogin;
 
 { TFDetail }
 
@@ -46,6 +46,9 @@ end;
 
 procedure TFDetail.btnBackClick(Sender: TObject);
 begin
+  var LLogin := TFLogin(FMain.Fr.GetFrame(LOGIN));
+  LLogin.btnMasuk.Text := 'Ganti Text';
+
   FMain.Fr.Back; Exit;
   FMain.Fr.NavigateTo(LOGIN);
 //  FMain.Fr.Back;
