@@ -217,8 +217,8 @@ end;
 procedure TFLoading.tiMoveTimer(Sender: TObject);
 begin
   tiMove.Enabled := False;
-  Frame.GoFrame(View.DETAIL);
-//  Frame.GoFrame(View.LOGIN);
+//  Frame.GoFrame(View.DETAIL);
+  Frame.GoFrame(View.LOGIN);
 end;
 
 end.

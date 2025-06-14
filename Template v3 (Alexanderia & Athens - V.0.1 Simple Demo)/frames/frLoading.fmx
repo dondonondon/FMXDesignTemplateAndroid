@@ -5006,8 +5006,8 @@ object FLoading: TFLoading
       Size.Height = 169.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 1
-      Viewport.Width = 340.000000000000000000
-      Viewport.Height = 149.000000000000000000
+      Viewport.Width = 360.000000000000000000
+      Viewport.Height = 169.000000000000000000
     end
     object memResult: TMemo
       Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
@@ -5019,8 +5019,8 @@ object FLoading: TFLoading
       Size.Height = 376.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      Viewport.Width = 356.000000000000000000
-      Viewport.Height = 372.000000000000000000
+      Viewport.Width = 360.000000000000000000
+      Viewport.Height = 376.000000000000000000
     end
     object btnCheck: TCornerButton
       Align = Top
@@ -5046,8 +5046,8 @@ object FLoading: TFLoading
       Size.Height = 71.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 3
-      Viewport.Width = 356.000000000000000000
-      Viewport.Height = 46.000000000000000000
+      Viewport.Width = 360.000000000000000000
+      Viewport.Height = 71.000000000000000000
     end
     object Edit1: TEdit
       Touch.InteractiveGestures = [LongTap, DoubleTap]
