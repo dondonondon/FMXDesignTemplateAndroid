@@ -5,13 +5,15 @@
 ![Architecture](https://img.shields.io/badge/Architecture-Form%20Shell%20%2B%20Frame%20Router-0E8A16?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Starter%20Template-F59E0B?style=flat-square)
 
-Delphi FireMonkey starter template for building cross-platform applications on Windows, Android, and iOS.
+English | [Bahasa Indonesia](README.id.md)
 
-This repository is structured as a production-oriented FMX foundation: the main form acts as the application shell, each screen is implemented as a `TFrame`, navigation is centralized in a router, and shared behaviors are exposed through focused services and helpers.
+Build Delphi FireMonkey applications on top of a structure that is already organized for real product work.
+
+FMX Starter Kit is a cross-platform template for Windows, Android, and iOS that uses a single form as the application shell, `TFrame` pages for screens, a centralized router for navigation, and focused services and helpers for shared behavior. Instead of starting from an empty FMX project, you begin with an opinionated base that is easier to extend, test, and maintain.
 
 ## Overview
 
-The template is designed to give you a practical starting point for real projects instead of a blank FMX application. It already includes:
+This template is intended for teams and developers who want to move quickly without letting the project structure collapse as features grow. It already includes:
 
 - A main application form used as the container shell.
 - Frame-based page navigation with route history and back handling.
@@ -19,6 +21,13 @@ The template is designed to give you a practical starting point for real project
 - Helper classes for common UI and platform tasks.
 - Cross-platform hooks for push notifications and Storage Access Framework (SAF).
 - Example screens for loading, login, and detail flows.
+
+## Why This Template
+
+- Start from a structured FMX foundation instead of a blank project.
+- Keep navigation concerns in one place instead of scattering them across forms and frames.
+- Reuse shared helpers and services as the codebase grows.
+- Keep the path open for Windows, Android, and iOS from the same codebase.
 
 ## Feature Highlights
 
@@ -40,21 +49,23 @@ The template is designed to give you a practical starting point for real project
 - Utility helpers for API requests, datasets, bitmaps, URLs, and file access.
 - Memory leak reporting enabled on shutdown in the project entry point for debugging.
 
-## Screenshots
+## Gallery
 
-This repository is ready for visual documentation, but screenshot assets have not been added yet.
+This repository is ready for screenshot-based documentation, but image assets have not been added yet.
 
-| Screen | Preview |
-| --- | --- |
-| Loading | Add a screenshot of the splash/loading frame here |
-| Login | Add a screenshot of the login frame here |
-| Detail | Add a screenshot of the detail frame here |
+When you have screenshots, place them in a folder such as `docs/images/` and replace the entries below with embedded images.
 
-If you want this README to feel more polished on GitHub, the next step is to export a few app screenshots from Windows or Android and replace the placeholder text with embedded images.
+| Screen | Suggested Asset | Status |
+| --- | --- | --- |
+| Loading | `docs/images/loading.png` | Waiting for image asset |
+| Login | `docs/images/login.png` | Waiting for image asset |
+| Detail | `docs/images/detail.png` | Waiting for image asset |
+
+Recommended sources: Windows desktop build, Android emulator, or physical device captures.
 
 ## Architecture
 
-This template follows a clean separation of concerns:
+The project follows a clean separation of concerns:
 
 - `frMain.pas` is the application shell and initializes the app context.
 - `frames/*` contains UI pages implemented as frames.
@@ -147,6 +158,13 @@ compile.bat
 
 The script builds the project in `Debug` / `Win32` using `msbuild`.
 
+## What You Can Customize First
+
+- Replace the sample frames with your own application pages.
+- Add new route aliases in `TAppServices.InitFrame`.
+- Expand the helper layer for app-specific APIs, storage, and platform integrations.
+- Standardize labels and messages if your product language is English-only.
+
 ## Default Startup Behavior
 
 When the application starts:
@@ -164,8 +182,9 @@ To add a new page:
 
 1. Create a new `TFrame` unit in the `frames` folder.
 2. Implement optional `ShowFrame` and `BackFrame` methods if needed.
-3. Register the frame alias in `TAppServices.InitFrame`.
-4. Navigate to it through `TAppHelper.NavigateTo('YOUR_ALIAS')`.
+3. Add a new view alias in `sources/app/BFA.App.Types.pas` under the `TView` constants.
+4. Register the frame alias in `sources/app/BFA.App.Services.pas` class `TAppServices.InitFrame`.
+5. Navigate to it through `TAppHelper.NavigateTo('YOUR_ALIAS')`.
 
 To add shared business logic or platform behavior:
 
