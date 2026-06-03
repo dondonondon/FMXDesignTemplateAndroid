@@ -9,14 +9,15 @@ unit BFA.App.Services;
 interface
 
 uses
+  System.Classes,
   System.SysUtils,
-  FMX.Forms, FMX.Layouts,
+  FMX.Forms, FMX.Layouts, FMX.MultiView, FMX.Types,
   BFA.App.Types,
   BFA.Control.Keyboard,
   BFA.Control.Frame,
   BFA.Control.Form.Message,
   BFA.Control.PushNotification,
-  BFA.Helper.SAF;
+  BFA.Helper.SAF, frListMenu;
 
 type
   TAppServices = class
@@ -29,6 +30,7 @@ type
     FRouter: TFrameRouter;
     FSAF: TBFASAF;
     FVertScroll: TVertScrollBox;
+    FSidebar: TFListMenu;
 
     procedure ConfigureContext(AForm: TForm; AVertScroll: TVertScrollBox;
       ALayout: TLayout);
@@ -37,13 +39,16 @@ type
     procedure InitKeyboard(AAutoSetEvent: Boolean);
     procedure InitPushNotification;
     procedure InitSAF;
-    procedure InitSidebar;
+    procedure InitSidebar(AForm: TForm);
     procedure InitToastMessage;
+    function FindLayout(AForm: TForm; const AName: string): TLayout;
+    function FindMultiView(AForm: TForm; const AName: string): TMultiView;
     procedure ReleaseKeyboard;
     procedure ReleaseMainHelper;
     procedure ReleasePushNotification;
     procedure ReleaseRouter;
     procedure ReleaseSAF;
+    procedure ReleaseSidebar;
     procedure SAFError(Sender: TObject; const AMessage: string);
     procedure SAFFilePicked(Sender: TObject; const AUri: string);
     procedure SAFFolderPicked(Sender: TObject; const AUri: string);
@@ -57,6 +62,7 @@ type
     procedure Initialize(AForm: TForm; AVertScroll: TVertScrollBox;
       ALayout: TLayout; AAutoSetEvent: Boolean = True);
 
+    property Sidebar: TFListMenu read FSidebar;
     property Keyboard: TKeyboardShow read FKeyboard;
     property MainHelper: TMainHelper read FMainHelper;
     property PushNotification: TPushNotificationService read FPushNotification;
@@ -68,7 +74,12 @@ implementation
 
 uses
   System.IOUtils,
-  frDetail, frLoading, frLogin;
+  frDetail, frLoading, frLogin, frHome,
+  {DEMO SAMPLE}
+  frDemoJSONToDataset, frDemoPermission,
+  frDemoPushNotif, frDemoRestAPI, frDemoSAF
+  {DEMO SAMPLE}
+  ;
 
 { TAppServices }
 
@@ -111,9 +122,43 @@ begin
   ReleaseSAF;
   ReleasePushNotification;
   ReleaseKeyboard;
+  ReleaseSidebar;
   ReleaseMainHelper;
   ReleaseRouter;
   inherited;
+end;
+
+function TAppServices.FindLayout(AForm: TForm; const AName: string): TLayout;
+var
+  LComponent: TComponent;
+begin
+  if not Assigned(AForm) then
+    raise EArgumentNilException.Create('Form is required.');
+
+  LComponent := AForm.FindComponent(AName);
+  if not (LComponent is TLayout) then begin
+    raise Exception.CreateFmt('%s layout is not available on %s.',
+      [AName, AForm.Name]);
+  end;
+
+  Result := TLayout(LComponent);
+end;
+
+function TAppServices.FindMultiView(AForm: TForm;
+  const AName: string): TMultiView;
+var
+  LComponent: TComponent;
+begin
+  if not Assigned(AForm) then
+    raise EArgumentNilException.Create('Form is required.');
+
+  LComponent := AForm.FindComponent(AName);
+  if not (LComponent is TMultiView) then begin
+    raise Exception.CreateFmt('%s multiview is not available on %s.',
+      [AName, AForm.Name]);
+  end;
+
+  Result := TMultiView(LComponent);
 end;
 
 procedure TAppServices.Initialize(AForm: TForm; AVertScroll: TVertScrollBox;
@@ -124,8 +169,8 @@ begin
   InitKeyboard(AAutoSetEvent);
   InitToastMessage;
   InitFrame;
-  InitSidebar;
-  InitPushNotification;
+  InitSidebar(FForm);
+  //InitPushNotification;    //remove comment to enabled
   InitSAF;
 
   if Assigned(FRouter) then
@@ -140,7 +185,16 @@ begin
   FRouter.Container := FLayout;
   FRouter.RegisterFrame(TFLogin, TView.LOGIN);
   FRouter.RegisterFrame(TFDetail, TView.DETAIL);
+  FRouter.RegisterFrame(TFHome, TView.HOME);
   FRouter.RegisterFrame(TFLoading, TView.LOADING);
+
+  {DEMO SAMPLE}
+  FRouter.RegisterFrame(TFDemoSAF, TView.DEMOSAF);
+  FRouter.RegisterFrame(TFDemoRestAPI, TView.DEMORESTAPI);
+  FRouter.RegisterFrame(TFDemoPushNotif, TView.DEMOPUSHNOTIF);
+  FRouter.RegisterFrame(TFDemoPermission, TView.DEMOPERMISSION);
+  FRouter.RegisterFrame(TFDemoJSONToDataset, TView.DEMOLOADJSONDATASET);
+  {DEMO SAMPLE}
 end;
 
 procedure TAppServices.InitKeyboard(AAutoSetEvent: Boolean);
@@ -173,8 +227,28 @@ begin
   FSAF.OnCancel := SAFCancel;
 end;
 
-procedure TAppServices.InitSidebar;
+procedure TAppServices.InitSidebar(AForm: TForm);
+var
+  LMultiView: TMultiView;
+  LSidebarHost: TLayout;
 begin
+  ReleaseSidebar;
+
+  LSidebarHost := FindLayout(AForm, 'loSidebar');
+  LMultiView := FindMultiView(AForm, 'MultiView');
+
+  FSidebar := TFListMenu.Create(AForm);
+  FSidebar.Parent := LSidebarHost;
+  FSidebar.Align := TAlignLayout.Contents;
+  FSidebar.MultiView := LMultiView;
+  FSidebar.AddShadow := False;
+
+  if not FSidebar.JSONListMenu.Trim.IsEmpty then begin
+    FSidebar.LoadListMenu;
+  end;
+
+  LMultiView.MasterButton := nil;
+  LMultiView.Enabled := False;
 end;
 
 procedure TAppServices.InitToastMessage;
@@ -206,6 +280,11 @@ end;
 procedure TAppServices.ReleaseSAF;
 begin
   FreeAndNil(FSAF);
+end;
+
+procedure TAppServices.ReleaseSidebar;
+begin
+  FreeAndNil(FSidebar);
 end;
 
 procedure TAppServices.SAFError(Sender: TObject; const AMessage: string);

@@ -1,0 +1,1552 @@
+object FHome: TFHome
+  Size.Width = 360.000000000000000000
+  Size.Height = 720.000000000000000000
+  Size.PlatformDefault = False
+  object background: TRectangle
+    Align = Contents
+    Fill.Color = xFFF7F9FB
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+  end
+  object loMain: TLayout
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object vsMain: TVertScrollBox
+      Align = Client
+      Size.Width = 360.000000000000000000
+      Size.Height = 645.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      ShowScrollBars = False
+      Viewport.Width = 360.000000000000000000
+      Viewport.Height = 645.000000000000000000
+      object lbApproval: TListBox
+        Touch.InteractiveGestures = []
+        Align = Top
+        Margins.Left = 16.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 16.000000000000000000
+        Position.Y = 520.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 177.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'transparentlistboxstyle'
+        TabOrder = 4
+        ShowScrollBars = False
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 328.000000000000000000
+        Viewport.Height = 177.000000000000000000
+        object ListBoxItem9: TListBoxItem
+          Selectable = False
+          Size.Width = 328.000000000000000000
+          Size.Height = 84.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object loTempApproval: TLayout
+            Align = Client
+            Margins.Top = 4.000000000000000000
+            Size.Width = 328.000000000000000000
+            Size.Height = 80.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            object Rectangle8: TRectangle
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Fill.Color = claWhite
+              HitTest = False
+              Size.Width = 328.000000000000000000
+              Size.Height = 80.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 8.000000000000000000
+              YRadius = 8.000000000000000000
+            end
+            object lblTempApprovalTitle: TLabel
+              StyleName = 'lblTempApprovalTitle'
+              Anchors = [akLeft, akRight]
+              StyledSettings = [Family]
+              Position.X = 68.000000000000000000
+              Position.Y = 22.578947067260740000
+              Size.Width = 240.000000000000000000
+              Size.Height = 18.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF0F172A
+              Text = 'Approval Inbox'
+              TabOrder = 42
+            end
+            object reTempBackgroundImage: TRectangle
+              StyleName = 'reTempBackgroundImage'
+              Align = Left
+              Fill.Color = xFFF9ECF0
+              HitTest = False
+              Margins.Left = 16.000000000000000000
+              Margins.Top = 16.000000000000000000
+              Margins.Bottom = 16.000000000000000000
+              Position.X = 16.000000000000000000
+              Position.Y = 16.000000000000000000
+              Size.Width = 44.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 8.000000000000000000
+              YRadius = 8.000000000000000000
+            end
+            object imgTempApproval: TImage
+              StyleName = 'imgTempApproval'
+              MultiResBitmap.Height = 96
+              MultiResBitmap.Width = 96
+              MultiResBitmap = <
+                item
+                  Width = 96
+                  Height = 96
+                  PNG = {
+                    89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                    380000000473424954080808087C0864880000066E49444154789CED9CDF75DB
+                    3614C6BF0B483D7D8445A947792A3D81DD09624FD07682CA13449EC0F6047127
+                    883A41B2819D09E24C60F62939D63F9EF4F489026E1FCCB44E1A5B200091B485
+                    DFAB4490C447E0F2BBB82010894422914824128944B60D0AD5D0522965843801
+                    D1880115AADD3641400EE08DE876CF763E7ECC02B5E9CF72384C4D515C309086
+                    68AFED1090896EF730840822C40599A238D996CE070006525D14AF42B4156404
+                    CC928443B4F3C8C8A5D6BB3B799EFB34E23D02A6FDFE816F1B8F14B502F67D1B
+                    F1164018B3E7DBC6634508E17DEFDE0210D1B68E0070807BF71680030CC3474C
+                    B3022C87C3749BDE7EBE815A2AF5A34F035E02E8A2D8E6A71F00A0A5F41A055E
+                    0210F3739FE39F02C4ECF5107A09C0445B3F028C671CF032625B6AC0FE87D47A
+                    C7D590755C4F3AEDF70FC001FA9F39236022888224B76C31CC2903231079BF44
+                    9486ECD2E558670184317B4C7E990C02269F8C39DEF5B4F31E9CCD926402E037
+                    9F464A43E62480730CF03660CC59329F1F35D8F90080FE7C3E02B3D7E8F33164
+                    CE02781B30A253AFE30342C0B96713F50A10C28049AD6B9DF31FC208F1DEB309
+                    6743E624400803A6A57C52AB66AE86CC498010068C985B93C413CC5E41181E86
+                    CC498010068C8946378341E346AE9C4E47BEEDB81A32D7201CE2E955D298D7CB
+                    24F17EFA5C9925C92FA628DE85688B88F6974A559E562BBFC84FFBFD0362BEA8
+                    7ADC9A8BC819B80AD9E683E76356204A43576FB0D687833CAFE4072A1BB11006
+                    EC6BCA8EA82D2684BEFECFB818B2CA53D036AF80ADC3C590551660CB57C0D651
+                    59804A6371391CA6BA28AEAB9EE42B720057BEF63F38B74939EFD12DB54E77F2
+                    FC4FDBFF578A01BE068C98CF3F1973D674FEE73E3E28957E27C40B261ABBB651
+                    1AB23F6CFF5F690AF23260CC9364B16832F3B99667799E258BC531313BE786AA
+                    1AB24A02F818B0C29833D763EB46785C6B55435635083BCD91CC7CF52CCFDB35
+                    E73FC04E9EE7C4ECE44BAA1A326B01B6AD0491899CA7CA2A258BD602F8942012
+                    51EA62D39BA2BC56F71C7F8592456B013C0D983242BCF038BE56569D8EF35B10
+                    2A1A326B017C0D18139D4E7B3DAF1BAB8369AF3726E613CF66AC05B03262810C
+                    D8ED096F83DB9B106D0546956F7941629DAD21B33262214B10CB9B7CF2E90C5B
+                    43663505C512C4EAD81A322B01620962756C0D99550C8825886ED8942C6E6665
+                    620D3783C1BED4FA3903E310A5815EDC96469E6B29DFFE5D1459DDB9AA4604B8
+                    CBB4D71B13D109EADFDC9D13F369B258FC5EF379BFA0710150A681BB52BEAB4D
+                    04E6CC48F9EB0FD3696DEBD0F7D10A01B0A1C5FEFB3042FCD486CE47A89DF221
+                    18CC66973E79786B98276DE97CB46904A04C826929979B3C47A1F56E9B52E3AD
+                    1901F82F0FBFB951C03C6953E7A36D02E0F36AD42616EC99B336AECAAD9D823E
+                    2815EC3DFD7B20B7D94BB589806C1B7843DE2FCA75E6877E5F2B4060176CFD85
+                    9159928C0004F9240C80517F3EB7AA549827C975C8CDE7FDF9FCC13EAE7B0AB2
+                    5E98E9CFE713263AF49C8E72A9F5816DE74FFBFDD3BA77FED71E0398686CBB3C
+                    3998CD2E0B630EC13CA97E229EFC753BDADEDAFC7D391CA621F60954A58920AC
+                    B494D653CBB33CCFFA8BC551A1F52E98270F8D080232663E2FB4DEED2F169536
+                    0036F5D5AFBA63C0BF30F3F160B1707AE5BC564AA94E670FAB9582940A441956
+                    ABAC4A49E05DCA7CD44B9763D7B12E0634260080DC0871D8B42B5D0E06FBDA98
+                    209B34BE45DB82F05D6E77C80C878DA5A397C3616A8C79DDD4F9D1B411632035
+                    4571D1C45EB1E560B0DF864F6D36EE8419488531177596ACDC24C9C818D378E7
+                    A30D029428227A394F92579B9C92964AA959929C0BE0555BBEEEDB160180DBD1
+                    30324571B1899D93D35E6F6CA4BC06D0AA0ABD26DF821E84804C00A7E876DFBA
+                    7E2278A9945A753A63C1FCA2A927BECDAFA155B894CC6F56C6BCEF0057F7E592
+                    CA0EDFEF18B3A7897EA973E7E57D3C1501BE80800CCCF9E712F272DFAF6A4350
+                    FD9A7502387FB0A94918487167AFEFA6F6FDD641AB82F036120568982840C344
+                    011A260AD0305180868902344C14A061D60A4040AB2AC91E136CB1DBDE4680D6
+                    14B23E36C8E27BD86B05D0448D6E6078E4ACDD8E6B954499F77AEFE246BD8A30
+                    67FDC56277DDDFAC82B096F2A8FCD255C492C298439BFF590950968E1C7B5FD5
+                    76900318D996C157CAE37E502AED0A71D1F8CEC696C2CC572CE551955A27A744
+                    FA4D928C04F03331A7DB1E1B08C818B8925A9FDBD6A146229148241289442291
+                    EDE61F917BB52D9B0506A10000000049454E44AE426082}
+                  FileName = 
+                    'D:\Github\Inventory\Client\assets\icons\dashboard\APPROVAL INBOX' +
+                    '.png'
+                end>
+              Anchors = [akLeft]
+              HitTest = False
+              Position.X = 24.000000000000000000
+              Position.Y = 26.000000000000000000
+              Size.Width = 28.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+            end
+            object lblTempApprovalDetail: TLabel
+              StyleName = 'lblTempApprovalDetail'
+              Anchors = [akLeft, akRight]
+              StyledSettings = [Family]
+              Position.X = 68.000000000000000000
+              Position.Y = 41.526317596435550000
+              Size.Width = 240.000000000000000000
+              Size.Height = 18.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.FontColor = xFF465145
+              Text = 'Review pending approvals'
+              TabOrder = 40
+            end
+            object reTempApprovalNotifCount: TRectangle
+              StyleName = 'reTempApprovalNotifCount'
+              Anchors = [akRight]
+              Fill.Color = xFFEC1313
+              Margins.Left = 16.000000000000000000
+              Margins.Top = 24.000000000000000000
+              Margins.Right = 16.000000000000000000
+              Margins.Bottom = 24.000000000000000000
+              Position.X = 276.000000000000000000
+              Position.Y = 28.000000000000000000
+              Size.Width = 36.000000000000000000
+              Size.Height = 24.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 12.000000000000000000
+              YRadius = 12.000000000000000000
+            end
+            object lblTempApprovalNotifCount: TLabel
+              StyleName = 'lblTempApprovalNotifCount'
+              Anchors = [akRight]
+              StyledSettings = [Family]
+              Position.X = 276.000000000000000000
+              Position.Y = 28.000000000000000000
+              Size.Width = 36.000000000000000000
+              Size.Height = 24.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              Text = '4'
+              TabOrder = 41
+            end
+          end
+        end
+        object ListBoxItem10: TListBoxItem
+          Selectable = False
+          Position.Y = 84.000000000000000000
+          Size.Width = 328.000000000000000000
+          Size.Height = 84.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Layout5: TLayout
+            Align = Client
+            Margins.Top = 4.000000000000000000
+            Size.Width = 328.000000000000000000
+            Size.Height = 80.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 4
+            object Rectangle9: TRectangle
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Fill.Color = claWhite
+              HitTest = False
+              Size.Width = 328.000000000000000000
+              Size.Height = 80.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 8.000000000000000000
+              YRadius = 8.000000000000000000
+            end
+            object Label9: TLabel
+              StyleName = 'lblTempApprovalTitle'
+              Anchors = [akLeft, akRight]
+              StyledSettings = [Family]
+              Position.X = 68.000000000000000000
+              Position.Y = 22.578947067260740000
+              Size.Width = 240.000000000000000000
+              Size.Height = 18.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF0F172A
+              Text = 'Approval History'
+              TabOrder = 42
+            end
+            object Rectangle10: TRectangle
+              StyleName = 'reTempBackgroundImage'
+              Align = Left
+              Fill.Color = xFFF9ECF0
+              HitTest = False
+              Margins.Left = 16.000000000000000000
+              Margins.Top = 16.000000000000000000
+              Margins.Bottom = 16.000000000000000000
+              Position.X = 16.000000000000000000
+              Position.Y = 16.000000000000000000
+              Size.Width = 44.000000000000000000
+              Size.Height = 48.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 8.000000000000000000
+              YRadius = 8.000000000000000000
+            end
+            object Image5: TImage
+              StyleName = 'imgTempApproval'
+              MultiResBitmap.Height = 96
+              MultiResBitmap.Width = 96
+              MultiResBitmap = <
+                item
+                  Width = 96
+                  Height = 96
+                  PNG = {
+                    89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                    380000000473424954080808087C0864880000088549444154789CED9DBF73DC
+                    C615C7BF0F0039AE923327934915813E68865DC822F6388DC0BBE38C5289FA0B
+                    4C751E597784FF029EFE029E78B4E28EA73215E92E198924D4C99ACC48EA34E1
+                    450777A9945397E101FB52F0C8303479C462F716B083CF8C1A12D85DEDC3BEB7
+                    EFC72E819292929292929292929292FF3728EF01C812343C9F191B0CF800860C
+                    DE1BCD240FBFFD4B14E53DB62CFCA404D06A786D30362EF9D530B668F9F1D3A3
+                    D7390C4B0927EF01A421F0DD0ADBCE2E33FC2B1EA9D88237012C1B1E9A32855F
+                    01C1ED05578C924380DDEB9E4D3871BF3918FC6066647AB0F21EC0249AB5EA9A
+                    18C5AFD24C3E00586CA77AAE48145600AD86D726A21D0095BCC7324D0A670352
+                    E8FB9F158512808CBEFFB960E73D80539AB5EA1A04EF02F84DF656189F7E3247
+                    7FF07EF5D18B77EFFFA9737CD3A210BBA009FB7B25080819B4675978DE29A88F
+                    90AB00CEF43D4CE87B8E00B48F6792E745F29A7313409EFA9EC1BDA2842F7211
+                    40B3565D23A2CDBCB7984510847123DC6A786D026D02F8C874DF1721D0A22D68
+                    F5B34FE686DF0FFEF5269F3118A455AF76005A37D9675AF25A0DC604F0A05E5D
+                    B540BBA6FACB0647C733C9B24921180B45D84CB74CF5951D726747CEAB07BE67
+                    CC0B37170B22FC54BCDB8A65E3F0AB7AF50B139D191300130AE9085D850DEA99
+                    1082310158B1F304C0709A7D30738F813D5DFDD8A0CEFD959B8B3ADABA0A6302
+                    E8846F2366FA7AAA9D30F5BAFBFDBB5BFBFD8FD9824F4C3DC5162B8E10BB5FDE
+                    76A7A63E8DE603BA07473D2B71E6C134F55D46F769FFF9A383A37B56E2CC0B42
+                    3B7B4BE4CE8C9C1D9D633B8FF1844C277C1B59C25E06CCD8844EF836DA7ED67F
+                    6825CE7CD6154180DFAA79DA8385C83B18F7A0E16D58ACF275FE2F2CE0770FFB
+                    CF273DD3AC79011136B3B41F5BB4A4BBF222D794E4F6B3FE43664CD72E5CA07B
+                    D0EFC4162D655183E3CA0BADE49E13EE1EF43BA6ECC2298F9F1EBDB684BD2CDB
+                    2701BE6E272D77012007BB70A14FA92D2BD97A1347851000C613B2B5DF5F52DB
+                    B1C8F729087765DED1BD0AB419E1C0772BC2710262FC8E01974EEA367B5BFBFF
+                    7822DB56564399C6085FD1DF261182D4FD006177BFAFA50A4F8B00EEAFDC5C74
+                    04762FCF6E658B3006FE822BACE410943E6396550081EF568435F34AA62F2B89
+                    3FEE8491B2C7ADAC8282DB0BEED5938F7184D13E0C7C572AFB65D22E74C26828
+                    2CBE27F38EB01C2D790D6501F028D9B83EAF4BAEB067A4035BB276C1E6387356
+                    6BFB593F64204CFB3C939E42027501A4AC686070E601A7F11798B9A7AC129852
+                    DB2B027CD9557D194A0208566E2EA6AD6A2066A5A8E2247F8181D01689B24367
+                    8B91542455388E7292494900B110E90D24A93B5A277661B4C44CF798B9C7CC3D
+                    16F0BBFBFD651D06B113464302EDA57D9E84BA1A52AA0DB5996E71CA7D1481DD
+                    F55AF52CAAC8A0E878367E22BB3B1A4F746FFC4F89C0772BC29EF982589CAD4E
+                    0176D36E0D85862C9F5A712E4142AD90CB84B5F33F991D39ED66BDDAB393E46B
+                    1D5FB00CAD7AB52340EB0083E9BF532EB32F5755AB505541ACA1B08A406B89ED
+                    18AD966835BCB696F21822E515A024000269A96C23C06F194A8207B7175C9D85
+                    C05FD5E66FA8BCAFB802F4D57532682DC563EAFD1CC7852A0C2B4C308ED85091
+                    AE94DD9A3E851100884C1961A3C6FE3A0A23006636920B285A7D92AA11D697C5
+                    62BBA3ADAD095871FC48E72A9811FC41693C2A2F3358CB7F4430DADDC3BF1B29
+                    0FEF84D150637DD250D57F515D01AACB792840C1F641FFA1623B52740F8E7A82
+                    209D13BE04650DA0E409337394D67564600F16CED44C02FA90E7E51ADBCFFA21
+                    80F9FB2B37176DF02FCF7E9160356D768CF31680207E63A5940001FED6D3BE54
+                    FED504173F82F5BAD7E694EF122875FEE02A94549093243203A898ACBBCF4270
+                    7BC19539B1C9427DE7A6248071F836F532B46D14CA0BBD48721CAFCA3C9F25FF
+                    7C11753F803975FC9C81D569561AAB42943E40372E83574659008985EF649E9F
+                    1939DACBFB747012214D1F0E21A4FFF026A12C80F16E22B52E2460B568B6601C
+                    2195518F432B49A43EBCABD0735B0A610F9C3EC865D9BC13F8EE52562726F0DD
+                    0AAC995501BE01E248F5FA011EC552F71231F39EAE0492965890BC7B4F6E6267
+                    3BF4D0AC7981B09D8120DE01A10D506F76E40C9AF5EA4E962A8556C36BCBDE55
+                    31128936C7518B003A613404412A9643C06AABE649D581B6EAD5CEB864F14713
+                    9D25B3D6AC79816C7286997BDF86FACE116BBBAAE0F3DFFEE20D5BD697525710
+                    10FCCFE6E7E8FBC1FB6BFD89A0E1F90CFAD3E4E6E07E3A3FF7E1E5E0FD8BEBDA
+                    1BDF5731B1BDCB1889E4EEDFA2A1B6609EB670F449900BF24B93B0D16C78D7EE
+                    8C98295DCA9270E7BA47CEDD472785EEAF1FBAF301DD837E47A6BCEF146204AD
+                    7A7530C94760A4AB40A009FA3CF0DD4AB3EEED66CA0933473A75FF29DA133276
+                    E2DCCB166F277776E40CAEB20BAA0500CDDACD35613B0302A4BCDD730368EBFE
+                    FA310D019C9C07CEA08A4E216CB4EAD581AE2A89A0E1F9EB75EF9088335F8129
+                    18ED2CE71CD230B55392B2871EAE60C8E03D3BA1276CD34EDA2A0C8BB0CC0277
+                    C68560AAA533AFB7F6FB4B8A6D5CC9548FA936EBDEE1249D5C7898A363912C4F
+                    43F59C32D5A4BC9DC4774D1EBCD38A81C9878983DA2705B0CE2150AC7A9C8918
+                    9A7C98284BE984D1D04AE2655DE15B03BC3635F9307569DF8B68F8EF9783F77F
+                    FE7D756EE23E3D6F98D1B1457C6F3B8C8CDDBA6BFCAE88070DCFB704EDC89C48
+                    34C05080DADBFB478F4C776CFCDACA97EFDE479FDFF8F57720AE14A14E938170
+                    94C47F7C7CF8EEAF79F49FF3D5C50B6E62C73B79A825064208B475E4755528C4
+                    E5DDCD15EF9695D01A134FBD44BD28137F4A2104704AE02FB8C24EEE00BCA679
+                    DB3A148C0E31C2A24CFC298512C079027FC14DACC407F11D025C398150C4E0D7
+                    040A630BCF8BFCE7AD0A2B80CB382D232461FD780725C43076E887D9D128327D
+                    E0AFA4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4A4E43AFE03F80ABFC2D340
+                    FF820000000049454E44AE426082}
+                  FileName = 
+                    'D:\Github\FMXDesignTemplateAndroid\assets\icons\APPROVAL HISTORY' +
+                    '.png'
+                end>
+              Anchors = [akLeft]
+              HitTest = False
+              Position.X = 24.000000000000000000
+              Position.Y = 26.000000000000000000
+              Size.Width = 28.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+            end
+            object Label11: TLabel
+              StyleName = 'lblTempApprovalDetail'
+              Anchors = [akLeft, akRight]
+              StyledSettings = [Family]
+              Position.X = 68.000000000000000000
+              Position.Y = 41.526317596435550000
+              Size.Width = 240.000000000000000000
+              Size.Height = 18.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.FontColor = xFF465145
+              Text = 'See approved and return records'
+              TabOrder = 40
+            end
+            object Rectangle11: TRectangle
+              StyleName = 'reTempApprovalNotifCount'
+              Anchors = [akRight]
+              Fill.Color = xFFEC1313
+              Margins.Left = 16.000000000000000000
+              Margins.Top = 24.000000000000000000
+              Margins.Right = 16.000000000000000000
+              Margins.Bottom = 24.000000000000000000
+              Position.X = 276.000000000000000000
+              Position.Y = 28.000000000000000000
+              Size.Width = 36.000000000000000000
+              Size.Height = 24.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 12.000000000000000000
+              YRadius = 12.000000000000000000
+            end
+            object Label12: TLabel
+              StyleName = 'lblTempApprovalNotifCount'
+              Anchors = [akRight]
+              StyledSettings = [Family]
+              Position.X = 276.000000000000000000
+              Position.Y = 28.000000000000000000
+              Size.Width = 36.000000000000000000
+              Size.Height = 24.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = claWhite
+              TextSettings.HorzAlign = Center
+              Text = '2'
+              TabOrder = 41
+            end
+          end
+        end
+      end
+      object lbHeader: TListBox
+        Align = Top
+        HitTest = False
+        Margins.Left = 8.000000000000000000
+        Margins.Top = 16.000000000000000000
+        Margins.Right = 8.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 76.000000000000000000
+        Size.Width = 344.000000000000000000
+        Size.Height = 120.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'transparentlistboxstyle'
+        TabOrder = 5
+        ShowScrollBars = False
+        Columns = 3
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 344.000000000000000000
+        Viewport.Height = 120.000000000000000000
+        object ListBoxItem1: TListBoxItem
+          Selectable = False
+          Size.Width = 114.000000000000000000
+          Size.Height = 120.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object Rectangle1: TRectangle
+            Align = Client
+            Fill.Color = xFFD4CECA
+            HitTest = False
+            Margins.Left = 8.000000000000000000
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 4.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Size.Width = 102.000000000000000000
+            Size.Height = 104.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Kind = None
+            XRadius = 8.000000000000000000
+            YRadius = 8.000000000000000000
+          end
+          object lblHeaderNeedQC: TLabel
+            Anchors = [akTop]
+            StyledSettings = [Family]
+            Position.X = 8.000000000000000000
+            Position.Y = 32.000000000000000000
+            Size.Width = 102.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 24.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = xFF93000A
+            TextSettings.HorzAlign = Center
+            Text = '12'
+            TabOrder = 41
+          end
+          object Label5: TLabel
+            Anchors = [akTop]
+            StyledSettings = [Family]
+            Position.X = 8.000000000000000000
+            Position.Y = 67.000000000000000000
+            Size.Width = 102.000000000000000000
+            Size.Height = 18.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 13.000000000000000000
+            TextSettings.FontColor = xFF93000A
+            TextSettings.HorzAlign = Center
+            Text = 'NEED QC'
+            TabOrder = 40
+          end
+        end
+        object ListBoxItem2: TListBoxItem
+          Selectable = False
+          Position.X = 114.000000000000000000
+          Size.Width = 114.000000000000000000
+          Size.Height = 120.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Rectangle2: TRectangle
+            Align = Client
+            Fill.Color = xFF6E4324
+            HitTest = False
+            Margins.Left = 6.000000000000000000
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 6.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Size.Width = 102.000000000000000000
+            Size.Height = 104.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Kind = None
+            XRadius = 8.000000000000000000
+            YRadius = 8.000000000000000000
+          end
+          object lblHeaderPending: TLabel
+            Anchors = [akTop]
+            StyledSettings = [Family]
+            Position.X = 6.000000000000000000
+            Position.Y = 32.000000000000000000
+            Size.Width = 102.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 24.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Center
+            Text = '8'
+            TabOrder = 41
+          end
+          object Label8: TLabel
+            Anchors = [akTop]
+            StyledSettings = [Family]
+            Position.X = 6.000000000000000000
+            Position.Y = 67.000000000000000000
+            Size.Width = 102.000000000000000000
+            Size.Height = 18.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 13.000000000000000000
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Center
+            Text = 'PENDING'
+            TabOrder = 40
+          end
+        end
+        object ListBoxItem3: TListBoxItem
+          Selectable = False
+          Position.X = 228.000000000000000000
+          Size.Width = 114.000000000000000000
+          Size.Height = 120.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Rectangle3: TRectangle
+            Align = Client
+            Fill.Color = claWhite
+            HitTest = False
+            Margins.Left = 4.000000000000000000
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 8.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Size.Width = 102.000000000000000000
+            Size.Height = 104.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = xFFE8E8E8
+            XRadius = 8.000000000000000000
+            YRadius = 8.000000000000000000
+          end
+          object lblHeaderPosted: TLabel
+            Anchors = [akTop]
+            StyledSettings = [Family]
+            Position.X = 5.000000000000000000
+            Position.Y = 32.000000000000000000
+            Size.Width = 101.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 24.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = xFF0F172A
+            TextSettings.HorzAlign = Center
+            Text = '24'
+            TabOrder = 41
+          end
+          object Label10: TLabel
+            Anchors = [akTop]
+            StyledSettings = [Family]
+            Position.X = 5.000000000000000000
+            Position.Y = 67.000000000000000000
+            Size.Width = 101.000000000000000000
+            Size.Height = 18.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 13.000000000000000000
+            TextSettings.FontColor = xFF0F172A
+            TextSettings.HorzAlign = Center
+            Text = 'POSTED'
+            TabOrder = 40
+          end
+        end
+      end
+      object lblName: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 16.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 16.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFF0F172A
+        TextSettings.Trimming = None
+        Text = 'Hello, Blangkon FA'
+        TabOrder = 3
+      end
+      object lblRole: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Margins.Left = 16.000000000000000000
+        Margins.Top = 2.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 16.000000000000000000
+        Position.Y = 45.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 15.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 11.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFF334155
+        TextSettings.Trimming = None
+        Text = 'COSTRUCTION MANAGER'
+        TabOrder = 2
+      end
+      object lbTransaction: TListBox
+        Touch.InteractiveGestures = []
+        Align = Top
+        Margins.Left = 16.000000000000000000
+        Margins.Right = 16.000000000000000000
+        Position.X = 16.000000000000000000
+        Position.Y = 246.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 224.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'transparentlistboxstyle'
+        TabOrder = 6
+        ShowScrollBars = False
+        Columns = 3
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        Viewport.Width = 328.000000000000000000
+        Viewport.Height = 224.000000000000000000
+        object ListBoxItem4: TListBoxItem
+          Selectable = False
+          Size.Width = 109.000000000000000000
+          Size.Height = 110.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          object loTempTransaction: TLayout
+            Align = Client
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 8.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Size.Width = 101.000000000000000000
+            Size.Height = 94.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            object reTempTransaction: TRectangle
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Fill.Color = claWhite
+              HitTest = False
+              Size.Width = 101.000000000000000000
+              Size.Height = 94.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 8.000000000000000000
+              YRadius = 8.000000000000000000
+            end
+            object ciTempTransaction: TCircle
+              Anchors = []
+              Fill.Color = xFFF7F9FB
+              HitTest = False
+              Position.X = 25.500000000000000000
+              Position.Y = 8.683332443237305000
+              Size.Width = 50.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+            end
+            object lblTempTransaction: TLabel
+              StyleName = 'lblTempTransaction'
+              Anchors = [akLeft, akRight]
+              StyledSettings = [Family]
+              Position.X = 8.000000000000000000
+              Position.Y = 54.175003051757810000
+              Size.Width = 85.000000000000000000
+              Size.Height = 35.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF0F172A
+              TextSettings.HorzAlign = Center
+              Text = 'Stock Out'
+              TabOrder = 40
+            end
+            object imgTempTransaction: TImage
+              StyleName = 'imgTempTransaction'
+              MultiResBitmap.Height = 96
+              MultiResBitmap.Width = 96
+              MultiResBitmap = <
+                item
+                  Width = 96
+                  Height = 96
+                  PNG = {
+                    89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                    380000000473424954080808087C086488000004D549444154789CED9DC1521B
+                    471086FFDE153ECB79824D10551CC5C5D7AC005771337E02E39B8B0465790289
+                    27F0DAC2946FE027887D4B0A23E453AA7C81A3AB90937D8264AF46BBD3390089
+                    9332BB6B607646437F47D568D5EA5F3D3BDDD3B3020441100441100441100441
+                    1004411004413B749D3747CBAD90151E302104100068DE9C69D72625E0188CE3
+                    4F77B2672F7F4912D3067D892B09B0B1D88A88D0B3CCE1851030FA34933DB64D
+                    88AF12205A990F7892ED3210EA3349338CADE7C371DFB41917F85507462BF381
+                    9AE48700DA7A4DD20C21BCF7DDDDE0FD1F7FBD316D0AAA0A1085415331FD0670
+                    A0DF24FD10A87D6FF69BE6FBDFFFFCD5B42D5E9541CAF7FBAE38FF0262443F86
+                    2DE35369A900D1CA7C00D04FF598532FE4A367DA865201F83473D2F9385B8184
+                    EBE19CD17B5AF91444537ED32DA1E1E37B939F5F1E01D3BEEA298159591E0153
+                    946C4D23955641823E4400C388008611010C63B5008AD1CF390FBC3CBBCB1E42
+                    305955C9BC091AA60DB8843407472F861F5F7DF6DABB280C169437730472A72C
+                    626304A499479D1707FF713E00201E252908B119B3F46057043027A72AEFBC3C
+                    B06BD34427F644C085F347A5CE8F6AB2A8166C898063EFCCF9E96503A230682A
+                    7F2676AD2C6E3C0218B4E7E559272E757EE310E047F55AA71FA311C08C78303C
+                    D92C1AF3EF56A85BBFFC0B8C458062F407C3F1AD763E4C45800245DBC3936745
+                    63D6EFCFB5D5243B74BD1A5B7704A439786DFBA0D8F91B8BB36B0DC5CE3B1F35
+                    47409A79D4D9D91F1F170D3A6FFA7A5A9F5966A927029893D33C5BD8D93F2974
+                    7E77B9D5BF4DCE472D115031C1EA2ECDC66038DB007019BA05F89A04CBB9357E
+                    154A7B43BB4B2DBECA8519B4E7E793CDA204CB06A2C5B93545BC7BB357E5044C
+                    AFAAF4A0EA8900E664301C3FD672EDA98002107ADDC5163F1F8EB78A46EAB909
+                    93E754C9F8CA5079E150D32A48593DEDD884160118B4A6E3BAD386E2F2CD232D
+                    0210106E2CB57E8EC2C0F94CF61252C5E86F97CCFFD0B90C256055F98DE0C94A
+                    F0B0E858501406CDDC6FEC12B0AACB962272567B83838FD73A2B771D7467C2ED
+                    3B13FFF0C94A706935331E25E9E060FC902B84AB8BD4508AA0A04C0400180CC7
+                    9B8A60CDD9ADBAA8A91A4AC19D49E368FD7E712FFEF6DBF1D66D13A1CE7274B3
+                    A1F8E887A5D9C292C3F6DBF11633DD9A24AEF61D311FB4D75D6C15FECA07C393
+                    BDCCA30500CEE71366B624CFD2F4421176F64F8EBDBCB1E0623BE2E798EB8A20
+                    F436965B85B5FF78F421F194DF715904A36D29C488CA12B67F44000A3773A615
+                    E37D41E7095B49AEF021F1F2ACC3C0EB7AADD38F7101CEA99EB001A37A4DD38B
+                    2D02544ED808E454145824002A276C2E6199004051C2767EB396EEE83A384FD8
+                    BEF57C7A8DC92441A3D1568CA7AEB5295A2B0070962B28C53DF80DE04AAD01F6
+                    63E31474AB10010C2302184604304C15019C2E097B20A3DFAFCAF3829C2C825D
+                    C0C446BF5FA900446ED55EFECF699EBF33F9F9A502785956789A659A61465CE1
+                    5CB2564A05884749EA64CB0873E2ABACB4714A37955641BECAB69CDA953A3F34
+                    6243EB7C2501E251923AB33558FD9108B550390F70616B9019B1A7F2055B9C8F
+                    AB3FBE7E6E8D80DE943CB7276560048578703836BAE2F912D76A4AED765A0F88
+                    689589DB16FD81430A50CAAC4644FEC8CB4FDFD830D70B822008822008822008
+                    8220088220088241FE06116AE777DFE746340000000049454E44AE426082}
+                  FileName = 'D:\Github\FMXDesignTemplateAndroid\assets\icons\STOCK OUT.png'
+                end>
+              Anchors = []
+              HitTest = False
+              Position.X = 36.500000000000000000
+              Position.Y = 19.683332443237300000
+              Size.Width = 28.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+        end
+        object ListBoxItem5: TListBoxItem
+          Selectable = False
+          Position.X = 109.000000000000000000
+          Size.Width = 109.000000000000000000
+          Size.Height = 110.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object Layout1: TLayout
+            Align = Client
+            Margins.Left = 4.000000000000000000
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 4.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Size.Width = 101.000000000000000000
+            Size.Height = 94.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            object Rectangle4: TRectangle
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Fill.Color = claWhite
+              HitTest = False
+              Size.Width = 101.000000000000000000
+              Size.Height = 94.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 8.000000000000000000
+              YRadius = 8.000000000000000000
+            end
+            object Circle1: TCircle
+              Anchors = []
+              Fill.Color = xFFF7F9FB
+              HitTest = False
+              Position.X = 25.500000000000000000
+              Position.Y = 8.683334350585938000
+              Size.Width = 50.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+            end
+            object Label2: TLabel
+              StyleName = 'lblTempTransaction'
+              Anchors = [akLeft, akRight]
+              StyledSettings = [Family]
+              Position.X = 8.000000000000000000
+              Position.Y = 54.175003051757810000
+              Size.Width = 85.000000000000000000
+              Size.Height = 35.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF0F172A
+              TextSettings.HorzAlign = Center
+              Text = 'Stock In'
+              TabOrder = 40
+            end
+            object Image1: TImage
+              StyleName = 'imgTempTransaction'
+              MultiResBitmap.Height = 96
+              MultiResBitmap.Width = 96
+              MultiResBitmap = <
+                item
+                  Width = 96
+                  Height = 96
+                  PNG = {
+                    89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                    380000000473424954080808087C0864880000044449444154789CED9DBF6FDB
+                    4614C7BF8F4C806E551DA06BE94806BC554B9D76A37F04C816F72F88C724701C
+                    F62FB0F21794A8D5A153BD768A3D1545128B998A78A946032122E61F50B5B7BA
+                    D7A171610436795449DFF1F83E9BA4C7D3C3FBE8444A7A770204411004411004
+                    411004411084B640A613B88A280C3ACABFF980C0DB00050C0E4CE77481190163
+                    30C6A4701C2769B2E840D60988C2A0C3FECDEF19BC633A177D38F33CEFDBF8C5
+                    DB71D923FD7A125A8C68AB172AF27E07F0B5E95CCA411D663CBCB3BC446F26D3
+                    52B3C11A014F36BA3B003D07F089E95C168610AEDDFE2C389DFC79AC7B881502
+                    1EDF5DE9FBC0AFA6F3A80202F5D7BA4B9DD377D3DF74E2BDFA532AE686C273D3
+                    39540931A2DDB017EAC41A17F064636507765DE15402F9D8D789332E80482FD1
+                    A64140A8330B8C0A88B67AA18BAFFE737C0FF78B628C0A504C5F9A7CFEBA6182
+                    DD338080BEC9E7BF060A67B7F17380E3748A024480614480614480614480615C
+                    153063E6430616FE9EFEBAB8613A81AA518CC1F0247D767E3B0A5703E5CD4720
+                    3B3FF039350318482E161F00E2E42CF394BF0EA6CC5C6657E39400021D5D76BF
+                    CD129C129087AD129C12C0E0EDBCC76D94E0940002C2BD8DDE202FC636094E09
+                    000010F69B24C13D016896043705A03912DC15806648705B00EC97E0BE00D82D
+                    A11D0260AF84F608809D12DA2500F649689F00D82541EBF78068AB1732E32940
+                    95B69130D460CE2AB710268993B32C0A57D7EBFC3DA150C0EE66775BF179F32C
+                    579EC08F2793F7950F5A21FF49F0FFFE43A7CDA42C856F411EC8C9DECD32C4C9
+                    5906425CC7D83AE700D7BBD7B4F014D532537504945EF7E4228AF0691DE3160A
+                    50E0674531AE13DD5B0D0044758CADB54A7277AB1712639F800E40159E88D4C0
+                    9BCF5F57375E39E2242BBCC48CEEAD06EAAFF968D136FA1F5EA5B935D6BA0C1D
+                    BE4C13D4D063F37473E567E5D361D5E3EAA0180300B9B3FBFF165F87567E10FB
+                    B877E832AEA3F868A3009B8A8FB609B0ADF86893001B8B8FB608B0B5F8688300
+                    9B8B0FD705D85E7CB82CA009C587AB029A527CB828A049C5878302C64D2A3EDC
+                    1390FFBD926DC5877B02AEC6C6E2C33501572DD0B0B5F8704DC0650B341EDF5D
+                    E9DB5A7CB8B84C1584FDBDCDEE03028D017458B1D6D661A6704F00807F377A2D
+                    DE2AC6069C7A0B6A2222C03022C03022C03022A05E6645014605B0FB5D77857D
+                    47460578735F7B93EB26425CDC4B6554409C9C654DD854695114E3D2DD5B2E62
+                    FC1CC094DF9DD65898B383515AD876695CC0F0659A2882B5AB641685D9CFDDB9
+                    E51C2BFE3FE0F4DDF4F59DDBB7965D598BA01883E1E8ED2F3AB1560800803793
+                    E9D157DD25108AF75BB619061D0E4FD2EF74E3AD11800F33616DF9D67B02F541
+                    D5AFC7AA1B66C40727E9A332C7582500004E27D3F1375F7C7E3CF7D58C988226
+                    88602081C2CEC128FDA9ECB1D6FD8DD5C7ECADF7EE13D13613F73FEC466E8390
+                    19808C1889621CE95CED08822008822008822008822058C03FF68001315CB6D3
+                    650000000049454E44AE426082}
+                  FileName = 'D:\Github\FMXDesignTemplateAndroid\assets\icons\STOCK IN.png'
+                end>
+              Anchors = []
+              HitTest = False
+              Position.X = 36.500000000000000000
+              Position.Y = 19.683334350585940000
+              Size.Width = 28.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+        end
+        object ListBoxItem6: TListBoxItem
+          Selectable = False
+          Position.X = 218.000000000000000000
+          Size.Width = 109.000000000000000000
+          Size.Height = 110.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object Layout2: TLayout
+            Align = Client
+            Margins.Left = 8.000000000000000000
+            Margins.Top = 8.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Size.Width = 101.000000000000000000
+            Size.Height = 94.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            object Rectangle5: TRectangle
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Fill.Color = claWhite
+              HitTest = False
+              Size.Width = 101.000000000000000000
+              Size.Height = 94.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 8.000000000000000000
+              YRadius = 8.000000000000000000
+            end
+            object Circle2: TCircle
+              Anchors = []
+              Fill.Color = xFFF7F9FB
+              HitTest = False
+              Position.X = 25.500000000000000000
+              Position.Y = 8.683334350585938000
+              Size.Width = 50.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+            end
+            object Label3: TLabel
+              StyleName = 'lblTempTransaction'
+              Anchors = [akLeft, akRight]
+              StyledSettings = [Family]
+              Position.X = 8.000000000000000000
+              Position.Y = 54.175003051757810000
+              Size.Width = 85.000000000000000000
+              Size.Height = 35.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF0F172A
+              TextSettings.HorzAlign = Center
+              Text = ' Monitoring'
+              TabOrder = 40
+            end
+            object Image2: TImage
+              StyleName = 'imgTempTransaction'
+              MultiResBitmap.Height = 96
+              MultiResBitmap.Width = 96
+              MultiResBitmap = <
+                item
+                  Width = 96
+                  Height = 96
+                  PNG = {
+                    89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                    380000000473424954080808087C0864880000036749444154789CEDDDBD4EDB
+                    5018C6F1E738A133E50A8C9A4A8CE9D076C49454EA6DB05602CC1510A6AA135F
+                    1162E312BA56A280D9285376AC265710D191E2F8EDC0829092633B4E5E3B7E7E
+                    23719C23FEB1E2C41F072022222222A2AA31933CD96F35BC18F08C601530AE40
+                    DCFC865668F706E842D07D78151D9EFEECF7B3AE285380AF9FDF361762D917C0
+                    CBFAC2F3C400C1C342B49125442DED13363F35FC1AF0034055DEED49B8B5D8F1
+                    3F2E2F99DFBD4190E689A9026CB51A6D037C4B3DBCAA30F0D246481C60ABD568
+                    43B09B79705561E07D585EFA7BDB1BDC245B3C01FFCB8A1B3F46BD8907572191
+                    63DE9D9CDF756DCB394956268FD1592EA3AA905A2CFB4996B36E017CF767170F
+                    B1D609C2B19F07D62D40FE45DBB98EAA421C07ABD665AC6B3168E635A0AA1163
+                    FF9E64DF02C0005919B1FF3290E44378319FE1549031B904A0296200650CA08C
+                    01949532800081C4F09C61F4FAE82234E2C01320D5AF904551D71E405A0204C7
+                    17E1DAF3BF1D9F87D700D636D71B57A664C728CAB705C4688F7A480CF6663B98
+                    C9952EC0F155783DEAB17A14597F7D2C9AD20518E720E8DF6B8F21ADB90A5046
+                    0CA08C01943180320650C600CA18401903286300650CA08C01943180F2F185D2
+                    1D0FC89BF6F1056E01CAC7172A1F40FBF842E5038C338BE30B0CA08C01943180
+                    B2990498A7F378F236F5EF01DAFBD94537FD2D60CECEE3C9DBD40368EF67179D
+                    EA877019CFE3C91BF782943180320650C600CA18401903286300650CA08C0194
+                    3180320650C600CA1840190328630065530FE07B6EAE377C2AFAFAD29A7A8008
+                    F591B73CF35B8DD4C7838BBEBEB4A61EC0D446DF6D5732DC89B7E8EB4BFDFAB6
+                    05B6D61B32E98B0810D486D83B08C2C0F7DC45D4EB4D11EC66BDFB7AD1D7F7DC
+                    D14538F67F3C930055660BC0BD20650CA08C01943180326B00039379821A82F5
+                    C4336B8018C200190930F9040EC6F034F2AC1CC921400C8C3CB996C67B88A343
+                    DB32D6009D5F61C08B29D21320380DECF38A25DA0B1A3A6627975155C8E330DA
+                    48B25CA20027E7775D11304242B1A09DE4DD8F34F388DDF60637EFDF2CA1EA97
+                    14D9C48276E7324C7CE54FAA99F46EFF0CAE1961B418C6EF5C86DFD33C27D364
+                    9EBEB7E20E6BD119433C1120183A6627C9C46D2F4D369DADB7E28A136DC7064D
+                    F334D94F45E69B317D81F44510184130EE3A382222222222A297FE03414740A6
+                    1598BBBC0000000049454E44AE426082}
+                  FileName = 
+                    'D:\Github\FMXDesignTemplateAndroid\assets\icons\TRANSACTION MONI' +
+                    'TORING.png'
+                end>
+              Anchors = []
+              HitTest = False
+              Position.X = 36.500000000000000000
+              Position.Y = 19.683334350585940000
+              Size.Width = 28.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+        end
+        object ListBoxItem7: TListBoxItem
+          Selectable = False
+          Position.Y = 110.000000000000000000
+          Size.Width = 109.000000000000000000
+          Size.Height = 110.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          object Layout3: TLayout
+            Align = Client
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 8.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Size.Width = 101.000000000000000000
+            Size.Height = 94.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            object Rectangle6: TRectangle
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Fill.Color = claWhite
+              HitTest = False
+              Size.Width = 101.000000000000000000
+              Size.Height = 94.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 8.000000000000000000
+              YRadius = 8.000000000000000000
+            end
+            object Circle3: TCircle
+              Anchors = []
+              Fill.Color = xFFF7F9FB
+              HitTest = False
+              Position.X = 25.500000000000000000
+              Position.Y = 8.683334350585938000
+              Size.Width = 50.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+            end
+            object Label4: TLabel
+              StyleName = 'lblTempTransaction'
+              Anchors = [akLeft, akRight]
+              StyledSettings = [Family]
+              Position.X = 8.000000000000000000
+              Position.Y = 54.175003051757810000
+              Size.Width = 85.000000000000000000
+              Size.Height = 35.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF0F172A
+              TextSettings.HorzAlign = Center
+              Text = 'Transfer Rck'
+              TabOrder = 40
+            end
+            object Image3: TImage
+              StyleName = 'imgTempTransaction'
+              MultiResBitmap.Height = 96
+              MultiResBitmap.Width = 96
+              MultiResBitmap = <
+                item
+                  Width = 96
+                  Height = 96
+                  PNG = {
+                    89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                    380000000473424954080808087C0864880000033D49444154789CEDDC4D4EDB
+                    4018C6F1676C07B1F4118C14A42CB9414D61C10E6E50BAEB8AF8060D27686841
+                    EA929E806D1785841314764850D547605941326F17A89F028F9378FC9AE4F96D
+                    091EEBFD4370C62100111111111111111111D5C2D4B550B6D94EC5621BC6EC08
+                    24A96BDD095D08E4E2BE35DEFFF839CFEB58D07B802C4D62095BEF04B2EB7BAD
+                    2A09E4B88E105E03645B9DC4DE8F0768EE4FBC83E477ADF1BACF0881AF0303C0
+                    F31E3E009864E93E3AC9D224F6B582B7007B9BEDDEF31EFE6F6B3688BABE0EEE
+                    E529284B93D886ADAF731200006E83F168A53FCC6FAB3EB097DF805118A67334
+                    7C00886D186EFB38B09700A198173E8EABC98859F371DCC8C741614C0C88EB41
+                    B55C6797233180C23FB4F6E13195F313A004B1B2FB617073AEB5FEDFB2CD766A
+                    05038DB5BD5E86921B03286300650CA08C01943180320650C600CA1840190328
+                    6300650CA04C6D33CEB72C4DE271149D04629CF7254400D7EEAD3166A7BBB19A
+                    96597B04DB3B3AFDF6A9CC63E736407F98DF6669E7B50DC603984A6E0EC55262
+                    4BDA0A7A4767E5868F797F0AEA0FAFF2C086EB907AEE3D5841EFF0EC667F92EF
+                    99EB00A831C234C387AFA7202B3877DF110B2BBFC1FD94FEF02ACFD2CE7A854F
+                    47FF9876F8A8F3AD894D90A59DA4EA08B30C1F8B160015479875F858C400A828
+                    4215C3C7A206C08C11AA1A3E163900A68C50E5F0B1E801306184AA870F067850
+                    26828FE18301FE288AE06BF8281360EF65FBAD8F85A761039C1F7EB919FA3AFE
+                    63117C0E1FA55E091BF47C2D3EA9C0A207C05B80FF5F31FB1E3E16612F6852BF
+                    F68E2C4CE67BF898E7EDE859F487573980833AD6E26F80320650C600CA184019
+                    03282B71151434E6230646A15C6A9F0311D11C716EC66569BBD4BBC1EAF06379
+                    94BB3EB9E4CD56922CFF881AF35FFAFD61F1E6A1F38FB00D75FE7FF6314B7751
+                    0F40E1FECCD25DF4CA86CDD94074FD90F332541903286300650CA08C01943180
+                    320650E67C1D2022C7F59C8A9B183837E3AC914B2368CC391311113DC5B91BDA
+                    DD58FD5ECFA9B809D07F7F7A5DF87E9DBD8DD5AE01B2FACEAAD8C1E9F54AD1D7
+                    DD57414DFA005629FE68C987C7482C06CD396707BE0E50C600CA184019032863
+                    00650CA08C018888888888888888886AF2130022463D3BC0CB63000000004945
+                    4E44AE426082}
+                  FileName = 
+                    'D:\Github\FMXDesignTemplateAndroid\assets\icons\TRANSFER RACK.pn' +
+                    'g'
+                end>
+              Anchors = []
+              HitTest = False
+              Position.X = 36.500000000000000000
+              Position.Y = 19.683334350585940000
+              Size.Width = 28.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+        end
+        object ListBoxItem8: TListBoxItem
+          Selectable = False
+          Position.X = 109.000000000000000000
+          Position.Y = 110.000000000000000000
+          Size.Width = 109.000000000000000000
+          Size.Height = 110.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          object Layout4: TLayout
+            Align = Client
+            Margins.Left = 4.000000000000000000
+            Margins.Top = 8.000000000000000000
+            Margins.Right = 4.000000000000000000
+            Margins.Bottom = 8.000000000000000000
+            Size.Width = 101.000000000000000000
+            Size.Height = 94.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+            object Rectangle7: TRectangle
+              Anchors = [akLeft, akTop, akRight, akBottom]
+              Fill.Color = claWhite
+              HitTest = False
+              Size.Width = 101.000000000000000000
+              Size.Height = 94.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+              XRadius = 8.000000000000000000
+              YRadius = 8.000000000000000000
+            end
+            object Circle4: TCircle
+              Anchors = []
+              Fill.Color = xFFF7F9FB
+              HitTest = False
+              Position.X = 25.500000000000000000
+              Position.Y = 8.683334350585938000
+              Size.Width = 50.000000000000000000
+              Size.Height = 50.000000000000000000
+              Size.PlatformDefault = False
+              Stroke.Kind = None
+            end
+            object Label6: TLabel
+              StyleName = 'lblTempTransaction'
+              Anchors = [akLeft, akRight]
+              StyledSettings = [Family]
+              Position.X = 8.000000000000000000
+              Position.Y = 54.175003051757810000
+              Size.Width = 85.000000000000000000
+              Size.Height = 35.000000000000000000
+              Size.PlatformDefault = False
+              TextSettings.Font.Size = 13.000000000000000000
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+              TextSettings.FontColor = xFF0F172A
+              TextSettings.HorzAlign = Center
+              Text = 'My Transaction'
+              TabOrder = 40
+            end
+            object Image4: TImage
+              StyleName = 'imgTempTransaction'
+              MultiResBitmap.Height = 96
+              MultiResBitmap.Width = 96
+              MultiResBitmap = <
+                item
+                  Width = 96
+                  Height = 96
+                  PNG = {
+                    89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+                    380000000473424954080808087C0864880000054849444154789CED9CBF731B
+                    4514C7BFEFEECC501E668696135666D2596E4CA872FEC14C3A9C8E32F4C83E3A
+                    3AE38AA142B1C34C3AC25FE050416688A574C60D4A476147C73FE01C1DC477FB
+                    286433C2B68CEE74B76F25EDA7F5E8DE7ABFFBDEFE7AFB008BC562B1582C168B
+                    C5326B90740346255AAF878A6991C021400D06FB00FCF33F270062026266741D
+                    8517ADCE7147B8C92361B4005118F8CAF32230B6063A7B443866A0733697ED3C
+                    FE398EAB6AE3B81829401406BE72DDAF00DA2AE37B0C7E62AA10AE74032ED35C
+                    AD47709C7D80C2B2BE49A086AB68E3C30FE6935F7BAF5F96F5DD32304A80CDB5
+                    8516116D0378BBFCAF930FD0C6F2C2BC7FF4EAF459F9DF2F861121280A039F5D
+                    6F9F81D246FDFFD075B274A5D589134DF686E24837000094EBB535763E003432
+                    D7DBD7686F28E22168736DA105D0866EBB040426842351019AABB71E10E16B29
+                    FB04DC59AECDFF79D43B3D146C830CD1BDDB813ACBDA0007526D382771B2B426
+                    351F88CD017C966D1BD0F900E0679EB72D655CC403FAA33FED49D81E8693A5EF
+                    4878818807F447BF5928C72B65D79D171901F42E394783104998D52E40B45E0F
+                    0D89FD97F13F0FEBDA0786760194C25DDD3647C5716951BB4DDD0689D0D06D73
+                    54183CFD1EC08089E1070040CCDA0787C4246CAC0020CA79E9333E120268FF27
+                    733013025806901040FC0CFE06A67F274C209305D07E672CE001DCD56F733478
+                    16046090B1F93AC4D03E38F4EF84898DCA4A188419DA0787C871F4E65AFDB571
+                    CB51E678F7E0A4A6DBACCC3294D012B17B030CFDA31F52023869FA50C2EE4D9C
+                    A96C47C2AE8800AD4E9C309BE305CCFCE47147266D516C27ECAA74C7884D1973
+                    2C35FA2199967218277F2DD7E6FF26C23DA93600FD9BB0EFDABD1752E645F382
+                    8E7AA787CBB5799F087724EC33A3B57770F28D84ED0B8CC80D6DAED5DBA4FF9E
+                    B8BBFBFC7849B3CD2B18711AEA66E97D40DF2E94818E93A52BBAECDD84111E70
+                    4173B5FE2D559C9DD00F3BC75F5469230FE2C9B9831CF54E9F2DD7DEFD83400D
+                    50E93BE54481BE7C74702CB6E2B90EA304405F84EE47EFBFF723887D947481CF
+                    8C96ABD2FBBBED5762AB9D611815822E1385B70376B26D064250EE5CA244315A
+                    9E4A1F9AF0106318460B3048F3E3FA5DCA1032A141FD8BFDE0BFCF5429617097
+                    401D56DCDD6B1F1B37DA2D168BC56219447C128EC2C087E73514D322B16A3051
+                    83403E979C414DA018E01840C2A08E93F14B13EA49C8BC9009031FAE1B32688B
+                    8186E0F564424087C14F779F9FFC20D100AD028C577CA36A648A7B6811C0EC8E
+                    BF06C68EA3D2968E0D5CE54711D17A3D54E4FE0460A39A1A10154008D9A14F75
+                    14F7A8CC03CA2E392305135A7BBF54777A5A8900E7CF50F701735FC3E483E337
+                    73D94A157343E90218F402BE64AA11A15401A6B7F32F285F84D20498FECEBFA0
+                    5C114ABB139E8DCE07000ADE3AF3F6A3302865395D8A00FD9A3FB3D0F9FFD228
+                    ABC0C7D821A85FF387BF2FA3319386CAB0F268CCF3A4B104E8AFF5E77E9BB1D1
+                    3F00C74E962D8DB3631E2B0429CF8B66B7F301808271ABAC14F600136BFE0831
+                    56C5ADC21E6062CD1F21FC71BCA0B80026D6FC918210155D961612A0B97AEBC1
+                    6CC7FE2BF8CAF30A95E129248043FC4991DF4D33CCC5725A0B0960C3CF550868
+                    140943B905E8971C9B805B2DFDF829BCDCC7EFB90550ACBFACD7A450A4E4596E
+                    0148A0ACD7A4C0ACAAF7001B7E8643443A0420BBFC1C0673F59370D9196B5305
+                    E51F9C463CD29B65AC00C2580184B10208630510A68800C6BE389C440A2C43F5
+                    17B69B1418789AF737B9057033EF33EB05D7929C6569EE24DEDC02B43ABFC74E
+                    E62D15517B4A4918E8BCC9D225A9AA5B168BC562B1582C168B65B2F807DD7DF5
+                    1290AFB5FB0000000049454E44AE426082}
+                  FileName = 
+                    'D:\Github\FMXDesignTemplateAndroid\assets\icons\MY TRANSACTIONS.' +
+                    'png'
+                end>
+              Anchors = []
+              HitTest = False
+              Position.X = 36.500000000000000000
+              Position.Y = 19.683334350585940000
+              Size.Width = 28.000000000000000000
+              Size.Height = 28.000000000000000000
+              Size.PlatformDefault = False
+            end
+          end
+        end
+      end
+      object loTitleApproval: TLayout
+        Align = Top
+        Position.Y = 470.000000000000000000
+        Size.Width = 360.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        object Glyph2: TGlyph
+          Margins.Left = 16.000000000000000000
+          Align = Left
+          Position.X = 16.000000000000000000
+          Size.Width = 20.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          ImageIndex = 1
+          Images = img
+        end
+        object Label7: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          HitTest = True
+          Margins.Left = 4.000000000000000000
+          Size.Width = 320.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFF0F172A
+          TextSettings.Trimming = None
+          Text = 'Approval'
+          TabOrder = 3
+        end
+      end
+      object loTitleTransaction: TLayout
+        Align = Top
+        Position.Y = 196.000000000000000000
+        Size.Width = 360.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        object Glyph1: TGlyph
+          Margins.Left = 16.000000000000000000
+          Align = Left
+          Position.X = 16.000000000000000000
+          Size.Width = 20.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          ImageIndex = 0
+          Images = img
+        end
+        object Label1: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Margins.Left = 4.000000000000000000
+          Size.Width = 320.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFF0F172A
+          TextSettings.Trimming = None
+          Text = 'Transaction'
+          TabOrder = 3
+        end
+      end
+    end
+    object loHeader: TLayout
+      Align = Top
+      Size.Width = 360.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object reHeader: TRectangle
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Fill.Color = xFFF7F9FB
+        Size.Width = 360.000000000000000000
+        Size.Height = 75.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object seHeader: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.150000005960464500
+          ShadowColor = xFFC4C4C4
+        end
+      end
+      object btnMenu: TCornerButton
+        Anchors = [akLeft, akTop, akBottom]
+        StyledSettings = [Family, Size]
+        Images = DM.ListIcon
+        ImageIndex = 4
+        Margins.Left = 8.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 8.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 40.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnImg'
+        TabOrder = 1
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnMenuClick
+      end
+      object lblWarehouseName: TLabel
+        Anchors = [akLeft, akTop, akRight]
+        StyledSettings = [Family]
+        Position.X = 57.000000000000000000
+        Position.Y = 15.000000000000000000
+        Size.Width = 303.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFF0F172A
+        TextSettings.Trimming = None
+        Text = 'Dashboard Overview'
+        TabOrder = 3
+      end
+      object lblWarehouseCode_: TLabel
+        Anchors = [akLeft, akTop, akRight]
+        StyledSettings = [Family]
+        Position.X = 57.000000000000000000
+        Position.Y = 39.000000000000000000
+        Size.Width = 303.000000000000000000
+        Size.Height = 18.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 13.000000000000000000
+        TextSettings.FontColor = xFFEC5B13
+        TextSettings.Trimming = None
+        Text = 'Code (Select to change)'
+        Visible = False
+        TabOrder = 2
+      end
+    end
+  end
+  object img: TImageList
+    Source = <
+      item
+        MultiResBitmap.Height = 96
+        MultiResBitmap.Width = 96
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 96
+            Height = 96
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+              380000000473424954080808087C0864880000029749444154789CEDDCBD4EDB
+              5018C6F1E7182E204AAF00D5DE3394760D1F91BAF53EA236B0766A7A0595AA8A
+              EBE88E5ADA8DD2851D44D64E16DD18929829155283F1C7F1790EBCCF6F4411B6
+              DE3F8EBF0144444444444444444444443AB7C15E019677BBE9E18BF4D9CDEFAB
+              FC0F733D12E6C25926FBE9D4397CDA5C1627E3513660AE8B632E9C61B29F4E51
+              E0C39D1F5DCF13B773747C71CE581F5301D60C7F8516C14C8092E1AF50229808
+              5061F82BC12398D809CF9DFB0AE0BAC2477BA177CC26B60000188FB2C1E6B238
+              01D0ABF0F1605B829900883482A900883082B900882C82C900882882D9008824
+              82E900882082B70093BDB4F0F5BB22E73582891331CFBC9EAC294033DE222840
+              735E222800990234E76567AC00CD783B125280FABC1E86EA44ECA99C883D46EC
+              E1C3728018860FAB0162193E2C068869F8B01620B6E1C3528018870F2B01621D
+              3E6238111B8FB2C164379D76B98C8D45318C71F8603F9EFEEF2FD3E1F5ABADBE
+              FB35CB7F74B19CB3597EBAFDBC0F070C4B3E4679349116E0BFAF058761A711AE
+              F29F2511680FE75202DCFB9DCC89407D3C3D7880077788612350878FD0012A1F
+              8D380C5F6EF5FF9ECDF2D32ED663156191B8F7CCE123E46168CC87824C410268
+              F8F7EB3C80865FAED3001AFEC33A0BA0E157D349000DBF3AEF0134FC7ABC06D0
+              F0EBF316A0E6F01FBDCFDF2EBDCCCECBE5686BC3F7A975000DBF9D560134FCF6
+              E877C4AC6B15E0E8F8E27C9EB89D8AFF0640D668BD0528423B5EBE8214A1399D
+              8891E95204992EC691E97234996EC890E99624996ECA93E9B114B260D7826A9E
+              ACF59245F126C06AD1057F3FA0CA96B02C30FDF2FDF263D835E3A0BCA05116C1
+              D2F0C17C43665D046BC307FB15A5BB112C0E3F0AE3513678BB971DB0D7434444
+              4444444444444444E409BB056619197771EB4A6D0000000049454E44AE426082}
+            FileName = 
+              'D:\Github\FMXDesignTemplateAndroid\assets\icons\grommet-icons_tr' +
+              'ansaction.png'
+          end>
+        Name = 'grommet-icons_transaction'
+      end
+      item
+        MultiResBitmap.Height = 96
+        MultiResBitmap.Width = 96
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 96
+            Height = 96
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+              380000000473424954080808087C0864880000051349444154789CED9C3D73DB
+              461086DF05488D3B639899943164D1332A95427252891F29D4596DAA30650A4A
+              C82F90DCA513247932EEA2FC03A9730A8A50E7B0094BCF4831F10B38AC45029B
+              C2A4424B00F8810321D0FB94C26117DC57873BECED1D20088220088220088220
+              08822008822008822008CB0CA93668954CC3CFE52C305E01D8506D3F61DA00DB
+              278D7FFF5C9443A502583BEBA6DFF79A009B2AED2E1E766FF35EF9ED3BD74DDA
+              93A6D2D872041F00C85CE9EB4DAB641A497B522640BDF2A2B61CC11F41A6AFE5
+              F693F6A24C00224EFC61170E613769172A5F41591B70A721F1DFA4740C106647
+              04481911206544809411015246044899DC229D9D346E94E79EE2B0572D72DACF
+              203D206544809411015246044819112065163A0B7A0CB38EC786F48094110152
+              46044819112065448094F9A2734118D631DDE6F3A60E7E4A3E6D30B844400940
+              E2151158B4008F11DB717B9F0AB2000057008E31ACF25844A1C1172F4018A797
+              D76700CE92F6236340CA8800292302A48CB259494A799EB6E60DCAC3813414AB
+              641AD0F2BB0C7F9B8936009863B39C1E0097C16D021CCDF32E26D95349760560
+              766F7DAFFCD609AF601E2B95DF9F615AD963F0793FEFBDCE5C75F4229914FC7A
+              A568F97AAE03C6C18C737A8340B595BEDEAC578A969AA70D279302F88CC3A8E0
+              EF55D76C221CC5FB9822930847F51F8A47F3DB984CF6046076DF5CDEBC0EBBBC
+              577D710690B20F286258F5EADA1FAAECDD27730230532DECDA5E75CD06F827D5
+              3E09544BAA272C74104E321754AF14ADE16B273198F1EBE9E58DADD266E67A40
+              10D6CEBA49A4EEB51306110E546F5B5A0A01B8EF1D28DA1ED506286A87A4A17A
+              DB52E605B04AA6C160155B89DA9A37289F34AE6B9122102C95BD20F302785A7E
+              5741EEFEB32FEA092218BEAEBF8AE9EF8ECC0BA011B6639A084C67685EDF1AA6
+              291EC08C524C9F7764A62E68E0D1B7BF3BD7EDFB7F67F0341BE9DA6032400FC6
+              89C0E05B25D3F0F55C33AC67D1A77C921232B3201314FC21D1832FB3ABF95E19
+              7862F89AD71C89C0A0B3D3C6F5CFF79B8F053F2AC8CAF64367468008C2DFFFFF
+              27EC7A007A5669BDEC6B5E93094E8CE047FB9C91CC8F0111F4EE27EC6CE783AB
+              F97A3930F83BEBA6AFE7FF59F47EE7CC081031F50BCBDD1B2B5AEE41DAC2763E
+              3C48E2CD71C888B2F582CC08D0D7E869C8A5F09C3DE160AF523C8CB23BE7092F
+              CAD609322380AEE981AF0602850DCEA306A122CC7BBC0E3347FB9C81CC0800A6
+              C02011E36AE2BD0122C439DB8808CEACF78491190142D30D7EFF7CAA77F29808
+              310F96EA699E7731C77D816446000236820662DB717B204C9722261CEC578A47
+              710E9662E673958BF68909C098DC4D676C139A83D10683E36967264CB0E6CE9C
+              32BB7DDF0B5D8D9B874404F01987A78D9BB24F089D81CCD38611BC1A663B6E8F
+              194A0313F83CA4D9516BD1F3A0AB32F4F279E110C3A08DD66C5B1FBB579B6B05
+              0CAB8DEF98B78D06D4369F15AE5A6EF741105A9DEEFBADD5824184EF54FDA671
+              986147AD45CF8B5201C68336E27E8063B721D45A9D6E60AAB8D5E9FEF5F2F957
+              ABAABF661974767A79F38B4A9B239409B0B95A40D87FC82878CC70E2B6D95A2B
+              985BDF1428A81700C0DF9DEEB9CA9EC00C3BA9E02389835B1F0BF54AD122D07E
+              400A7A5A7A3EE8F04DE3FA58F1A37D86B21EF0D86875BAEFBF7FF6F505880D10
+              4C004FA6BCB5E7337ED3FDC18F27CD8F933FF262B2B43D601CAB641A9E96DFD5
+              806D260E2ECE656E13E98EE6DD2EB43857100441100441100441100441100441
+              10044110969BFF00F25C42FC268116660000000049454E44AE426082}
+            FileName = 
+              'D:\Github\FMXDesignTemplateAndroid\assets\icons\material-symbols' +
+              '_order-approve.png'
+          end>
+        Name = 'material-symbols_order-approve'
+      end
+      item
+        MultiResBitmap.Height = 96
+        MultiResBitmap.Width = 96
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 96
+            Height = 96
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000060000000600806000000E29877
+              380000000473424954080808087C0864880000055349444154789CED9C4B6EDB
+              481086FFA2A8AC3537603032A0DD282708ED248097F109ACEC06C1D8C31B58B9
+              81E0044676914F902C07706C3327B0B2336005E10D46DBB19A5DB3F003B6F8B0
+              D4E63BF52D4576B351BFD8CD7A74038220088220088220088220088220088220
+              0882D06428AF8EBD975D97197B0CF40174F27A0E80C9655B6D7DFC27082263D8
+              EC393C579F187009F0FF6BAB3771F795899547A7BB2FBB43CD3865C0CDD9F800
+              D06FCFED4F7117F45C7DBE1E0318709FCC5BA77F6E3A4ECEE35989CC05D8D958
+              1B80B19775BF69D0B59163E82FDCE9544D84CC05B088B7B3EE335BAA2542E602
+              70F2BFB1425447845CD6807A500D117E61015009117E710150BA08220050AA08
+              22C02DE588D0740166ABDD5EBC088D168081C9EAADC849F2ACF3A0D90210DE99
+              B44BF1AC33A7310278AE1389397DF83AF5356168D09DC19B6346630450B0FB71
+              BF7FF83A7DC74C6F18F097E98701FF32545B990F3001BBA807E50DB5781B0946
+              7E7F723106302E7E540FD39837804083B7AFD662DF822AD3180100C0D6FA73D9
+              B19D556994006587154CC83C25B9FBA2CB59F7690283C7AD900E013519F9C18A
+              0E597134568047909863CE83864D4199909863CE03112006F184CB473CE1B2F8
+              753C61E6809906EF4FA7DF4A1B4305284D00A5ADAD03FFA2B057BDAA94360589
+              F1AF284D80BFDC6E0DEA87F2A73401AC167FF26A183CCB9A2A7BC2461EA9E73A
+              1D58EDD70CFD1C64B90CEEDC29109E30784280BF7FFCE330A3713E8A2A0B0066
+              1EBF3FF9F166997B3DD7E968DBF6C0F87BB98A6C0EC074B87F3235C9986546A5
+              FD80653D526FB3E7E856FBECBA2A7BC972787240D8DB7DF1FB4FA98C4B80891E
+              9C7EDEBE5AEBEBB93A03D8D088E43C99DB676525732A2B0003FE3C54A9D38FB7
+              D9736CCDA7196C02E9D89A4BC923D4DA13D6F330D1F8CC3C06D3B8C5EAFBC80F
+              669EEB74C2B6FD8715D2808907314D3A4FE6F66700CF4CC76342698BB00AE9D9
+              639CB1DD97DD61EC4E1CE640B5ACAD83A3E4BE3DB7E7682B3C05C54C5B8CE1FE
+              C9D4A89EC884FA7AC24CD19D38CCC1A50ED7D38C0F0023FF3CB0746B1D1CB3C6
+              10BCB81AA3BCA8A527BCB3B136885B742F75B8FED15FCE6F18F9E7816A212EEA
+              D9D1B6FDDC746CAB524B4FD822440CC4CCE3658D7FC3C1D1C5849822F542ACF9
+              B5C9B84C28B1308B1CADF96CF74537E13A07CA8A9FCB191C152EC690CB105A7C
+              6831EE2DCA9211030090633327E5662302B4587D37798AAD5474BD206AFE1AB0
+              141C357412A6A52709ED44005C3B630997224633FD7229F28B278ECA0A90E609
+              132822405275F483D8B1ED0A4B16D5D513F681858533A53A3A7D18B40DF0C26F
+              DCFCAA08A5AD2DD33004137F59FCCDA43ADADBEC398C6858826875214DA9A527
+              6C29F52D6E1D58A53ADADBEC39D7B1A4FB300745266B6AE9098FFC6006C2287A
+              65B9EAE8AB1076781AE74D6B98F913A6949811E3C0B2ACADD103719BD4676DAC
+              FD8C0DA8C554477BAED3816DF799693B6EDAB9E1B2AD9E1679A853A553923710
+              E03378BC3835786ECFD12D7596ED773B0797ED705DAAA3EF7075040E8D7737BA
+              F7F2B723FF3C5016ADAFBE213B8D623779D442805B087B8B6BC7C1D1C5C40AED
+              67B1A165F307152642BD040040AD681266E49F07FB27174F3561B8821033CD18
+              5AA1FD34BE4D3122D4620D5860B67F3CFD2DED869D8DB581053C67E2FE9DC0DD
+              0CA019B3F6C9A22F9652DF6EE240A919B29CD7843C04F837EF60D6FEF134F371
+              9725421E67C6E5EAC62FBBE37D5552D394391EE091BD008607642C0B81737394
+              D244C82B4993B9008F3820E34134639877982045845CDEEC5CBE82563D20E301
+              660CF8ACE17E28A85CE456846BA317BD6D491004411004411004411004411004
+              41100441109AC3FFA5878DC124AD6CE70000000049454E44AE426082}
+            FileName = 
+              'D:\Github\FMXDesignTemplateAndroid\assets\icons\garden_document-' +
+              'search-fill-12.png'
+          end>
+        Name = 'garden_document-search-fill-12'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'grommet-icons_transaction'
+            SourceRect.Right = 96.000000000000000000
+            SourceRect.Bottom = 96.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'material-symbols_order-approve'
+            SourceRect.Right = 96.000000000000000000
+            SourceRect.Bottom = 96.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'garden_document-search-fill-12'
+            SourceRect.Right = 96.000000000000000000
+            SourceRect.Bottom = 96.000000000000000000
+          end>
+      end>
+    Left = 312
+    Top = 32
+  end
+end

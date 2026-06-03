@@ -75,13 +75,9 @@ type
       const APermissions: TClassicStringDynArray); static;
     class procedure ShowDeniedMessage(
       const APermissions: TClassicStringDynArray); static;
-    class function ToClassicStringArray(
-      const APermissions: TArray<string>): TClassicStringDynArray; static;
-    class procedure ShowRationale(Sender: TObject;
-      const APermissions: TClassicStringDynArray;
+    class procedure ShowRationale(const APermissions: TClassicStringDynArray;
       const APostRationaleProc: TProc); static;
-    class procedure RequestResult(Sender: TObject;
-      const APermissions: TClassicStringDynArray;
+    class procedure RequestResult(const APermissions: TClassicStringDynArray;
       const AGrantResults: TClassicPermissionStatusDynArray); static;
     {$ENDIF}
   public
@@ -243,15 +239,14 @@ begin
   end;
 
   {$IF DEFINED(ANDROID)}
-  PermissionsService.RequestPermissions(ToClassicStringArray(APermissions),
-    RequestResult, ShowRationale);
+  PermissionsService.RequestPermissions(APermissions, RequestResult, ShowRationale);
   {$ELSE}
   ExecuteGranted;
   {$ENDIF}
 end;
 
 {$IF DEFINED(ANDROID)}
-class procedure THelperPermission.RequestResult(Sender: TObject;
+class procedure THelperPermission.RequestResult(
   const APermissions: TClassicStringDynArray;
   const AGrantResults: TClassicPermissionStatusDynArray);
 begin
@@ -329,7 +324,7 @@ end;
 {$ENDIF}
 
 {$IF DEFINED(ANDROID)}
-class procedure THelperPermission.ShowRationale(Sender: TObject;
+class procedure THelperPermission.ShowRationale(
   const APermissions: TClassicStringDynArray;
   const APostRationaleProc: TProc);
 var
@@ -345,18 +340,6 @@ begin
       if Assigned(APostRationaleProc) then
         APostRationaleProc;
     end);
-end;
-{$ENDIF}
-
-{$IF DEFINED(ANDROID)}
-class function THelperPermission.ToClassicStringArray(
-  const APermissions: TArray<string>): TClassicStringDynArray;
-var
-  LIndex: Integer;
-begin
-  SetLength(Result, Length(APermissions));
-  for LIndex := 0 to High(APermissions) do
-    Result[LIndex] := APermissions[LIndex];
 end;
 {$ENDIF}
 

@@ -6,6 +6,8 @@
 
 program FMXStarterKit;
 
+{$R *.dres}
+
 uses
   System.StartUpCopy,
   FMX.Forms,
@@ -13,8 +15,9 @@ uses
   frDetail in 'frames\frDetail.pas' {FDetail: TFrame},
   frLoading in 'frames\frLoading.pas' {FLoading: TFrame},
   frLogin in 'frames\frLogin.pas' {FLogin: TFrame},
-  frTemp in 'frames\frTemp.pas' {FTemp: TFrame},
+  frHome in 'frames\frHome.pas' {FHome: TFrame},
   BFA.App.Types in 'sources\app\BFA.App.Types.pas',
+  BFA.App.Func in 'sources\app\BFA.App.Func.pas',
   BFA.App.Services in 'sources\app\BFA.App.Services.pas',
   BFA.App.Context in 'sources\app\BFA.App.Context.pas',
   BFA.Resource.Message in 'sources\resources\BFA.Resource.Message.pas',
@@ -31,7 +34,15 @@ uses
   BFA.Helper.OpenURL in 'sources\helpers\BFA.Helper.OpenURL.pas',
   BFA.Android.SAF.Modern in 'sources\helpers\SAF\BFA.Android.SAF.Modern.pas',
   BFA.iOS.SAF.Modern in 'sources\helpers\SAF\BFA.iOS.SAF.Modern.pas',
-  BFA.Helper.SAF in 'sources\helpers\BFA.Helper.SAF.pas';
+  BFA.Helper.SAF in 'sources\helpers\BFA.Helper.SAF.pas',
+  uDM in 'uDM.pas' {DM: TDataModule},
+  frListMenu in 'frames\controls\frListMenu.pas' {FListMenu: TFrame},
+  frConfirmation in 'frames\controls\frConfirmation.pas' {FConfirmation: TFrame},
+  frDemoPermission in 'frames\sampledemo\frDemoPermission.pas' {FDemoPermission: TFrame},
+  frDemoJSONToDataset in 'frames\sampledemo\frDemoJSONToDataset.pas' {FDemoJSONToDataset: TFrame},
+  frDemoRestAPI in 'frames\sampledemo\frDemoRestAPI.pas' {FDemoRestAPI: TFrame},
+  frDemoPushNotif in 'frames\sampledemo\frDemoPushNotif.pas' {FDemoPushNotif: TFrame},
+  frDemoSAF in 'frames\sampledemo\frDemoSAF.pas' {FDemoSAF: TFrame};
 
 {$R *.res}
 
@@ -40,5 +51,6 @@ begin
 
   Application.Initialize;
   Application.CreateForm(TFMain, FMain);
+  Application.CreateForm(TDM, DM);
   Application.Run;
 end.

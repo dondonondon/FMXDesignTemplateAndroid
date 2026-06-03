@@ -12,7 +12,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
   FMX.Controls.Presentation, FMX.StdCtrls,
-  BFA.App.Services;
+  BFA.App.Services, FMX.MultiView, FMX.Memo.Types, FMX.ScrollBox, FMX.Memo;
 
 type
   TFMain = class(TForm)
@@ -20,6 +20,9 @@ type
     vsMain: TVertScrollBox;
     loFrame: TLayout;
     SB: TStyleBook;
+    MultiView: TMultiView;
+    loSidebar: TLayout;
+    memAnnounce: TMemo;
     procedure FormDestroy(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -104,6 +107,8 @@ end;
 
 procedure TFMain.FormShow(Sender: TObject);
 begin
+  if Assigned(memAnnounce) then FreeAndNil(memAnnounce);
+
   if Assigned(AppContext) and Assigned(AppContext.Services) then
     Exit;
 

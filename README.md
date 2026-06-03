@@ -53,17 +53,19 @@ This template is intended for teams and developers who want to move quickly with
 
 ## Gallery
 
-This repository is ready for screenshot-based documentation, but image assets have not been added yet.
+The screenshots below are taken from the current template build.
 
-When you have screenshots, place them in a folder such as `docs/images/` and replace the entries below with embedded images.
+| Loading | Login |
+| --- | --- |
+| ![Loading Screen](docs/images/loading.png) | ![Login Screen](docs/images/login.png) |
 
-| Screen | Suggested Asset | Status |
-| --- | --- | --- |
-| Loading | `docs/images/loading.png` | Waiting for image asset |
-| Login | `docs/images/login.png` | Waiting for image asset |
-| Detail | `docs/images/detail.png` | Waiting for image asset |
+| Dashboard | Sidebar |
+| --- | --- |
+| ![Dashboard Screen](docs/images/dashboard.png) | ![Sidebar Screen](docs/images/sidebar.png) |
 
-Recommended sources: Windows desktop build, Android emulator, or physical device captures.
+| Detail Sample |
+| --- |
+| ![Detail Sample Screen](docs/images/detailsample.png) |
 
 ## Architecture
 

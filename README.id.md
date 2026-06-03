@@ -53,17 +53,19 @@ Template ini ditujukan untuk tim dan developer yang ingin bergerak cepat tanpa m
 
 ## Galeri
 
-Repository ini sudah siap untuk dokumentasi visual, tetapi asset gambar screenshot belum ditambahkan.
+Screenshot di bawah diambil dari build template yang saat ini ada di repository.
 
-Saat screenshot sudah tersedia, letakkan file gambar di folder seperti `docs/images/` lalu ganti entri di bawah dengan gambar yang di-embed.
+| Loading | Login |
+| --- | --- |
+| ![Loading Screen](docs/images/loading.png) | ![Login Screen](docs/images/login.png) |
 
-| Screen | Asset yang Disarankan | Status |
-| --- | --- | --- |
-| Loading | `docs/images/loading.png` | Menunggu asset gambar |
-| Login | `docs/images/login.png` | Menunggu asset gambar |
-| Detail | `docs/images/detail.png` | Menunggu asset gambar |
+| Dashboard | Sidebar |
+| --- | --- |
+| ![Dashboard Screen](docs/images/dashboard.png) | ![Sidebar Screen](docs/images/sidebar.png) |
 
-Sumber yang disarankan: build Windows desktop, emulator Android, atau screenshot dari perangkat fisik.
+| Detail Sample |
+| --- |
+| ![Detail Sample Screen](docs/images/detailsample.png) |
 
 ## Arsitektur
 

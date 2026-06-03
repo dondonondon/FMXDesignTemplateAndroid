@@ -6,12 +6,18 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants, 
   FMX.Types, FMX.Graphics, FMX.Controls, FMX.Forms, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Objects, FMX.Layouts, System.Threading,
-  FMX.Edit;
+  FMX.Edit, FMX.Effects;
 
 type
   TFTemp = class(TFrame)
-    loMain: TLayout;
     background: TRectangle;
+    loMain: TLayout;
+    loHeader: TLayout;
+    reHeader: TRectangle;
+    seHeader: TShadowEffect;
+    btnMenu: TCornerButton;
+    LabelTitle: TLabel;
+    procedure btnMenuClick(Sender: TObject);
   private
     procedure SetupFrame;
   public
@@ -37,6 +43,11 @@ uses BFA.Helper.Main;
 procedure TFTemp.BackFrame;
 begin
   TAppHelper.Back;
+end;
+
+procedure TFTemp.btnMenuClick(Sender: TObject);
+begin
+  BackFrame;
 end;
 
 constructor TFTemp.Create(AOwner: TComponent);

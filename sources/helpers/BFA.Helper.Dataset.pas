@@ -6,7 +6,9 @@ uses
   System.Classes, System.Generics.Collections, System.JSON, System.SysUtils,
   Data.DB,
   Datasnap.DBClient,
-  FireDAC.Comp.Client, FireDAC.Comp.DataSet;
+  FireDAC.Comp.Client, FireDAC.Comp.DataSet,
+
+  FMX.Dialogs;
 
 type
   TTypeJSON = (ArrayData, ObjectData, None);
@@ -268,9 +270,10 @@ begin
   if not Assigned(AJSONData) then
     raise EArgumentNilException.Create('JSON object is required.');
 
-  for LPair in AJSONData do
+  for LPair in AJSONData do begin
     AddFieldDef(ADataset, LPair.JsonString.Value,
       GetFieldType(LPair.JsonValue), GetFieldSize(LPair.JsonValue));
+  end;
 
   ADataset.CreateDataSet;
 end;
@@ -506,13 +509,20 @@ begin
 end;
 
 class function THelperDataset.GetFieldSize(const AValue: TJSONValue): Integer;
+var
+  LText: string;
 begin
   Result := DEFAULT_STRING_FIELD_SIZE;
 
   if not Assigned(AValue) or (AValue is TJSONNull) then
     Exit;
 
-  Result := Length(AValue.Value);
+  if IsNestedJSONValue(AValue) then
+    LText := AValue.ToJSON
+  else
+    LText := AValue.Value;
+
+  Result := Length(LText);
   Result := Result + Round(Result * 0.25);
 
   if Result <= 0 then
@@ -531,7 +541,11 @@ begin
   if AValue is TJSONNumber then
     Result := ftFloat
   else if (AValue is TJSONTrue) or (AValue is TJSONFalse) then
-    Result := ftBoolean;
+    Result := ftBoolean
+  else if IsNestedJSONValue(AValue) then
+    Result := ftMemo
+  else if Length(AValue.Value) > MAX_STRING_FIELD_SIZE then
+    Result := ftMemo;
 end;
 
 class function THelperDataset.IsFloat(const AValue: string): Boolean;

@@ -1,0 +1,302 @@
+object FDemoJSONToDataset: TFDemoJSONToDataset
+  Size.Width = 360.000000000000000000
+  Size.Height = 720.000000000000000000
+  Size.PlatformDefault = False
+  object background: TRectangle
+    Align = Contents
+    Fill.Color = xFFF7F9FB
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+  end
+  object loMain: TLayout
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object loHeader: TLayout
+      Align = Top
+      Size.Width = 360.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object reHeader: TRectangle
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Fill.Color = xFFF7F9FB
+        Size.Width = 360.000000000000000000
+        Size.Height = 75.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object seHeader: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.150000005960464500
+          ShadowColor = xFFC4C4C4
+        end
+      end
+      object btnMenu: TCornerButton
+        Anchors = [akLeft, akTop, akBottom]
+        StyledSettings = [Family, Size]
+        Images = DM.ListIcon
+        ImageIndex = 6
+        Margins.Left = 8.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 8.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 40.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnImg'
+        TabOrder = 1
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnMenuClick
+      end
+      object LabelTitle: TLabel
+        Anchors = [akLeft, akTop, akRight]
+        StyledSettings = [Family]
+        Position.X = 57.000000000000000000
+        Position.Y = 15.000000000000000000
+        Size.Width = 303.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFF0F172A
+        TextSettings.Trimming = None
+        Text = 'Demo JSON to Dataset'
+        TabOrder = 2
+      end
+    end
+    object memJSON: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Lines.Strings = (
+        '['
+        '        {'
+        '            "index":0,'
+        '            "name":"Dashboard",'
+        '            "frame":"TFHome",'
+        '            "alias":"HOME",'
+        '            "imagefilenamedefault":"dashboard_main.png",'
+        '            "imagefilenameselected":"dashboard_selected.png",'
+        '            "imageindexdefault":"8",'
+        '            "imageindexselected":"9",'
+        '            "submenu":""'
+        '        },'
+        '        {'
+        '            "index":1,'
+        '            "name":"Detail",'
+        '            "frame":"TFDetail",'
+        '            "alias":"DETAIL",'
+        '            "imagefilenamedefault":"detail_main.png",'
+        '            "imagefilenameselected":"detail_selected.png",'
+        '            "imageindexdefault":"8",'
+        '            "imageindexselected":"9",'
+        '            "submenu":""'
+        '        },'
+        '        {'
+        '            "index":2,'
+        '            "name":"Settings",'
+        '            "frame":"",'
+        '            "alias":"",'
+        '            "imagefilenamedefault":"master_main.png",'
+        '            "imagefilenameselected":"master_selected.png",'
+        '            "imageindexdefault":"0",'
+        '            "imageindexselected":"1",'
+        '            "submenu":['
+        '                {'
+        '                    "index":0,'
+        '                    "name":"Sample Sub Menu 1",'
+        '                    "frame":"TFSettingItems",'
+        '                    "alias":"SETTINGITEM",'
+        '                    "imagefilenamedefault":"sub_main.png",'
+        '                    "imagefilenameselected":"sub_selected.png",'
+        '                    "imageindexdefault":"14",'
+        '                    "imageindexselected":"15",'
+        '                    "submenu":""'
+        '                },'
+        '                {'
+        '                    "index":1,'
+        '                    "name":"Sample Sub Menu 2",'
+        '                    "frame":"TFSettingCustomers",'
+        '                    "alias":"SETTINGCUSTOMER",'
+        '                    "imagefilenamedefault":"sub_main.png",'
+        '                    "imagefilenameselected":"sub_selected.png",'
+        '                    "imageindexdefault":"14",'
+        '                    "imageindexselected":"15",'
+        '                    "submenu":""'
+        '                },'
+        '                {'
+        '                    "index":2,'
+        '                    "name":"Sample Sub Menu 3",'
+        '                    "frame":"TFSettingVAT",'
+        '                    "alias":"SETTINGVAT",'
+        '                    "imagefilenamedefault":"sub_main.png",'
+        '                    "imagefilenameselected":"sub_selected.png",'
+        '                    "imageindexdefault":"14",'
+        '                    "imageindexselected":"15",'
+        '                    "submenu":""'
+        '                },'
+        '                {'
+        '                    "index":3,'
+        '                    "name":"Sample Sub Menu 4",'
+        '                    "frame":"TFSettingAccount",'
+        '                    "alias":"SETTINGACCOUNT",'
+        '                    "imagefilenamedefault":"sub_main.png",'
+        '                    "imagefilenameselected":"sub_selected.png",'
+        '                    "imageindexdefault":"14",'
+        '                    "imageindexselected":"15",'
+        '                    "submenu":""'
+        '                },'
+        '                {'
+        '                    "index":4,'
+        '                    "name":"Sample Sub Menu 5",'
+        '                    "frame":"TFSettingAdv",'
+        '                    "alias":"SETTINGADV",'
+        '                    "imagefilenamedefault":"sub_main.png",'
+        '                    "imagefilenameselected":"sub_selected.png",'
+        '                    "imageindexdefault":"14",'
+        '                    "imageindexselected":"15",'
+        '                    "submenu":""'
+        '                }'
+        '            ]'
+        '        }'
+        '    ]')
+      ReadOnly = True
+      StyledSettings = [Family, Style, FontColor]
+      TextSettings.Font.Size = 10.000000000000000000
+      TextSettings.WordWrap = True
+      Align = Top
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 91.000000000000000000
+      Size.Width = 328.000000000000000000
+      Size.Height = 166.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'memMain'
+      TabOrder = 9
+      Viewport.Width = 307.000000000000000000
+      Viewport.Height = 150.000000000000000000
+    end
+    object btnLoad: TCornerButton
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 265.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 328.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'btnMain'
+      TabOrder = 7
+      Text = 'Load'
+      TextSettings.Font.Size = 12.500000000000000000
+      XRadius = 16.000000000000000000
+      YRadius = 16.000000000000000000
+      OnClick = btnLoadClick
+    end
+    object btnNext: TCornerButton
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 361.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 328.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'btnMain'
+      TabOrder = 5
+      Text = 'Next'
+      TextSettings.Font.Size = 12.500000000000000000
+      XRadius = 16.000000000000000000
+      YRadius = 16.000000000000000000
+      OnClick = btnNextClick
+    end
+    object btnBack: TCornerButton
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 409.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 328.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'btnMain'
+      TabOrder = 4
+      Text = 'Back'
+      TextSettings.Font.Size = 12.500000000000000000
+      XRadius = 16.000000000000000000
+      YRadius = 16.000000000000000000
+      OnClick = btnBackClick
+    end
+    object memData: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      ReadOnly = True
+      StyledSettings = [Family, Style, FontColor]
+      TextSettings.Font.Size = 10.000000000000000000
+      TextSettings.WordWrap = True
+      Align = Client
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Size.Width = 328.000000000000000000
+      Size.Height = 255.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'memMain'
+      TabOrder = 8
+      Viewport.Width = 312.000000000000000000
+      Viewport.Height = 239.000000000000000000
+    end
+    object btnLoadSubMenu: TCornerButton
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 313.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 328.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'btnMain'
+      TabOrder = 6
+      Text = 'Load Sub Menu <> '#39#39
+      TextSettings.Font.Size = 12.500000000000000000
+      XRadius = 16.000000000000000000
+      YRadius = 16.000000000000000000
+      OnClick = btnLoadSubMenuClick
+    end
+  end
+  object QData: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 272
+    Top = 184
+  end
+end

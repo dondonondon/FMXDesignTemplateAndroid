@@ -5,7 +5,7 @@ object FDetail: TFDetail
   Size.PlatformDefault = False
   object background: TRectangle
     Align = Contents
-    Fill.Color = xFFFBFBFB
+    Fill.Color = xFFF7F9FB
     Size.Width = 360.000000000000000000
     Size.Height = 720.000000000000000000
     Size.PlatformDefault = False
@@ -17,85 +17,184 @@ object FDetail: TFDetail
     Size.Height = 720.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
-    object btnBack: TCornerButton
-      Position.X = 8.000000000000000000
-      Position.Y = 8.000000000000000000
-      Sides = [Top, Left, Bottom, Right]
-      Size.Width = 89.000000000000000000
-      Size.Height = 33.000000000000000000
+    object lbData: TListBox
+      Align = Client
+      Margins.Left = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Size.Width = 328.000000000000000000
+      Size.Height = 645.000000000000000000
       Size.PlatformDefault = False
-      StyleLookup = 'btnMain'
-      TabOrder = 1
-      Text = 'back'
-      XRadius = 3.000000000000000000
-      YRadius = 3.000000000000000000
-    end
-    object btnShare: TCornerButton
-      Position.X = 8.000000000000000000
-      Position.Y = 96.000000000000000000
-      Sides = [Top, Left, Bottom, Right]
-      Size.Width = 201.000000000000000000
-      Size.Height = 41.000000000000000000
-      Size.PlatformDefault = False
-      StyleLookup = 'btnMain'
-      TabOrder = 5
-      Text = 'btnShare'
-      XRadius = 3.000000000000000000
-      YRadius = 3.000000000000000000
-    end
-    object btnGetFile: TCornerButton
-      Position.X = 8.000000000000000000
-      Position.Y = 160.000000000000000000
-      Sides = [Top, Left, Bottom, Right]
-      Size.Width = 201.000000000000000000
-      Size.Height = 41.000000000000000000
-      Size.PlatformDefault = False
-      StyleLookup = 'btnMain'
-      TabOrder = 4
-      Text = 'Get File'
-      XRadius = 3.000000000000000000
-      YRadius = 3.000000000000000000
-    end
-    object btnShareFile: TCornerButton
-      Position.X = 8.000000000000000000
-      Position.Y = 209.000000000000000000
-      Sides = [Top, Left, Bottom, Right]
-      Size.Width = 201.000000000000000000
-      Size.Height = 41.000000000000000000
-      Size.PlatformDefault = False
-      StyleLookup = 'btnMain'
+      StyleLookup = 'transparentlistboxstyle'
       TabOrder = 3
-      Text = 'Share File'
-      XRadius = 3.000000000000000000
-      YRadius = 3.000000000000000000
+      ShowScrollBars = False
+      DisableFocusEffect = True
+      Images = DM.ListIcon
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+      OnItemClick = lbDataItemClick
+      Viewport.Width = 328.000000000000000000
+      Viewport.Height = 645.000000000000000000
+      object ListBoxItem1: TListBoxItem
+        Selectable = False
+        TextSettings.Font.Size = 13.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        StyledSettings = [Family, FontColor, Other]
+        ImageIndex = 5
+        Size.Width = 328.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Toast / Popup Message'
+      end
+      object ListBoxItem2: TListBoxItem
+        Tag = 1
+        Selectable = False
+        TextSettings.Font.Size = 13.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        StyledSettings = [Family, FontColor, Other]
+        ImageIndex = 5
+        Position.Y = 57.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'Loading Indicator'
+      end
+      object ListBoxItem3: TListBoxItem
+        Tag = -1
+        Selectable = False
+        TextSettings.Font.Size = 13.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        StyledSettings = [Family, FontColor, Other]
+        ItemData.Detail = 'DEMOPERMISSION'
+        ImageIndex = 5
+        Position.Y = 114.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Permission'
+      end
+      object ListBoxItem4: TListBoxItem
+        Tag = -1
+        Selectable = False
+        TextSettings.Font.Size = 13.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        StyledSettings = [Family, FontColor, Other]
+        ItemData.Detail = 'DEMOLOADJSONDATASET'
+        ImageIndex = 5
+        Position.Y = 171.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Load JSON to Dataset'
+      end
+      object ListBoxItem5: TListBoxItem
+        Tag = -1
+        Selectable = False
+        TextSettings.Font.Size = 13.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        StyledSettings = [Family, FontColor, Other]
+        ItemData.Detail = 'DEMORESTAPI'
+        ImageIndex = 5
+        Position.Y = 228.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Rest API'
+      end
+      object ListBoxItem6: TListBoxItem
+        Tag = -1
+        Selectable = False
+        TextSettings.Font.Size = 13.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        StyledSettings = [Family, FontColor, Other]
+        ItemData.Detail = 'DEMOPUSHNOTIF'
+        ImageIndex = 5
+        Position.Y = 285.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Push Notif (Get Token & Device ID)'
+      end
+      object ListBoxItem7: TListBoxItem
+        Tag = -1
+        Selectable = False
+        TextSettings.Font.Size = 13.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        StyledSettings = [Family, FontColor, Other]
+        ItemData.Detail = 'DEMOSAF'
+        ImageIndex = 5
+        Position.Y = 342.000000000000000000
+        Size.Width = 328.000000000000000000
+        Size.Height = 57.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Storage Access Framework (SAF)'
+      end
     end
-    object memResult: TMemo
-      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
-      DataDetectorTypes = []
-      StyledSettings = [Family, Style, FontColor]
-      TextSettings.Font.Size = 11.000000000000000000
-      Anchors = [akLeft, akTop, akRight, akBottom]
-      Position.X = 8.000000000000000000
-      Position.Y = 322.000000000000000000
-      Size.Width = 344.000000000000000000
-      Size.Height = 390.000000000000000000
+    object loHeader: TLayout
+      Align = Top
+      Size.Width = 360.000000000000000000
+      Size.Height = 75.000000000000000000
       Size.PlatformDefault = False
-      TabOrder = 6
-      Viewport.Width = 340.000000000000000000
-      Viewport.Height = 386.000000000000000000
-    end
-    object btnOpenFile: TCornerButton
-      Position.X = 8.000000000000000000
-      Position.Y = 273.000000000000000000
-      Sides = [Top, Left, Bottom, Right]
-      Size.Width = 201.000000000000000000
-      Size.Height = 41.000000000000000000
-      Size.PlatformDefault = False
-      StyleLookup = 'btnMain'
       TabOrder = 2
-      Text = 'Open File'
-      XRadius = 3.000000000000000000
-      YRadius = 3.000000000000000000
+      object reHeader: TRectangle
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Fill.Color = xFFF7F9FB
+        Size.Width = 360.000000000000000000
+        Size.Height = 75.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object seHeader: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.150000005960464500
+          ShadowColor = xFFC4C4C4
+        end
+      end
+      object btnMenu: TCornerButton
+        Anchors = [akLeft, akTop, akBottom]
+        StyledSettings = [Family, Size]
+        Images = DM.ListIcon
+        ImageIndex = 4
+        Margins.Left = 8.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 8.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 40.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnImg'
+        TabOrder = 1
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnMenuClick
+      end
+      object LabelTitle: TLabel
+        Anchors = [akLeft, akTop, akRight]
+        StyledSettings = [Family]
+        Position.X = 57.000000000000000000
+        Position.Y = 15.000000000000000000
+        Size.Width = 303.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFF0F172A
+        TextSettings.Trimming = None
+        Text = 'Detail Menu (Sample Code / Feature)'
+        TabOrder = 2
+      end
     end
   end
 end

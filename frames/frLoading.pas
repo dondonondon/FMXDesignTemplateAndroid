@@ -10,7 +10,6 @@ uses
 type
   TFLoading = class(TFrame)
     loMain: TLayout;
-    background: TRectangle;
     logo: TImage;
     ShadowEffect1: TShadowEffect;
     Image1: TImage;
@@ -19,11 +18,14 @@ type
     ShadowEffect3: TShadowEffect;
     Image3: TImage;
     ShadowEffect4: TShadowEffect;
-    Label1: TLabel;
+    LabelLoading: TLabel;
     tiMove: TTimer;
     faOpa: TFloatAnimation;
-    procedure logoClick(Sender: TObject);
-    procedure Label1Click(Sender: TObject);
+    LabelVersion: TLabel;
+    FlowLayout1: TFlowLayout;
+    background: TRectangle;
+    procedure faOpaFinish(Sender: TObject);
+    procedure tiMoveTimer(Sender: TObject);
   private
     procedure SetupFrame;
   public
@@ -44,7 +46,7 @@ implementation
 uses
   BFA.App.Types,
   BFA.Control.Form.Message,
-  BFA.Helper.Main;
+  BFA.Helper.Main, BFA.App.Func, BFA.App.Services;
 
 constructor TFLoading.Create(AOwner: TComponent);
 begin
@@ -57,42 +59,37 @@ begin
   inherited;
 end;
 
-procedure TFLoading.Label1Click(Sender: TObject);
-var
-  LErrorMessage: string;
+procedure TFLoading.faOpaFinish(Sender: TObject);
 begin
-  TAppHelper.ToastMessage('Ok Bosku1');
-  TAppHelper.ToastMessage('Ok Bosku2');
-  TAppHelper.StartLoading('Hello World');
-
-  TTask.Run(procedure begin
-    try
-      Sleep(1500);
-      TAppHelper.StopLoading;
-    except
-      on E: Exception do begin
-        LErrorMessage := E.Message;
-        TThread.Queue(nil, procedure begin
-          TAppHelper.ToastMessage(LErrorMessage, TTypeMessage.Error);
-        end);
-      end;
-    end;
-  end);
-end;
-
-procedure TFLoading.logoClick(Sender: TObject);
-begin
-  TAppHelper.NavigateTo(TView.LOGIN);
+  TFloatAnimation(Sender).Enabled := False;
+  tiMove.Enabled := True;
 end;
 
 procedure TFLoading.SetupFrame;
 begin
-
+  loMain.Visible := False;
+  TAppHelper.ChangeColorStatusBar($FFC7B6AA, False);
 end;
 
 procedure TFLoading.ShowFrame;
 begin
   SetupFrame;
+
+  TTask.Run(procedure begin
+    Sleep(Round(250));
+    TThread.Synchronize(TThread.CurrentThread, procedure begin
+      loMain.Opacity := 0;
+      loMain.Visible := True;
+      faOpa.Enabled := True;
+    end);
+  end).Start;
+end;
+
+procedure TFLoading.tiMoveTimer(Sender: TObject);
+begin
+  tiMove.Enabled := False;
+  TAppHelper.NavigateTo(TView.LOGIN);
+//  TAppHelper.EnabledSidebar(True);
 end;
 
 end.

@@ -9,6 +9,14 @@ uses
   BFA.App.Services,
   BFA.Control.Form.Message,
 
+  {$IF DEFINED(ANDROID)}
+  AndroidApi.JNI.GraphicsContentViewText, AndroidApi.JNI.OS, AndroidApi.Helpers, AndroidApi.JNI.Net,
+  AndroidApi.JNI.JavaTypes, AndroidApi.JNIBridge, AndroidApi.JNI.Provider, AndroidApi.JNI.Telephony,
+  FMX.PhoneDialer, FMX.PhoneDialer.Android, FMX.Platform.Android,
+  AndroidApi.JNI.Java.Net,
+  AndroidApi.JNI.Android.Security,
+  {$ENDIF}
+
   Rest.Types,
   FireDAC.Comp.Client,
   BFA.Helper.APIRequest;
@@ -25,6 +33,13 @@ type
     class procedure StartLoading(AMessage: string = '');
     class procedure StopLoading;
     class procedure ToastMessage(AMessage: string; AJenis: TTypeMessage = Information);
+    class procedure PopupMessage(AMessage: string; AJenis: TTypeMessage = Information);
+
+    class procedure EnabledSidebar(AEnabled : Boolean);
+    class procedure ShowSidebar;
+    class procedure HideSidebar;
+    class procedure SelectedMenuSidebar(AAlias : String);
+    class procedure ChangeColorStatusBar(AColor : Cardinal; IsDark : Boolean = False);
   end;
 
   TRESTRequestHelper = class
@@ -67,6 +82,41 @@ begin
   end);
 end;
 
+class procedure TAppHelper.ChangeColorStatusBar(AColor: Cardinal; IsDark: Boolean);
+{$IF DEFINED(ANDROID) AND NOT DEFINED(DEBUG)}
+var
+  View: JView;
+{$ENDIF}
+begin
+  {$IF DEFINED(ANDROID) AND NOT DEFINED(DEBUG)}
+  TAndroidHelper.Activity.getWindow.setStatusBarColor(AColor);
+
+  if TOSVersion.Check(6) then begin
+    View := TAndroidHelper.Activity.getWindow.getDecorView;
+
+    if IsDark then
+      View.setSystemUiVisibility(
+        View.getSystemUiVisibility or
+        TJView.JavaClass.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+      )
+    else
+      View.setSystemUiVisibility(
+        View.getSystemUiVisibility and
+        not TJView.JavaClass.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+      );
+  end;
+  {$ENDIF}
+end;
+
+class procedure TAppHelper.EnabledSidebar(AEnabled: Boolean);
+begin
+  ExecuteOnMainThread(procedure begin
+    if not Assigned(Services.Sidebar) then Exit;
+
+    Services.Sidebar.MultiView.Enabled := AEnabled;
+  end);
+end;
+
 class procedure TAppHelper.ExecuteOnMainThread(const AProc: TProc);
 begin
   if TThread.CurrentThread.ThreadID = MainThreadID then
@@ -75,6 +125,15 @@ begin
     TThread.Queue(nil, procedure begin
       AProc();
     end);
+end;
+
+class procedure TAppHelper.HideSidebar;
+begin
+  ExecuteOnMainThread(procedure begin
+    if not Assigned(Services.Sidebar) then Exit;
+
+    Services.Sidebar.MultiView.HideMaster;
+  end);
 end;
 
 class function TAppHelper.MainHelper: TMainHelper;
@@ -92,6 +151,21 @@ begin
   end);
 end;
 
+class procedure TAppHelper.PopupMessage(AMessage: string; AJenis: TTypeMessage);
+begin
+  ExecuteOnMainThread(procedure begin
+    MainHelper.ShowPopUpMessage(AMessage, AJenis);
+  end);
+end;
+
+class procedure TAppHelper.SelectedMenuSidebar(AAlias: String);
+begin
+  ExecuteOnMainThread(procedure begin
+    if not Assigned(Services.Sidebar) then Exit;
+    Services.Sidebar.SetSelectedMenu(AAlias);
+  end);
+end;
+
 class function TAppHelper.Services: TAppServices;
 begin
   if not Assigned(AppContext) then
@@ -100,6 +174,14 @@ begin
   Result := AppContext.Services;
   if not Assigned(Result) then
     raise EInvalidOperation.Create('Application services are not initialized.');
+end;
+
+class procedure TAppHelper.ShowSidebar;
+begin
+  ExecuteOnMainThread(procedure begin
+    if not Assigned(Services.Sidebar) then Exit;
+    Services.Sidebar.MultiView.ShowMaster;
+  end);
 end;
 
 class procedure TAppHelper.StartLoading(AMessage: string);

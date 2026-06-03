@@ -1,0 +1,137 @@
+object FDemoPermission: TFDemoPermission
+  Size.Width = 360.000000000000000000
+  Size.Height = 720.000000000000000000
+  Size.PlatformDefault = False
+  object background: TRectangle
+    Align = Contents
+    Fill.Color = xFFF7F9FB
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+  end
+  object loMain: TLayout
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    Size.Width = 360.000000000000000000
+    Size.Height = 720.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object loHeader: TLayout
+      Align = Top
+      Size.Width = 360.000000000000000000
+      Size.Height = 75.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object reHeader: TRectangle
+        Anchors = [akLeft, akTop, akRight, akBottom]
+        Fill.Color = xFFF7F9FB
+        Size.Width = 360.000000000000000000
+        Size.Height = 75.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object seHeader: TShadowEffect
+          Distance = 3.000000000000000000
+          Direction = 45.000000000000000000
+          Softness = 0.300000011920929000
+          Opacity = 0.150000005960464500
+          ShadowColor = xFFC4C4C4
+        end
+      end
+      object btnMenu: TCornerButton
+        Anchors = [akLeft, akTop, akBottom]
+        StyledSettings = [Family, Size]
+        Images = DM.ListIcon
+        ImageIndex = 6
+        Margins.Left = 8.000000000000000000
+        Margins.Top = 8.000000000000000000
+        Margins.Bottom = 8.000000000000000000
+        Position.X = 8.000000000000000000
+        Position.Y = 8.000000000000000000
+        Sides = [Top, Left, Bottom, Right]
+        Size.Width = 40.000000000000000000
+        Size.Height = 59.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'btnImg'
+        TabOrder = 1
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = claWhite
+        XRadius = 3.000000000000000000
+        YRadius = 3.000000000000000000
+        OnClick = btnMenuClick
+      end
+      object LabelTitle: TLabel
+        Anchors = [akLeft, akTop, akRight]
+        StyledSettings = [Family]
+        Position.X = 57.000000000000000000
+        Position.Y = 15.000000000000000000
+        Size.Width = 303.000000000000000000
+        Size.Height = 42.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 16.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+        TextSettings.FontColor = xFF0F172A
+        TextSettings.Trimming = None
+        Text = 'Demo Permission'
+        TabOrder = 2
+      end
+    end
+    object btnPermissionManual: TCornerButton
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 91.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 328.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'btnMain'
+      TabOrder = 4
+      Text = 'Camera Permission Manual'
+      TextSettings.Font.Size = 13.000000000000000000
+      XRadius = 16.000000000000000000
+      YRadius = 16.000000000000000000
+      OnClick = btnPermissionManualClick
+    end
+    object memLog: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      StyledSettings = [Family, Style, FontColor]
+      TextSettings.Font.Size = 13.000000000000000000
+      Align = Client
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Margins.Bottom = 16.000000000000000000
+      Size.Width = 328.000000000000000000
+      Size.Height = 501.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'memMain'
+      TabOrder = 5
+      Viewport.Width = 312.000000000000000000
+      Viewport.Height = 485.000000000000000000
+    end
+    object btnPermission: TCornerButton
+      Align = Top
+      StyledSettings = [Family, Style, FontColor]
+      Margins.Left = 16.000000000000000000
+      Margins.Top = 16.000000000000000000
+      Margins.Right = 16.000000000000000000
+      Position.X = 16.000000000000000000
+      Position.Y = 147.000000000000000000
+      Sides = [Top, Left, Bottom, Right]
+      Size.Width = 328.000000000000000000
+      Size.Height = 40.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'btnMain'
+      TabOrder = 3
+      Text = 'Camera Permission Auto'
+      TextSettings.Font.Size = 13.000000000000000000
+      XRadius = 16.000000000000000000
+      YRadius = 16.000000000000000000
+      OnClick = btnPermissionClick
+    end
+  end
+end
