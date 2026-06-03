@@ -1,4 +1,4 @@
-program prjTemplateV4;
+program FMXStarterKit;
 
 uses
   System.StartUpCopy,
