@@ -1,3 +1,9 @@
+{*******************************************************************************
+  Copyright (c) 2026 Fajar Donny Bachtiar (Blangkon FA)
+  Licensed under the Apache License, Version 2.0.
+  See the LICENSE file in the project root for license details.
+*******************************************************************************}
+
 unit frMain;
 
 interface

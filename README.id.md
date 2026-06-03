@@ -7,6 +7,8 @@
 
 [English](README.md) | Bahasa Indonesia
 
+Copyright (c) 2026 Fajar Donny Bachtiar (Blangkon FA)
+
 Bangun aplikasi Delphi FireMonkey di atas struktur proyek yang sudah disiapkan untuk kebutuhan produk nyata.
 
 FMX Starter Kit adalah template lintas platform untuk Windows, Android, dan iOS yang menggunakan satu form sebagai shell aplikasi, halaman berbasis `TFrame`, router terpusat untuk navigasi, serta service dan helper terfokus untuk perilaku bersama. Daripada memulai dari proyek FMX kosong, Anda memulai dari fondasi yang lebih mudah dikembangkan, diuji, dan dirawat.
@@ -210,4 +212,4 @@ Proyek ini cocok sebagai starting point jika Anda ingin codebase Delphi FMX yang
 
 ## Lisensi
 
-Tambahkan lisensi proyek Anda di sini.
+Proyek ini menggunakan Apache License 2.0. Lihat [LICENSE](LICENSE) untuk teks lisensi lengkap dan [NOTICE](NOTICE) untuk informasi atribusi.
