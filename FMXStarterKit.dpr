@@ -11,6 +11,7 @@ program FMXStarterKit;
 uses
   System.StartUpCopy,
   FMX.Forms,
+  FMX.Skia,
   frMain in 'frMain.pas' {Form3},
   frDetail in 'frames\frDetail.pas' {FDetail: TFrame},
   frLoading in 'frames\frLoading.pas' {FLoading: TFrame},
@@ -47,6 +48,7 @@ uses
 {$R *.res}
 
 begin
+  GlobalUseSkia := True;
   ReportMemoryLeaksOnShutdown := True;
 
   Application.Initialize;
